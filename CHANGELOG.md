@@ -3,8 +3,11 @@
 Entscheidungen und Änderungen (für Philip kurz erklärt). Neueste oben. Was Nutzer in der App sehen: `content/neuigkeiten.md`.
 
 ## 1.4.0 – 26.11.2026 (Phase 2, erster Teil)
-- **Neu live:** Folgen 2, 3, 4, 6, 7, 8, 9 und das Abschlussprojekt (Addierer). Folge 5: Faktencheck 2× gescheitert (zuletzt 1 kleiner
-  Fehler), Durchgang 3 bestanden – wartet laut Regel auf Philips OK. Vorschau-Prüfung fand „null“ im Text (deutsches Wort) → umformuliert.
+- **Neu live:** die ganze Staffel 1 – Folgen 2–9 und das Abschlussprojekt (Addierer). Folge 5: Faktencheck 2× gescheitert (zuletzt 1 kleiner
+  Fehler), Durchgang 3 bestanden, Freigabe nach Philips OK.
+- **Regel nachgeschärft (Philip):** Nach zwei gescheiterten Faktenchecks nur noch fragen, wenn grundsätzliche fachliche Fehler oder
+  Verständnisprobleme bleiben; bei kleinen Detailfehlern (Jahreszahlen, Namen, Formulierungen) korrigieren, weiterer Durchgang, bei
+  Bestehen selbst freigeben. Vorschau-Prüfung fand „null“ im Text (deutsches Wort) → umformuliert.
 - **Arbeitsweise:** fünf Autoren-Subagenten parallel (je 1–2 Folgen, gemeinsamer Auftrag mit Philips Format-Regeln), Karteikarten
   durch günstigeres Modell, je Folge unabhängiger Faktencheck (Berichte `docs/faktencheck/`). Korrekturen gingen an den jeweiligen
   Autor zurück. Ergebnisse Durchgang 1: s1f04 bestanden, alle anderen 1–3 Fehler; Durchgang 2 bestanden für s1f02, 03, 06, 08, 09, s1g.

@@ -17,7 +17,9 @@ wie eine gute Doku, Schichten-Karte „Vom Sandkorn zur KI“. Live: https://it-
   Speicherformat (`js/kern/speicher.js`, Schlüssel `ittrainer.v1`) nur mit Migration und **nach Rückfrage bei Philip**.
 - Folgen-Status `entwurf → geprueft → freigegeben`. `geprueft` nur nach bestandenem **unabhängigem Faktencheck** (Subagent, der nicht
   geschrieben hat; Bericht in `docs/faktencheck/`). `freigegeben` erst bei bestandenem Check + grünen Tests. Live zeigt nur `freigegeben`.
-- Scheitert ein Faktencheck **zweimal**: Philip fragen. Ebenso bei Kosten/neuen Diensten, Gefahr für den Lernfortschritt,
+- Scheitert ein Faktencheck **zweimal**: Philip nur fragen, wenn **grundsätzliche fachliche Fehler oder Verständnisprobleme** bleiben.
+  Bleiben nur kleine Detailfehler (Jahreszahlen, Namen, Formulierungen): korrigieren, weiteren Durchgang laufen lassen, bei Bestehen
+  selbst freigeben (Philip, 26.11.2026). Philip fragen außerdem bei Kosten/neuen Diensten, Gefahr für den Lernfortschritt,
   grundlegenden Konzept-/Formatänderungen. Alles andere selbst entscheiden und in `CHANGELOG.md` notieren.
 - Routinearbeit (Karteikarten aus fertigem Text u. Ä.) an günstigeres Modell (Subagent `sonnet`/`haiku`); Konzept, Didaktik, Faktencheck mit dem starken.
 - Mobile first, Tippflächen ≥ 44 px, kleinste Schrift 15 px; Farben nur über CSS-Variablen.

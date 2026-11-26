@@ -1,6 +1,7 @@
 ---
 id: s1f05
-status: entwurf
+status: freigegeben
+faktencheck: 26.11.2026 – Durchgang 1 nicht bestanden (2 Fehler), Durchgang 2 nicht bestanden (1 kleiner Fehler), Durchgang 3 bestanden; Freigabe nach Philips OK; Berichte in docs/faktencheck/
 dauer: 18
 quellen:
 - William H. Eccles, Frank W. Jordan: Britisches Patent GB 148,582 „Improvements in ionic relays“ (angemeldet 1918, veröffentlicht 1920) | https://historyofinformation.com/detail.php?id=3606
@@ -31,7 +32,7 @@ Zunächst fand die Schaltung nur wenige Anwendungen. Dann kamen die ersten elekt
 
 Die Lösung kam aus einer ganz anderen Richtung. Am Massachusetts Institute of Technology (MIT) baute ein Team um den Ingenieur **Jay Forrester** den Rechner **Whirlwind**. Sein Speicher war langsam und unzuverlässig, und Forrester suchte nach etwas Besserem. Er fand es in winzigen Ringen aus einem magnetisierbaren Material, kaum größer als ein Stecknadelkopf. Ein Ring kann in die eine oder in die andere Richtung magnetisiert sein – das ist ein Bit. Die Ringe wurden wie Perlen auf ein Gitter aus Drähten gefädelt, in Whirlwind jede Ebene mit 32 × 32 Ringen. Durch einen waagerechten und einen senkrechten Draht floss zugleich Strom, aber jeder führte nur halb so viel, wie zum Umpolen nötig ist. Nur am Ring an der Kreuzung kamen beide Hälften zusammen – so traf man genau einen Ring.
 
-Im **August 1953** lief Whirlwind zum ersten Mal mit diesem **Kernspeicher**. Er war schneller und viel zuverlässiger als alles davor – und er vergaß nichts, selbst wenn man den Strom abschaltete. Bis in die 1970er Jahre war der Kernspeicher die häufigste Art von Arbeitsspeicher. Die Ringe wurden oft von Hand aufgefädelt.
+Im **August 1953** lief Whirlwind zum ersten Mal mit diesem **Kernspeicher**. Er war schneller und viel zuverlässiger als der Speicher, den Whirlwind vorher hatte – und er vergaß nichts, selbst wenn man den Strom abschaltete. Bis in die 1970er Jahre war der Kernspeicher die häufigste Art von Arbeitsspeicher. Die Ringe wurden oft von Hand aufgefädelt.
 
 > **Wusstest du?:** Wenn ein Programm unter Linux abstürzt, steht manchmal „core dumped“ da – „Kernspeicher ausgekippt“. Das Programm hat beim Absturz den Inhalt seines Speichers in eine Datei geschrieben, damit man den Fehler suchen kann. Die Magnetkerne sind seit Jahrzehnten verschwunden, das Wort ist geblieben.
 
