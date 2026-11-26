@@ -1,7 +1,7 @@
-// „Mehr“: Darstellung, Fortschritt sichern und übertragen (Datei oder Code), Über die App.
+// Zahnrad oben rechts: Neuigkeiten, Darstellung, Fortschritt sichern und übertragen (Datei oder Code), Über die App.
 import { el, toast, frage, dateiAnbieten } from '../kern/dom.js';
 import { alsDateiText, ausDateiText, alsCode, ausCode, zusammenfuehren } from '../kern/speicher.js';
-import { versionsText } from '../kern/logik.js';
+import { versionsText, versionVergleich } from '../kern/logik.js';
 import { wendeThemaAn } from '../kern/thema.js';
 import { ansichtSetzen } from './bausteine.js';
 
@@ -42,14 +42,24 @@ export function zeigeEinstellungen(ctx) {
   datei.addEventListener('change', () => { const f = datei.files[0]; if (f) uebernehmen(async () => ausDateiText(await f.text(), app.id)); });
 
   const fertig = Object.values(ctx.zustand.folgen).filter((f) => f.fertig).length;
-  const karten = Object.keys(ctx.zustand.karten).length;
+  const geuebt = Object.keys(ctx.zustand.karten).length + Object.keys(ctx.zustand.quiz).length;
+  // Neuigkeiten: die letzten Versionen, noch nicht gesehene markiert; mit dem Öffnen gelten sie als gesehen
+  const gesehen = ctx.zustand.neuGesehen;
+  const neuigkeiten = ctx.index.neuigkeiten.slice(0, 3);
+  if (neuigkeiten[0] && gesehen !== neuigkeiten[0].version) { ctx.zustand.neuGesehen = neuigkeiten[0].version; ctx.speichern(); }
   ansichtSetzen([
-    el('p', { class: 'kicker', text: 'Mehr' }),
     el('h1', { class: 'titel', text: 'Einstellungen' }),
+    neuigkeiten.length ? el('section', { class: 'karte', 'aria-labelledby': 'neu-titel' }, [
+      el('h2', { class: 'karte-titel', id: 'neu-titel', text: 'Was ist neu' }),
+      ...neuigkeiten.map((n) => el('div', { class: `neu-version${gesehen && versionVergleich(n.version, gesehen) > 0 ? ' neu-ungesehen' : ''}` }, [
+        el('p', { class: 'neu-kopf', text: `Version ${n.version} · ${n.datum}${gesehen && versionVergleich(n.version, gesehen) > 0 ? ' · neu' : ''}` }),
+        el('ul', { class: 'neu-liste' }, n.punkte.map((p) => el('li', { text: p }))),
+      ])),
+    ]) : null,
     el('section', { class: 'karte' }, [el('h2', { class: 'karte-titel', text: 'Darstellung' }), thema]),
     el('section', { class: 'karte', 'aria-labelledby': 'sichern-titel' }, [
       el('h2', { class: 'karte-titel', id: 'sichern-titel', text: 'Fortschritt sichern' }),
-      el('p', { class: 'karte-text', text: `Dein Fortschritt (${fertig} Folgen fertig, ${karten} Karten im Kasten) liegt nur in diesem Browser. Sichere ihn als Datei oder übertrage ihn als Code auf ein anderes Gerät – z. B. vom Handy zum PC.` }),
+      el('p', { class: 'karte-text', text: `Dein Fortschritt (${fertig} Folgen abgeschlossen, ${geuebt} Fragen geübt) liegt nur in diesem Browser. Sichere ihn als Datei oder übertrage ihn als Code auf ein anderes Gerät – z. B. vom Handy zum PC.` }),
       el('div', { class: 'knopfreihe' }, [
         el('button', { type: 'button', class: 'knopf', text: 'Als Datei speichern', onclick: () => dateiAnbieten(`it-trainer-fortschritt-${new Date().toISOString().slice(0, 10)}.json`, alsDateiText(ctx.zustand)) }),
         el('button', { type: 'button', class: 'knopf knopf-zweit', text: 'Als Code anzeigen', onclick: async () => {

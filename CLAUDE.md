@@ -16,7 +16,10 @@ wie eine gute Doku, Schichten-Karte „Vom Sandkorn zur KI“. Live: https://it-
 - **Stabile IDs** (Folgen, Fragen, Karten, Übungen, Glossar): nie ändern/löschen – `tests/fixtures/ids.json`, neue mit `npm run ids-aufnehmen`.
   Speicherformat (`js/kern/speicher.js`, Schlüssel `ittrainer.v1`) nur mit Migration und **nach Rückfrage bei Philip**.
 - **Format (Philip, 26.11.2026):** Jede Folge steht für sich (keine Bilder/Geschichten anderer Folgen, Fachwissen kurz neu erklären).
-  Quiz und Karten gehören in den **Lernpool**, nicht in die Folge; Folge endet mit „Auf den Punkt“. Details: `content/README.md`.
+  Quiz und Karten gehören in den **Reiter Lernen**, nicht in die Folge; Folge endet mit „Auf den Punkt“.
+- **Aufbau (Philip, 26.11.2026):** drei Reiter Start (nur Doku-Reihe: Schichten + Staffeln) · Lernen (schlicht: Staffel → Folgen,
+  „X von Y sicher“, Unsicheres zuerst – keine Tagesrunde/Festigkeit/Fächer sichtbar) · Glossar; Zahnrad oben rechts für Einstellungen,
+  Fortschritt, Neuigkeiten. Keine Lern-Elemente auf Start. Details: `content/README.md` → „Aufbau der App und Lernen“.
 - Folgen-Status `entwurf → geprueft → freigegeben`. `geprueft` nur nach bestandenem **unabhängigem Faktencheck** (Subagent, der nicht
   geschrieben hat; Bericht in `docs/faktencheck/`). `freigegeben` erst bei bestandenem Check + grünen Tests. Live zeigt nur `freigegeben`.
 - Scheitert ein Faktencheck **zweimal**: Philip nur fragen, wenn **grundsätzliche fachliche Fehler oder Verständnisprobleme** bleiben.

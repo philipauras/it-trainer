@@ -20,22 +20,6 @@ export function bereiteFrageVor(frage, { mischenAn = true, rnd = Math.random } =
   return { frage, reihenfolge, richtigePosition: reihenfolge.indexOf(frage.richtig) };
 }
 
-/** Neuer Stand einer Frage nach einer Antwort (verändert den alten nicht). */
-export function bewerteFrage(stand, istRichtig, jetzt = Date.now()) {
-  const p = { gesehen: 0, richtig: 0, falsch: 0, ...(stand || {}) };
-  p.gesehen += 1;
-  if (istRichtig) p.richtig += 1; else p.falsch += 1;
-  p.zuletzt = istRichtig;
-  p.ts = jetzt;
-  return p;
-}
-
-/** Ergebnis eines Quiz: [{ richtig: bool }] → { richtig, gesamt, prozent }. */
-export function quizErgebnis(antworten) {
-  const richtig = antworten.filter((a) => a.richtig).length;
-  return { richtig, gesamt: antworten.length, prozent: antworten.length ? Math.round((richtig / antworten.length) * 100) : 0 };
-}
-
 /** Versionstext für die Anzeige, z. B. „Version 1.1.0 · a1b2c3d“ (lokal: „Version 1.1.0 · lokal“). */
 export function versionsText(version, build) {
   return `Version ${version} · ${!build || build === 'dev' ? 'lokal' : build}`;

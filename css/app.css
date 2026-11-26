@@ -25,7 +25,7 @@ img, svg { max-width: 100%; }
 }
 .hauptnavi {
   position: fixed; inset: auto 0 0 0; z-index: 20;
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(3, 1fr);
   background: color-mix(in srgb, var(--c-flaeche) 94%, transparent);
   backdrop-filter: blur(10px);
   border-top: 1px solid var(--c-linie);
@@ -37,11 +37,16 @@ img, svg { max-width: 100%; }
 }
 .hauptnavi a[aria-current] { color: var(--c-akzent); }
 .navi-symbol { font-size: 20px; line-height: 1; font-weight: 700; }
-.navi-zahl {
-  position: absolute; top: 6px; left: calc(50% + 8px);
-  min-width: 22px; height: 22px; padding: 0 6px; border-radius: 11px;
-  background: var(--c-akzent); color: var(--c-auf-akzent); font-size: 15px; line-height: 22px; text-align: center;
+/* Zahnrad oben rechts: Einstellungen, Fortschritt übertragen, Neuigkeiten (kein eigener Reiter) */
+.rahmen { position: relative; }
+.zahnrad {
+  position: absolute; top: max(12px, env(safe-area-inset-top)); right: 12px; z-index: 15;
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+  color: var(--c-text-3); font-size: 24px; text-decoration: none;
 }
+.zahnrad:hover, .zahnrad[aria-current] { color: var(--c-akzent); background: var(--c-akzent-weich); }
+.zahnrad-punkt { position: absolute; top: 8px; right: 8px; width: 10px; height: 10px; border-radius: 50%; background: var(--c-akzent); }
+.ansicht > :first-child { padding-right: 44px; } /* nichts unter dem Zahnrad verstecken */
 @media (min-width: 900px) {
   .rahmen { display: grid; grid-template-columns: 200px 1fr; }
   .hauptnavi {
@@ -51,7 +56,6 @@ img, svg { max-width: 100%; }
   .hauptnavi a { flex-direction: row; justify-content: flex-start; gap: 12px; padding: 0 14px; border-radius: 10px; font-size: 17px; min-height: 48px; }
   .hauptnavi a[aria-current] { background: var(--c-akzent-weich); }
   .navi-symbol { width: 26px; text-align: center; }
-  .navi-zahl { position: static; margin-left: auto; }
   .ansicht { padding: 40px 40px 60px; }
 }
 
@@ -97,14 +101,10 @@ img, svg { max-width: 100%; }
 .start-logo { border-radius: 11px; flex: none; }
 .start-titel { margin: 0; font-size: 28px; line-height: 1.1; }
 .start-untertitel { margin: 0; color: var(--c-text-3); font-size: 17px; font-weight: 500; }
-.start-raster { display: grid; gap: 0 16px; }
-@media (min-width: 640px) { .start-raster { grid-template-columns: 3fr 2fr; } }
-.weiter-karte { border-left: 6px solid var(--c-akzent); }
-.weiter-knopf { margin-top: 8px; }
-.weiter-karte .status-marke { position: absolute; top: 18px; right: 18px; }
-.kasten-karte .karte-titel { display: flex; align-items: baseline; gap: 8px; }
-.neu-karte { border: 2px solid var(--c-akzent); }
 .neu-liste { margin: 0 0 4px; padding-left: 22px; }
+.neu-version { margin: 0 0 12px; }
+.neu-kopf { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--c-text-3); }
+.neu-ungesehen .neu-kopf { color: var(--c-akzent); }
 .vorschau-hinweis { padding: 10px 14px; border-radius: 10px; background: var(--c-entwurf-bg); color: var(--c-text); font-size: 15px; }
 
 /* Schichten-Karte „Vom Sandkorn zur KI“ */
@@ -312,7 +312,7 @@ pre.code code { background: none; padding: 0; }
 .rueckmeldung-titel { margin: 0 0 4px; font-weight: 700; }
 .rueckmeldung-text p { margin: 0 0 8px; }
 .nachlesen-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-decoration: none; }
-.quiz-ergebnis, .karten-ende { text-align: center; padding: 16px 0 4px; }
+.quiz-ergebnis, .runde-ende { text-align: center; padding: 16px 0 4px; }
 .quiz-lob { margin: 8px 0 0; color: var(--c-text-2); }
 
 /* ---------------------------------------------------------------- Karteikarten */
@@ -331,13 +331,6 @@ pre.code code { background: none; padding: 0; }
 .knopf-nein:hover { background: var(--c-falsch-bg); border-color: var(--c-falsch); color: var(--c-text); filter: brightness(.97); }
 .knopf-ja { background: var(--c-richtig); border-color: var(--c-richtig); color: #fff; }
 .knopf-ja:hover { background: var(--c-richtig); border-color: var(--c-richtig); color: #fff; filter: brightness(1.08); }
-.faecher { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; list-style: none; margin: 0 0 8px; padding: 16px; background: var(--c-flaeche); border-radius: var(--rund); box-shadow: var(--schatten); }
-.fach { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2px; }
-.fach-saeule { position: relative; width: 100%; max-width: 54px; height: 96px; border-radius: 8px; background: var(--c-flaeche-2); overflow: hidden; }
-.fach-fuellung { position: absolute; left: 0; right: 0; bottom: 0; background: var(--c-akzent); border-radius: 8px 8px 0 0; }
-.fach-zahl { font-weight: 700; font-size: 20px; }
-.fach-name { font-size: 15px; font-weight: 600; }
-.fach-abstand { font-size: 15px; color: var(--c-text-3); line-height: 1.2; }
 
 /* ---------------------------------------------------------------- Glossar */
 .suchfeld, .code-feld {
@@ -551,36 +544,18 @@ body[data-ansicht="folge"] .update-leiste { display: none; }
 .add-bit { font: 700 22px var(--schrift-code); color: var(--c-text-3); }
 .add-bit.an { color: var(--c-akzent); }
 
-/* ---------------------------------------------------------------- Lernpool */
-/* Schichten-Karte: Festigkeit (kräftig = sitzt fest, blass = Wiederholung fällig) und Runden-Knopf je Schicht */
-.schicht-zeile { position: relative; }
-.schicht-mit-pool .schicht-kopf { padding-right: 64px; }
-.schicht-mit-pool .schicht-nr { background: color-mix(in srgb, var(--s-farbe) var(--fest, 100%), var(--c-flaeche-2)); }
-.schicht-mit-pool { border-left-color: color-mix(in srgb, var(--s-farbe) var(--fest, 100%), var(--c-flaeche-2)); }
-.schicht-fest { display: flex; flex-direction: column; gap: 2px; margin-top: 6px; }
-.schicht-fest .balken { height: 6px; }
-.schicht-fest-text { font-size: 15px; color: var(--c-text-2); }
-.schicht-runde {
-  position: absolute; top: 8px; right: 8px; display: flex; align-items: center; justify-content: center; gap: 2px;
-  min-width: 48px; min-height: 48px; padding: 0 8px; border-radius: 12px; background: var(--c-flaeche-2); color: var(--c-text);
-  font-size: 22px; font-weight: 700; text-decoration: none; z-index: 1;
-}
-.schicht-runde-dran { background: var(--c-akzent); color: var(--c-auf-akzent); }
-.schicht-runde-zahl { font-size: 15px; }
+/* ---------------------------------------------------------------- Lernen */
 /* Folge: Hinweis am Ende und angesprungene Stelle */
-.pool-hinweis { margin: 18px 0 0; padding: 14px 16px; border-radius: 12px; background: var(--c-akzent-weich); }
-.pool-hinweis p { margin: 0 0 6px; }
-.pool-hinweis-zahl { font-size: 18px; }
-.pool-hinweis-text { font-size: 16px; color: var(--c-text-2); }
+.pool-hinweis { margin: 18px 0 0; color: var(--c-text-2); }
 .stelle-markiert { scroll-margin-top: 90px; animation: stelle 2.4s ease-out 1; border-radius: 6px; }
 @keyframes stelle { 0%, 40% { background: color-mix(in srgb, var(--c-lampe) 35%, transparent); } 100% { background: transparent; } }
 @media (prefers-reduced-motion: reduce) { .stelle-markiert { animation: none; outline: 3px solid var(--c-lampe); } }
-/* Übersicht und Runde */
-.pool-staffel { margin-top: 16px; }
-.pool-folgen { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 6px; }
-.pool-folge { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 10px 12px; border-radius: 12px; background: var(--c-flaeche-2); color: var(--c-text); text-decoration: none; }
-.pool-folge .balken { margin: 6px 0 2px; }
-.pool-ueben { font-weight: 700; color: var(--c-akzent); white-space: nowrap; }
-.pool-fertig { padding: 14px 16px; border-radius: 12px; background: var(--c-richtig-bg); font-weight: 600; }
-.pool-art { display: inline-block; padding: 0 8px; border-radius: 99px; background: var(--c-flaeche-2); color: var(--c-text-2); }
-.pool-art-frage { background: var(--c-akzent-weich); color: var(--c-akzent); }
+/* Übersicht: Staffel → Folgen, Balken „X von Y sicher“ */
+.lern-staffel { margin-top: 16px; }
+.lern-stand { display: flex; flex-direction: column; gap: 4px; margin: 6px 0 2px; }
+.lern-stand-text { font-size: 15px; color: var(--c-text-2); }
+.lern-folgen { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 6px; }
+.lern-folge { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 10px 12px; border-radius: 12px; background: var(--c-flaeche-2); color: var(--c-text); text-decoration: none; }
+.lern-folge .balken { margin: 6px 0 2px; }
+.lern-folge-gesperrt { opacity: .55; }
+.lern-ueben { font-weight: 700; color: var(--c-akzent); white-space: nowrap; }

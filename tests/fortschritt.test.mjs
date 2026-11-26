@@ -1,7 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { leer } from '../js/kern/speicher.js';
-import { naechsteFolge, schichtStaende, aktuelleSchicht, freigeschalteteKarten, pruefeFertig, besuche, folgenAnteil } from '../js/kern/fortschritt.js';
+import { naechsteFolge, schichtStaende, aktuelleSchicht, pruefeFertig, besuche, folgenAnteil } from '../js/kern/fortschritt.js';
+import { poolEintraege } from '../js/kern/lernpool.js';
+const freigeschalteteKarten = (idx, z) => poolEintraege(idx, z).filter((e) => e.typ === 'karte').map((e) => e.id);
+const freigeschalteteFragen = (idx, z) => poolEintraege(idx, z).filter((e) => e.typ === 'frage').map((e) => e.id);
 
 const index = { staffeln: [
   { nr: 1, schichten: ['strom', 'logik'], folgen: [
@@ -46,7 +49,6 @@ test('Besuche, Fertig-Regel und freigeschaltete Karten', () => {
 });
 
 test('Lernpool-Freischaltung: mit Abschluss der Folge – alte Stände (Karten schon durchgearbeitet) behalten ihre Karten', async () => {
-  const { freigeschalteteFragen } = await import('../js/kern/fortschritt.js');
   const idx = { staffeln: [{ nr: 1, schichten: ['strom'], folgen: [
     { id: 'a', schicht: 'strom', status: 'freigegeben', karten: ['a-k01'], quiz: ['a-q01'] },
     { id: 'b', schicht: 'strom', status: 'freigegeben', karten: ['b-k01'], quiz: ['b-q01'] },

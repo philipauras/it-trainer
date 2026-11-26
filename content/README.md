@@ -68,7 +68,7 @@ Text …
 | `faktencheck` | bei `freigegeben` | Datum, Ergebnis, wer geprüft hat |
 
 **Abschnitte** – genau diese neun, genau in dieser Reihenfolge. Die ersten sieben bilden die Folge, `[quiz]` und
-`[karten]` stehen nur in der Datei und kommen in den **Lernpool** (siehe unten). Hinter `[schlüssel]` steht die
+`[karten]` stehen nur in der Datei und kommen in den **Reiter Lernen** (siehe „Aufbau der App und Lernen“). Hinter `[schlüssel]` steht die
 Überschrift, die in der App erscheint (frei wählbar, gern als Frage):
 
 | Schlüssel | In der App | Wozu |
@@ -79,9 +79,9 @@ Text …
 | `[werkstatt]` | d · Im Bild | ein Alltagsbild, das das Prinzip trifft (siehe „Bilder“ unten) – und wo es hinkt. Der Schlüssel heißt aus Speichergründen weiter `werkstatt` |
 | `[selbst]` | e · Selbst machen | mindestens eine **Übung** (Simulator mit `id:`) |
 | `[beidir]` | f · Wo steckt das bei dir? | Bezug zu Philips echten Systemen (siehe unten) |
-| `[fazit]` | g · Auf den Punkt | **3–4 Kernsätze** als Liste (`- …`). Die App ergänzt darunter „X neue Karten im Lernpool“ und den Knopf „Folge abschließen“ |
-| `[quiz]` | – (Lernpool) | Quizfragen (Format unten) – nach dem Abschluss der Folge im Lernpool |
-| `[karten]` | – (Lernpool) | Karteikarten (Format unten) – nach dem Abschluss der Folge im Lernpool |
+| `[fazit]` | g · Auf den Punkt | **3–4 Kernsätze** als Liste (`- …`). Die App ergänzt darunter „X neue Fragen zum Lernen“ (Link zum Reiter Lernen) und den Knopf „Folge abschließen“ |
+| `[quiz]` | – (Lernpool) | Quizfragen (Format unten) – nach dem Abschluss der Folge im Reiter Lernen |
+| `[karten]` | – (Lernpool) | Karteikarten (Format unten) – nach dem Abschluss der Folge im Reiter Lernen |
 
 ## Text schreiben (Markdown)
 
@@ -140,18 +140,23 @@ und meldet z. B. eine unlösbare Übung. Übungen ohne Fingertipp-Weg für die a
 
 Neue Simulatoren programmiert der Agent (`js/sim/`, Anleitung in `js/sim/README.md`).
 
-## Lernpool (Philip, 26.11.2026)
+## Aufbau der App und Lernen (Philip, 26.11.2026)
 
-Quiz und Karteikarten unterbrechen den Fluss einer Folge – darum stehen sie nicht mehr in der Folge, sondern in einem
-gemeinsamen **Lernpool**. Mit „Folge abschließen“ (am Ende von „Auf den Punkt“) werden Fragen und Karten der Folge
-freigeschaltet.
+Unten genau **drei Reiter** (am PC dieselben drei in der linken Leiste), dazu ein **Zahnrad oben rechts**:
 
-- **Heute wiederholen** (Startseite): Runde von 5–10 Minuten, gemischt aus fälligen Karten und Fragen, Fragen aus kürzlich
-  abgeschlossenen Folgen und früheren Fehlern. Leitner-System für beide (5 Fächer: täglich, alle 2, 4, 8, 16 Tage).
-- **Schichten-Karte** zeigt je Schicht die Festigkeit des Wissens; fällige Wiederholungen lassen sie verblassen. Der Knopf ↻
-  startet eine Runde nur für diese Schicht.
-- **Lernen** (unten in der Leiste): freies Üben je Staffel/Folge und eine **Prüfung je Staffel** (Fragen aller Folgen gemischt, mit Auswertung).
-- Falsch beantwortet → „Im Wissen nachlesen“ springt an die passende Stelle der Folge, „Zurück zur Runde“ führt zurück.
+1. **Start = die Doku-Reihe:** Schichten-Karte und Staffeln mit ihren Folgen – sonst nichts, keine Lern-Elemente.
+   Am Ende jeder Folge steht „Auf den Punkt“ und als reiner Text „X neue Fragen zum Lernen“ mit Link zum Reiter Lernen.
+2. **Lernen** – nur über diesen Reiter erreichbar, bewusst schlicht: Liste Staffel → ihre Folgen. Nur abgeschlossene Folgen
+   („Folge abschließen“) sind übbar, die anderen ausgegraut. Antippen startet eine Übungsrunde zur Folge; je Staffel zusätzlich
+   „Ganze Staffel üben“ und „Prüfung“ (nur Fragen, Auswertung je Folge). Fortschritt nur als Balken „X von Y sicher“ je Folge und
+   Staffel – keine Tagesrunde, keine Festigkeit, keine Fächer, Fälligkeiten oder Termine, kein Zähler am Reiter.
+   Im Hintergrund: In einer Runde kommen falsch Beantwortetes und Unsicheres zuerst (Leitner-Fächer, unsichtbar).
+   „Im Wissen nachlesen“ springt an die Stelle in der Folge (`Nachlesen: abschnitt / Zwischenüberschrift`), „Zurück zur Runde“ führt zurück.
+3. **Glossar** – alle Begriffe mit Suche.
+
+**Zahnrad:** Neuigkeiten („Was ist neu“), Darstellung, Fortschritt sichern/übertragen, Über die App. Ein Punkt am Zahnrad zeigt ungelesene Neuigkeiten.
+
+Quizfragen und Karteikarten (unten) sind das Material für den Reiter Lernen – beide zählen als „Fragen“.
 
 ## Quiz
 
@@ -175,7 +180,7 @@ Nachlesen: prinzip
 - `Nachlesen:` Pflicht – Abschnitt, in den „Im Wissen nachlesen“ springt (`prinzip`, `geschichte`, …). Mit Stelle:
   `Nachlesen: prinzip / Acht Bits sind ein Byte` springt zur Zwischenüberschrift `### Acht Bits sind ein Byte` (der Build prüft, dass es sie gibt).
 - **Verständnis statt Detailwissen:** Fragen eher „Was passiert, wenn …?“, „Warum …?“, „Woran erkennst du …?“ –
-  nicht Jahreszahlen oder Namen abfragen. Die Frage muss **ohne die Folge vor Augen** verständlich sein (sie erscheint im Lernpool gemischt mit anderen Folgen).
+  nicht Jahreszahlen oder Namen abfragen. Die Frage muss **ohne die Folge vor Augen** verständlich sein (beim Üben einer ganzen Staffel erscheint sie gemischt mit anderen Folgen).
 - Mindestens 4 Fragen je Folge. Antworten ähnlich lang halten, damit die Länge nichts verrät.
 
 ## Karteikarten
@@ -190,7 +195,7 @@ Hinten: Die kleinste Einheit der Information: eine Entscheidung zwischen zwei M�
 
 - ID-Schema `<folge>-k01`, … Mindestens 4 Karten je Folge.
 - Eine Karte = eine Sache. Vorne eine Frage, hinten eine kurze Antwort (ein bis zwei Sätze).
-- Auch Karten müssen für sich allein verständlich sein (im Lernpool gemischt). Lieber nach dem Begriff fragen als nach dem Bild.
+- Auch Karten müssen für sich allein verständlich sein (beim Staffel-Üben gemischt). Lieber nach dem Begriff fragen als nach dem Bild.
 
 ## Stabile IDs – wichtig für den Lernfortschritt
 
@@ -306,6 +311,6 @@ alle Punkte, die der Nutzer noch nicht gesehen hat.
 | `schichten` | die Schichten-Karte „Vom Sandkorn zur KI“ (von unten nach oben) |
 | `staffeln` | Plan: Staffeln mit Stufe, Schichten und Folgen (ID, Titel, Untertitel, Schicht, ggf. `art: abschlussprojekt`) |
 | `abschnitte` | die sieben sichtbaren Abschnitte einer Folge (Titel, Buchstabe, Symbol) |
-| `lernpoolAbschnitte` | `quiz` und `karten` – stehen in der Datei, erscheinen im Lernpool |
+| `lernpoolAbschnitte` | `quiz` und `karten` – stehen in der Datei, erscheinen im Reiter Lernen |
 | `boxen` | erlaubte Hinweisboxen |
-| `regeln` | Status-Stufen, Mindestzahlen für Quiz/Karten, Leitner-Abstände und Rundengröße, Prüfung, Kernsätze im Fazit |
+| `regeln` | Status-Stufen, Mindestzahlen für Quiz/Karten, Leitner-Fächer (unsichtbar), Rundengröße und Prüfung (`lernen`), Kernsätze im Fazit |

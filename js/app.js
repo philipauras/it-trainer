@@ -55,10 +55,12 @@ async function init() {
     einstellungen: () => zeigeEinstellungen(ctx),
   }, {
     nachher: (name) => {
-      for (const a of $$('.hauptnavi a')) { if (a.dataset.navi === (navi[name] || 'start')) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); }
+      for (const a of $$('.hauptnavi a, .zahnrad')) { if (a.dataset.navi === (navi[name] || 'start')) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); }
       document.body.dataset.ansicht = name;
     },
   });
+  // Allererster Besuch: nichts ist „neu“ – nur merken, welche Version es gibt (Neuigkeiten stehen unter dem Zahnrad)
+  if (!ctx.zustand.neuGesehen && ctx.index.neuigkeiten[0]) { ctx.zustand.neuGesehen = ctx.index.neuigkeiten[0].version; ctx.speichern(); }
   ctx.naviAktualisieren();
   serviceWorkerEinrichten({ leiste: $('#update-leiste'), knopf: $('#knopf-neu-laden') });
 }

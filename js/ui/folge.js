@@ -1,6 +1,6 @@
 // Eine Folge Schritt für Schritt: a Einstieg · b Geschichte · c Prinzip · d Im Bild · e Selbst machen ·
 // f Wo steckt das bei dir? · g Auf den Punkt (Reihenfolge und Titel aus config.json → abschnitte).
-// Quizfragen und Karteikarten erscheinen nicht hier, sondern im Lernpool (js/ui/lernpool.js) – freigeschaltet mit „Folge abschließen“.
+// Quizfragen und Karteikarten erscheinen nicht hier, sondern im Reiter „Lernen“ (js/ui/lernpool.js) – freigeschaltet mit „Folge abschließen“.
 import { el, $$, toast } from '../kern/dom.js';
 import { besuche, pruefeFertig } from '../kern/fortschritt.js';
 import { ansichtSetzen, statusMarke, zurueckLink } from './bausteine.js';
@@ -91,15 +91,14 @@ export async function zeigeFolge(ctx, [id, abschnittId]) {
   }
 }
 
-/** Am Ende der Folge: wie viele Fragen und Karten in den Lernpool kommen (bzw. schon dort sind). */
+/** Am Ende der Folge: reiner Hinweis, wie viele Fragen dazu im Reiter „Lernen“ warten (mit Link). */
 function poolHinweis(ctx, folge) {
   const n = folge.quiz.length + folge.karten.length;
   const fertig = !!ctx.zustand.folgen[folge.id]?.fertig;
-  return el('div', { class: 'pool-hinweis' }, [
-    el('p', { class: 'pool-hinweis-zahl' }, [el('strong', { text: `${n} neue Karten im Lernpool` }), ` (${folge.quiz.length} Fragen, ${folge.karten.length} Karteikarten)`]),
-    el('p', { class: 'pool-hinweis-text', text: fertig
-      ? 'Diese Folge ist abgeschlossen – ihre Fragen und Karten sind schon in deinem Lernpool und melden sich, wenn sie dran sind.'
-      : 'Mit „Folge abschließen“ kommen sie in deinen Lernpool. Er erinnert dich, wenn sie dran sind – auf der Startseite unter „Heute wiederholen“.' }),
+  return el('p', { class: 'pool-hinweis' }, [
+    `${n} neue Fragen zum Lernen – `,
+    fertig ? 'du findest sie unter ' : 'nach „Folge abschließen“ unter ',
+    el('a', { href: '#lernen', text: 'Lernen' }), '.',
   ]);
 }
 
@@ -121,5 +120,5 @@ function abschliessen(ctx, folge) {
   ctx.speichern();
   geheZu('');
   const n = folge.quiz.length + folge.karten.length;
-  if (neu) setTimeout(() => toast(`Folge abgeschlossen – ${n} neue Karten im Lernpool.`), 50);
+  if (neu) setTimeout(() => toast(`Folge abgeschlossen – ${n} neue Fragen zum Lernen.`), 50);
 }

@@ -1,8 +1,8 @@
 // Gemeinsamer Zustand aller Ansichten: Konfiguration, Inhalte, Fortschritt. Wird einmal in app.js angelegt.
 import { browserSpeicher } from '../kern/speicher.js';
 import { glossarMuster } from '../kern/glossar.js';
-import { tag } from '../kern/leitner.js';
-import { poolEintraege, tagesrunde } from '../kern/lernpool.js';
+import { poolEintraege } from '../kern/lernpool.js';
+import { versionVergleich } from '../kern/logik.js';
 import { $, toast } from '../kern/dom.js';
 
 export async function ladeJson(url) {
@@ -41,19 +41,14 @@ export function erstelleKontext({ config, index, glossar, build }) {
       for (const s of index.staffeln) { const f = s.folgen.find((x) => x.id === id); if (f) return { ...f, staffel: s }; }
       return null;
     },
-    /** Lernpool: freigeschaltete Einträge und Größe der heutigen Runde. */
-    pool() {
-      const eintraege = poolEintraege(index, ctx.zustand);
-      const L = config.regeln.leitner;
-      return { eintraege, heute: tagesrunde(eintraege, ctx.zustand, { heute: tag(), max: L.maxJeRunde, neuMax: L.neuJeRunde }).length };
-    },
+    /** Lernen: Einträge (Fragen, Karten) aller abgeschlossenen Folgen. */
+    pool() { return poolEintraege(index, ctx.zustand); },
+    /** Punkt am Zahnrad, solange es Neuigkeiten gibt, die noch nicht angesehen wurden. */
     naviAktualisieren() {
-      const z = $('#navi-faellig');
-      if (!z) return;
-      const { heute } = ctx.pool();
-      z.hidden = !heute;
-      z.textContent = String(heute);
-      z.setAttribute('aria-label', `${heute} heute zu wiederholen`);
+      const punkt = $('#zahnrad-punkt');
+      if (!punkt) return;
+      const neueste = index.neuigkeiten[0]?.version;
+      punkt.hidden = !(neueste && ctx.zustand.neuGesehen && versionVergleich(neueste, ctx.zustand.neuGesehen) > 0);
     },
   };
   return ctx;

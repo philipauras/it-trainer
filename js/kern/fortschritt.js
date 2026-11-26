@@ -50,15 +50,6 @@ export function aktuelleSchicht(index, zustand) {
  */
 export const poolFrei = (zustand, f, alt) => !!zustand.folgen[f.id]?.fertig || !!zustand.folgen[f.id]?.besucht.includes(alt);
 
-/** Karten im Lernpool (freigeschaltete Folgen). */
-export function freigeschalteteKarten(index, zustand) {
-  return alleFolgen(index).filter((f) => verfuegbar(f) && poolFrei(zustand, f, 'karten')).flatMap((f) => f.karten || []);
-}
-/** Quizfragen im Lernpool (freigeschaltete Folgen). */
-export function freigeschalteteFragen(index, zustand) {
-  return alleFolgen(index).filter((f) => verfuegbar(f) && poolFrei(zustand, f, 'quiz')).flatMap((f) => f.quiz || []);
-}
-
 /** Folge als fertig markieren, wenn alle Pflicht-Abschnitte (config regeln.folgeFertigAb) besucht sind. Gibt true zurück, wenn neu fertig. */
 export function pruefeFertig(zustand, id, pflicht, jetzt = Date.now()) {
   const f = zustand.folgen[id];

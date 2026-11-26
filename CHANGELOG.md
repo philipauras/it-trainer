@@ -2,6 +2,18 @@
 
 Entscheidungen und Änderungen (für Philip kurz erklärt). Neueste oben. Was Nutzer in der App sehen: `content/neuigkeiten.md`.
 
+## 1.6.0 – 26.11.2026 (aufgeräumter Aufbau, Philips Feedback)
+- **Drei Reiter** Start · Lernen · Glossar (am PC linke Leiste); Einstellungen, Fortschritt übertragen und Neuigkeiten unter dem
+  **Zahnrad** oben rechts (Punkt bei ungelesenen Neuigkeiten). Start zeigt nur noch Schichten-Karte und Staffeln (Weiterlernen-,
+  Wiederholen- und Neuigkeiten-Karte entfernt, keine Festigkeit, keine ↻-Knöpfe).
+- **Lernen schlicht:** Liste Staffel → Folgen, nicht abgeschlossene ausgegraut, Antippen = Übungsrunde zur Folge, je Staffel „Ganze
+  Staffel üben“ und Prüfung. Anzeige nur „X von Y sicher“ (sicher = Leitner-Fach ≥ 2, also zuletzt gewusst). Runde: falsch Beantwortetes →
+  noch nie Geübtes → Unsicheres → Sicheres. Bewertung vereinfacht: richtig = ein Fach weiter, falsch = Fach 1 (die „Üben ändert den Plan
+  nicht“-Regel entfällt, weil es keine Tagesrunde mehr gibt).
+- **Entfernt:** Tagesrunde, Festigkeit, Fächer-Übersicht, Zähler am Reiter, zugehörige Stile und Tests. Speicherformat unverändert;
+  der vorhandene Lernstand (Fächer von Karten und Fragen, alte Fragen ohne Fach) wird direkt in „sicher“ übersetzt.
+- Ende der Folge: „X neue Fragen zum Lernen“ als Text mit Link.
+
 ## 1.5.0 – 26.11.2026 (eigenständige Folgen + Lernpool, Philips Format-Entscheidung)
 - **Jede Folge steht für sich:** keine Rückgriffe auf Bilder/Geschichten anderer Folgen; nötiges Fachwissen in 1–2 Sätzen neu
   erklärt mit Verweis. Prüfpunkt in Faktencheck und Auftragsvorlagen.

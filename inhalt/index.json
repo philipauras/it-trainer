@@ -1,6 +1,6 @@
 {
  "_hinweis": "ERZEUGT von werkzeuge/bauen.mjs aus content/ und config.json – nicht von Hand bearbeiten (npm run bauen).",
- "version": "1.5.0",
+ "version": "1.6.0",
  "live": false,
  "staffeln": [
   {
@@ -487,6 +487,15 @@
   }
  ],
  "neuigkeiten": [
+  {
+   "version": "1.6.0",
+   "datum": "26.11.2026",
+   "punkte": [
+    "Aufgeräumt: unten nur noch drei Reiter – Start (die Doku-Reihe), Lernen und Glossar. Einstellungen, Fortschritt übertragen und Neuigkeiten findest du unter dem Zahnrad oben rechts.",
+    "Lernen ist jetzt eine einfache Liste: Staffel → ihre Folgen. Tippe eine abgeschlossene Folge an, um ihre Fragen zu üben – was du noch nicht sicher weißt, kommt zuerst.",
+    "Dein Stand pro Folge und Staffel: „X von Y sicher“. Dein bisheriger Lernstand ist übernommen."
+   ]
+  },
   {
    "version": "1.5.0",
    "datum": "26.11.2026",

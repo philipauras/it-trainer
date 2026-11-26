@@ -2,6 +2,11 @@
 
 Erscheint in der App als „Was ist neu“ nach einem Update. Oberster Eintrag = Version aus config.json.
 
+## 1.6.0 – 26.11.2026
+- Aufgeräumt: unten nur noch drei Reiter – Start (die Doku-Reihe), Lernen und Glossar. Einstellungen, Fortschritt übertragen und Neuigkeiten findest du unter dem Zahnrad oben rechts.
+- Lernen ist jetzt eine einfache Liste: Staffel → ihre Folgen. Tippe eine abgeschlossene Folge an, um ihre Fragen zu üben – was du noch nicht sicher weißt, kommt zuerst.
+- Dein Stand pro Folge und Staffel: „X von Y sicher“. Dein bisheriger Lernstand ist übernommen.
+
 ## 1.5.0 – 26.11.2026
 - Neu: der Lernpool. Quiz und Karteikarten stehen nicht mehr in den Folgen, sondern kommen mit „Folge abschließen“ in einen gemeinsamen Pool.
 - Auf der Startseite: „Heute wiederholen“ – eine kurze Runde aus fälligen Karten, neuen Fragen und früheren Fehlern.

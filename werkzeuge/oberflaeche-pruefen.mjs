@@ -169,24 +169,25 @@ async function folgeDurchklicken(f, nr) {
   los(`Folge ${f.id}: Auf den Punkt – abschließen`);
   await weiter(); await s.locator('.abschnitt-fazit').waitFor(); await kein_ueberlauf(`${f.id}/fazit`);
   const hinweis = await s.locator('.pool-hinweis').innerText();
-  assert.match(hinweis, new RegExp(`${f.karten.length + f.fragen} neue Karten im Lernpool`), 'Hinweis „X neue Karten im Lernpool“');
+  assert.match(hinweis, new RegExp(`${f.karten.length + f.fragen} neue Fragen zum Lernen`), 'Hinweis „X neue Fragen zum Lernen“');
+  assert.equal(await s.locator('.pool-hinweis a[href="#lernen"]').count(), 1, 'Link zum Reiter Lernen');
   await bild(`${p}-g-fazit`);
   await s.getByRole('button', { name: 'Folge abschließen' }).click();
   await s.locator('.start-kopf').waitFor();
   const z = await zustand();
   assert.ok(z.folgen[f.id].fertig, `${f.id} nicht als fertig gespeichert`);
   for (const u of f.uebungen) assert.ok(z.uebungen[u], `Übung ${u} nicht gespeichert`);
-  const pool = await s.evaluate((id) => window.__itTrainer.pool().eintraege.filter((e) => e.folge === id).length, f.id);
-  assert.equal(pool, f.karten.length + f.fragen, `${f.id}: nach dem Abschluss nicht im Lernpool`);
+  const pool = await s.evaluate((id) => window.__itTrainer.pool().filter((e) => e.folge === id).length, f.id);
+  assert.equal(pool, f.karten.length + f.fragen, `${f.id}: nach dem Abschluss nicht übbar`);
 }
 
 /** Eine Lernrunde bis zum Ende spielen. Bei der ersten Frage: nachlesen und zurück (dieselbe Frage ist noch da). */
 async function rundeSpielen(name, { nachlesen = false } = {}) {
   let erste = true;
-  for (let i = 0; i < 80 && !(await s.locator('.karten-ende').count()); i++) {
+  for (let i = 0; i < 80 && !(await s.locator('.runde-ende').count()); i++) {
     await s.locator('.lernkarte, .antworten').first().waitFor();
     if (await s.locator('.lernkarte').count()) {
-      await s.getByRole('button', { name: 'Umdrehen' }).click();
+      await s.getByRole('button', { name: 'Antwort zeigen' }).click();
       await s.getByRole('button', { name: i === 0 ? 'Noch nicht' : 'Wusste ich' }).click();
       continue;
     }
@@ -203,7 +204,7 @@ async function rundeSpielen(name, { nachlesen = false } = {}) {
     }
     await s.getByRole('button', { name: /^(Weiter|Ergebnis zeigen)$/ }).click();
   }
-  await s.locator('.karten-ende').waitFor(); await kein_ueberlauf(`${name}/ende`); await bild(`${name}-ende`);
+  await s.locator('.runde-ende').waitFor(); await kein_ueberlauf(`${name}/ende`); await bild(`${name}-ende`);
 }
 
 let gerät2;
@@ -229,30 +230,37 @@ try {
   let nr = 3;
   for (const f of folgen) await folgeDurchklicken(f, nr++);
 
+  los('Start: nur Doku-Reihe, drei Reiter, Zahnrad');
+  await s.goto(url); await s.locator('.schichten').waitFor();
+  assert.equal(await s.locator('.hauptnavi a').count(), 3, 'genau drei Reiter');
+  assert.equal(await s.locator('.kasten-karte, .weiter-karte, .schicht-runde, .schicht-fest, .neu-karte, .navi-zahl').count(), 0, 'keine Lern-Elemente auf Start');
+  await bild('20-start-ganz');
   if (folgen.length) {
-    los('Lernpool: Startseite zeigt „Heute wiederholen“ und Festigkeit');
-    await s.goto(url); await s.locator('.kasten-karte .grosse-zahl').waitFor();
-    assert.ok(Number(await s.locator('.kasten-karte .grosse-zahl').innerText()) > 0, 'Heute wiederholen: Anzahl');
-    await s.locator('.schicht-runde').first().waitFor(); await bild('20-start-lernpool-ganz');
-    los('Lernpool: Tagesrunde mit Nachlesen und zurück');
-    await s.locator('.kasten-karte').click(); await s.locator('.runde').waitFor();
-    await rundeSpielen('21-tagesrunde', { nachlesen: true });
+    los('Lernen: Übersicht mit „X von Y sicher“');
+    await s.locator('.hauptnavi a[data-navi="lernen"]').click(); await s.locator('.lern-staffel').first().waitFor();
+    assert.match(await s.locator('.lern-staffel').first().innerText(), /\d+ von \d+ sicher/);
+    await kein_ueberlauf('Lernen'); await bild('21-lernen-ganz');
+    los('Lernen: Runde zu einer Folge mit Nachlesen und zurück');
+    await s.locator('a.lern-folge').first().click(); await s.locator('.runde').waitFor();
+    await rundeSpielen('22-folge', { nachlesen: true });
     const z = await zustand();
-    assert.ok(Object.values(z.quiz).some((q) => q.fach && q.faellig), 'Fragen bekommen ein Leitner-Fach');
-    assert.ok(Object.keys(z.karten).length, 'Karten bewertet');
-    los('Lernpool: Runde für eine Schicht');
-    await s.goto(url); await s.locator('.schicht-runde').first().click(); await s.locator('.runde').waitFor();
-    await rundeSpielen('22-schicht');
-    los('Lernpool: Übersicht und Prüfung der Staffel');
-    await s.goto(`${url}#lernen`); await s.locator('.faecher').waitFor(); await kein_ueberlauf('Lernpool'); await bild('23-lernpool-ganz');
+    assert.ok(Object.values(z.quiz).some((q) => q.fach && q.faellig), 'Fragen bekommen im Hintergrund ein Fach');
+    los('Lernen: ganze Staffel üben');
+    await s.goto(`${url}#lernen`); await s.locator('a[href^="#lernen/runde/staffel/"]').first().click(); await s.locator('.runde').waitFor();
+    await rundeSpielen('23-staffel');
+    los('Lernen: Prüfung der Staffel');
+    await s.goto(`${url}#lernen`); await s.locator('.lern-stand-text').first().waitFor();
+    assert.ok(Number(/^(\d+)/.exec(await s.locator('.lern-stand-text').first().innerText())[1]) > 0, 'nach dem Üben ist etwas sicher');
     if (await s.locator('a[href^="#lernen/runde/pruefung/"]').count()) {
       await s.locator('a[href^="#lernen/runde/pruefung/"]').first().click(); await s.locator('.runde').waitFor();
       await rundeSpielen('24-pruefung');
       await s.locator('.pruefung-auswertung').waitFor();
     }
   } else {
-    await s.goto(`${url}#lernen`); await s.locator('.titel').waitFor(); await kein_ueberlauf('Lernpool');
+    await s.goto(`${url}#lernen`); await s.locator('.titel').waitFor(); await kein_ueberlauf('Lernen');
   }
+  los('Zahnrad: Einstellungen und Neuigkeiten');
+  await s.locator('.zahnrad').click(); await s.locator('#neu-titel').waitFor(); await kein_ueberlauf('Einstellungen');
   los('Handy: Glossar mit Suche');
   await s.goto(`${url}#glossar`); await s.locator('.glossar-eintrag').first().waitFor();
   await s.getByRole('searchbox').fill('bit'); await s.locator('.glossar-eintrag').first().click(); await kein_ueberlauf('Glossar'); await bild('21-glossar');
