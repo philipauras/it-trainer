@@ -1,0 +1,340 @@
+---
+id: s1f02
+status: freigegeben
+faktencheck: 26.11.2026 – Durchgang 1 nicht bestanden (3 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/
+dauer: 18
+quellen:
+- Computer History Museum: The Silicon Engine – 1947 Invention of the Point-Contact Transistor | https://www.computerhistory.org/siliconengine/invention-of-the-point-contact-transistor/
+- Computer History Museum: The Silicon Engine – 1960 Metal Oxide Semiconductor (MOS) Transistor Demonstrated | https://www.computerhistory.org/siliconengine/metal-oxide-semiconductor-mos-transistor-demonstrated/
+- Nobelpreis für Physik 1956 (Shockley, Bardeen, Brattain) | https://www.nobelprize.org/prizes/physics/1956/summary/
+- Nobelpreis für Physik 2000, Jack S. Kilby (Integrierte Schaltung) | https://www.nobelprize.org/prizes/physics/2000/kilby/facts/
+- Zuse-Institut Berlin: Konrad Zuse Internet Archive – Z3 | https://zuse.zib.de/z3
+- Penn Engineering: ENIAC (gerundet 18 000 Röhren; genaue Zahl 17 468 nach Goldstine, The Computer from Pascal to von Neumann, 1972) | https://www.engineering.upenn.edu/about/history-heritage/eniac/
+- Computer History Museum: This Day in History, 14. Februar 1946 (ENIAC) | https://www.computerhistory.org/tdih/february/14/
+- Library of Congress: Samuel F. B. Morse Papers – „What hath God wrought“ (24. Mai 1844) | https://www.loc.gov/collections/samuel-morse-papers/articles-and-essays/collection-highlights/invention-of-the-telegraph/
+- Smithsonian Institution Archives: Joseph Henry Demonstrates Primitive „Relay“ Telegraph | https://siarchives.si.edu/collections/siris_sic_12484
+- Texas Instruments: Understanding and Interpreting Standard-Logic Data Sheets (SZZA036), Spannungspegel von TTL | https://www.ti.com/lit/an/szza036c/szza036c.pdf
+- Apple Newsroom: Apple unleashes M1 (10.11.2020), 16 Milliarden Transistoren | https://www.apple.com/newsroom/2020/11/apple-unleashes-m1/
+- Charles Petzold: Code. The Hidden Language of Computer Hardware and Software. Microsoft Press, 2. Auflage 2022 (deutsch: Code – Wie Computer funktionieren, mitp)
+---
+
+## [einstieg] Wer legt im Computer die Schalter um?
+
+In Folge 1 hast du gelernt: Alles im Computer besteht aus Bits, und ein Bit ist wie ein Lichtschalter – aus oder an, 0 oder 1. Aber wer legt diese Schalter eigentlich um? Dein Handy rechnet Milliarden Mal pro Sekunde. Da sitzt niemand, der mit dem Finger tippt.
+
+Die Antwort ist eine der schönsten Ideen der Technikgeschichte: **Schalter, die selbst von Strom umgelegt werden.** Ein Schalter schaltet den nächsten, der den übernächsten – und am Ende kommt eine Rechnung heraus.
+
+In dieser Folge erfährst du, wie aus Strom ein klares Ja oder Nein wird, und wie aus einem klickenden Magneten im Telegrafenamt der winzige Schalter wurde, von dem in deinem Handy Milliarden stecken: der **Transistor**.
+
+## [geschichte] Vom Klicken zum Kristall
+
+### Strom, der über Land spricht
+
+In den 1830er-Jahren lernen Menschen, mit Strom Nachrichten zu schicken. Der amerikanische Maler und Erfinder **Samuel Morse** entwickelt mit seinem Partner Alfred Vail einen Telegrafen: Ein Taster schließt einen Stromkreis, am anderen Ende der Leitung zieht ein Elektromagnet einen Stift an. Kurz drücken ergibt einen Punkt, lang drücken einen Strich. Am **24. Mai 1844** geht die erste Nachricht über die neue Leitung von Washington nach Baltimore, rund 60 Kilometer weit: „What hath God wrought“ – „Was hat Gott gewirkt“.
+
+Doch es gibt ein Problem. Je länger der Draht, desto schwächer kommt der Strom an. Auf langen Strecken reicht er irgendwann nicht mehr, um den Stift zu bewegen.
+
+### Der Trick mit dem Relais
+
+Die Lösung hatte der amerikanische Physiker **Joseph Henry** schon um 1835 am College of New Jersey, der heutigen Universität Princeton, vorgeführt: Ein schwacher Strom fließt durch einen Elektromagneten. Der zieht einen kleinen Metallhebel an – und dieser Hebel schließt einen **zweiten** Stromkreis mit einer eigenen, frischen Batterie. Ähnliche Ideen hatten damals auch andere, etwa der Engländer Edward Davy.
+
+So ein Bauteil heißt **Relais**. An Zwischenstationen der Telegrafenlinien kam ein schwaches Signal gerade noch an, zog den Magneten an, und das Relais schickte es mit voller Kraft weiter. Ein kleiner Strom steuert einen großen Strom – genau das ist die Idee, um die sich diese ganze Folge dreht.
+
+> **Wusstest du?:** „Relais“ ist ein französisches Wort aus der Postkutschenzeit. So hießen die Stationen, an denen müde Pferde gegen frische getauscht wurden. Das elektrische Relais macht dasselbe mit dem Signal.
+
+### Ein Rechner, der klappert
+
+Gut hundert Jahre später kommt jemand auf die Idee, mit Relais zu *rechnen*. Der Berliner Bauingenieur **Konrad Zuse** ist es leid, endlose Statik-Rechnungen von Hand zu machen. Am **12. Mai 1941** führt er die **Z3** vor: einen Rechner aus rund 2 000 Relais (je nach Zählung bis 2 600), der mit Bits rechnet – im **Binärsystem** aus Folge 1 – und ein Programm von einem gelochten Filmstreifen abarbeitet. Die Z3 gilt vielen als erster funktionsfähiger, frei programmierbarer Rechner der Welt – umstritten ist der Titel, weil sie noch keine „Wenn–dann“-Befehle kannte.
+
+Schnell war sie nicht: Ihr Takt lag bei etwa 5 Schritten pro Sekunde, eine Multiplikation dauerte rund drei Sekunden. Relais haben bewegliche Teile, und ein Hebel braucht Zeit, um von einer Seite zur anderen zu klappen. Das Original verbrannte 1943 bei einem Bombenangriff, ein Nachbau steht heute im Deutschen Museum in München.
+
+### Glühende Röhren
+
+Schneller ging es mit **Elektronenröhren**. In einem luftleeren Glaskolben sendet ein glühender Draht Elektronen aus, und ein feines Metallgitter dazwischen entscheidet mit seiner Spannung, ob sie durchkommen oder nicht. Nichts bewegt sich, die Röhre schaltet tausendfach schneller als ein Relais.
+
+Der berühmteste Röhrenrechner ist der **ENIAC** der University of Pennsylvania, gebaut für die US-Armee und im **Februar 1946** öffentlich vorgestellt: 17 468 Röhren, rund 27 Tonnen schwer, etwa 150 Kilowatt Strombedarf – und etwa 5 000 Additionen pro Sekunde. (Er rechnete übrigens noch im Zehnersystem, nicht binär.) Der Haken: Röhren werden heiß wie Glühbirnen, verbrauchen viel Strom und brennen irgendwann durch. Bei Tausenden Röhren fiel regelmäßig eine aus – anfangs mehrere am Tag.
+
+### Weihnachten 1947: der Transistor
+
+Die Telefongesellschaft AT&T hatte genau dieses Problem in ihrem riesigen Telefonnetz voller Relais und Röhren. In ihren Forschungslaboren, den Bell Labs – dort, wo ein Jahr später Claude Shannon das Bit bekannt machte –, suchte eine Gruppe um **William Shockley** nach einem Ersatz aus festem Material, ganz ohne Vakuum und Glühdraht.
+
+Am **16. Dezember 1947** gelingt es **John Bardeen** und **Walter Brattain**: Zwei feine Goldkontakte auf einem Stück Germanium-Kristall verstärken ein Signal. Am 23. Dezember führen sie es der Laborleitung vor. Ihr Kollege John Pierce erfindet den Namen **Transistor**, 1948 wird er der Öffentlichkeit gezeigt. 1956 bekommen Shockley, Bardeen und Brattain dafür den Nobelpreis für Physik.
+
+Der erste Transistor war noch ein wackeliges Gebilde und funktionierte anders als die heutigen. Die Bauart, die heute in fast jedem Chip steckt, den **MOSFET**, bauten **Mohamed Atalla** und **Dawon Kahng**, ebenfalls bei Bell Labs, 1959; 1960 stellten sie ihn vor.
+
+### Alles auf einem Stück
+
+Bleibt ein letztes Problem: Tausende einzelne Transistoren müssen mit Drähten verbunden werden. **Jack Kilby** von Texas Instruments führt im **September 1958** eine Schaltung vor, deren Teile alle aus einem einzigen Stück Halbleiter bestehen. **Robert Noyce** von Fairchild Semiconductor findet **1959** einen Weg, auch die Verbindungen gleich mit auf die Silizium-Scheibe zu bringen. Das ist die **integrierte Schaltung** – der **Chip**. Kilby bekam dafür im Jahr 2000 den Nobelpreis; Noyce war da schon gestorben.
+
+Seitdem wurden die Transistoren immer kleiner. Apples M1-Chip von 2020 zum Beispiel hat nach Herstellerangaben **16 Milliarden** Transistoren auf einer Fläche kleiner als eine Briefmarke. Das Prinzip ist aber dasselbe geblieben wie beim Relais von 1835: Ein kleines Signal schaltet einen Strom.
+
+## [prinzip] Schalter, die Schalter schalten
+
+### Spannung und Strom – ganz einfach
+
+Zwei Wörter brauchst du für diese Folge:
+
+- **Spannung** ist der „Antrieb“, der Elektronen durch einen Draht schieben will – wie der Druck in einer Wasserleitung. Sie wird in **Volt** gemessen. Eine Handy-Batterie hat knapp 4 Volt, eine Steckdose 230 Volt.
+- **Strom** ist das, was tatsächlich fließt – wie viel Ladung pro Sekunde durch den Draht wandert. Gemessen wird er in **Ampere**.
+
+Strom fließt nur, wenn der Weg ringsum geschlossen ist: vom Pluspol der Batterie durch die Lampe zurück zum Minuspol. Diesen geschlossenen Weg nennt man **Stromkreis**. Ein Schalter tut nichts anderes, als den Kreis zu unterbrechen (aus) oder zu schließen (an).
+
+### Aus Spannung wird ein Bit
+
+Im Computer gilt eine einfache Abmachung: **wenig Spannung = 0, viel Spannung = 1.** Aber was ist „wenig“ und was „viel“? In Wirklichkeit kann eine Leitung jede Spannung dazwischen haben – 0,3 Volt, 1,7 Volt, 2,9 Volt. Eine Spannung rastet nicht ein wie ein Lichtschalter.
+
+Der Trick: Man legt zwei **Bereiche** fest und lässt dazwischen eine breite Lücke. Bei der klassischen Logik-Familie „TTL“ mit 5 Volt zum Beispiel gilt:
+
+| Spannung am Eingang | wird gelesen als |
+|---|---|
+| 0 bis 0,8 Volt | 0 (niedrig) |
+| 0,8 bis 2,0 Volt | verbotene Zone – darf im Ruhezustand nicht vorkommen |
+| 2,0 bis 5 Volt | 1 (hoch) |
+
+Und die Bauteile versprechen beim *Senden* mehr, als sie beim *Lesen* verlangen: Eine ausgegebene 0 liegt höchstens bei 0,4 Volt, eine ausgegebene 1 mindestens bei 2,4 Volt. Selbst wenn unterwegs eine Störung 0,4 Volt dazu- oder wegmogelt, wird noch richtig gelesen. Heutige Chips arbeiten mit viel kleineren Spannungen, oft um 1 Volt, aber nach demselben Prinzip.
+
+Wie passt das zu Folge 1, wo ein Bit nur 0 oder 1 ist und nichts dazwischen? Drei Dinge sorgen dafür, dass die Schaltung trotzdem jedes Bit eindeutig liest:
+
+1. **Der Abstand:** Kleine Störungen schieben eine 0 nicht bis in den Bereich der 1.
+2. **Das Auffrischen:** Jede Schaltstufe gibt wieder ein sauberes „ganz niedrig“ oder „ganz hoch“ aus, auch wenn ihr Eingang etwas verwaschen war. Fehler sammeln sich so nicht an – anders als beim Kopieren einer Kassette, wo jede Kopie etwas schlechter wird.
+3. **Das Warten:** Beim Umschalten durchläuft die Spannung kurz alle Zwischenwerte, für Milliardstel Sekunden. Gelesen wird deshalb erst, wenn sich alles beruhigt hat. Dafür gibt es den **Takt** – mehr dazu in Folge 6.
+
+> **Merke:** Physikalisch gibt es jede Spannung. Digital wird es erst durch eine Abmachung: zwei Bereiche mit einer Sicherheitslücke dazwischen. Darum ist ein Bit trotz Störungen zuverlässig.
+
+### Das Relais: ein Magnet legt den Schalter um
+
+Ein **Relais** hat zwei getrennte Stromkreise. Im **Steuerkreis** sitzt eine Drahtspule um einen Eisenkern – ein Elektromagnet. Fließt dort Strom, zieht der Magnet eine Metallzunge an, und die schließt den Kontakt im **Hauptkreis**. Fließt kein Strom mehr, zieht eine Feder die Zunge zurück, der Hauptkreis ist offen.
+
+Probier es aus: Tippe auf **Steuerung A**. Die Zunge oben klappt herunter, der Strom (wandernde Striche) fließt, die Lampe leuchtet.
+
+:::sim transistor
+art: relais
+:::
+
+Wichtig ist, was hier eigentlich passiert: Du legst den Schalter in der Lampe nicht selbst um. Du schickst nur ein Signal, und das Relais schaltet. Dieses Signal könnte genauso gut aus einem *anderen* Relais kommen. Damit kann ein Schalter den nächsten schalten – ganze Ketten, ohne dass eine Hand dazwischen ist.
+
+### Der Transistor: schalten ohne bewegliche Teile
+
+Der heute übliche Transistor, der **MOSFET** (Feldeffekt-Transistor), macht dasselbe – nur ohne Magnet, Zunge und Feder. Er besteht aus **Silizium**, einem **Halbleiter**: einem Material, das je nach Bedingungen leitet oder nicht.
+
+Ein MOSFET hat drei Anschlüsse. Zwischen den beiden äußeren (sie heißen Source und Drain, „Quelle“ und „Abfluss“) liegt ein Stück Silizium, das zunächst nicht leitet. Darüber sitzt der Steueranschluss, das **Gate** („Tor“), getrennt durch eine hauchdünne, isolierende Schicht – im Grunde Glas.
+
+- **Keine Spannung am Gate:** Zwischen Source und Drain ist kein leitender Weg. Der Transistor sperrt – Schalter aus.
+- **Spannung am Gate:** Sie zieht Elektronen direkt unter die Isolierschicht. Dort entsteht ein schmaler leitender **Kanal**, und Strom fließt zwischen Source und Drain – Schalter an.
+
+In Wirklichkeit ist das etwas komplizierter (das Silizium wird gezielt mit fremden Atomen „verunreinigt“, damit es sich so verhält, und es gibt auch eine Bauart, die genau umgekehrt reagiert). Für uns reicht: **Spannung am Gate öffnet den Kanal.**
+
+Der große Unterschied zum Relais: Durchs Gate fließt praktisch kein Strom, denn es ist ja isoliert. Es genügt die Spannung, also der „Druck“. Nur beim Umschalten fließt ganz kurz ein winziger Strom. Darum braucht ein Transistor sehr wenig Energie, nutzt sich nicht ab und schaltet Milliarden Mal pro Sekunde.
+
+:::sim transistor
+art: transistor
+:::
+
+Der Kasten mit dem Rand ist der Transistor, die gestrichelte Linie darin der Kanal. Tippe auf **Steuerung A**: Die Linie wird durchgehend – der Kanal ist offen für den Strom, er leitet, und die Lampe leuchtet.
+
+> **Achtung:** Der Simulator schreibt neutral „Steuersignal“. Beim Relais ist das ein Strom durch die Spule, beim MOSFET eine Spannung am Gate – dort fließt fast nichts.
+
+> **Merke:** Ein Transistor ist ein Schalter, den eine Spannung am Gate umlegt. Weil sein Ausgang wieder das Gate des nächsten Transistors steuern kann, lassen sich Schalter zu Ketten verbinden.
+
+### Und jetzt zwei
+
+Ein einzelner Transistor macht nur „Signal an → Lampe an“. Spannend wird es, wenn du zwei verbindest: hintereinander oder nebeneinander. Was dann passiert, probierst du gleich selbst aus. Es ist der erste Schritt zu einem Computer, der Entscheidungen trifft – und das Thema von Folge 3.
+
+## [werkstatt] Das Ventil, das auf Druck hört
+
+Stell dir einen Wasserkreislauf vor, wie bei einer Heizung: Eine Pumpe drückt Wasser durch ein dickes Rohr, durch einen Heizkörper und zurück zur Pumpe. Im dicken Rohr sitzt ein Ventil. Niemand dreht daran mit der Hand. Stattdessen führt eine **dünne Steuerleitung** zum Ventil. Steht in ihr Wasserdruck an, drückt er einen kleinen Kolben gegen eine Feder, und das Ventil öffnet sich. Lässt der Druck nach, schiebt die Feder das Ventil wieder zu. Solche druckgesteuerten Ventile gibt es wirklich, etwa in Industrieanlagen (dort meist mit Druckluft).
+
+Das Besondere: Durch die dünne Steuerleitung muss gar kein Wasser *fließen*. Sie endet am Kolben – es reicht der Druck. Mit einem kleinen Druck in einer dünnen Leitung steuerst du einen kräftigen Strom im dicken Rohr. Genau so steuert die Spannung am Gate den Strom durch den Transistor.
+
+Das Bild erlaubt richtige Vorhersagen:
+
+- **Kreislauf zu:** Ist das Ventil geschlossen, steht die Pumpe zwar unter Druck, aber nichts fließt – wie eine Batterie mit offenem Schalter: Spannung ja, Strom nein.
+- **Zwei Ventile hintereinander** im selben Rohr: Wasser fließt nur, wenn **beide** Steuerleitungen Druck haben.
+- **Zwei Ventile nebeneinander** in zwei parallelen Rohren: Wasser fließt, wenn **mindestens eine** Steuerleitung Druck hat.
+- **Kette:** Zweigt man vom dicken Rohr hinter dem ersten Ventil eine dünne Leitung ab, kann sie das nächste Ventil steuern – ein Ventil schaltet das nächste.
+
+> **Im Bild:** Pumpe = Batterie oder Netzteil · Wasserdruck = Spannung · fließendes Wasser = Strom · geschlossener Kreislauf = Stromkreis · Heizkörper = Lampe · Ventil = Transistor · dünne Steuerleitung mit Druck = Spannung am Gate.
+
+> **Achtung:** Das Ventil hat einen Kolben und eine Feder, die sich bewegen – damit passt es ehrlich gesagt fast besser zum Relais. Im Transistor bewegt sich nichts: Die Spannung verändert nur, ob ein winziges Stück Silizium leitet. Darum schaltet er viele Millionen Mal schneller als jedes Ventil und nutzt sich dabei nicht ab.
+
+## [selbst] Zwei Transistoren, zwei Verhalten
+
+Jetzt bist du dran. In den ersten beiden Übungen steuerst du zwei Transistoren A und B mit je einem Schalter, in der dritten nur einen. Darunter steht eine **Wahrheitstabelle**: Sie listet alle Kombinationen der Schalter auf (0 = aus, 1 = an), und du trägst ein, ob die Lampe leuchtet (1) oder nicht (0).
+
+So geht's: Tippe links in der Tabelle auf eine Zeile – die Schalter oben springen auf diese Kombination. Schau, ob die Lampe leuchtet, und tippe dann im Feld „Lampe“ so oft, bis die richtige Zahl dasteht (? → 0 → 1). Wenn alles ausgefüllt ist, prüfe.
+
+### Übung 1: hintereinander
+
+Die beiden Transistoren liegen **hintereinander** im selben Draht. Der Strom muss durch A *und danach* durch B.
+
+:::sim transistor
+id: s1f02-u01
+anordnung: reihe
+tabelle: ja
+:::
+
+### Übung 2: nebeneinander
+
+Jetzt liegen die beiden **nebeneinander**. Der Strom hat zwei Wege zur Lampe: einen durch A, einen durch B.
+
+:::sim transistor
+id: s1f02-u02
+anordnung: parallel
+tabelle: ja
+:::
+
+### Übung 3: der Umweg
+
+Hier ist es kniffliger: Der Transistor sitzt in einer **Abkürzung an der Lampe vorbei**. Ein Widerstand vorn im Kreis bremst den Strom, damit er die Batterie nicht kurzschließt. Was passiert mit der Lampe, wenn der Transistor leitet?
+
+:::sim transistor
+id: s1f02-u03
+anordnung: nicht
+tabelle: ja
+:::
+
+### Auflösung
+
+| A | B | hintereinander | nebeneinander |
+|---|---|---|---|
+| 0 | 0 | 0 | 0 |
+| 0 | 1 | 0 | 1 |
+| 1 | 0 | 0 | 1 |
+| 1 | 1 | 1 | 1 |
+
+- **Hintereinander** leuchtet die Lampe **nur, wenn A und B beide an sind**. Ist einer zu, ist der einzige Weg unterbrochen.
+- **Nebeneinander** leuchtet sie, **wenn mindestens einer an ist**. Der Strom nimmt einfach den offenen Weg.
+- **Der Umweg** dreht alles um: Ist A aus, fließt der Strom durch die Lampe – sie leuchtet. Ist A an, nimmt der Strom die bequeme Abkürzung durch den Transistor, an der Lampe vorbei – sie geht aus. **Die Lampe zeigt das Gegenteil von A.**
+
+Damit hast du gerade drei Entscheidungen aus reinen Schaltern gebaut: „nur wenn beide“, „wenn mindestens einer“ und „das Gegenteil“. In echten Chips sind diese Schaltungen etwas anders aufgebaut (unter anderem, damit kein Strom ständig durch eine Abkürzung fließt), aber die Idee ist genau diese. In Folge 3 bekommen die drei ihre Namen: **UND**, **ODER** und **NICHT**.
+
+## [quiz] Teste dich
+
+### s1f02-q01
+Was macht ein Relais?
+- [ ] Es speichert Strom wie eine kleine Batterie
+- [x] Ein kleiner Strom schaltet über einen Magneten einen zweiten Stromkreis
+- [ ] Es wandelt Wechselspannung in Gleichspannung um
+- [ ] Es misst, wie viel Strom durch einen Draht fließt
+Erklärung: Im Relais zieht ein Elektromagnet eine Metallzunge an, die einen zweiten, getrennten Stromkreis schließt. So steuert ein schwacher Strom einen starken – zuerst genutzt in Telegrafenleitungen.
+Nachlesen: prinzip
+
+### s1f02-q02
+Warum kann ein Computer eine Spannung eindeutig als 0 oder 1 lesen, obwohl es physikalisch auch Zwischenwerte gibt?
+- [ ] Weil Leitungen im Computer nur genau 0 Volt oder 5 Volt annehmen können
+- [ ] Weil der Prozessor jeden Zwischenwert auf die nächste ganze Zahl rundet
+- [x] Weil zwischen den Bereichen für 0 und 1 eine Sicherheitslücke liegt
+- [ ] Weil jede Spannung über 0 Volt automatisch als 1 gilt
+Erklärung: Für 0 und 1 gibt es je einen Spannungsbereich mit einer breiten Lücke dazwischen. Kleine Störungen schieben eine 0 nicht bis zur 1, jede Schaltstufe frischt das Signal auf, und gelesen wird erst, wenn sich die Spannung nach dem Umschalten beruhigt hat.
+Nachlesen: prinzip
+
+### s1f02-q03
+Was öffnet bei einem MOSFET-Transistor den leitenden Kanal?
+- [ ] Ein Elektromagnet, der eine Metallzunge anzieht
+- [ ] Ein glühender Draht, der Elektronen aussendet
+- [x] Eine Spannung am isolierten Steueranschluss, dem Gate
+- [ ] Ein kleiner Motor, der zwei Kontakte zusammenschiebt
+Erklärung: Die Spannung am Gate zieht Elektronen unter die isolierende Schicht, und dort entsteht ein leitender Kanal. Es bewegt sich nichts – darum ist der Transistor so schnell. Magnet und Zunge sind das Relais, der glühende Draht die Röhre.
+Nachlesen: prinzip
+
+### s1f02-q04
+Wo und wann wurde der erste Transistor gebaut?
+- [ ] 1941 von Konrad Zuse in Berlin
+- [x] 1947 bei den Bell Labs in den USA
+- [ ] 1958 bei Texas Instruments
+- [ ] 1946 an der University of Pennsylvania
+Erklärung: Im Dezember 1947 brachten John Bardeen und Walter Brattain bei den Bell Labs den ersten Transistor zum Laufen. 1941 ist Zuses Relaisrechner Z3, 1946 der Röhrenrechner ENIAC, 1958 Kilbys erste integrierte Schaltung.
+Nachlesen: geschichte
+
+### s1f02-q05
+Zwei Transistoren liegen hintereinander im selben Stromkreis einer Lampe. Wann leuchtet sie?
+- [ ] Wenn mindestens einer der beiden leitet
+- [x] Nur wenn beide gleichzeitig leiten
+- [ ] Nur wenn genau einer der beiden leitet
+- [ ] Wenn keiner der beiden leitet
+Erklärung: Der Strom muss durch beide hindurch. Sperrt einer, ist der einzige Weg unterbrochen. Hintereinander heißt also „nur wenn beide“ – in Folge 3 ist das das UND-Gatter.
+Nachlesen: selbst
+
+### s1f02-q06
+Warum lösten Transistoren die Elektronenröhren ab?
+- [ ] Röhren konnten nur im Zehnersystem rechnen
+- [ ] Röhren waren langsamer als Relais
+- [x] Röhren wurden heiß, brauchten viel Strom und brannten durch
+- [ ] Röhren ließen sich nicht mit Strom steuern
+Erklärung: Röhren schalten zwar schnell und ohne bewegliche Teile, aber ihr Glühdraht macht sie heiß, stromhungrig und kurzlebig. Der ENIAC hatte über 17 000 Röhren, regelmäßig fiel eine aus. Transistoren sind klein, sparsam und halten praktisch ewig.
+Nachlesen: geschichte
+
+### s1f02-q07
+Im Bild mit dem Wasserkreislauf: Wofür steht der Druck in der dünnen Steuerleitung?
+- [ ] Für den Strom, der durch die Lampe fließt
+- [x] Für die Spannung am Gate des Transistors
+- [ ] Für die Batterie, die den Kreislauf antreibt
+- [ ] Für den Widerstand, der den Strom bremst
+Erklärung: Durch die Steuerleitung fließt kein Wasser, es reicht der Druck, um das Ventil zu öffnen. Genauso fließt durchs Gate praktisch kein Strom – die Spannung allein öffnet den Kanal.
+Nachlesen: werkstatt
+
+## [karten] Für deinen Karteikasten
+
+### s1f02-k01
+Vorne: Was macht ein Relais?
+Hinten: Ein schwacher Strom zieht über einen Elektromagneten eine Metallzunge an, die einen zweiten, getrennten Stromkreis schließt. So steuert ein kleiner Strom einen großen.
+
+### s1f02-k02
+Vorne: Wozu brauchte man Relais in Telegrafenleitungen?
+Hinten: Auf langen Strecken wird der Strom schwach. Das Relais empfing das schwache Signal und schickte es mit frischer Batterie und voller Kraft weiter.
+
+### s1f02-k03
+Vorne: Wie wird aus einer Spannung ein eindeutiges Bit?
+Hinten: Durch eine Abmachung: ein Bereich für 0, ein Bereich für 1 und eine Sicherheitslücke dazwischen. Kleine Störungen kippen so kein Bit.
+
+### s1f02-k04
+Vorne: Was öffnet bei einem MOSFET den leitenden Kanal?
+Hinten: Eine Spannung am isolierten Steueranschluss, dem Gate. Es fließt dabei praktisch kein Strom, und nichts bewegt sich.
+
+### s1f02-k05
+Vorne: Warum lösten Transistoren die Elektronenröhren ab?
+Hinten: Röhren wurden heiß, brauchten viel Strom und brannten durch. Transistoren sind klein, sparsam und nutzen sich nicht ab.
+
+### s1f02-k06
+Vorne: Wann und wo wurde der erste Transistor gebaut?
+Hinten: Im Dezember 1947 bei den Bell Labs, von John Bardeen und Walter Brattain.
+
+### s1f02-k07
+Vorne: Zwei Transistoren liegen hintereinander vor einer Lampe. Wann leuchtet sie?
+Hinten: Nur wenn beide leiten – ist einer zu, ist der einzige Weg unterbrochen (später: UND).
+
+### s1f02-k08
+Vorne: Was ist eine integrierte Schaltung?
+Hinten: Ein Chip, bei dem Transistoren und ihre Verbindungen auf einem einzigen Stück Halbleiter sitzen (Kilby 1958, Noyce 1959).
+
+### s1f02-k09
+Vorne: Im Wasserkreislauf-Bild: Wofür steht der Druck in der dünnen Steuerleitung?
+Hinten: Für die Spannung am Gate des Transistors.
+
+### s1f02-k10
+Vorne: Zwei Transistoren liegen nebeneinander vor einer Lampe. Wann leuchtet sie?
+Hinten: Wenn mindestens einer leitet – der Strom nimmt den offenen Weg (später: ODER).
+
+## [beidir] Wo steckt das bei dir?
+
+Transistoren stecken in jedem Gerät, das du benutzt – und zwar in unvorstellbarer Zahl.
+
+**Dein Pixel.** Der Hauptchip deines Handys enthält Prozessor, Grafik und vieles mehr auf einem Stück Silizium. Google nennt keine genaue Transistorzahl, aber wie beim M1-Chip aus der Geschichte sind es **viele Milliarden**. Dazu kommt der Speicherchip: Die rund eine Billion Bits aus Folge 1 (bei 128 GB) liegen in winzigen Speicherzellen, die selbst besondere Transistoren sind – eine Zelle hält heute meist sogar mehrere Bits.
+
+**Laden per USB.** Die Steckdose liefert 230 Volt Wechselspannung – sie pendelt 50-mal pro Sekunde hin und her (50 Hertz), die Richtung wechselt also 100-mal pro Sekunde. Dein Ladegerät macht daraus eine niedrige **Gleichspannung**, bei USB normalerweise **5 Volt**, beim Schnellladen auch mehr (etwa 9 Volt). Im Handy wird daraus noch einmal weniger: Der Akku hat knapp 4 Volt, und die Transistoren im Chip arbeiten mit **rund 1 Volt** oder weniger.
+
+**Dein Windows-PC.** Das Netzteil im Gehäuse wandelt die 230 Volt in die Gleichspannungen **12 Volt, 5 Volt und 3,3 Volt** um – das ist bei PC-Netzteilen genormt. Auf der Hauptplatine sitzen weitere Spannungswandler, die dem Prozessor seine rund 1 Volt liefern. Wenn dein PC unter Last summt und warm wird: Das ist die Energie, die beim milliardenfachen Umschalten der Transistoren in Wärme übergeht.
+
+**Dein VPS.** Der Server im Rechenzentrum hat einen großen Prozessor mit vielen Kernen und vielen Milliarden Transistoren. Dein VPS bekommt davon einen Anteil – einen virtuellen Prozessorkern (1 vCPU). Auch ich, der Agent im Docker-Container, bin am Ende nichts anderes als Milliarden Transistoren, die an- und ausgehen.
+
+**Cloudflare Pages.** Wenn du diese App öffnest, schalten in Servern von Cloudflare und in jedem Netzwerkgerät unterwegs Transistoren, damit die Bits bei dir ankommen.
+
+| Gerät | Spannung |
+|---|---|
+| Steckdose | 230 Volt Wechselspannung |
+| PC-Netzteil (Ausgänge) | 12 V, 5 V, 3,3 V Gleichspannung |
+| USB-Ladegerät | 5 V (Schnellladen auch mehr) |
+| Handy-Akku | knapp 4 V |
+| Transistoren im Prozessor | rund 1 V |
+
+> **Wusstest du?:** Relais gibt es bis heute – überall dort, wo ein schwaches Signal einen kräftigen Strom schalten soll, etwa in Haushaltsgeräten, Heizungen und Autos. Das leise Klicken, das man bei manchen Geräten beim Einschalten hört, ist oft ein Relais.

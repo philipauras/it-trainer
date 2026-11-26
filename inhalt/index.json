@@ -1,6 +1,6 @@
 {
  "_hinweis": "ERZEUGT von werkzeuge/bauen.mjs aus content/ und config.json – nicht von Hand bearbeiten (npm run bauen).",
- "version": "1.3.0",
+ "version": "1.4.0",
  "live": false,
  "staffeln": [
   {
@@ -50,7 +50,27 @@
      "untertitel": "Vom Relais zum Transistor",
      "schicht": "transistor",
      "art": "folge",
-     "status": "geplant"
+     "status": "freigegeben",
+     "dauer": 18,
+     "datei": "inhalt/folgen/s1f02.json",
+     "karten": [
+      "s1f02-k01",
+      "s1f02-k02",
+      "s1f02-k03",
+      "s1f02-k04",
+      "s1f02-k05",
+      "s1f02-k06",
+      "s1f02-k07",
+      "s1f02-k08",
+      "s1f02-k09",
+      "s1f02-k10"
+     ],
+     "fragen": 7,
+     "uebungen": [
+      "s1f02-u01",
+      "s1f02-u02",
+      "s1f02-u03"
+     ]
     },
     {
      "id": "s1f03",
@@ -59,7 +79,26 @@
      "untertitel": "UND, ODER, NICHT",
      "schicht": "logik",
      "art": "folge",
-     "status": "geplant"
+     "status": "freigegeben",
+     "dauer": 18,
+     "datei": "inhalt/folgen/s1f03.json",
+     "karten": [
+      "s1f03-k01",
+      "s1f03-k02",
+      "s1f03-k03",
+      "s1f03-k04",
+      "s1f03-k05",
+      "s1f03-k06",
+      "s1f03-k07",
+      "s1f03-k08"
+     ],
+     "fragen": 7,
+     "uebungen": [
+      "s1f03-u01",
+      "s1f03-u02",
+      "s1f03-u03",
+      "s1f03-u04"
+     ]
     },
     {
      "id": "s1f04",
@@ -68,7 +107,26 @@
      "untertitel": "Der Halbaddierer",
      "schicht": "logik",
      "art": "folge",
-     "status": "geplant"
+     "status": "freigegeben",
+     "dauer": 22,
+     "datei": "inhalt/folgen/s1f04.json",
+     "karten": [
+      "s1f04-k01",
+      "s1f04-k02",
+      "s1f04-k03",
+      "s1f04-k04",
+      "s1f04-k05",
+      "s1f04-k06",
+      "s1f04-k07",
+      "s1f04-k08",
+      "s1f04-k09"
+     ],
+     "fragen": 8,
+     "uebungen": [
+      "s1f04-u01",
+      "s1f04-u02",
+      "s1f04-u03"
+     ]
     },
     {
      "id": "s1f05",
@@ -77,7 +135,28 @@
      "untertitel": "Flipflop und RAM",
      "schicht": "logik",
      "art": "folge",
-     "status": "geplant"
+     "status": "entwurf",
+     "dauer": 18,
+     "datei": "inhalt/folgen/s1f05.json",
+     "karten": [
+      "s1f05-k01",
+      "s1f05-k02",
+      "s1f05-k03",
+      "s1f05-k04",
+      "s1f05-k05",
+      "s1f05-k06",
+      "s1f05-k07",
+      "s1f05-k08",
+      "s1f05-k09",
+      "s1f05-k10",
+      "s1f05-k11"
+     ],
+     "fragen": 8,
+     "uebungen": [
+      "s1f05-u01",
+      "s1f05-u02",
+      "s1f05-u03"
+     ]
     },
     {
      "id": "s1f06",
@@ -86,7 +165,26 @@
      "untertitel": "Takt, Holen, Entschlüsseln, Ausführen",
      "schicht": "prozessor",
      "art": "folge",
-     "status": "geplant"
+     "status": "freigegeben",
+     "dauer": 18,
+     "datei": "inhalt/folgen/s1f06.json",
+     "karten": [
+      "s1f06-k01",
+      "s1f06-k02",
+      "s1f06-k03",
+      "s1f06-k04",
+      "s1f06-k05",
+      "s1f06-k06",
+      "s1f06-k07",
+      "s1f06-k08",
+      "s1f06-k09"
+     ],
+     "fragen": 8,
+     "uebungen": [
+      "s1f06-u01",
+      "s1f06-u02",
+      "s1f06-u03"
+     ]
     },
     {
      "id": "s1f07",
@@ -95,7 +193,26 @@
      "untertitel": "Register, Cache, RAM, SSD",
      "schicht": "prozessor",
      "art": "folge",
-     "status": "geplant"
+     "status": "entwurf",
+     "dauer": 17,
+     "datei": "inhalt/folgen/s1f07.json",
+     "karten": [
+      "s1f07-k01",
+      "s1f07-k02",
+      "s1f07-k03",
+      "s1f07-k04",
+      "s1f07-k05",
+      "s1f07-k06",
+      "s1f07-k07",
+      "s1f07-k08",
+      "s1f07-k09"
+     ],
+     "fragen": 8,
+     "uebungen": [
+      "s1f07-u01",
+      "s1f07-u02",
+      "s1f07-u03"
+     ]
     },
     {
      "id": "s1f08",
@@ -104,7 +221,26 @@
      "untertitel": "Der Verwalter im Hintergrund",
      "schicht": "betriebssystem",
      "art": "folge",
-     "status": "geplant"
+     "status": "freigegeben",
+     "dauer": 18,
+     "datei": "inhalt/folgen/s1f08.json",
+     "karten": [
+      "s1f08-k01",
+      "s1f08-k02",
+      "s1f08-k03",
+      "s1f08-k04",
+      "s1f08-k05",
+      "s1f08-k06",
+      "s1f08-k07",
+      "s1f08-k08",
+      "s1f08-k09"
+     ],
+     "fragen": 7,
+     "uebungen": [
+      "s1f08-u01",
+      "s1f08-u02",
+      "s1f08-u03"
+     ]
     },
     {
      "id": "s1f09",
@@ -113,7 +249,26 @@
      "untertitel": "Dateien und Programme",
      "schicht": "betriebssystem",
      "art": "folge",
-     "status": "geplant"
+     "status": "freigegeben",
+     "dauer": 19,
+     "datei": "inhalt/folgen/s1f09.json",
+     "karten": [
+      "s1f09-k01",
+      "s1f09-k02",
+      "s1f09-k03",
+      "s1f09-k04",
+      "s1f09-k05",
+      "s1f09-k06",
+      "s1f09-k07",
+      "s1f09-k08",
+      "s1f09-k09"
+     ],
+     "fragen": 7,
+     "uebungen": [
+      "s1f09-u01",
+      "s1f09-u02",
+      "s1f09-u03"
+     ]
     },
     {
      "id": "s1g",
@@ -122,7 +277,26 @@
      "untertitel": "Zwei Zahlen addieren",
      "schicht": "logik",
      "art": "abschlussprojekt",
-     "status": "geplant"
+     "status": "freigegeben",
+     "dauer": 20,
+     "datei": "inhalt/folgen/s1g.json",
+     "karten": [
+      "s1g-k01",
+      "s1g-k02",
+      "s1g-k03",
+      "s1g-k04",
+      "s1g-k05",
+      "s1g-k06",
+      "s1g-k07",
+      "s1g-k08",
+      "s1g-k09"
+     ],
+     "fragen": 7,
+     "uebungen": [
+      "s1g-u01",
+      "s1g-u02",
+      "s1g-u03"
+     ]
     }
    ]
   },
@@ -219,6 +393,16 @@
   }
  ],
  "neuigkeiten": [
+  {
+   "version": "1.4.0",
+   "datum": "26.11.2026",
+   "punkte": [
+    "Neue Folgen: 2 „Strom als Sprache“ (Relais und Transistor), 3 „Logikgatter“, 4 „Binär zählen und rechnen“, 6 „Der Prozessor“, 8 „Das Betriebssystem“ und 9 „Was passiert beim Doppelklick?“.",
+    "Abschlussprojekt der Staffel 1: Bau aus Gattern einen Rechner, der zwei Zahlen addiert.",
+    "Viele neue Übungen zum Anfassen: Schalter, Gatter wählen, Wahrheitstabellen ausfüllen, Dateiblöcke lesen.",
+    "Die Folgen 5 und 7 sind in Arbeit und folgen in Kürze."
+   ]
+  },
   {
    "version": "1.3.0",
    "datum": "26.11.2026",

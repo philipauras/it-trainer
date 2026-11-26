@@ -34,6 +34,8 @@ export function suche(begriffe, anfrage) {
     const kopf = normal(b.begriff);
     const alles = normal([b.begriff, ...(b.woerter || []), ...FELDER.map((f) => b[f] || '')].join(' '));
     if (!woerter.every((w) => alles.includes(w))) return null;
+    if (kopf === woerter.join(' ')) return -2; // genauer Treffer zuerst („bit“ → Bit, nicht 64-Bit-Prozessor)
+    if (woerter.every((w) => kopf.startsWith(w))) return -1;
     if (woerter.every((w) => kopf.includes(w))) return 0;
     if (woerter.every((w) => normal(`${b.begriff} ${b.kurz || b.beschreibung || ''}`).includes(w))) return 1;
     return 2;

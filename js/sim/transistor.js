@@ -63,7 +63,7 @@ export default function starte({ wurzel, optionen, fertig = () => {}, istFertig 
       const durchT = werte[0] === 1;
       k.push(linie(`M${L} 80 V${O} H120`, true), svg('rect', { x: 120, y: O - 9, width: 34, height: 18, rx: 3, class: 'widerstand' }),
         svg('text', { x: 137, y: O - 14, 'text-anchor': 'middle', class: 'bauteil-text', text: 'Widerstand' }));
-      k.push(linie(`M154 ${O} H${R} V75`, !durchT), linie(`M${R} 125 V${U} H${L} V124`, true));
+      k.push(linie(`M154 ${O} H200`, true), linie(`M200 ${O} H${R} V75`, !durchT), linie(`M${R} 125 V${U} H200`, !durchT), linie(`M200 ${U} H${L} V124`, true));
       // Abzweig mit Transistor zwischen Knoten 200,O und 200,U
       k.push(linie(`M200 ${O} V75`, durchT), linie(`M200 125 V${U}`, durchT));
       k.push(svg('g', { transform: 'rotate(90 200 100)' }, [bauteil(200, 100, durchT, art, '')]));
@@ -97,7 +97,7 @@ export default function starte({ wurzel, optionen, fertig = () => {}, istFertig 
     const steuer = ein.filter((_, i) => werte[i]).length;
     info.replaceChildren(el('p', {}, [
       'Lampe: ', el('strong', { text: licht ? 'leuchtet' : 'aus' }),
-      ` · ${steuer ? `Steuerstrom fließt bei ${ein.filter((_, i) => werte[i]).join(' und ')}` : 'kein Steuerstrom'}`,
+      ` · ${steuer ? `Steuersignal an bei ${ein.filter((_, i) => werte[i]).join(' und ')}` : 'kein Steuersignal'}`,
     ]));
   };
   let tab = null;

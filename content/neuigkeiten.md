@@ -2,6 +2,12 @@
 
 Erscheint in der App als „Was ist neu“ nach einem Update. Oberster Eintrag = Version aus config.json.
 
+## 1.4.0 – 26.11.2026
+- Neue Folgen: 2 „Strom als Sprache“ (Relais und Transistor), 3 „Logikgatter“, 4 „Binär zählen und rechnen“, 6 „Der Prozessor“, 8 „Das Betriebssystem“ und 9 „Was passiert beim Doppelklick?“.
+- Abschlussprojekt der Staffel 1: Bau aus Gattern einen Rechner, der zwei Zahlen addiert.
+- Viele neue Übungen zum Anfassen: Schalter, Gatter wählen, Wahrheitstabellen ausfüllen, Dateiblöcke lesen.
+- Die Folgen 5 und 7 sind in Arbeit und folgen in Kürze.
+
 ## 1.3.0 – 26.11.2026
 - Folge 1 überarbeitet: statt der Werkstatt ein Bild, das das Bit genauer trifft – das Parkhaus mit den Lämpchen.
 - Neue Übung in Folge 1: Stell mit acht Schaltern den Buchstaben P ein.

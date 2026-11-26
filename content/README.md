@@ -217,6 +217,15 @@ Bisher verwendete Hauptbilder:
 | Folge | Bild |
 |---|---|
 | s1f01 Bit | Parkhaus-Lämpchen (frei/belegt) |
+| s1f02 Transistor | Druckgesteuertes Ventil im Wasserkreislauf |
+| s1f03 Gatter | Alltagsschaltungen: Schließfach (UND), Klingel mit zwei Tastern (ODER), Kühlschranklicht (NICHT), Wechselschaltung (XODER) |
+| s1f04 Binär | Kilometerzähler mit Rollen, die nur 0 und 1 zeigen |
+| s1f05 Speicher | Anforderungstaster an der Fußgängerampel („Signal kommt“) |
+| s1f06 Prozessor | Köchin mit nummerierten Fächern (Rezeptkarten und Zutaten im selben Regal) |
+| s1f07 Speicherhierarchie | Lernen am Schreibtisch: Hand, Tisch, Regal, Bibliothek, Fernleihe |
+| s1f08 Betriebssystem | Simultanschach |
+| s1f09 Doppelklick | Zeitschrift mit „Fortsetzung auf Seite …“ |
+| s1g Addierer | Dominoreihe (Übertragswelle) |
 
 ## „Wo steckt das bei dir?“
 

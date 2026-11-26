@@ -5,8 +5,8 @@
 import { el } from '../kern/dom.js';
 
 export const STUFEN = [
-  { id: 'register', name: 'Register', echt: 'ca. 0,3 ns', takte: 1, groesse: 'wenige Hundert Byte' },
-  { id: 'l1', name: 'L1-Cache', echt: 'ca. 1 ns', takte: 4, groesse: 'ca. 32–64 KB je Kern' },
+  { id: 'register', name: 'Register', echt: 'ca. 0,3 ns', takte: 1, groesse: 'einige Hundert Byte bis wenige KB' },
+  { id: 'l1', name: 'L1-Cache', echt: 'ca. 1 ns', takte: 4, groesse: 'ca. 32–192 KB je Kern' },
   { id: 'l2', name: 'L2-Cache', echt: 'ca. 4 ns', takte: 12, groesse: 'ca. 0,5–2 MB je Kern' },
   { id: 'l3', name: 'L3-Cache', echt: 'ca. 10–20 ns', takte: 40, groesse: 'ca. 8–64 MB' },
   { id: 'ram', name: 'Arbeitsspeicher', echt: 'ca. 80–100 ns', takte: 300, groesse: 'ca. 4–64 GB' },

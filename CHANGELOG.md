@@ -2,6 +2,19 @@
 
 Entscheidungen und Änderungen (für Philip kurz erklärt). Neueste oben. Was Nutzer in der App sehen: `content/neuigkeiten.md`.
 
+## 1.4.0 – 26.11.2026 (Phase 2, erster Teil)
+- **Neu live:** Folgen 2, 3, 4, 6, 8, 9 und das Abschlussprojekt (Addierer). Folgen 5 und 7 noch in Prüfung.
+- **Arbeitsweise:** fünf Autoren-Subagenten parallel (je 1–2 Folgen, gemeinsamer Auftrag mit Philips Format-Regeln), Karteikarten
+  durch günstigeres Modell, je Folge unabhängiger Faktencheck (Berichte `docs/faktencheck/`). Korrekturen gingen an den jeweiligen
+  Autor zurück. Ergebnisse Durchgang 1: s1f04 bestanden, alle anderen 1–3 Fehler; Durchgang 2 bestanden für s1f02, 03, 06, 08, 09, s1g.
+  Typische Funde: schiefe Bilder (Treppenhauslicht ist kein ODER, Simultanschach-Zuordnung), „das Sprachmodell läuft auf dem VPS“
+  (falsch – dort läuft nur das Programm, das Modell rechnet bei Anthropic), Einheiten/Zuordnungen (50 Hz, Blockgröße).
+- **11 neue Simulatoren** (Transistor, Schaltung, Binär, Flipflop/RAM, Prozessor, Zugriffszeit, Zeitscheiben, Dateisystem, Addierer,
+  Sortieren, Zuordnen); Simulatoren können `pruefe(optionen)` exportieren – der Build meldet unlösbare Übungen.
+- **Glossar** +88 Begriffe (Doppelte beim Zusammenführen bereinigt); Suche zeigt genaue Treffer zuerst.
+- **Veröffentlichen aus Worktree** `/workspace/tmp/it-deploy` (Branch `release`), damit parallel entstehende Entwürfe den Deploy
+  nicht blockieren (deploy.sh verlangt einen sauberen Stand). Prüfskript: Zeitlimit für Abrufe (ein hängender Abruf blockierte 1.3.0).
+
 ## 1.3.0 – 26.11.2026 (Format nach Philips Feedback zu Folge 1)
 - **Keine durchgehende Werkstatt-Analogie mehr**: pro Thema das treffendste Alltagsbild, hinkt es, lieber Grafik/Animation.
   Abschnitt d heißt in der App „Im Bild“ (interner Schlüssel bleibt `werkstatt`, weil der Fortschritt besuchte Abschnitte speichert),

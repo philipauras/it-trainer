@@ -154,6 +154,969 @@
     "Cloudflare"
    ],
    "kurz": "Dienst, der fertige Webseiten und Web-Apps auf Servern in aller Welt bereitstellt – so erreichst du den bim-trainer und diese App."
+  },
+  {
+   "begriff": "Spannung",
+   "id": "spannung",
+   "woerter": [
+    "Spannung",
+    "Spannungen",
+    "Volt"
+   ],
+   "kurz": "Der „Antrieb“, der elektrische Ladung durch einen Draht schieben will – vergleichbar mit dem Druck in einer Wasserleitung. Gemessen in Volt.",
+   "mehr": "Im Computer steht wenig Spannung für 0 und viel Spannung für 1, mit einer Sicherheitslücke dazwischen.",
+   "folge": "s1f02"
+  },
+  {
+   "begriff": "Strom",
+   "id": "strom",
+   "woerter": [
+    "Strom",
+    "Stromstärke",
+    "Ampere"
+   ],
+   "kurz": "Die elektrische Ladung, die tatsächlich durch einen Draht fließt – wie viel pro Sekunde. Gemessen in Ampere.",
+   "mehr": "Strom fließt nur in einem geschlossenen Stromkreis. Spannung ohne geschlossenen Kreis ergibt keinen Strom.",
+   "folge": "s1f02"
+  },
+  {
+   "begriff": "Stromkreis",
+   "id": "stromkreis",
+   "woerter": [
+    "Stromkreis",
+    "Stromkreise",
+    "Stromkreises",
+    "Hauptkreis",
+    "Steuerkreis"
+   ],
+   "kurz": "Der geschlossene Weg, auf dem Strom von der Quelle (z. B. Batterie) durch ein Gerät und wieder zurück fließt.",
+   "mehr": "Ein Schalter unterbricht den Kreis (aus) oder schließt ihn (an).",
+   "folge": "s1f02"
+  },
+  {
+   "begriff": "Relais",
+   "id": "relais",
+   "woerter": [
+    "Relais"
+   ],
+   "kurz": "Elektrischer Schalter, den ein Elektromagnet umlegt: Ein kleiner Strom im Steuerkreis schaltet einen zweiten Stromkreis.",
+   "mehr": "Um 1835 von Joseph Henry vorgeführt, zuerst für Telegrafenleitungen genutzt. Konrad Zuses Z3 (1941) rechnete mit rund 2 000 Relais.",
+   "folge": "s1f02"
+  },
+  {
+   "begriff": "Elektronenröhre",
+   "id": "elektronenroehre",
+   "woerter": [
+    "Elektronenröhre",
+    "Elektronenröhren",
+    "Röhre",
+    "Röhren"
+   ],
+   "kurz": "Schalt- und Verstärkerbauteil aus einem luftleeren Glaskolben, in dem eine Gitterspannung den Elektronenfluss von einem Glühdraht steuert.",
+   "mehr": "Schneller als Relais, aber heiß, stromhungrig und kurzlebig. Der ENIAC (1946) hatte über 17 000 davon.",
+   "folge": "s1f02"
+  },
+  {
+   "begriff": "Transistor",
+   "id": "transistor",
+   "woerter": [
+    "Transistor",
+    "Transistoren",
+    "Transistors"
+   ],
+   "kurz": "Winziger elektronischer Schalter ohne bewegliche Teile: Ein Steuersignal entscheidet, ob Strom durch ihn fließt.",
+   "mehr": "Erfunden 1947 bei den Bell Labs (Bardeen, Brattain, Shockley; Nobelpreis 1956). Heutige Chips enthalten Milliarden davon.",
+   "folge": "s1f02"
+  },
+  {
+   "begriff": "MOSFET",
+   "id": "mosfet",
+   "woerter": [
+    "MOSFET",
+    "Feldeffekt-Transistor"
+   ],
+   "kurz": "Die heute übliche Transistor-Bauart: Eine Spannung am isolierten Gate öffnet einen leitenden Kanal im Silizium.",
+   "mehr": "Abkürzung für „Metal-Oxide-Semiconductor Field-Effect Transistor“. 1959 von Mohamed Atalla und Dawon Kahng bei den Bell Labs gebaut, 1960 vorgestellt.",
+   "folge": "s1f02"
+  },
+  {
+   "begriff": "Gate",
+   "id": "gate",
+   "woerter": [
+    "Gate"
+   ],
+   "kurz": "Der Steueranschluss eines MOSFET-Transistors. Liegt dort Spannung an, leitet der Transistor.",
+   "mehr": "Das Gate ist durch eine hauchdünne Isolierschicht getrennt, darum fließt dort fast kein Strom.",
+   "folge": "s1f02"
+  },
+  {
+   "begriff": "Halbleiter",
+   "id": "halbleiter",
+   "woerter": [
+    "Halbleiter",
+    "Halbleiters"
+   ],
+   "kurz": "Material wie Silizium, das je nach Bedingungen Strom leitet oder nicht – der Grundstoff von Transistoren und Chips.",
+   "mehr": "Durch gezieltes Einbringen fremder Atome („Dotieren“) lassen sich seine Eigenschaften genau einstellen.",
+   "folge": "s1f02"
+  },
+  {
+   "begriff": "Silizium",
+   "id": "silizium",
+   "woerter": [
+    "Silizium"
+   ],
+   "kurz": "Chemisches Element und wichtigster Halbleiter; aus Silizium-Scheiben werden fast alle Chips hergestellt.",
+   "mehr": "Kommt in Sand und Gestein vor (als Siliziumdioxid) – daher „Vom Sandkorn zur KI“.",
+   "folge": "s1f02"
+  },
+  {
+   "begriff": "Integrierte Schaltung (Chip)",
+   "id": "chip",
+   "woerter": [
+    "integrierte Schaltung",
+    "integrierten Schaltung",
+    "Chip",
+    "Chips"
+   ],
+   "kurz": "Viele Transistoren samt ihren Verbindungen auf einem einzigen Stück Silizium.",
+   "mehr": "Erste Vorführung 1958 durch Jack Kilby (Texas Instruments), 1959 verbessert von Robert Noyce (Fairchild). Heute Milliarden Transistoren pro Chip.",
+   "folge": "s1f02"
+  },
+  {
+   "begriff": "Gleichspannung",
+   "id": "gleichspannung",
+   "woerter": [
+    "Gleichspannung",
+    "Wechselspannung"
+   ],
+   "kurz": "Spannung, deren Richtung gleich bleibt – wie bei Batterie, Akku und USB. Bei Wechselspannung (Steckdose) pendelt sie ständig hin und her – in Europa 50-mal pro Sekunde (50 Hertz), die Richtung wechselt also 100-mal pro Sekunde.",
+   "mehr": "Elektronik braucht Gleichspannung; Netzteile und Ladegeräte wandeln die Wechselspannung aus der Steckdose um.",
+   "folge": "s1f02"
+  },
+  {
+   "begriff": "Wahrheitstabelle",
+   "id": "wahrheitstabelle",
+   "woerter": [
+    "Wahrheitstabelle",
+    "Wahrheitstabellen"
+   ],
+   "kurz": "Tabelle, die für jede Kombination der Eingänge (0 oder 1) den Ausgang einer Schaltung zeigt.",
+   "mehr": "Bei zwei Eingängen hat sie vier Zeilen: 00, 01, 10, 11. Mehr in Folge 3.",
+   "folge": "s1f03"
+  },
+  {
+   "begriff": "Logikgatter",
+   "id": "logikgatter",
+   "woerter": [
+    "Logikgatter",
+    "Gatter"
+   ],
+   "kurz": "Kleine Schaltung – heute meist aus Transistoren, früher aus Relais – mit einem oder mehreren Eingängen und einem Ausgang, die eine logische Regel umsetzt (z. B. UND, ODER, NICHT).",
+   "mehr": "Aus Gattern sind alle Prozessoren aufgebaut. Ihr Verhalten beschreibt eine Wahrheitstabelle.",
+   "folge": "s1f03"
+  },
+  {
+   "begriff": "Boolesche Algebra",
+   "id": "boolesche-algebra",
+   "woerter": [
+    "boolesche Algebra",
+    "booleschen Algebra",
+    "boolesche Logik",
+    "booleschen Logik",
+    "boolesche"
+   ],
+   "kurz": "Rechnen mit nur zwei Werten, wahr (1) und falsch (0), und Verknüpfungen wie UND, ODER, NICHT.",
+   "mehr": "Begründet von George Boole (1847, 1854). Claude Shannon zeigte 1937/38, dass sich Schaltkreise damit berechnen lassen.",
+   "folge": "s1f03"
+  },
+  {
+   "begriff": "UND",
+   "id": "und-gatter",
+   "woerter": [
+    "UND",
+    "UND-Gatter",
+    "AND"
+   ],
+   "kurz": "Logikgatter, dessen Ausgang nur dann 1 ist, wenn alle Eingänge 1 sind.",
+   "mehr": "Im einfachen Modell aus Folge 2: zwei Schalter hintereinander. Englisch AND.",
+   "folge": "s1f03"
+  },
+  {
+   "begriff": "ODER",
+   "id": "oder-gatter",
+   "woerter": [
+    "ODER",
+    "ODER-Gatter",
+    "OR"
+   ],
+   "kurz": "Logikgatter, dessen Ausgang 1 ist, wenn mindestens ein Eingang 1 ist – auch wenn beide 1 sind.",
+   "mehr": "Im einfachen Modell aus Folge 2: zwei Schalter nebeneinander. Englisch OR.",
+   "folge": "s1f03"
+  },
+  {
+   "begriff": "NICHT",
+   "id": "nicht-gatter",
+   "woerter": [
+    "NICHT",
+    "NICHT-Gatter",
+    "NOT"
+   ],
+   "kurz": "Logikgatter mit einem Eingang, das ihn umdreht: aus 0 wird 1, aus 1 wird 0.",
+   "mehr": "Englisch NOT, auch Inverter genannt.",
+   "folge": "s1f03"
+  },
+  {
+   "begriff": "XODER",
+   "id": "xoder",
+   "woerter": [
+    "XODER",
+    "XOR",
+    "exklusives ODER"
+   ],
+   "kurz": "Logikgatter, dessen Ausgang 1 ist, wenn genau ein Eingang 1 ist – also wenn die Eingänge verschieden sind.",
+   "mehr": "„Entweder – oder“. Englisch XOR. Wichtig beim Addieren (Folge 4).",
+   "folge": "s1f03"
+  },
+  {
+   "begriff": "NUND",
+   "id": "nund",
+   "woerter": [
+    "NUND",
+    "NAND"
+   ],
+   "kurz": "Logikgatter, das das Gegenteil von UND liefert: Der Ausgang ist nur dann 0, wenn alle Eingänge 1 sind.",
+   "mehr": "Aus NUND-Gattern allein lässt sich jedes andere Gatter bauen. Englisch NAND.",
+   "folge": "s1f03"
+  },
+  {
+   "begriff": "NODER",
+   "id": "noder",
+   "woerter": [
+    "NODER",
+    "NOR"
+   ],
+   "kurz": "Logikgatter, das das Gegenteil von ODER liefert: Der Ausgang ist nur dann 1, wenn alle Eingänge 0 sind.",
+   "mehr": "Wie NUND lässt sich auch aus NODER allein jedes Gatter bauen. Englisch NOR. Zwei über Kreuz verbundene NODER-Gatter ergeben ein RS-Flipflop.",
+   "folge": "s1f03"
+  },
+  {
+   "begriff": "Stellenwertsystem",
+   "id": "stellenwertsystem",
+   "woerter": [
+    "Stellenwertsystem",
+    "Stellenwert",
+    "Stellenwerte",
+    "Stellenwerten"
+   ],
+   "kurz": "Zahlenschrift, in der eine Ziffer ihren Wert erst durch ihren Platz bekommt – in 333 bedeutet jede 3 etwas anderes.",
+   "mehr": "Im Zehnersystem ist jede Stelle zehnmal so viel wert wie die rechts daneben, im Binärsystem doppelt so viel (1, 2, 4, 8 …).",
+   "folge": "s1f04"
+  },
+  {
+   "begriff": "Zehnersystem",
+   "id": "zehnersystem",
+   "woerter": [
+    "Zehnersystem",
+    "Dezimalsystem",
+    "Dezimalzahl",
+    "dezimal"
+   ],
+   "kurz": "Unser alltägliches Stellenwertsystem mit den zehn Ziffern 0 bis 9; jede Stelle ist zehnmal so viel wert wie die rechts daneben.",
+   "mehr": "Entstand mit der Null in Indien und kam über die arabische Welt nach Europa – darum „arabische Ziffern“.",
+   "folge": "s1f04"
+  },
+  {
+   "begriff": "Übertrag",
+   "id": "uebertrag",
+   "woerter": [
+    "Übertrag",
+    "Überträge",
+    "Übertrags"
+   ],
+   "kurz": "Die Eins, die beim Addieren in die nächste Stelle links wandert, wenn eine Stelle „voll“ ist (binär: 1 + 1 = 10).",
+   "mehr": "Englisch „carry“, darum oft mit C abgekürzt. Im Halbaddierer liefert ihn ein UND-Gatter.",
+   "folge": "s1f04"
+  },
+  {
+   "begriff": "Überlauf",
+   "id": "ueberlauf",
+   "woerter": [
+    "Überlauf",
+    "überläuft",
+    "Überläufe"
+   ],
+   "kurz": "Ein Ergebnis passt nicht mehr in die vorhandenen Stellen – der Übertrag ganz links fällt heraus, z. B. 1111 + 1 = 0000 bei vier Bit.",
+   "mehr": "Wie ein Tacho, der nach 99 999 km wieder bei 00 000 anfängt. In Programmen eine häufige Fehlerquelle.",
+   "folge": "s1g"
+  },
+  {
+   "begriff": "Halbaddierer",
+   "id": "halbaddierer",
+   "woerter": [
+    "Halbaddierer",
+    "Halbaddierern",
+    "Halbaddierers"
+   ],
+   "kurz": "Schaltung aus zwei Gattern, die zwei Bits addiert: Summe = XODER, Übertrag = UND.",
+   "mehr": "„Halb“, weil er keinen Übertrag von der Nachbarstelle rechts annehmen kann – das kann erst der Volladdierer.",
+   "folge": "s1f04"
+  },
+  {
+   "begriff": "Volladdierer",
+   "id": "volladdierer",
+   "woerter": [
+    "Volladdierer",
+    "Volladdierern",
+    "Volladdierers"
+   ],
+   "kurz": "Schaltung, die drei Bits addiert – A, B und den Übertrag von rechts – und Summe und Übertrag liefert.",
+   "mehr": "Lässt sich aus zwei Halbaddierern und einem ODER-Gatter bauen. Nebeneinander geschaltet ergeben sie ein Addierwerk.",
+   "folge": "s1f04"
+  },
+  {
+   "begriff": "Addierwerk",
+   "id": "addierwerk",
+   "woerter": [
+    "Addierwerk",
+    "Addierwerke",
+    "Addierwerks"
+   ],
+   "kurz": "Schaltung, die zwei mehrstellige Binärzahlen addiert – je Stelle ein Volladdierer, die Überträge wandern nach links.",
+   "mehr": "Kern des Rechenwerks im Prozessor (Folge 6).",
+   "folge": "s1f04"
+  },
+  {
+   "begriff": "Flipflop",
+   "id": "flipflop",
+   "woerter": [
+    "Flipflop",
+    "Flipflops",
+    "RS-Flipflop",
+    "SR-Flipflop"
+   ],
+   "kurz": "Schaltung, die sich genau ein Bit merkt: Zwei Gatter halten sich über Rückkopplung gegenseitig in ihrem Zustand.",
+   "mehr": "Das RS-Flipflop aus zwei NODER-Gattern hat die Eingänge S (setzen) und R (zurücksetzen). Erfunden 1918 von Eccles und Jordan, damals mit Elektronenröhren.",
+   "folge": "s1f05"
+  },
+  {
+   "begriff": "Rückkopplung",
+   "id": "rueckkopplung",
+   "woerter": [
+    "Rückkopplung",
+    "rückgekoppelt"
+   ],
+   "kurz": "Der Ausgang einer Schaltung wird wieder zu ihrem Eingang zurückgeführt.",
+   "mehr": "So kann eine Schaltung ihren Zustand selbst festhalten – die Grundlage jedes Flipflops.",
+   "folge": "s1f05"
+  },
+  {
+   "begriff": "Register",
+   "id": "register",
+   "woerter": [
+    "Register"
+   ],
+   "kurz": "Eine Reihe von Flipflops im Prozessor, die gemeinsam eine Zahl festhält, z. B. acht Flipflops für ein Byte.",
+   "mehr": "Der schnellste Speicher überhaupt; hier liegen die Zahlen, mit denen der Prozessor gerade rechnet.",
+   "folge": "s1f05"
+  },
+  {
+   "begriff": "Adresse",
+   "id": "adresse",
+   "woerter": [
+    "Adresse",
+    "Adressen",
+    "Adressbit",
+    "Adressbits"
+   ],
+   "kurz": "Die Nummer einer Speicherzelle. Wer lesen oder schreiben will, nennt zuerst die Adresse.",
+   "mehr": "Die Adresse ist selbst eine Binärzahl: Mit n Adressbits lassen sich 2 × 2 × … (n-mal) Zellen ansprechen.",
+   "folge": "s1f05"
+  },
+  {
+   "begriff": "Wahlfreier Zugriff",
+   "id": "wahlfreier-zugriff",
+   "woerter": [
+    "wahlfreier Zugriff",
+    "wahlfreiem Zugriff",
+    "Random Access"
+   ],
+   "kurz": "Jede Speicheradresse ist direkt und gleich schnell erreichbar – man muss nicht erst „hinspulen“.",
+   "mehr": "Daher der Name RAM (Random Access Memory). Gegenbeispiel: Magnetband oder Kassette.",
+   "folge": "s1f05"
+  },
+  {
+   "begriff": "SRAM",
+   "id": "sram",
+   "woerter": [
+    "SRAM"
+   ],
+   "kurz": "Statisches RAM: speichert jedes Bit in einem Flipflop aus meist sechs Transistoren – sehr schnell, aber groß und teuer.",
+   "mehr": "Muss nicht aufgefrischt werden. Steckt in den Caches des Prozessors.",
+   "folge": "s1f05"
+  },
+  {
+   "begriff": "DRAM",
+   "id": "dram",
+   "woerter": [
+    "DRAM"
+   ],
+   "kurz": "Dynamisches RAM: speichert jedes Bit als Ladung in einem winzigen Kondensator mit einem Transistor – klein und billig.",
+   "mehr": "Die Ladung sickert weg, darum wird jede Zelle ständig aufgefrischt. Daraus besteht der Arbeitsspeicher. Idee von Robert Dennard (IBM, 1966).",
+   "folge": "s1f05"
+  },
+  {
+   "begriff": "Kondensator",
+   "id": "kondensator",
+   "woerter": [
+    "Kondensator",
+    "Kondensatoren"
+   ],
+   "kurz": "Bauteil, das elektrische Ladung speichert – ähnlich einem winzigen Akku. Geladen = 1, leer = 0.",
+   "mehr": "In einer DRAM-Zelle so winzig, dass die Ladung schon nach Millisekunden wegsickert.",
+   "folge": "s1f05"
+  },
+  {
+   "begriff": "Auffrischen",
+   "id": "auffrischen",
+   "woerter": [
+    "Auffrischen",
+    "aufgefrischt",
+    "Refresh"
+   ],
+   "kurz": "Das ständige Lesen und Neuschreiben jeder DRAM-Zelle, bevor ihre Ladung verloren ist.",
+   "mehr": "Bei üblichen Speicherriegeln ist jede Zeile mindestens alle 64 Millisekunden an der Reihe (bei DDR5 alle 32).",
+   "folge": "s1f05"
+  },
+  {
+   "begriff": "Flüchtig",
+   "id": "fluechtig",
+   "woerter": [
+    "flüchtig",
+    "flüchtige",
+    "flüchtiger",
+    "flüchtigen"
+   ],
+   "kurz": "Ein Speicher ist flüchtig, wenn sein Inhalt ohne Strom verloren geht – wie Register, Cache und Arbeitsspeicher.",
+   "mehr": "Gegenteil: dauerhaft (nichtflüchtig), etwa SSD, Festplatte oder USB-Stick.",
+   "folge": "s1f05"
+  },
+  {
+   "begriff": "Kernspeicher",
+   "id": "kernspeicher",
+   "woerter": [
+    "Kernspeicher",
+    "Magnetkernspeicher"
+   ],
+   "kurz": "Arbeitsspeicher aus winzigen Magnetringen auf einem Drahtgitter; jeder Ring speichert ein Bit durch seine Magnetisierungsrichtung.",
+   "mehr": "Zuerst 1953 im Rechner Whirlwind (MIT, Jay Forrester); bis in die 1970er üblich. Behielt seinen Inhalt auch ohne Strom.",
+   "folge": "s1f05"
+  },
+  {
+   "begriff": "Cache",
+   "id": "cache",
+   "woerter": [
+    "Cache",
+    "Caches",
+    "L1-Cache",
+    "L2-Cache",
+    "L3-Cache"
+   ],
+   "kurz": "Kleiner, sehr schneller Zwischenspeicher im Prozessor, der häufig gebrauchte Daten aus dem Arbeitsspeicher bereithält.",
+   "mehr": "Besteht aus SRAM; heutige Prozessoren haben mehrere Stufen (L1, L2, L3). Der Name kommt vom französischen „cacher“ (verstecken).",
+   "folge": "s1f07"
+  },
+  {
+   "begriff": "Takt",
+   "id": "takt",
+   "woerter": [
+    "Takt",
+    "Takte",
+    "Takten",
+    "Taktes"
+   ],
+   "kurz": "Elektrisches Signal, das in festem Rhythmus zwischen an und aus wechselt und dem Prozessor den Schritt vorgibt.",
+   "mehr": "Die Taktfrequenz wird in Hertz gemessen: 3 GHz sind drei Milliarden Takte pro Sekunde. Zuses Z3 (1941) schaffte etwa 5 Takte pro Sekunde.",
+   "folge": "s1f06"
+  },
+  {
+   "begriff": "Befehlszähler",
+   "id": "befehlszaehler",
+   "woerter": [
+    "Befehlszähler"
+   ],
+   "kurz": "Register im Prozessor, das die Adresse des nächsten Befehls im Speicher enthält.",
+   "mehr": "Wird beim Holen um eins weitergezählt; ein Sprungbefehl schreibt eine neue Adresse hinein. Englisch „program counter“.",
+   "folge": "s1f06"
+  },
+  {
+   "begriff": "Befehlsregister",
+   "id": "befehlsregister",
+   "woerter": [
+    "Befehlsregister"
+   ],
+   "kurz": "Register im Prozessor, in dem der Befehl liegt, der gerade entschlüsselt und ausgeführt wird.",
+   "folge": "s1f06"
+  },
+  {
+   "begriff": "Steuerwerk",
+   "id": "steuerwerk",
+   "woerter": [
+    "Steuerwerk"
+   ],
+   "kurz": "Teil des Prozessors, der erkennt, welcher Befehl dran ist, und die übrigen Teile passend zusammenschaltet.",
+   "mehr": "Besteht wie alles im Prozessor aus Logikgattern.",
+   "folge": "s1f06"
+  },
+  {
+   "begriff": "Befehlszyklus",
+   "id": "befehlszyklus",
+   "woerter": [
+    "Befehlszyklus"
+   ],
+   "kurz": "Der Kreislauf, in dem ein Prozessor arbeitet: Befehl holen, entschlüsseln, ausführen – und wieder von vorn.",
+   "mehr": "Englisch „fetch – decode – execute“. Echte Prozessoren überlappen die Schritte mehrerer Befehle (Pipeline).",
+   "folge": "s1f06"
+  },
+  {
+   "begriff": "Gigahertz (GHz)",
+   "id": "gigahertz",
+   "woerter": [
+    "Gigahertz",
+    "GHz"
+   ],
+   "kurz": "Eine Milliarde Schwingungen pro Sekunde – die übliche Einheit für den Takt von Prozessoren.",
+   "mehr": "Hertz heißt „pro Sekunde“. Heutige PC-Prozessoren laufen mit etwa 3 bis 5 GHz.",
+   "folge": "s1f06"
+  },
+  {
+   "begriff": "Sprungbefehl",
+   "id": "sprungbefehl",
+   "woerter": [
+    "Sprungbefehl",
+    "Sprung",
+    "Sprünge",
+    "Sprüngen"
+   ],
+   "kurz": "Befehl, der eine neue Adresse in den Befehlszähler schreibt, sodass der Prozessor an einer anderen Stelle weitermacht.",
+   "mehr": "Ein bedingter Sprung („nur wenn A = 0“) ermöglicht Entscheidungen, ein Sprung zurück eine Schleife.",
+   "folge": "s1f06"
+  },
+  {
+   "begriff": "Schleife",
+   "id": "schleife",
+   "woerter": [
+    "Schleife",
+    "Schleifen"
+   ],
+   "kurz": "Teil eines Programms, der mehrmals hintereinander ausgeführt wird.",
+   "mehr": "Im Prozessor entsteht sie durch einen Sprung zurück zu einem früheren Befehl.",
+   "folge": "s1f06"
+  },
+  {
+   "begriff": "Von-Neumann-Architektur",
+   "id": "von-neumann-architektur",
+   "woerter": [
+    "Von-Neumann-Architektur"
+   ],
+   "kurz": "Bauplan fast aller Computer: Programm und Daten liegen im selben Speicher, der Prozessor holt die Befehle von dort.",
+   "mehr": "Benannt nach John von Neumanns Bericht über die EDVAC (1945); die Ideen stammten auch von J. Presper Eckert und John Mauchly.",
+   "folge": "s1f06"
+  },
+  {
+   "begriff": "Mikroprozessor",
+   "id": "mikroprozessor",
+   "woerter": [
+    "Mikroprozessor",
+    "Mikroprozessoren"
+   ],
+   "kurz": "Ein vollständiger Prozessor auf einem einzigen Chip.",
+   "mehr": "Als erster frei käuflicher gilt der Intel 4004 von 1971 mit etwa 2 300 Transistoren.",
+   "folge": "s1f06"
+  },
+  {
+   "begriff": "Prozessorkern",
+   "id": "prozessorkern",
+   "woerter": [
+    "Prozessorkern",
+    "Prozessorkerne",
+    "Kern",
+    "Kerne",
+    "Kernen"
+   ],
+   "kurz": "Ein vollständiger Prozessor mit eigenem Befehlszyklus; heutige Chips enthalten mehrere davon.",
+   "mehr": "Mehrere Kerne können wirklich gleichzeitig verschiedene Befehle ausführen.",
+   "folge": "s1f06"
+  },
+  {
+   "begriff": "Pipeline",
+   "id": "pipeline",
+   "woerter": [
+    "Pipeline"
+   ],
+   "kurz": "Technik, bei der ein Prozessor schon den nächsten Befehl holt, während er den vorigen noch ausführt.",
+   "folge": "s1f06"
+  },
+  {
+   "begriff": "vCPU",
+   "id": "vcpu",
+   "woerter": [
+    "vCPU"
+   ],
+   "kurz": "Virtueller Prozessorkern: der Anteil an einem echten Prozessor, den ein gemieteter Server zugeteilt bekommt.",
+   "folge": "s1f06"
+  },
+  {
+   "begriff": "Rechenwerk (ALU)",
+   "id": "rechenwerk",
+   "woerter": [
+    "Rechenwerk",
+    "Rechenwerks",
+    "Rechenwerke",
+    "ALU"
+   ],
+   "kurz": "Der Teil des Prozessors, der rechnet: addieren, subtrahieren, Bits vergleichen und verknüpfen.",
+   "mehr": "ALU steht für „Arithmetic Logic Unit“. Ihr Herzstück ist ein Addierwerk aus Volladdierern.",
+   "folge": "s1f06"
+  },
+  {
+   "begriff": "Speicherhierarchie",
+   "id": "speicherhierarchie",
+   "woerter": [
+    "Speicherhierarchie"
+   ],
+   "kurz": "Die Stufen der Speicher im Computer – vom kleinen, schnellen Register bis zur großen, langsamen Festplatte.",
+   "mehr": "Je näher am Prozessor, desto schneller, kleiner und teurer ist der Speicher.",
+   "folge": "s1f07"
+  },
+  {
+   "begriff": "Lokalität",
+   "id": "lokalitaet",
+   "woerter": [
+    "Lokalität"
+   ],
+   "kurz": "Programme greifen bald wieder auf dieselben Daten zu (zeitlich) und auf deren Nachbarn (räumlich) – darum funktioniert ein Cache.",
+   "folge": "s1f07"
+  },
+  {
+   "begriff": "Festplatte",
+   "id": "festplatte",
+   "woerter": [
+    "Festplatte",
+    "Festplatten",
+    "HDD"
+   ],
+   "kurz": "Dauerhafter Speicher mit sich drehenden Magnetscheiben und einem beweglichen Lesekopf – groß und billig, aber langsam.",
+   "mehr": "Die erste kam 1956 von IBM (IBM 350 im RAMAC-System). Abkürzung HDD für „Hard Disk Drive“.",
+   "folge": "s1f07"
+  },
+  {
+   "begriff": "Flash-Speicher",
+   "id": "flash-speicher",
+   "woerter": [
+    "Flash-Speicher"
+   ],
+   "kurz": "Dauerhafter Speicher ohne bewegliche Teile, der Bits als gefangene Ladung in Speicherzellen hält – steckt in SSDs, USB-Sticks und Handys.",
+   "mehr": "Erfunden von Fujio Masuoka bei Toshiba (vorgestellt 1984).",
+   "folge": "s1f07"
+  },
+  {
+   "begriff": "Nanosekunde",
+   "id": "nanosekunde",
+   "woerter": [
+    "Nanosekunde",
+    "Nanosekunden"
+   ],
+   "kurz": "Eine Milliardstel Sekunde (ns). Ein Zugriff auf den Arbeitsspeicher dauert grob 100 Nanosekunden.",
+   "folge": "s1f07"
+  },
+  {
+   "begriff": "Swap",
+   "id": "swap",
+   "woerter": [
+    "Swap"
+   ],
+   "kurz": "Bereich auf dem Laufwerk, auf den das Betriebssystem selten benutzte Teile des Arbeitsspeichers auslagert, wenn dieser knapp wird.",
+   "folge": "s1f07"
+  },
+  {
+   "begriff": "Betriebssystem",
+   "id": "betriebssystem",
+   "woerter": [
+    "Betriebssystem",
+    "Betriebssysteme",
+    "Betriebssystems"
+   ],
+   "kurz": "Das Programm, das nach dem Einschalten als Erstes startet und den Rechner verwaltet: Prozessorzeit, Speicher, Geräte und Dateien.",
+   "mehr": "Beispiele sind Windows, Linux, Android, macOS und iOS. Sein Herzstück ist der Kernel.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Kernel",
+   "id": "kernel",
+   "woerter": [
+    "Kernel",
+    "Betriebssystemkern",
+    "Kernelmodus"
+   ],
+   "kurz": "Der innerste Teil des Betriebssystems, der mit vollen Rechten läuft und die Hardware verwaltet.",
+   "mehr": "Programme laufen dagegen im eingeschränkten Benutzermodus und müssen den Kernel per Systemaufruf um Hilfe bitten. Nicht zu verwechseln mit dem Prozessorkern.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Prozess",
+   "id": "prozess",
+   "woerter": [
+    "Prozess",
+    "Prozesse",
+    "Prozesses",
+    "Prozessen"
+   ],
+   "kurz": "Ein laufendes Programm mit eigenem Speicherbereich und eigenem Zustand.",
+   "mehr": "Startest du ein Programm zweimal, entstehen in der Regel zwei Prozesse. Der Zustand umfasst vor allem Registerinhalte und Befehlszähler.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Scheduler",
+   "id": "scheduler",
+   "kurz": "Der Teil des Betriebssystems, der entscheidet, welcher Prozess als Nächstes Rechenzeit bekommt.",
+   "mehr": "Übersetzt „Planer“. Er verteilt Zeitscheiben und kann Prioritäten vergeben.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Zeitscheibe",
+   "id": "zeitscheibe",
+   "woerter": [
+    "Zeitscheibe",
+    "Zeitscheiben"
+   ],
+   "kurz": "Die kurze Zeitspanne, die ein Prozess am Stück rechnen darf, bevor der nächste drankommt.",
+   "mehr": "Typisch sind einige bis einige Dutzend Millisekunden, je nach System. Kurze Zeitscheiben machen den Rechner reaktionsschnell, kosten aber mehr Zeit fürs Umschalten.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Kontextwechsel",
+   "id": "kontextwechsel",
+   "kurz": "Das Umschalten des Prozessors von einem Prozess zum nächsten: Zustand des alten sichern, Zustand des neuen laden.",
+   "mehr": "Dauert grob einige Mikrosekunden, in denen keines der Programme vorankommt.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Unterbrechung (Interrupt)",
+   "id": "interrupt",
+   "woerter": [
+    "Unterbrechung",
+    "Interrupt"
+   ],
+   "kurz": "Ein Signal, das den Prozessor das laufende Programm liegen lassen und in den Kernel springen lässt.",
+   "mehr": "Ausgelöst etwa von einem Zeitgeber (Ende der Zeitscheibe) oder von Geräten wie Tastatur und Maus.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Speicherschutz",
+   "id": "speicherschutz",
+   "kurz": "Schutz, der dafür sorgt, dass jedes Programm nur auf seinen eigenen Speicherbereich zugreifen kann.",
+   "mehr": "Ein Baustein im Prozessor prüft jeden Zugriff. Greift ein Programm daneben, beendet das Betriebssystem nur dieses Programm.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Treiber",
+   "id": "treiber",
+   "woerter": [
+    "Treiber",
+    "Gerätetreiber",
+    "Maustreiber"
+   ],
+   "kurz": "Programmteil, der zwischen dem Betriebssystem und einem bestimmten Gerät übersetzt.",
+   "mehr": "Läuft meist im Kernel mit vollen Rechten. Kommt oft vom Hersteller (Drucker, Grafikkarte); für Standardgeräte wie Maus oder SSD bringt das Betriebssystem ihn mit.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Systemaufruf",
+   "id": "systemaufruf",
+   "woerter": [
+    "Systemaufruf",
+    "Systemaufrufe",
+    "Systemaufrufen"
+   ],
+   "kurz": "Die Bitte eines Programms an den Kernel, etwas für es zu erledigen – etwa eine Datei öffnen oder Speicher bereitstellen.",
+   "mehr": "Englisch „system call“. Der Kernel prüft dabei, ob das Programm das darf.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Stapelverarbeitung",
+   "id": "stapelverarbeitung",
+   "kurz": "Arbeitsweise früher Computer: Aufträge werden gesammelt und automatisch nacheinander abgearbeitet, ohne dass jemand eingreift.",
+   "mehr": "Englisch „batch processing“. GM-NAA I/O (1956) gilt als eines der ersten Betriebssysteme dieser Art.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Time-Sharing",
+   "id": "time-sharing",
+   "kurz": "Verfahren, bei dem ein Computer so schnell zwischen mehreren Nutzern wechselt, dass jeder ihn für sich allein zu haben scheint.",
+   "mehr": "Zuerst vorgeführt 1961 mit CTSS am MIT. Grundlage des heutigen Multitaskings.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Unix",
+   "id": "unix",
+   "kurz": "Einflussreiches Betriebssystem, 1969 bei den Bell Labs von Ken Thompson und Dennis Ritchie begonnen.",
+   "mehr": "Viele heutige Systeme folgen seinen Ideen, etwa Linux, Android und macOS.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Linux",
+   "id": "linux",
+   "kurz": "Freier Betriebssystemkern, 1991 von Linus Torvalds begonnen; Grundlage vieler Server und von Android.",
+   "mehr": "Jeder darf ihn kostenlos nutzen und verändern. Auch dein VPS läuft mit Linux.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Namensraum",
+   "id": "namensraum",
+   "woerter": [
+    "Namensraum",
+    "Namensräume",
+    "Namensräumen"
+   ],
+   "kurz": "Funktion des Linux-Kernels, die einer Gruppe von Prozessen eine eigene, abgeschottete Sicht gibt – etwa auf Prozesse, Dateien oder Netzwerk.",
+   "mehr": "Englisch „namespace“. Docker-Container beruhen darauf; sie teilen sich den Kernel des Rechners.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Multics",
+   "id": "multics",
+   "kurz": "Einflussreiches Time-Sharing-Betriebssystem der 1960er-Jahre von MIT, General Electric und Bell Labs.",
+   "mehr": "Führte unter anderem Ordner in Ordnern ein. Unix entstand als schlankere Antwort darauf.",
+   "folge": "s1f08"
+  },
+  {
+   "begriff": "Datei",
+   "id": "datei",
+   "woerter": [
+    "Datei",
+    "Dateien"
+   ],
+   "kurz": "Eine Folge von Bytes, die unter einem Namen gespeichert ist.",
+   "mehr": "Dazu merkt sich das Betriebssystem Metadaten wie Größe, Datum, Besitzer und Rechte.",
+   "folge": "s1f09"
+  },
+  {
+   "begriff": "Metadaten",
+   "id": "metadaten",
+   "kurz": "Daten über Daten – bei einer Datei etwa Größe, Änderungsdatum, Besitzer, Rechte und Ort der Blöcke.",
+   "folge": "s1f09"
+  },
+  {
+   "begriff": "Dateisystem",
+   "id": "dateisystem",
+   "woerter": [
+    "Dateisystem",
+    "Dateisysteme",
+    "Dateisystems"
+   ],
+   "kurz": "Die Ordnung, die das Betriebssystem über die Blöcke eines Datenträgers legt, damit es Dateien mit Namen und Ordnern gibt.",
+   "mehr": "Beispiele: NTFS (Windows), ext4 (Linux), FAT (USB-Sticks).",
+   "folge": "s1f09"
+  },
+  {
+   "begriff": "Block",
+   "id": "block",
+   "woerter": [
+    "Block",
+    "Blöcke",
+    "Blöcken"
+   ],
+   "kurz": "Eines der Stücke fester Größe, in die das Dateisystem einen Datenträger einteilt – meist 4 KiB.",
+   "mehr": "Dateien belegen fast immer ganze Blöcke. Unter Windows heißen sie „Cluster“.",
+   "folge": "s1f09"
+  },
+  {
+   "begriff": "Verzeichnis",
+   "id": "verzeichnis",
+   "woerter": [
+    "Verzeichnis",
+    "Verzeichnisse",
+    "Ordner"
+   ],
+   "kurz": "Liste im Dateisystem, die zu jedem Dateinamen sagt, wo die Daten liegen. Auf dem Bildschirm erscheint sie als Ordner.",
+   "mehr": "Verzeichnisse dürfen wieder Verzeichnisse enthalten – eine Baumstruktur, beschrieben 1965 für Multics.",
+   "folge": "s1f09"
+  },
+  {
+   "begriff": "Dateiendung",
+   "id": "dateiendung",
+   "woerter": [
+    "Dateiendung",
+    "Dateiendungen",
+    "Endung",
+    "Dateinamenerweiterung",
+    "Dateinamenerweiterungen"
+   ],
+   "kurz": "Die Buchstaben nach dem letzten Punkt im Dateinamen, etwa .jpg oder .txt – sie verraten, welche Art Inhalt die Datei haben soll.",
+   "mehr": "Die Endung ist nur Teil des Namens. Umbenennen ändert den Inhalt nicht.",
+   "folge": "s1f09"
+  },
+  {
+   "begriff": "Grafische Oberfläche",
+   "id": "grafische-oberflaeche",
+   "woerter": [
+    "grafische Oberfläche",
+    "grafischen Oberfläche"
+   ],
+   "kurz": "Bedienung des Computers mit Fenstern, Symbolen und Mauszeiger statt mit getippten Befehlen.",
+   "mehr": "Erste Ideen bei Douglas Engelbart (1968), entwickelt am Xerox PARC (Alto, 1973), bekannt geworden mit Apple Lisa (1983) und Macintosh (1984).",
+   "folge": "s1f09"
+  },
+  {
+   "begriff": "Maus",
+   "id": "maus",
+   "kurz": "Eingabegerät, mit dem man einen Zeiger auf dem Bildschirm bewegt und klickt.",
+   "mehr": "Erdacht von Douglas Engelbart, öffentlich vorgeführt am 9. Dezember 1968.",
+   "folge": "s1f09"
+  },
+  {
+   "begriff": "Ripple-Carry-Addierer",
+   "id": "ripple-carry-addierer",
+   "woerter": [
+    "Ripple-Carry-Addierer",
+    "Ripple-Carry"
+   ],
+   "kurz": "Addierer aus hintereinander geschalteten Volladdierern, bei dem der Übertrag wie eine Welle (englisch „ripple“) Stelle für Stelle nach links läuft.",
+   "mehr": "Einfach zu bauen, aber langsam bei vielen Stellen, weil jede Stelle auf den Übertrag ihres rechten Nachbarn warten muss.",
+   "folge": "s1g"
+  },
+  {
+   "begriff": "Übertrags-Flag",
+   "id": "uebertrags-flag",
+   "woerter": [
+    "Übertrags-Flag",
+    "Carry-Flag"
+   ],
+   "kurz": "Ein einzelnes Bit in verbreiteten Prozessoren (z. B. x86, ARM), in dem sie sich den Übertrag aus der vordersten Stelle der letzten Rechnung merken.",
+   "mehr": "Englisch „carry flag“. Zeigt einen Überlauf bei Zahlen ohne Vorzeichen an (für Zahlen mit Vorzeichen gibt es das Overflow-Flag) und hilft, sehr große Zahlen in mehreren Schritten zu addieren.",
+   "folge": "s1g"
+  },
+  {
+   "begriff": "Carry-Lookahead",
+   "id": "carry-lookahead",
+   "woerter": [
+    "Carry-Lookahead"
+   ],
+   "kurz": "Schnelles Additionsverfahren, das die Überträge mit zusätzlichen Gattern vorab ausrechnet, statt auf die Übertragswelle zu warten.",
+   "mehr": "Jede Stelle zeigt an, ob sie einen Übertrag erzeugt (beide Bits 1) oder nur weiterreicht (genau ein Bit 1). Heute meist in noch schnelleren Abwandlungen im Einsatz.",
+   "folge": "s1g"
+  },
+  {
+   "begriff": "64-Bit-Prozessor",
+   "id": "64-bit-prozessor",
+   "woerter": [
+    "64-Bit-Prozessor",
+    "64 Bit"
+   ],
+   "kurz": "Prozessor, der Zahlen in Häppchen von 64 Stellen auf einmal verarbeitet; die größte Zahl ohne Vorzeichen ist rund 1,8 × 10¹⁹.",
+   "mehr": "Heute Standard in PCs (x86-64), Handys (ARM) und Servern.",
+   "folge": "s1g"
   }
  ]
 }
