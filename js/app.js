@@ -12,6 +12,7 @@ import { zeigeFolge } from './ui/folge.js';
 import { zeigeKarteikasten } from './ui/karten.js';
 import { zeigeGlossar } from './ui/glossar.js';
 import { zeigeEinstellungen } from './ui/einstellungen.js';
+import { setzeAppName } from './ui/bausteine.js';
 
 // deploy.sh setzt hier beim Veröffentlichen den Commit ein, lokal bleibt „dev“
 const APP_BUILD = 'dev';
@@ -29,6 +30,7 @@ async function init() {
     serviceWorkerEinrichten({ leiste: $('#update-leiste'), knopf: $('#knopf-neu-laden') });
     return;
   }
+  setzeAppName(ctx.config.app.name);
   wendeThemaAn(ctx.config.farben, ctx.zustand.einstellungen.thema);
   folgeSystem(ctx.config.farben, () => ctx.zustand.einstellungen.thema);
 

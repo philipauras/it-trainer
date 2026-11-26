@@ -2,6 +2,12 @@
 
 Entscheidungen und Änderungen (für Philip kurz erklärt). Neueste oben. Was Nutzer in der App sehen: `content/neuigkeiten.md`.
 
+## 1.1.0 – 26.11.2026
+- **Name „IT“** (statt IT-Trainer) und **Icon T-Rex-Kopf** (8-Bit, 15×15, auf Schwarz, dunkelgrüne Kontur) – Philips Wahl nach
+  den Runden 5–7 (feinere 32er-Fassung war ihm zu viel). Nur der angezeigte Name ändert sich: Adresse it-trainer.pages.dev,
+  Speicher-Schlüssel, Code-Präfix, Ordner und Repo bleiben, damit kein Lernfortschritt verloren geht.
+- Seitentitel nimmt den Namen jetzt aus config.json (vorher fest im Code).
+
 ## 1.0.1 – 26.11.2026
 - **Neues App-Icon „Kratzspuren“** (Philips Wahl nach vier Entwurfsrunden: Schwert, Energie-Schwert, Schwert auf Arcade-Grund, IT-Motive):
   drei leuchtende Krallenhiebe, 8-Bit-Raster 15×15, auf Arcade-Sonnenuntergang. Entwürfe: `/workspace/entwuerfe/it-trainer-icon`.

@@ -1,6 +1,6 @@
 {
  "_hinweis": "ERZEUGT von werkzeuge/bauen.mjs aus content/ und config.json – nicht von Hand bearbeiten (npm run bauen).",
- "version": "1.0.1",
+ "version": "1.1.0",
  "live": false,
  "staffeln": [
   {
@@ -218,6 +218,13 @@
   }
  ],
  "neuigkeiten": [
+  {
+   "version": "1.1.0",
+   "datum": "26.11.2026",
+   "punkte": [
+    "Die App heißt jetzt **IT** – mit neuem Icon: ein T-Rex im 8-Bit-Stil auf Schwarz. Tipp: App einmal vom Startbildschirm entfernen und neu hinzufügen, damit Name und Icon erscheinen. Dein Fortschritt bleibt erhalten."
+   ]
+  },
   {
    "version": "1.0.1",
    "datum": "26.11.2026",

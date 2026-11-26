@@ -1,12 +1,16 @@
 // Kleine Bausteine, die mehrere Ansichten nutzen.
 import { el, $ } from '../kern/dom.js';
 
+let appName = document.title;
+/** App-Name aus config.json für den Seitentitel (einmal beim Start). */
+export const setzeAppName = (name) => { appName = name; };
+
 /** Ansicht ersetzen, Seitentitel setzen, nach oben springen und den Fokus für Screenreader setzen. */
 export function ansichtSetzen(kinder, { titel, klasse = '' } = {}) {
   const main = $('#inhalt');
   main.className = `ansicht ${klasse}`.trim();
   main.replaceChildren(...kinder.filter(Boolean));
-  document.title = titel ? `${titel} · IT-Trainer` : 'IT-Trainer';
+  document.title = titel && titel !== appName ? `${titel} · ${appName}` : appName;
   scrollTo(0, 0);
   main.focus({ preventScroll: true });
 }
