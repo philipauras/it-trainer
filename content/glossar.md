@@ -39,13 +39,13 @@ folge: s1f01
 
 ## ASCII
 id: ascii
-kurz: Kodierung für Text aus den USA (ab 1963, heutige Form seit 1967): 128 Muster aus 7 Bit – 95 sichtbare Zeichen wie Buchstaben, Ziffern, Satzzeichen, der Rest Steuerbefehle.
+kurz: Kodierung für Text aus den USA (ab 1963, heutige Form seit 1967): 128 Muster aus 7 Bit – 95 druckbare Zeichen wie Buchstaben, Ziffern, Satzzeichen, der Rest Steuerbefehle.
 mehr: Abkürzung für „American Standard Code for Information Interchange“. Umlaute wie ä kennt ASCII nicht.
 folge: s1f01
 
 ## UTF-8
 id: utf-8
-kurz: Heute übliche Kodierung für Text, die alle Schriftzeichen der Welt kennt. Normale Buchstaben brauchen 1 Byte, Umlaute 2.
+kurz: Heute übliche Kodierung für Text, die alle Schriftzeichen der Welt kennt. Normale Buchstaben brauchen 1 Byte, Umlaute 2, andere Zeichen und Emojis bis zu 4.
 mehr: Die ersten 128 Zeichen sind dieselben wie in ASCII. Fast alle Webseiten nutzen UTF-8.
 folge: s1f01
 

@@ -1,6 +1,7 @@
 ---
 id: s1f01
-status: entwurf
+status: freigegeben
+faktencheck: 26.11.2026 – Durchgang 1 nicht bestanden (4 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/
 dauer: 15
 quellen:
 - Claude E. Shannon: A Mathematical Theory of Communication. Bell System Technical Journal 27 (1948), S. 379–423 und 623–656 | https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf
@@ -33,7 +34,7 @@ Shannons Einsicht: Für seine Theorie spielt keine Rolle, was eine Nachricht bed
 
 ## [prinzip] Ja oder Nein: das Bit
 
-**Information** beantwortet eine offene Frage. Bevor im Kirchturm Licht zu sehen war, gab es zwei Möglichkeiten; danach nur noch eine. Diese kleinste Menge an Information – eine Entscheidung zwischen genau zwei Möglichkeiten – heißt **Bit**. Man schreibt die beiden Möglichkeiten meist als **0** und **1**. Ob das „aus/an“, „nein/ja“ oder „Land/Wasser“ bedeutet, ist Vereinbarungssache.
+**Information** beantwortet eine offene Frage. Bevor im Kirchturm Licht zu sehen war, gab es zwei Möglichkeiten; danach nur noch eine. Diese Menge an Information – eine Entscheidung zwischen zwei gleich wahrscheinlichen Möglichkeiten – heißt **Bit**; sie ist die Grundeinheit, in der man Information misst. Man schreibt die beiden Möglichkeiten meist als **0** und **1**. Ob das „aus/an“, „nein/ja“ oder „Land/Wasser“ bedeutet, ist Vereinbarungssache.
 
 Ein Lichtschalter ist das perfekte Bild für ein Bit: Er ist entweder aus oder an, nichts dazwischen. Probier es aus:
 
@@ -59,7 +60,7 @@ Damit ist das Rätsel vom Anfang gelöst: 20 Bits ergeben gut eine Million Muste
 
 ### Acht Bits sind ein Byte
 
-Weil einzelne Bits so winzig sind, fasst man sie zu Achtergruppen zusammen: **8 Bit = 1 Byte**. Ein Byte hat 2⁸ = 256 mögliche Muster – genug, um jedem Buchstaben des Alphabets, jeder Ziffer und jedem Satzzeichen ein eigenes Muster zu geben. Genau das macht der **ASCII**-Code, entstanden ab 1963 in den USA (seine heutige Form mit Kleinbuchstaben gibt es seit 1967). Er kommt sogar mit 7 Bit aus: 128 Muster, davon 95 für sichtbare Zeichen und der Rest für Steuerbefehle wie „neue Zeile“. Umlaute wie ä kennt ASCII nicht. Im Computer steht jedes Zeichen in einem ganzen Byte, das vorderste Bit ist dann 0. Das große A ist `01000001`, das B `01000010`. Stell es mit acht Schaltern ein:
+Weil einzelne Bits so winzig sind, fasst man sie zu Achtergruppen zusammen: **8 Bit = 1 Byte**. Ein Byte hat 2⁸ = 256 mögliche Muster – genug, um jedem Buchstaben des englischen Alphabets, jeder Ziffer und jedem Satzzeichen ein eigenes Muster zu geben. Genau das macht der **ASCII**-Code, entstanden ab 1963 in den USA (seine heutige Form mit Kleinbuchstaben gibt es seit 1967). Er kommt sogar mit 7 Bit aus: 128 Muster, davon 95 für druckbare Zeichen (samt Leerzeichen) und der Rest für Steuerbefehle wie „neue Zeile“. Umlaute wie ä kennt ASCII nicht. Im Computer steht jedes Zeichen in einem ganzen Byte, das vorderste Bit ist dann 0. Das große A ist `01000001`, das B `01000010`. Stell es mit acht Schaltern ein:
 
 :::sim bit-schalter
 schalter: 8
@@ -216,7 +217,7 @@ Bits sind überall um dich herum – auch in den Geräten, die du jeden Tag benu
 | 1 Bit | 0 oder 1 | das Laternen-Signal: Land oder Wasser |
 | 1 Byte | 8 Bit | ein Buchstabe in ASCII |
 | 1 Kilobyte (kB) | 1 000 Byte | eine halbe Seite Text |
-| 1 Megabyte (MB) | 1 000 KB | ein Handyfoto (grob 2–5 MB) |
+| 1 Megabyte (MB) | 1 000 kB | ein Handyfoto (grob 2–5 MB) |
 | 1 Gigabyte (GB) | 1 000 MB | ein Spielfilm in mittlerer Qualität |
 
 > **Achtung:** Windows rechnet bei Dateigrößen mit 1 024 statt 1 000 (weil 1 024 = 2¹⁰), schreibt aber trotzdem „KB“, „MB“ und „GB“. Darum zeigt der Explorer eine „1-TB-Festplatte“ nur mit etwa 931 GB an. Wer es genau meint, schreibt KiB, MiB, GiB für die 1 024er-Einheiten.

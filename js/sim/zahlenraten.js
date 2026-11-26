@@ -47,7 +47,7 @@ export default function starte({ wurzel, optionen, fertig }) {
       kopf.replaceChildren(
         el('p', { class: 'sim-gross', text: `Gefunden: ${geheim}!` }),
         el('p', {}, [`Du hast `, el('strong', { text: `${fragen} ${fragen === 1 ? 'Frage' : 'Fragen'}` }), ` gebraucht. `,
-          fragen === ziel && halbiert ? `Perfekt – jede Frage hat die Möglichkeiten genau halbiert.` : gut ? `Da war auch etwas Glück dabei: Mit genauem Halbieren brauchst du bei ${max} Zahlen immer genau ${ziel} Fragen.` : `Mit genauem Halbieren reichen bei ${max} Zahlen immer ${ziel} Fragen.`]),
+          halbiert ? `Perfekt – jede Frage hat die Möglichkeiten genau halbiert.` : fragen < ziel ? `Da war Glück dabei: Mit genauem Halbieren brauchst du bei ${max} Zahlen höchstens ${ziel} Fragen – dafür immer.` : fragen === ziel ? `Genau so viele wie mit konsequentem Halbieren.` : `Mit genauem Halbieren reichen bei ${max} Zahlen immer höchstens ${ziel} Fragen.`]),
         el('p', { class: 'sim-zusatz', text: `Warum ${ziel}? Weil ${Array(ziel).fill(2).join(' × ')} = ${2 ** ziel}. Eine Frage, die die Möglichkeiten genau halbiert, liefert genau 1 Bit – ${max} Möglichkeiten brauchen ${ziel} Bit.` }),
       );
       steuerung.replaceChildren(el('button', { type: 'button', class: 'knopf', text: 'Noch einmal', onclick: neu }));

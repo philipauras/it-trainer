@@ -57,11 +57,11 @@ async function dateienPruefen() {
   los('Dateien: Veröffentlichung ist da (Build-Kennung)');
   if (build) {
     // Nach dem Hochladen braucht die Adresse manchmal einige Sekunden
+    // Neue Adressen bekommen ihr Zertifikat erst nach einigen Minuten – bis zu 15 Minuten geduldig warten
     let ok = false;
-    for (let i = 0; i < 30 && !ok; i++) {
-      const t = await (await holen(`js/app.js?t=${Date.now()}`, 3)).text();
-      ok = t.includes(`const APP_BUILD = '${build}'`);
-      if (!ok) await new Promise((r) => setTimeout(r, 3000));
+    for (let i = 0; i < 90 && !ok; i++) {
+      try { ok = (await (await holen(`js/app.js?t=${Date.now()}`)).text()).includes(`const APP_BUILD = '${build}'`); } catch { /* noch nicht erreichbar */ }
+      if (!ok) await new Promise((r) => setTimeout(r, 10_000));
     }
     assert.ok(ok, `Unter ${url} ist nicht Commit ${build} veröffentlicht`);
   }
