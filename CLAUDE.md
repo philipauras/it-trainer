@@ -21,6 +21,8 @@ wie eine gute Doku, Schichten-Karte „Vom Sandkorn zur KI“. Live: https://it-
   Bleiben nur kleine Detailfehler (Jahreszahlen, Namen, Formulierungen): korrigieren, weiteren Durchgang laufen lassen, bei Bestehen
   selbst freigeben (Philip, 26.11.2026). Philip fragen außerdem bei Kosten/neuen Diensten, Gefahr für den Lernfortschritt,
   grundlegenden Konzept-/Formatänderungen. Alles andere selbst entscheiden und in `CHANGELOG.md` notieren.
+- **Neue Staffel:** Vorlagen für Subagenten in `docs/auftraege/` (Folgen schreiben, Faktencheck, Karteikarten). Bewährt: mehrere
+  Autoren parallel, Glossar in Einzeldateien sammeln und zusammenführen, Korrekturen an den Autor zurück, aus einem Worktree veröffentlichen.
 - Routinearbeit (Karteikarten aus fertigem Text u. Ä.) an günstigeres Modell (Subagent `sonnet`/`haiku`); Konzept, Didaktik, Faktencheck mit dem starken.
 - Mobile first, Tippflächen ≥ 44 px, kleinste Schrift 15 px; Farben nur über CSS-Variablen.
 - Neue JS-Datei → `sw.js` (`APP_DATEIEN`); Test prüft. Sichtbare Änderung → `app.version` in `config.json` + Eintrag in `content/neuigkeiten.md`.
