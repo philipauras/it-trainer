@@ -224,6 +224,7 @@ try {
 
   los('Export per Code und Datei → zweites Gerät');
   await s.goto(`${url}#einstellungen`); await s.getByRole('button', { name: 'Als Code anzeigen' }).click();
+  await s.waitForFunction(() => document.querySelector('textarea[readonly]')?.value.length > 10); // Code wird asynchron gepackt
   const code = await s.locator('textarea[readonly]').inputValue();
   assert.match(code, /^IT1[ZJ]\./);
   const [download] = await Promise.all([s.waitForEvent('download'), s.getByRole('button', { name: 'Als Datei speichern' }).click()]);

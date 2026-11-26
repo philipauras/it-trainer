@@ -3,6 +3,10 @@
 Entscheidungen und Änderungen (für Philip kurz erklärt). Neueste oben. Was Nutzer in der App sehen: `content/neuigkeiten.md`.
 
 ## 1.0.0 – 26.11.2026 (Phase 1: Grundgerüst + Folge 1)
+- **Live seit 26.11.2026** (Commit c41673d). Faktencheck Folge 1: Durchgang 1 nicht bestanden (ASCII-Details, „jede Antwort = 1 Bit“
+  im Zahlenraten, Laternen-Bild, Mbit/s vs. MB), alles behoben; Durchgang 2 bestanden, Empfehlungen umgesetzt.
+- Betrieb: Neue Pages-Adressen bekommen ihr Zertifikat erst nach 1–2 Minuten → Prüfung wartet bis zu 15 Min.; einmal lieferte die
+  Cloudflare-API beim Anlegen einen Fehler 500, der zweite Versuch klappte. Prüfskript wartet jetzt auf den asynchron erzeugten Code.
 - **Gerüst** nach Vorbild bim-trainer, aber sauber getrennt: `config.json` (Thema), `content/` (Inhalte), `js/kern/` (neutraler Kern),
   `js/ui/` (je Ansicht ein Modul), `js/sim/` (Simulatoren). Aus dem bim-trainer übernommen und verallgemeinert: Service Worker
   mit Update-Schutz (Prüfsummen), `_headers`, `404.html`, Markdown-Renderer, Glossar-Logik, Quiz-Logik, Schrift Barlow, Testaufbau.
