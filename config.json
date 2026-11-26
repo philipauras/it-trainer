@@ -6,7 +6,7 @@
     "kurzname": "IT-Trainer",
     "untertitel": "Vom Sandkorn zur KI",
     "beschreibung": "IT und Programmieren von Grund auf – Folge für Folge, offline nutzbar.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "speicherSchluessel": "ittrainer.v1",
     "codePraefix": "IT1"
   },

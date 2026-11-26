@@ -2,6 +2,11 @@
 
 Entscheidungen und Änderungen (für Philip kurz erklärt). Neueste oben. Was Nutzer in der App sehen: `content/neuigkeiten.md`.
 
+## 1.0.1 – 26.11.2026
+- **Neues App-Icon „Kratzspuren“** (Philips Wahl nach vier Entwurfsrunden: Schwert, Energie-Schwert, Schwert auf Arcade-Grund, IT-Motive):
+  drei leuchtende Krallenhiebe, 8-Bit-Raster 15×15, auf Arcade-Sonnenuntergang. Entwürfe: `/workspace/entwuerfe/it-trainer-icon`.
+  Dateinamen bleiben gleich (neue Cache-Version lädt sie neu); auf dem Handy App einmal neu zum Startbildschirm hinzufügen.
+
 ## 1.0.0 – 26.11.2026 (Phase 1: Grundgerüst + Folge 1)
 - **Live seit 26.11.2026** (Commit c41673d). Faktencheck Folge 1: Durchgang 1 nicht bestanden (ASCII-Details, „jede Antwort = 1 Bit“
   im Zahlenraten, Laternen-Bild, Mbit/s vs. MB), alles behoben; Durchgang 2 bestanden, Empfehlungen umgesetzt.
