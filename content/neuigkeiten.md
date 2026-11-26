@@ -2,6 +2,9 @@
 
 Erscheint in der App als „Was ist neu“ nach einem Update. Oberster Eintrag = Version aus config.json.
 
+## 1.2.0 – 26.11.2026
+- Neues App-Icon: eine einzige Linse aus Rauchglas – ganz reduziert, nur Licht und Schatten. Tipp: App einmal vom Startbildschirm entfernen und neu hinzufügen.
+
 ## 1.1.0 – 26.11.2026
 - Die App heißt jetzt **IT** – mit neuem Icon: ein T-Rex im 8-Bit-Stil auf Schwarz. Tipp: App einmal vom Startbildschirm entfernen und neu hinzufügen, damit Name und Icon erscheinen. Dein Fortschritt bleibt erhalten.
 

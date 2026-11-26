@@ -2,6 +2,10 @@
 
 Entscheidungen und Änderungen (für Philip kurz erklärt). Neueste oben. Was Nutzer in der App sehen: `content/neuigkeiten.md`.
 
+## 1.2.0 – 26.11.2026
+- **Icon „Rauchglas-Linse“** (Philips Wahl, Runde 8): nur Verläufe, keine Grafik; ersetzt den T-Rex. Android-Fassung: Kugel genau
+  im sicheren Kreis (80 %), außen fast Schwarz; Favicon/Logo: Kugel mit durchsichtigen Ecken. Name bleibt „IT“.
+
 ## 1.1.0 – 26.11.2026
 - **Name „IT“** (statt IT-Trainer) und **Icon T-Rex-Kopf** (8-Bit, 15×15, auf Schwarz, dunkelgrüne Kontur) – Philips Wahl nach
   den Runden 5–7 (feinere 32er-Fassung war ihm zu viel). Nur der angezeigte Name ändert sich: Adresse it-trainer.pages.dev,
