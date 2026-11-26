@@ -66,19 +66,19 @@ folge: s1f01
 id: ram
 woerter: Arbeitsspeicher, RAM
 kurz: Der schnelle Speicher, in dem ein Computer gerade laufende Programme und Daten hält. Ohne Strom ist sein Inhalt weg.
-mehr: In der Werkstatt-Analogie die große Ablage neben der Werkbank. Genaueres in Folge 5 und 7.
+mehr: Wird beim Ausschalten gelöscht. Genaueres in Folge 5 und 7.
 folge: s1f05
 
 ## Prozessor (CPU)
 id: cpu
 woerter: Prozessor, CPU
-kurz: Das Bauteil, das Befehle ausführt und rechnet – in der Werkstatt-Analogie die Werkbank.
+kurz: Das Bauteil, das Befehle ausführt und rechnet.
 mehr: CPU steht für „Central Processing Unit“. Wie er arbeitet, zeigt Folge 6.
 folge: s1f06
 
 ## SSD
 id: ssd
-kurz: Dauerhafter Speicher ohne bewegliche Teile, der seinen Inhalt auch ohne Strom behält – in der Werkstatt-Analogie das Lager.
+kurz: Dauerhafter Speicher ohne bewegliche Teile, der seinen Inhalt auch ohne Strom behält.
 mehr: Abkürzung für „Solid State Drive“. Ersetzt in den meisten Geräten die alte Festplatte mit Drehscheiben.
 folge: s1f07
 

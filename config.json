@@ -6,7 +6,7 @@
     "kurzname": "IT",
     "untertitel": "Vom Sandkorn zur KI",
     "beschreibung": "IT und Programmieren von Grund auf – Folge für Folge, offline nutzbar.",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "speicherSchluessel": "ittrainer.v1",
     "codePraefix": "IT1"
   },
@@ -15,16 +15,16 @@
     "dunkel": { "akzent": "#4cc3dc", "akzentHover": "#7fd5e7", "akzentWeich": "#11313a", "hintergrund": "#0e1116" }
   },
   "stufen": [
-    { "id": "lehrling", "titel": "Lehrling", "beschreibung": "Wie ein Computer von innen funktioniert und wie er mit anderen spricht." },
-    { "id": "geselle", "titel": "Geselle", "beschreibung": "Selbst programmieren und mit den Werkzeugen der Profis arbeiten." },
-    { "id": "meister", "titel": "Meister", "beschreibung": "Daten, Server und KI – eigene Systeme bauen und betreiben." }
+    { "id": "lehrling", "titel": "Grundlagen", "beschreibung": "Wie ein Computer von innen funktioniert und wie er mit anderen spricht." },
+    { "id": "geselle", "titel": "Aufbau", "beschreibung": "Selbst programmieren und mit den Werkzeugen der Profis arbeiten." },
+    { "id": "meister", "titel": "Vertiefung", "beschreibung": "Daten, Server und KI – eigene Systeme bauen und betreiben." }
   ],
   "schichten": [
     { "id": "strom", "titel": "Strom", "kurz": "Elektronen tragen Ja und Nein", "farbe": "#d99a0b" },
     { "id": "transistor", "titel": "Transistor", "kurz": "Schalter ohne bewegliche Teile", "farbe": "#e0761f" },
     { "id": "logik", "titel": "Logik", "kurz": "UND, ODER, NICHT – Rechnen mit Schaltern", "farbe": "#d4504a" },
-    { "id": "prozessor", "titel": "Prozessor", "kurz": "Die Werkbank, die Befehle abarbeitet", "farbe": "#c2417a" },
-    { "id": "betriebssystem", "titel": "Betriebssystem", "kurz": "Der Werkstattmeister verteilt die Arbeit", "farbe": "#9150c8" },
+    { "id": "prozessor", "titel": "Prozessor", "kurz": "Das Rechenwerk, das Befehle abarbeitet", "farbe": "#c2417a" },
+    { "id": "betriebssystem", "titel": "Betriebssystem", "kurz": "Verteilt Rechenzeit, Speicher und Geräte", "farbe": "#9150c8" },
     { "id": "netzwerk", "titel": "Netzwerk", "kurz": "Computer sprechen miteinander", "farbe": "#5f5bdc" },
     { "id": "programmieren", "titel": "Programmieren", "kurz": "Dem Computer Arbeitsanweisungen schreiben", "farbe": "#2f72d6" },
     { "id": "web", "titel": "Web", "kurz": "Seiten und Apps im Browser", "farbe": "#1688b8" },
@@ -45,9 +45,9 @@
         { "id": "s1f05", "titel": "Wie sich ein Computer etwas merkt", "untertitel": "Flipflop und RAM", "schicht": "logik" },
         { "id": "s1f06", "titel": "Der Prozessor", "untertitel": "Takt, Holen, Entschlüsseln, Ausführen", "schicht": "prozessor" },
         { "id": "s1f07", "titel": "Speicherhierarchie", "untertitel": "Register, Cache, RAM, SSD", "schicht": "prozessor" },
-        { "id": "s1f08", "titel": "Das Betriebssystem", "untertitel": "Der Werkstattmeister", "schicht": "betriebssystem" },
+        { "id": "s1f08", "titel": "Das Betriebssystem", "untertitel": "Der Verwalter im Hintergrund", "schicht": "betriebssystem" },
         { "id": "s1f09", "titel": "Was passiert beim Doppelklick?", "untertitel": "Dateien und Programme", "schicht": "betriebssystem" },
-        { "id": "s1g", "titel": "Gesellenstück: Der Addierer", "untertitel": "Aus Gattern einen Rechner bauen", "schicht": "logik", "art": "gesellenstueck" }
+        { "id": "s1g", "titel": "Ein Rechner aus Gattern", "untertitel": "Zwei Zahlen addieren", "schicht": "logik", "art": "abschlussprojekt" }
       ]
     },
     { "nr": 2, "id": "s2", "titel": "Wie Computer reden", "stufe": "lehrling", "schichten": ["netzwerk"], "beschreibung": "Netzwerk, Internet, HTTP und Verschlüsselung.", "folgen": [] },
@@ -63,13 +63,13 @@
     { "id": "einstieg", "buchstabe": "a", "titel": "Einstieg", "symbol": "?" },
     { "id": "geschichte", "buchstabe": "b", "titel": "Geschichte", "symbol": "◷" },
     { "id": "prinzip", "buchstabe": "c", "titel": "Das Prinzip", "symbol": "◎" },
-    { "id": "werkstatt", "buchstabe": "d", "titel": "In der Werkstatt", "symbol": "⚒" },
+    { "id": "werkstatt", "buchstabe": "d", "titel": "Im Bild", "symbol": "◐" },
     { "id": "selbst", "buchstabe": "e", "titel": "Selbst machen", "symbol": "✋" },
     { "id": "quiz", "buchstabe": "f", "titel": "Quiz", "symbol": "✓" },
     { "id": "karten", "buchstabe": "g", "titel": "Karteikarten", "symbol": "▤" },
     { "id": "beidir", "buchstabe": "h", "titel": "Wo steckt das bei dir?", "symbol": "⌂" }
   ],
-  "boxen": { "Merke": "merke", "Werkstatt": "werkstatt", "Achtung": "achtung", "Beispiel": "beispiel", "Wusstest du?": "wusstest" },
+  "boxen": { "Merke": "merke", "Im Bild": "bild", "Achtung": "achtung", "Beispiel": "beispiel", "Wusstest du?": "wusstest" },
   "regeln": {
     "status": ["entwurf", "geprueft", "freigegeben"],
     "liveStatus": "freigegeben",

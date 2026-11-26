@@ -151,6 +151,10 @@ async function folgeDurchklicken(f, nr) {
       for (let i = 0; i < 12 && !(await u.getByText(/^Gefunden/).count()); i++) await u.getByRole('button', { name: /^Ist sie größer als/ }).click();
       await u.getByText(/^Gefunden/).waitFor();
       assert.match(await u.innerText(), /6 Fragen/, 'Halbieren braucht 6 Fragen');
+    } else {
+      // Andere Simulatoren stellen einen unsichtbaren Haken „_loesen“ bereit (setzt die Lösung wie per Fingertipp)
+      const hatHaken = await u.locator('.sim-flaeche').evaluate((e) => { if (typeof e._loesen !== 'function') return false; e._loesen(); return true; });
+      assert.ok(hatHaken, 'Übung ohne Lösungs-Haken (_loesen) – Simulator ergänzen');
     }
     await u.locator('.uebung-fertig').waitFor({ timeout: 3000 });
   }

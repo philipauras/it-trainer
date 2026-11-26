@@ -41,7 +41,7 @@ dauer: 15
 quellen:
 - Claude E. Shannon: A Mathematical Theory of Communication (1948) | https://…
 - Ein Buch ohne Link
-faktencheck: 26.11.2026 – bestanden (unabhängige Prüfung): fachlich korrekt, verständlich, Analogie stimmig
+faktencheck: 26.11.2026 – bestanden (unabhängige Prüfung): fachlich korrekt, verständlich, Bild stimmig
 ---
 
 ## [einstieg] Kann ein Lichtschalter sprechen?
@@ -49,7 +49,7 @@ Text …
 
 ## [geschichte] …
 ## [prinzip] …
-## [werkstatt] …
+## [werkstatt] …   (in der App „Im Bild“)
 ## [selbst] …
 ## [quiz] …
 ## [karten] …
@@ -74,7 +74,7 @@ die in der App erscheint (frei wählbar, gern als Frage):
 | `[einstieg]` | a · Einstieg | eine Frage, die neugierig macht – der erste Absatz erscheint groß |
 | `[geschichte]` | b · Geschichte | wer, wann, warum – erzählt wie eine gute Doku |
 | `[prinzip]` | c · Das Prinzip | das Konzept, mit interaktiver Grafik/Simulator |
-| `[werkstatt]` | d · In der Werkstatt | die Werkstatt-Analogie (siehe unten) – und wo sie hinkt |
+| `[werkstatt]` | d · Im Bild | ein Alltagsbild, das das Prinzip trifft (siehe „Bilder“ unten) – und wo es hinkt. Der Schlüssel heißt aus Speichergründen weiter `werkstatt` |
 | `[selbst]` | e · Selbst machen | mindestens eine **Übung** (Simulator mit `id:`) |
 | `[quiz]` | f · Quiz | Fragen mit Erklärung (Format unten) |
 | `[karten]` | g · Karteikarten | Karten für den Karteikasten (Format unten) |
@@ -92,7 +92,7 @@ die in der App erscheint (frei wählbar, gern als Frage):
 | `\| a \| b \|` + Zeile `\|---\|---\|` | Tabelle |
 | `[Text](https://…)` | Link (nur https) |
 | ```` ``` ```` … ```` ``` ```` | Codeblock |
-| `> **Merke:** Text` | Hinweisbox. Marken: `Merke`, `Werkstatt`, `Achtung`, `Beispiel`, `Wusstest du?` (Liste in `config.json → boxen`) |
+| `> **Merke:** Text` | Hinweisbox. Marken: `Merke`, `Im Bild`, `Achtung`, `Beispiel`, `Wusstest du?` (Liste in `config.json → boxen`) |
 | `> Text` | normales Zitat |
 
 HTML wird nicht ausgeführt, sondern als Text gezeigt.
@@ -117,7 +117,7 @@ buchstabe: ja
 
 | Name | Einstellungen | Was er zeigt |
 |---|---|---|
-| `bit-schalter` | `schalter` (1–8, Start), `veraenderbar` (ja/nein), `buchstabe` (ja/nein: bei 8 Schaltern ASCII-Zeichen zeigen) | Lichtschalter = Bits, Anzahl der Muster |
+| `bit-schalter` | `schalter` (1–8, Start), `veraenderbar` (ja/nein), `buchstabe` (ja/nein: bei 8 Schaltern ASCII-Zeichen zeigen), `ziel` (ein Zeichen, z. B. `P` – Übung: dieses Zeichen einstellen) | Lichtschalter = Bits, Anzahl der Muster |
 | `zahlenraten` | `max` (Standard 64) | Zahl mit Ja/Nein-Fragen finden; Übung geschafft, wenn gefunden |
 | `code` | `sprache` (python/javascript), `start` | Platzhalter für Code-Übungen (ab Staffel 3) |
 
@@ -170,28 +170,39 @@ Der Fortschritt im Browser hängt an den IDs von Folgen, Fragen, Karten und Übu
 
 | Was | Schema | Beispiel |
 |---|---|---|
-| Folge | `s<staffel>f<nr>`, Gesellenstück `s<staffel>g` | `s1f01`, `s1g`, Brücke zu BIM: `sbimf01` |
+| Folge | `s<staffel>f<nr>`, Abschlussprojekt `s<staffel>g` | `s1f01`, `s1g`, Brücke zu BIM: `sbimf01` |
 | Quizfrage | `<folge>-q<nr>` | `s1f01-q03` |
 | Karteikarte | `<folge>-k<nr>` | `s1f01-k07` |
 | Übung | `<folge>-u<nr>` | `s1f01-u01` |
 | Glossarbegriff | Kleinbuchstaben, Bindestriche | `bit`, `utf-8` |
 
-## Die Werkstatt-Analogie (gilt für alle Folgen)
+## Bilder, Grafiken und Mitmachen (gilt für alle Folgen – Philip, 26.11.2026)
 
-Der Computer ist eine Werkstatt. Feste Rollen, damit die Bilder über alle Folgen zusammenpassen:
+**Kein durchgehendes Bild.** Es gibt keine Serien-Analogie (früher „Werkstatt“) mehr. Alles bleibt bildlich, aber
+**pro Thema wird das Alltagsbild gewählt, das das Prinzip am besten trifft** – Bibliothek, Verkehr, Post, Küche,
+Wasserleitung, Parkhaus … Abwechslungsreich, nicht erzwungen.
 
-| Im Computer | In der Werkstatt |
+- Ein Bild pro Folge im Abschnitt d (`[werkstatt]`, in der App „Im Bild“); kleinere Vergleiche im übrigen Text sind erlaubt.
+- Das Bild muss den **Mechanismus** treffen, nicht nur die Stimmung. Probe: Kann man aus dem Bild eine richtige Vorhersage ableiten?
+- Kurze Zusammenfassung als Box `> **Im Bild:** …` (Bild-Teil = Computer-Teil).
+- Jedes Bild hinkt irgendwo – sag kurz (ein bis zwei Sätze), wo (`> **Achtung:** …`).
+- **Hinkt ein Bild zu sehr, lieber eine gute Grafik oder Animation** (Simulator) statt einer schiefen Analogie. Der Abschnitt d
+  darf dann statt eines Alltagsbildes eine Grafik zeigen.
+- Kein Bild aus einer früheren Folge erneut als Hauptbild verwenden (Liste unten pflegen).
+- Der **Faktencheck prüft auch die Bilder**: Stimmt der Vergleich? Wird klar gesagt, wo er hinkt?
+
+**Mitmachen (Philips Feedback zu Folge 1):** Interaktive Schalter und Übungen kommen am besten an – davon mehr.
+Jede Folge hat mindestens **einen Simulator im Prinzip** und **mindestens zwei Übungen** in „Selbst machen“, möglichst
+zum Anfassen (Schalter umlegen, Gatter wählen, Schritte ordnen) statt nur Lesen.
+
+**Stufen und Staffelende:** keine Handwerks-Begriffe (Lehrling/Geselle/Meister, Gesellenstück). Stufen heißen
+**Grundlagen / Aufbau / Vertiefung**, am Ende einer Staffel steht ein **Abschlussprojekt** (`art: abschlussprojekt`).
+
+Bisher verwendete Hauptbilder:
+
+| Folge | Bild |
 |---|---|
-| Prozessor (CPU) | die Werkbank, an der gearbeitet wird |
-| Register | was gerade in der Hand liegt |
-| Cache | die kleine Ablage direkt an der Werkbank |
-| Arbeitsspeicher (RAM) | die große Ablage daneben – schnell erreichbar, wird abends abgeräumt |
-| SSD / Festplatte | das Lager – viel Platz, Weg dorthin dauert, bleibt über Nacht |
-| Betriebssystem | der Werkstattmeister, der Aufträge, Plätze und Werkzeuge verteilt |
-| Programm | die Arbeitsanweisung / der Bauplan |
-| Bit | ein Platz an der Werkzeugwand: Werkzeug da oder nicht da |
-
-Jede Analogie hinkt irgendwo – sag in einem Satz, wo (z. B. als `> **Achtung:** …`).
+| s1f01 Bit | Parkhaus-Lämpchen (frei/belegt) |
 
 ## „Wo steckt das bei dir?“
 
@@ -238,9 +249,9 @@ alle Punkte, die der Nutzer noch nicht gesehen hat.
 |---|---|
 | `app` | Name, Untertitel, Version, Speicher-Schlüssel (nie ändern), Code-Präfix für den Fortschritts-Code |
 | `farben` | Akzent- und Hintergrundfarbe für hell und dunkel |
-| `stufen` | Lehrling, Geselle, Meister |
+| `stufen` | Grundlagen, Aufbau, Vertiefung (die IDs `lehrling`/`geselle`/`meister` sind historisch und bleiben) |
 | `schichten` | die Schichten-Karte „Vom Sandkorn zur KI“ (von unten nach oben) |
-| `staffeln` | Plan: Staffeln mit Stufe, Schichten und Folgen (ID, Titel, Untertitel, Schicht, ggf. `art: gesellenstueck`) |
+| `staffeln` | Plan: Staffeln mit Stufe, Schichten und Folgen (ID, Titel, Untertitel, Schicht, ggf. `art: abschlussprojekt`) |
 | `abschnitte` | die acht Abschnitte einer Folge (Titel, Buchstabe, Symbol) |
 | `boxen` | erlaubte Hinweisboxen |
 | `regeln` | Status-Stufen, Mindestzahlen für Quiz/Karten, Leitner-Abstände, wann eine Folge „fertig“ ist |

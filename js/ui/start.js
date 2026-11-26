@@ -54,7 +54,7 @@ function weiterKarte(ctx) {
   return el('a', { class: 'karte weiter-karte karte-link', href: `#folge/${n.id}` }, [
     el('p', { class: 'kicker', text: angefangen ? 'Weitermachen' : 'Als Nächstes' }),
     el('h2', { class: 'karte-titel', text: n.titel }),
-    el('p', { class: 'karte-text', text: `Staffel ${n.staffel.nr} · ${n.art === 'gesellenstueck' ? 'Gesellenstück' : `Folge ${n.nr}`} · ${n.untertitel}` }),
+    el('p', { class: 'karte-text', text: `Staffel ${n.staffel.nr} · ${n.art === 'abschlussprojekt' ? 'Abschlussprojekt' : `Folge ${n.nr}`} · ${n.untertitel}` }),
     angefangen ? balken(anteil, `${Math.round(anteil * 100)} % der Folge`) : null,
     el('span', { class: 'knopf weiter-knopf', text: angefangen ? 'Weiter' : 'Folge starten' }),
     statusMarke(n.status),
@@ -108,7 +108,7 @@ export function folgenZeile(ctx, f, { klein = false } = {}) {
   const fertig = istFertig(ctx.zustand, f.id);
   const da = verfuegbar(f);
   const anteil = folgenAnteil(ctx.zustand, f.id, ctx.config.abschnitte.length);
-  const kennung = f.art === 'gesellenstueck' ? '★' : String(f.nr);
+  const kennung = f.art === 'abschlussprojekt' ? '★' : String(f.nr);
   const inhalt = [
     el('span', { class: `folge-nr${fertig ? ' folge-nr-fertig' : ''}`, text: fertig ? '✓' : kennung, 'aria-hidden': 'true' }),
     el('span', { class: 'folge-text' }, [
@@ -118,7 +118,7 @@ export function folgenZeile(ctx, f, { klein = false } = {}) {
     ]),
     statusMarke(f.status),
   ];
-  const label = `${f.art === 'gesellenstueck' ? 'Gesellenstück' : `Folge ${f.nr}`}: ${f.titel}${fertig ? ' (fertig)' : ''}${da ? '' : ' (in Arbeit)'}`;
+  const label = `${f.art === 'abschlussprojekt' ? 'Abschlussprojekt' : `Folge ${f.nr}`}: ${f.titel}${fertig ? ' (fertig)' : ''}${da ? '' : ' (in Arbeit)'}`;
   return el('li', {}, [da
     ? el('a', { class: 'folge-zeile', href: `#folge/${f.id}`, 'aria-label': label }, inhalt)
     : el('div', { class: 'folge-zeile folge-geplant', 'aria-label': label }, inhalt)]);

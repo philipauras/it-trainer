@@ -2,6 +2,17 @@
 
 Entscheidungen und Änderungen (für Philip kurz erklärt). Neueste oben. Was Nutzer in der App sehen: `content/neuigkeiten.md`.
 
+## 1.3.0 – 26.11.2026 (Format nach Philips Feedback zu Folge 1)
+- **Keine durchgehende Werkstatt-Analogie mehr**: pro Thema das treffendste Alltagsbild, hinkt es, lieber Grafik/Animation.
+  Abschnitt d heißt in der App „Im Bild“ (interner Schlüssel bleibt `werkstatt`, weil der Fortschritt besuchte Abschnitte speichert),
+  Hinweisbox „Werkstatt“ → „Im Bild“. Folge 1: Parkhaus-Lämpchen statt Werkzeugwand.
+- **Stufen** Grundlagen/Aufbau/Vertiefung statt Lehrling/Geselle/Meister (IDs bleiben), Staffelende „Abschlussprojekt“ statt
+  Gesellenstück (`art: abschlussprojekt`, Folgen-ID `s1g` bleibt). Werkstatt-Wörter auch aus Schichten-Texten und Glossar entfernt.
+- **Mehr Mitmachen**: neue Übung s1f01-u02 (Buchstaben P mit acht Schaltern einstellen); Regel ab jetzt: je Folge ≥ 2 Übungen.
+- Faktencheck der Überarbeitung: Durchgang 3 nicht bestanden (Hinkt-Satz schief), Durchgang 4 bestanden. Gezählt als erster
+  Fehlschlag des neuen Textes (der Fehlschlag von Durchgang 1 war mit Durchgang 2 erledigt) – daher keine Rückfrage.
+- Automatische Oberflächen-Prüfung löst neue Übungen über einen unsichtbaren Haken `_loesen` am Simulator.
+
 ## 1.2.0 – 26.11.2026
 - **Icon „Rauchglas-Linse“** (Philips Wahl, Runde 8): nur Verläufe, keine Grafik; ersetzt den T-Rex. Android-Fassung: Kugel genau
   im sicheren Kreis (80 %), außen fast Schwarz; Favicon/Logo: Kugel mit durchsichtigen Ecken. Name bleibt „IT“.

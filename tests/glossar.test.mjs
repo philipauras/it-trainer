@@ -19,7 +19,7 @@ test('Sortierung, Anfangsbuchstaben, Normalisierung, Suche', () => {
   assert.deepEqual(sortiert([{ begriff: 'RAM' }, { begriff: 'bit' }, { begriff: 'ASCII' }]).map((b) => b.begriff), ['ASCII', 'bit', 'RAM']);
   assert.equal(buchstabe('3D'), '#');
   assert.equal(suche(glossar, 'bit')[0].id, 'bit');
-  assert.ok(suche(glossar, 'werkbank').some((b) => b.id === 'cpu'), 'Suche auch in der Erklärung');
+  assert.ok(suche(glossar, 'befehle').some((b) => b.id === 'cpu'), 'Suche auch in der Erklärung');
 });
 
 test('Begriffe im Text: ganze Wörter, Abkürzungen nur groß, längere gewinnen, je Abschnitt einmal', () => {

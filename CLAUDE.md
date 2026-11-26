@@ -34,6 +34,7 @@ wie eine gute Doku, Schichten-Karte „Vom Sandkorn zur KI“. Live: https://it-
    Folgen durchklicken, Export/Import, offline). Bestanden → Merker `.git/vorschau-geprueft`.
 2. `git switch main && git merge --ff-only <branch>` → `./deploy.sh live` (nur main, nur der geprüfte Commit) → `git push origin main`.
 3. Push an Philip mit „Was ist neu“. Screenshots selbst ansehen (Automatik findet nicht alles).
-- Ausnahme Phase 1 (Grundgerüst + Folge 1): nach dem Livegang auf Philips Feedback zum Format warten.
+- Phase 1 abgeschlossen; Format-Feedback (26.11.2026) ist in `content/README.md` → „Bilder, Grafiken und Mitmachen“ festgehalten:
+  kein durchgehendes Bild, pro Thema das treffendste Alltagsbild, mehr interaktive Übungen, Stufen Grundlagen/Aufbau/Vertiefung, Abschlussprojekt.
 - GitHub: privates Repo `philipauras/it-trainer` per Deploy-Key `~/.claude/ssh/it-trainer_deploy` (Repo/Key legt Philip an), nur Sicherung.
 - Zugangsdaten `~/.claude/secrets/cloudflare.env` – nie anzeigen, nie `source`n.

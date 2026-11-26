@@ -221,8 +221,8 @@ pre.code code { background: none; padding: 0; }
 .box p { margin: 0; }
 .box p + p { margin-top: 4px; }
 .box-marke { font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--c-akzent); }
-.box-werkstatt { background: color-mix(in srgb, var(--c-lampe) 14%, var(--c-flaeche)); border-left-color: var(--c-lampe); }
-.box-werkstatt .box-marke { color: var(--c-text-2); }
+.box-bild { background: color-mix(in srgb, var(--c-lampe) 14%, var(--c-flaeche)); border-left-color: var(--c-lampe); }
+.box-bild .box-marke { color: var(--c-text-2); }
 .box-achtung { background: var(--c-falsch-bg); border-left-color: var(--c-falsch); }
 .box-achtung .box-marke { color: var(--c-falsch); }
 .box-wusstest { background: var(--c-flaeche-2); border-left-color: var(--c-text-3); }
@@ -250,6 +250,7 @@ pre.code code { background: none; padding: 0; }
 .sim-gross { font-size: 22px; font-weight: 700; }
 .sim-label { font-weight: 500; color: var(--c-text-2); font-size: 17px; }
 .sim-zusatz { font-size: 16px; color: var(--c-text-2); }
+.sim-ziel { margin: 0 0 12px; padding: 8px 12px; border-radius: 10px; background: var(--c-akzent-weich); font-weight: 600; }
 .sim-steuerung { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; }
 .sim-anzahl { min-width: 96px; text-align: center; font-weight: 600; }
 .bitmuster { font-family: var(--schrift-code); font-size: 26px; letter-spacing: .12em; color: var(--c-akzent); background: none; }

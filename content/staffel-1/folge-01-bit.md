@@ -1,7 +1,7 @@
 ---
 id: s1f01
 status: freigegeben
-faktencheck: 26.11.2026 – Durchgang 1 nicht bestanden (4 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/
+faktencheck: 26.11.2026 – Durchgang 1 nicht bestanden (4 Fehler behoben), Durchgang 2 bestanden; Überarbeitung (neues Bild, Übung u02): Durchgang 3 nicht bestanden (1 Fehler behoben), Durchgang 4 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/
 dauer: 15
 quellen:
 - Claude E. Shannon: A Mathematical Theory of Communication. Bell System Technical Journal 27 (1948), S. 379–423 und 623–656 | https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf
@@ -74,17 +74,17 @@ Dass `01000001` ein „A“ ist, steht nirgends in den Bits selbst. Es ist eine 
 
 Wie ein Computer Bits *speichert* und mit ihnen *rechnet* – mit Strom statt mit Laternen –, erfährst du in den nächsten Folgen.
 
-## [werkstatt] Die Werkzeugwand
+## [werkstatt] Das Parkhaus mit den Lämpchen
 
-In dieser Serie ist der Computer eine **Werkstatt**. Nach und nach lernst du ihre Teile kennen: die Werkbank, an der gearbeitet wird (der Prozessor), die Ablage daneben (der Arbeitsspeicher) und das Lager (die SSD). Heute beginnen wir mit dem Kleinsten, was es dort gibt.
+Viele Parkhäuser haben über jedem Stellplatz ein kleines Lämpchen. Ein Sensor an der Decke merkt, ob unter ihm ein Auto steht, und das Lämpchen zeigt es an: **grün = frei, rot = belegt**. Mehr kann es nicht sagen – und mehr muss es auch nicht.
 
-An der Wand hängt eine Werkzeugwand mit aufgemalten Umrissen: hier der Hammer, da die Zange, dort der Schraubendreher. Jeder Platz ist entweder **belegt oder leer**. Ein Blick genügt, und wer in der Werkstatt arbeitet, weiß, welches Werkzeug gerade unterwegs ist.
+Jedes dieser Lämpchen ist ein Bit: frei = 0, belegt = 1. Eine Reihe aus acht Stellplätzen ist ein Byte – sie kann 256 verschiedene Belegungen zeigen, von „alles frei“ bis „alles voll“. Dabei zählt nicht nur, *wie viele* Autos dastehen (0 bis 8), sondern *welche* Plätze belegt sind: Platz 1 und 3 belegt ist ein anderes Muster als Platz 2 und 5. Darum sind es 256 Muster und nicht nur 9. Und die Anzeige an der Einfahrt („Ebene 2: 37 frei“) macht, was Computer ständig tun: Sie fasst viele einzelne Bits zu einer Auskunft zusammen.
 
-Jeder dieser Plätze ist ein Bit. Belegt = 1, leer = 0. Eine Reihe mit acht Plätzen ist ein Byte: Sie kann 256 verschiedene Belegungen zeigen. Und so wie die Werkzeugwand nur etwas sagt, wenn man weiß, welcher Umriss zu welchem Werkzeug gehört, sagen Bits nur etwas, wenn man die Kodierung kennt.
+Dass Grün „frei“ heißt, steht nicht im Licht selbst. Es ist eine Abmachung, die jeder Autofahrer kennt – eine **Kodierung**, genau wie die Laternen im Kirchturm. Man könnte genauso gut vereinbaren: Lampe aus = frei, Lampe an = belegt. Hauptsache, alle wissen es.
 
-> **Werkstatt:** Bit = ein Platz an der Werkzeugwand, belegt oder leer. Byte = eine Reihe aus acht Plätzen.
+> **Im Bild:** Bit = ein Stellplatz-Lämpchen, frei (0) oder belegt (1). Byte = eine Reihe aus acht Stellplätzen. Kodierung = die Abmachung, was Grün und Rot bedeuten.
 
-> **Achtung:** Hier hinkt das Bild: Ein Werkzeug kann auch schief oder halb im Platz hängen. Ein Bit kennt kein „halb“ – es ist immer genau 0 oder 1. Genau diese Eindeutigkeit macht Computer so zuverlässig.
+> **Achtung:** Hier hinkt das Bild: Die Lämpchen springen von selbst um, sobald ein Auto kommt oder fährt – sie zeigen nur, was draußen gerade los ist. Ein gespeichertes Bit im Computer dagegen behält seinen Wert, bis der Computer es gezielt umschaltet. Und acht Stellplätze liegen nur zufällig nebeneinander, während der Computer ein Byte immer als Einheit liest.
 
 ## [selbst] Finde die Zahl mit möglichst wenigen Fragen
 
@@ -96,6 +96,17 @@ max: 64
 :::
 
 Wie viele Fragen hast du gebraucht? Wer immer halbiert, braucht bei 64 Zahlen **genau 6 Fragen** – denn 2⁶ = 64. Eine Frage, die die Möglichkeiten genau halbiert, liefert genau ein Bit. Die gesuchte Zahl steckt also in 6 Bit, so wie ein Buchstabe im ASCII-Code in 7 bis 8 Bit steckt.
+
+### Schreib einen Buchstaben
+
+Jetzt du: Stell mit acht Schaltern das große **P** ein. Tipp: Das A ist `01000001`, das B `01000010`, das C `01000011`. Bei allen Großbuchstaben sind die ersten drei Schalter `010`, und jeder Buchstabe ist im ASCII-Code genau eins weiter als der vorige. Das P ist der 16. Buchstabe – es kommt also 15 Buchstaben nach dem A. Probier dich heran – die Anzeige unter den Schaltern verrät dir, wo du gerade bist.
+
+:::sim bit-schalter
+id: s1f01-u02
+ziel: P
+:::
+
+Wie du Bitmuster „hochzählst“, ohne zu probieren, lernst du in Folge 4.
 
 **Zum Weiterdenken:** Wie viele Fragen bräuchtest du für eine Zahl zwischen 1 und 1000? (Tipp: Schau in die Tabelle im Abschnitt „Das Prinzip“. Die Antwort ist 10, denn 2¹⁰ = 1 024 reicht gerade.)
 
@@ -195,8 +206,8 @@ Vorne: Dein Internet hat 100 Mbit/s. Wie viele Megabyte pro Sekunde sind das hö
 Hinten: 12,5 MB/s – denn 1 Byte = 8 Bit, also 100 Megabit ÷ 8 = 12,5 Megabyte.
 
 ### s1f01-k08
-Vorne: Was zeigt die Werkzeugwand-Analogie für Bit und Byte?
-Hinten: Ein Bit ist ein Platz an der Wand, belegt (1) oder leer (0). Ein Byte ist eine Reihe aus acht solchen Plätzen.
+Vorne: Im Parkhaus-Bild ist ein Lämpchen (frei oder belegt) ein Bit. Was ist dann eine Reihe aus acht Stellplätzen?
+Hinten: Ein Byte: 8 Bit, die zusammen 256 verschiedene Belegungen zeigen können.
 
 ## [beidir] Wo steckt das bei dir?
 

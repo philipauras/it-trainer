@@ -2,6 +2,11 @@
 
 Erscheint in der App als „Was ist neu“ nach einem Update. Oberster Eintrag = Version aus config.json.
 
+## 1.3.0 – 26.11.2026
+- Folge 1 überarbeitet: statt der Werkstatt ein Bild, das das Bit genauer trifft – das Parkhaus mit den Lämpchen.
+- Neue Übung in Folge 1: Stell mit acht Schaltern den Buchstaben P ein.
+- Neue Namen: Die Stufen heißen jetzt Grundlagen, Aufbau und Vertiefung; am Ende jeder Staffel wartet ein Abschlussprojekt. Dein Fortschritt bleibt erhalten.
+
 ## 1.2.0 – 26.11.2026
 - Neues App-Icon: eine einzige Linse aus Rauchglas – ganz reduziert, nur Licht und Schatten. Tipp: App einmal vom Startbildschirm entfernen und neu hinzufügen.
 

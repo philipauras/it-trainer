@@ -1,6 +1,6 @@
 {
  "_hinweis": "ERZEUGT von werkzeuge/bauen.mjs aus content/ und config.json – nicht von Hand bearbeiten (npm run bauen).",
- "version": "1.2.0",
+ "version": "1.3.0",
  "live": false,
  "staffeln": [
   {
@@ -39,7 +39,8 @@
      ],
      "fragen": 7,
      "uebungen": [
-      "s1f01-u01"
+      "s1f01-u01",
+      "s1f01-u02"
      ]
     },
     {
@@ -100,7 +101,7 @@
      "id": "s1f08",
      "nr": 8,
      "titel": "Das Betriebssystem",
-     "untertitel": "Der Werkstattmeister",
+     "untertitel": "Der Verwalter im Hintergrund",
      "schicht": "betriebssystem",
      "art": "folge",
      "status": "geplant"
@@ -117,10 +118,10 @@
     {
      "id": "s1g",
      "nr": 10,
-     "titel": "Gesellenstück: Der Addierer",
-     "untertitel": "Aus Gattern einen Rechner bauen",
+     "titel": "Ein Rechner aus Gattern",
+     "untertitel": "Zwei Zahlen addieren",
      "schicht": "logik",
-     "art": "gesellenstueck",
+     "art": "abschlussprojekt",
      "status": "geplant"
     }
    ]
@@ -218,6 +219,15 @@
   }
  ],
  "neuigkeiten": [
+  {
+   "version": "1.3.0",
+   "datum": "26.11.2026",
+   "punkte": [
+    "Folge 1 überarbeitet: statt der Werkstatt ein Bild, das das Bit genauer trifft – das Parkhaus mit den Lämpchen.",
+    "Neue Übung in Folge 1: Stell mit acht Schaltern den Buchstaben P ein.",
+    "Neue Namen: Die Stufen heißen jetzt Grundlagen, Aufbau und Vertiefung; am Ende jeder Staffel wartet ein Abschlussprojekt. Dein Fortschritt bleibt erhalten."
+   ]
+  },
   {
    "version": "1.2.0",
    "datum": "26.11.2026",

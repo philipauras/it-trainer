@@ -1,4 +1,4 @@
-// Eine Folge Schritt für Schritt: a Einstieg · b Geschichte · c Prinzip · d Werkstatt · e Selbst machen ·
+// Eine Folge Schritt für Schritt: a Einstieg · b Geschichte · c Prinzip · d Im Bild · e Selbst machen ·
 // f Quiz · g Karteikarten · h Wo steckt das bei dir? (Reihenfolge und Titel aus config.json → abschnitte)
 import { el, $$, toast } from '../kern/dom.js';
 import { besuche, pruefeFertig } from '../kern/fortschritt.js';
@@ -48,7 +48,7 @@ export async function zeigeFolge(ctx, [id, abschnittId]) {
   }, [el('span', { class: 'schritt-buchstabe', text: erledigt.has(a.id) && i !== pos ? '✓' : a.buchstabe }), el('span', { class: 'schritt-titel', text: a.titel })])));
 
   const zurueckZu = ctx.unterwegs.nachlesen?.folge === id ? ctx.unterwegs.nachlesen : null;
-  const kennung = folge.art === 'gesellenstueck' ? 'Gesellenstück' : `Folge ${folge.nr}`;
+  const kennung = folge.art === 'abschlussprojekt' ? 'Abschlussprojekt' : `Folge ${folge.nr}`;
   const kopf = el('header', { class: 'folgen-kopf' }, [
     zurueckLink(`#staffel/${folge.staffel}`, `Staffel ${folge.staffel}`),
     el('p', { class: 'kicker', text: `${kennung} · ${folge.dauer} Min.` }),
