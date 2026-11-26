@@ -1,0 +1,61 @@
+/*
+ * Gestaltung – Schrift und neutrale Farben (Herkunft: bim-trainer css/thema.css).
+ * Die Akzentfarbe der App und die Hintergrundfarbe kommen aus config.json → farben (js/kern/thema.js setzt
+ * --c-akzent, --c-akzent-hover, --c-akzent-weich, --c-bg). Die Werte hier sind nur der Zustand vor dem Laden.
+ *
+ *   Schrift     Barlow 400/500/600/700, Code: Systemschrift mit fester Breite
+ *   Richtig     Grün     Falsch  Orange   (wie bim-trainer)
+ *   Typo-Skala  40 (große Zahl) · 28 (Titel) · 22 (Abschnitt) · 18 (Fließtext) · 15 px (Zusatz, kleinste Schrift)
+ *   Raster      20 px Seitenrand, Tippflächen ≥ 44 px
+ */
+@font-face { font-family: "Barlow"; src: url("../fonts/barlow-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../fonts/barlow-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../fonts/barlow-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../fonts/barlow-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
+:root {
+  --schrift: "Barlow", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --schrift-code: ui-monospace, "Cascadia Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  --c-bg: #f3f5f7;
+  --c-flaeche: #ffffff;
+  --c-flaeche-2: #e9edf1;
+  --c-linie: #d9dfe6;
+  --c-text: #161a1f;
+  --c-text-2: #444d58;
+  --c-text-3: #66707c;
+  --c-akzent: #0b6e8a;
+  --c-akzent-hover: #095b72;
+  --c-akzent-weich: #e1f1f5;
+  --c-auf-akzent: #ffffff;
+  --c-richtig: #15803d;
+  --c-richtig-bg: #e5f4ea;
+  --c-falsch: #c2410c;
+  --c-falsch-bg: #fdece2;
+  --c-entwurf: #a16207;
+  --c-entwurf-bg: #fdf4d8;
+  --c-lampe: #f5b301;
+  --schatten: 0 1px 2px rgb(20 30 45 / .05), 0 6px 20px rgb(20 30 45 / .07);
+  --rund: 14px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="hell"]) {
+    --c-bg: #0e1116; --c-flaeche: #171b22; --c-flaeche-2: #212732; --c-linie: #2d3440;
+    --c-text: #eceff3; --c-text-2: #aab2bd; --c-text-3: #8c95a2;
+    --c-akzent: #4cc3dc; --c-akzent-hover: #7fd5e7; --c-akzent-weich: #11313a; --c-auf-akzent: #0b1116;
+    --c-richtig: #4ade80; --c-richtig-bg: #0f2e1c; --c-falsch: #fb923c; --c-falsch-bg: #3a2010;
+    --c-entwurf: #facc15; --c-entwurf-bg: #33290b; --c-lampe: #ffd34d;
+    --schatten: 0 1px 2px rgb(0 0 0 / .4), 0 6px 20px rgb(0 0 0 / .3);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dunkel"] {
+  --c-bg: #0e1116; --c-flaeche: #171b22; --c-flaeche-2: #212732; --c-linie: #2d3440;
+  --c-text: #eceff3; --c-text-2: #aab2bd; --c-text-3: #8c95a2;
+  --c-auf-akzent: #0b1116;
+  --c-richtig: #4ade80; --c-richtig-bg: #0f2e1c; --c-falsch: #fb923c; --c-falsch-bg: #3a2010;
+  --c-entwurf: #facc15; --c-entwurf-bg: #33290b; --c-lampe: #ffd34d;
+  --schatten: 0 1px 2px rgb(0 0 0 / .4), 0 6px 20px rgb(0 0 0 / .3);
+  color-scheme: dark;
+}

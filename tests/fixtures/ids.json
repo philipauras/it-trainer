@@ -1,0 +1,47 @@
+{
+ "hinweis": "Eingefrorene IDs – nie entfernen oder ändern (Lernfortschritt!). Neue mit: npm run ids-aufnehmen",
+ "ids": {
+  "folgen": [
+   "s1f01"
+  ],
+  "fragen": [
+   "s1f01-q01",
+   "s1f01-q02",
+   "s1f01-q03",
+   "s1f01-q04",
+   "s1f01-q05",
+   "s1f01-q06",
+   "s1f01-q07"
+  ],
+  "karten": [
+   "s1f01-k01",
+   "s1f01-k02",
+   "s1f01-k03",
+   "s1f01-k04",
+   "s1f01-k05",
+   "s1f01-k06",
+   "s1f01-k07",
+   "s1f01-k08"
+  ],
+  "uebungen": [
+   "s1f01-u01"
+  ],
+  "glossar": [
+   "ascii",
+   "binaersystem",
+   "bit",
+   "byte",
+   "cloudflare-pages",
+   "cpu",
+   "docker-container",
+   "information",
+   "kilo-mega-giga",
+   "kodierung",
+   "mbit-s",
+   "ram",
+   "ssd",
+   "utf-8",
+   "vps"
+  ]
+ }
+}

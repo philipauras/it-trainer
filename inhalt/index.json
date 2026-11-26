@@ -1,0 +1,232 @@
+{
+ "_hinweis": "ERZEUGT von werkzeuge/bauen.mjs aus content/ und config.json – nicht von Hand bearbeiten (npm run bauen).",
+ "version": "1.0.0",
+ "live": false,
+ "staffeln": [
+  {
+   "nr": 1,
+   "id": "s1",
+   "titel": "Was ist ein Computer?",
+   "stufe": "lehrling",
+   "schichten": [
+    "strom",
+    "transistor",
+    "logik",
+    "prozessor",
+    "betriebssystem"
+   ],
+   "beschreibung": "Vom einzelnen Bit über Transistoren und Logikgatter bis zum Prozessor und zum Betriebssystem.",
+   "folgen": [
+    {
+     "id": "s1f01",
+     "nr": 1,
+     "titel": "Was ist Information?",
+     "untertitel": "Das Bit",
+     "schicht": "strom",
+     "art": "folge",
+     "status": "entwurf",
+     "dauer": 15,
+     "datei": "inhalt/folgen/s1f01.json",
+     "karten": [
+      "s1f01-k01",
+      "s1f01-k02",
+      "s1f01-k03",
+      "s1f01-k04",
+      "s1f01-k05",
+      "s1f01-k06",
+      "s1f01-k07",
+      "s1f01-k08"
+     ],
+     "fragen": 7,
+     "uebungen": [
+      "s1f01-u01"
+     ]
+    },
+    {
+     "id": "s1f02",
+     "nr": 2,
+     "titel": "Strom als Sprache",
+     "untertitel": "Vom Relais zum Transistor",
+     "schicht": "transistor",
+     "art": "folge",
+     "status": "geplant"
+    },
+    {
+     "id": "s1f03",
+     "nr": 3,
+     "titel": "Logikgatter",
+     "untertitel": "UND, ODER, NICHT",
+     "schicht": "logik",
+     "art": "folge",
+     "status": "geplant"
+    },
+    {
+     "id": "s1f04",
+     "nr": 4,
+     "titel": "Binär zählen und rechnen",
+     "untertitel": "Der Halbaddierer",
+     "schicht": "logik",
+     "art": "folge",
+     "status": "geplant"
+    },
+    {
+     "id": "s1f05",
+     "nr": 5,
+     "titel": "Wie sich ein Computer etwas merkt",
+     "untertitel": "Flipflop und RAM",
+     "schicht": "logik",
+     "art": "folge",
+     "status": "geplant"
+    },
+    {
+     "id": "s1f06",
+     "nr": 6,
+     "titel": "Der Prozessor",
+     "untertitel": "Takt, Holen, Entschlüsseln, Ausführen",
+     "schicht": "prozessor",
+     "art": "folge",
+     "status": "geplant"
+    },
+    {
+     "id": "s1f07",
+     "nr": 7,
+     "titel": "Speicherhierarchie",
+     "untertitel": "Register, Cache, RAM, SSD",
+     "schicht": "prozessor",
+     "art": "folge",
+     "status": "geplant"
+    },
+    {
+     "id": "s1f08",
+     "nr": 8,
+     "titel": "Das Betriebssystem",
+     "untertitel": "Der Werkstattmeister",
+     "schicht": "betriebssystem",
+     "art": "folge",
+     "status": "geplant"
+    },
+    {
+     "id": "s1f09",
+     "nr": 9,
+     "titel": "Was passiert beim Doppelklick?",
+     "untertitel": "Dateien und Programme",
+     "schicht": "betriebssystem",
+     "art": "folge",
+     "status": "geplant"
+    },
+    {
+     "id": "s1g",
+     "nr": 10,
+     "titel": "Gesellenstück: Der Addierer",
+     "untertitel": "Aus Gattern einen Rechner bauen",
+     "schicht": "logik",
+     "art": "gesellenstueck",
+     "status": "geplant"
+    }
+   ]
+  },
+  {
+   "nr": 2,
+   "id": "s2",
+   "titel": "Wie Computer reden",
+   "stufe": "lehrling",
+   "schichten": [
+    "netzwerk"
+   ],
+   "beschreibung": "Netzwerk, Internet, HTTP und Verschlüsselung.",
+   "folgen": []
+  },
+  {
+   "nr": 3,
+   "id": "s3",
+   "titel": "Programmieren denken",
+   "stufe": "geselle",
+   "schichten": [
+    "programmieren"
+   ],
+   "beschreibung": "Mit Python lernen, wie man einem Computer Schritt für Schritt Anweisungen gibt – direkt im Browser.",
+   "folgen": []
+  },
+  {
+   "nr": 4,
+   "id": "s4",
+   "titel": "Werkzeug der Profis",
+   "stufe": "geselle",
+   "schichten": [
+    "betriebssystem",
+    "programmieren"
+   ],
+   "beschreibung": "Terminal, Linux und Git.",
+   "folgen": []
+  },
+  {
+   "nr": 5,
+   "id": "s5",
+   "titel": "Web",
+   "stufe": "geselle",
+   "schichten": [
+    "web"
+   ],
+   "beschreibung": "HTML, CSS und JavaScript – so entsteht eine App wie diese.",
+   "folgen": []
+  },
+  {
+   "nr": 6,
+   "id": "s6",
+   "titel": "Daten & Datenbanken",
+   "stufe": "meister",
+   "schichten": [
+    "daten"
+   ],
+   "beschreibung": "Tabellen, Abfragen und warum Ordnung in Daten alles ist.",
+   "folgen": []
+  },
+  {
+   "nr": 7,
+   "id": "s7",
+   "titel": "Server & Betrieb",
+   "stufe": "meister",
+   "schichten": [
+    "server"
+   ],
+   "beschreibung": "Docker, Sicherheit und Dienste, die rund um die Uhr laufen.",
+   "folgen": []
+  },
+  {
+   "nr": 8,
+   "id": "s8",
+   "titel": "KI verstehen & mit KI bauen",
+   "stufe": "meister",
+   "schichten": [
+    "ki"
+   ],
+   "beschreibung": "Wie Sprachmodelle funktionieren und wie man mit ihnen arbeitet.",
+   "folgen": []
+  },
+  {
+   "nr": 9,
+   "id": "sbim",
+   "symbol": "★",
+   "titel": "Brücke zu BIM",
+   "stufe": "meister",
+   "schichten": [
+    "daten",
+    "programmieren"
+   ],
+   "beschreibung": "IFC als Daten verstehen und mit Python und ifcopenshell auswerten.",
+   "folgen": []
+  }
+ ],
+ "neuigkeiten": [
+  {
+   "version": "1.0.0",
+   "datum": "26.11.2026",
+   "punkte": [
+    "Der IT-Trainer ist da: Schichten-Karte „Vom Sandkorn zur KI“ mit dem Plan aller Staffeln",
+    "Folge 1: Was ist Information? – das Bit, mit Lichtschaltern und Zahlenraten zum Ausprobieren",
+    "Karteikasten mit Wiederholung nach dem Leitner-System",
+    "Fortschritt als Datei oder Code sichern und auf ein anderes Gerät übertragen"
+   ]
+  }
+ ]
+}

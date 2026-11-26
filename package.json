@@ -1,0 +1,16 @@
+{
+  "name": "it-trainer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "werkzeuge/server.sh",
+    "bauen": "node werkzeuge/bauen.mjs",
+    "test": "node --test 'tests/*.test.mjs'",
+    "pruefen": "node werkzeuge/bauen.mjs --pruefen",
+    "oberflaeche": "node werkzeuge/oberflaeche-pruefen.mjs",
+    "ids-aufnehmen": "node werkzeuge/ids-aufnehmen.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.151.1"
+  }
+}

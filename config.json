@@ -1,0 +1,81 @@
+{
+  "_hinweis": "Alles Themenspezifische der App steht hier. Format: content/README.md, Abschnitt „config.json“. Nach Änderungen: npm run bauen.",
+  "app": {
+    "id": "it-trainer",
+    "name": "IT-Trainer",
+    "kurzname": "IT-Trainer",
+    "untertitel": "Vom Sandkorn zur KI",
+    "beschreibung": "IT und Programmieren von Grund auf – Folge für Folge, offline nutzbar.",
+    "version": "1.0.0",
+    "speicherSchluessel": "ittrainer.v1",
+    "codePraefix": "IT1"
+  },
+  "farben": {
+    "hell": { "akzent": "#0b6e8a", "akzentHover": "#095b72", "akzentWeich": "#e1f1f5", "hintergrund": "#f3f5f7" },
+    "dunkel": { "akzent": "#4cc3dc", "akzentHover": "#7fd5e7", "akzentWeich": "#11313a", "hintergrund": "#0e1116" }
+  },
+  "stufen": [
+    { "id": "lehrling", "titel": "Lehrling", "beschreibung": "Wie ein Computer von innen funktioniert und wie er mit anderen spricht." },
+    { "id": "geselle", "titel": "Geselle", "beschreibung": "Selbst programmieren und mit den Werkzeugen der Profis arbeiten." },
+    { "id": "meister", "titel": "Meister", "beschreibung": "Daten, Server und KI – eigene Systeme bauen und betreiben." }
+  ],
+  "schichten": [
+    { "id": "strom", "titel": "Strom", "kurz": "Elektronen tragen Ja und Nein", "farbe": "#d99a0b" },
+    { "id": "transistor", "titel": "Transistor", "kurz": "Schalter ohne bewegliche Teile", "farbe": "#e0761f" },
+    { "id": "logik", "titel": "Logik", "kurz": "UND, ODER, NICHT – Rechnen mit Schaltern", "farbe": "#d4504a" },
+    { "id": "prozessor", "titel": "Prozessor", "kurz": "Die Werkbank, die Befehle abarbeitet", "farbe": "#c2417a" },
+    { "id": "betriebssystem", "titel": "Betriebssystem", "kurz": "Der Werkstattmeister verteilt die Arbeit", "farbe": "#9150c8" },
+    { "id": "netzwerk", "titel": "Netzwerk", "kurz": "Computer sprechen miteinander", "farbe": "#5f5bdc" },
+    { "id": "programmieren", "titel": "Programmieren", "kurz": "Dem Computer Arbeitsanweisungen schreiben", "farbe": "#2f72d6" },
+    { "id": "web", "titel": "Web", "kurz": "Seiten und Apps im Browser", "farbe": "#1688b8" },
+    { "id": "daten", "titel": "Daten", "kurz": "Wissen ordnen, speichern, abfragen", "farbe": "#0f9590" },
+    { "id": "server", "titel": "Server", "kurz": "Dienste, die rund um die Uhr laufen", "farbe": "#2b935a" },
+    { "id": "ki", "titel": "KI", "kurz": "Maschinen, die aus Beispielen lernen", "farbe": "#6f8f1f" }
+  ],
+  "staffeln": [
+    {
+      "nr": 1, "id": "s1", "titel": "Was ist ein Computer?", "stufe": "lehrling",
+      "schichten": ["strom", "transistor", "logik", "prozessor", "betriebssystem"],
+      "beschreibung": "Vom einzelnen Bit über Transistoren und Logikgatter bis zum Prozessor und zum Betriebssystem.",
+      "folgen": [
+        { "id": "s1f01", "titel": "Was ist Information?", "untertitel": "Das Bit", "schicht": "strom" },
+        { "id": "s1f02", "titel": "Strom als Sprache", "untertitel": "Vom Relais zum Transistor", "schicht": "transistor" },
+        { "id": "s1f03", "titel": "Logikgatter", "untertitel": "UND, ODER, NICHT", "schicht": "logik" },
+        { "id": "s1f04", "titel": "Binär zählen und rechnen", "untertitel": "Der Halbaddierer", "schicht": "logik" },
+        { "id": "s1f05", "titel": "Wie sich ein Computer etwas merkt", "untertitel": "Flipflop und RAM", "schicht": "logik" },
+        { "id": "s1f06", "titel": "Der Prozessor", "untertitel": "Takt, Holen, Entschlüsseln, Ausführen", "schicht": "prozessor" },
+        { "id": "s1f07", "titel": "Speicherhierarchie", "untertitel": "Register, Cache, RAM, SSD", "schicht": "prozessor" },
+        { "id": "s1f08", "titel": "Das Betriebssystem", "untertitel": "Der Werkstattmeister", "schicht": "betriebssystem" },
+        { "id": "s1f09", "titel": "Was passiert beim Doppelklick?", "untertitel": "Dateien und Programme", "schicht": "betriebssystem" },
+        { "id": "s1g", "titel": "Gesellenstück: Der Addierer", "untertitel": "Aus Gattern einen Rechner bauen", "schicht": "logik", "art": "gesellenstueck" }
+      ]
+    },
+    { "nr": 2, "id": "s2", "titel": "Wie Computer reden", "stufe": "lehrling", "schichten": ["netzwerk"], "beschreibung": "Netzwerk, Internet, HTTP und Verschlüsselung.", "folgen": [] },
+    { "nr": 3, "id": "s3", "titel": "Programmieren denken", "stufe": "geselle", "schichten": ["programmieren"], "beschreibung": "Mit Python lernen, wie man einem Computer Schritt für Schritt Anweisungen gibt – direkt im Browser.", "folgen": [] },
+    { "nr": 4, "id": "s4", "titel": "Werkzeug der Profis", "stufe": "geselle", "schichten": ["betriebssystem", "programmieren"], "beschreibung": "Terminal, Linux und Git.", "folgen": [] },
+    { "nr": 5, "id": "s5", "titel": "Web", "stufe": "geselle", "schichten": ["web"], "beschreibung": "HTML, CSS und JavaScript – so entsteht eine App wie diese.", "folgen": [] },
+    { "nr": 6, "id": "s6", "titel": "Daten & Datenbanken", "stufe": "meister", "schichten": ["daten"], "beschreibung": "Tabellen, Abfragen und warum Ordnung in Daten alles ist.", "folgen": [] },
+    { "nr": 7, "id": "s7", "titel": "Server & Betrieb", "stufe": "meister", "schichten": ["server"], "beschreibung": "Docker, Sicherheit und Dienste, die rund um die Uhr laufen.", "folgen": [] },
+    { "nr": 8, "id": "s8", "titel": "KI verstehen & mit KI bauen", "stufe": "meister", "schichten": ["ki"], "beschreibung": "Wie Sprachmodelle funktionieren und wie man mit ihnen arbeitet.", "folgen": [] },
+    { "nr": 9, "id": "sbim", "symbol": "★", "titel": "Brücke zu BIM", "stufe": "meister", "schichten": ["daten", "programmieren"], "beschreibung": "IFC als Daten verstehen und mit Python und ifcopenshell auswerten.", "folgen": [] }
+  ],
+  "abschnitte": [
+    { "id": "einstieg", "buchstabe": "a", "titel": "Einstieg", "symbol": "?" },
+    { "id": "geschichte", "buchstabe": "b", "titel": "Geschichte", "symbol": "◷" },
+    { "id": "prinzip", "buchstabe": "c", "titel": "Das Prinzip", "symbol": "◎" },
+    { "id": "werkstatt", "buchstabe": "d", "titel": "In der Werkstatt", "symbol": "⚒" },
+    { "id": "selbst", "buchstabe": "e", "titel": "Selbst machen", "symbol": "✋" },
+    { "id": "quiz", "buchstabe": "f", "titel": "Quiz", "symbol": "✓" },
+    { "id": "karten", "buchstabe": "g", "titel": "Karteikarten", "symbol": "▤" },
+    { "id": "beidir", "buchstabe": "h", "titel": "Wo steckt das bei dir?", "symbol": "⌂" }
+  ],
+  "boxen": { "Merke": "merke", "Werkstatt": "werkstatt", "Achtung": "achtung", "Beispiel": "beispiel", "Wusstest du?": "wusstest" },
+  "regeln": {
+    "status": ["entwurf", "geprueft", "freigegeben"],
+    "liveStatus": "freigegeben",
+    "quiz": { "minAntworten": 2, "maxAntworten": 4, "minFragen": 4 },
+    "karten": { "minKarten": 4 },
+    "leitner": { "intervalleTage": [1, 2, 4, 8, 16], "maxJeRunde": 20, "neuJeRunde": 10 },
+    "folgeFertigAb": ["quiz", "karten"]
+  }
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>IT-Trainer</title>
+  <meta name="description" content="IT und Programmieren von Grund auf – offline nutzbar.">
+  <meta name="theme-color" content="#f3f5f7">
+  <meta name="robots" content="noindex">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/icon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="stylesheet" href="css/thema.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="sprungmarke" href="#inhalt">Zum Inhalt</a>
+  <div class="rahmen">
+    <nav class="hauptnavi" aria-label="Hauptbereiche">
+      <a href="#" data-navi="start"><span class="navi-symbol" aria-hidden="true">◫</span><span>Start</span></a>
+      <a href="#karten" data-navi="karten"><span class="navi-symbol" aria-hidden="true">▤</span><span>Karten</span><span class="navi-zahl" id="navi-faellig" hidden></span></a>
+      <a href="#glossar" data-navi="glossar"><span class="navi-symbol" aria-hidden="true">Aa</span><span>Glossar</span></a>
+      <a href="#einstellungen" data-navi="einstellungen"><span class="navi-symbol" aria-hidden="true">⋯</span><span>Mehr</span></a>
+    </nav>
+    <main id="inhalt" class="ansicht" tabindex="-1">
+      <p class="laden" id="laden-hinweis">Wird geladen …</p>
+      <noscript><p>Diese App braucht JavaScript.</p></noscript>
+    </main>
+  </div>
+
+  <dialog id="dialog-glossar" class="blatt" aria-labelledby="glossar-blatt-titel">
+    <form method="dialog">
+      <p class="kicker">Glossar</p>
+      <h2 class="blatt-titel" id="glossar-blatt-titel"></h2>
+      <p class="blatt-text" id="glossar-blatt-text"></p>
+      <p class="blatt-text blatt-mehr" id="glossar-blatt-mehr"></p>
+      <div class="knopfreihe">
+        <a class="knopf knopf-zweit" id="glossar-blatt-link" href="#glossar">Im Glossar öffnen</a>
+        <button class="knopf" value="zu">Schließen</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="dialog-frage" class="blatt" aria-labelledby="frage-blatt-titel">
+    <form method="dialog">
+      <h2 class="blatt-titel" id="frage-blatt-titel"></h2>
+      <p class="blatt-text" id="frage-blatt-text"></p>
+      <div class="knopfreihe">
+        <button class="knopf knopf-zweit" value="nein" id="frage-blatt-nein">Abbrechen</button>
+        <button class="knopf" value="ja" id="frage-blatt-ja">OK</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <div class="update-leiste" id="update-leiste" role="status" hidden>
+    <span>Neue Version verfügbar</span>
+    <button type="button" class="update-knopf" id="knopf-neu-laden">Neu laden</button>
+  </div>
+</body>
+</html>

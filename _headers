@@ -1,0 +1,23 @@
+# HTTP-Header für Cloudflare Pages
+# Content-Security-Policy: Die App spricht nur mit der eigenen Adresse und führt nur eigene Skripte aus.
+# (Für Python im Browser ab Staffel 3 kommt hier gezielt die Pyodide-Quelle dazu – siehe docs/code-uebungen.md.)
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  X-Robots-Tag: noindex
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+
+# App-Hülle, Service Worker, Manifest und Inhalte immer frisch prüfen (offline übernimmt der Service Worker)
+/
+  Cache-Control: no-cache
+/sw.js
+  Cache-Control: no-cache
+/config.json
+  Cache-Control: no-cache
+/manifest.webmanifest
+  Content-Type: application/manifest+json
+  Cache-Control: no-cache
+/inhalt/*
+  Cache-Control: no-cache

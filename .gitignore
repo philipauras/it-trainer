@@ -1,0 +1,22 @@
+# Geheimnisse – nie ins Repo
+.env*
+!.env.example
+.dev.vars
+*.pem
+*.key
+cookies.txt
+# Abhängigkeiten
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+# Build / Werkzeuge
+dist/
+build/
+.wrangler/
+.cache/
+# System / Logs
+.DS_Store
+Thumbs.db
+*.log
