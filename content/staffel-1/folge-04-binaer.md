@@ -26,7 +26,7 @@ Versuch einmal, MDCCCLXXXVIII und CCXIV schriftlich zu addieren. Mit römischen 
 
 Die Lösung ist das **Stellenwertsystem**: Eine Ziffer bekommt ihren Wert erst durch ihren Platz. In 333 bedeutet jede 3 etwas anderes – dreihundert, dreißig, drei. Die Babylonier kannten so etwas schon vor rund 4000 Jahren, allerdings zur Grundzahl 60 (davon leben noch unsere 60 Minuten und 60 Sekunden).
 
-Unser heutiges **Zehnersystem** mit neun Ziffern und der Null entstand in **Indien**. Spätestens im 7. Jahrhundert war die Null dort eine richtige Zahl, mit der man rechnet: Der Mathematiker **Brahmagupta** schrieb **628** Regeln dafür auf, etwa dass eine Zahl plus null die Zahl selbst ergibt. Die Null ist der Trick, der das System erst funktionieren lässt: Sie hält einen Platz frei. Ohne sie könnte man 305 und 35 nicht unterscheiden.
+Unser heutiges **Zehnersystem** mit neun Ziffern und der Null entstand in **Indien**. Spätestens im 7. Jahrhundert war die Null dort eine richtige Zahl, mit der man rechnet: Der Mathematiker **Brahmagupta** schrieb **628** Regeln dafür auf, etwa dass eine Zahl plus 0 die Zahl selbst ergibt. Die Null ist der Trick, der das System erst funktionieren lässt: Sie hält einen Platz frei. Ohne sie könnte man 305 und 35 nicht unterscheiden.
 
 Über die arabische Welt – um **825** schrieb **al-Chwarizmi** in Bagdad darüber, aus seinem Namen wurde unser Wort „Algorithmus“ – kam das System nach Europa. Darum heißen die Ziffern bei uns „arabische Ziffern“, obwohl sie aus Indien stammen.
 

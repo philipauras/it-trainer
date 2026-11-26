@@ -223,11 +223,11 @@ Erklärung: Zwei Bits ergeben 2 × 2 = 4 Muster: 00, 01, 10, 11 – also die Adr
 Nachlesen: prinzip
 
 ### s1f05-q07
-Welche neue Speicherart setzte der Rechner Whirlwind am MIT 1953 als erster Computer ein?
-- [ ] Mit DRAM-Chips von Intel
-- [ ] Mit Flipflops aus Transistoren
-- [x] Mit einem Kernspeicher aus Magnetringen
-- [ ] Mit einer Festplatte als Arbeitsspeicher
+Welche neue Speicherart bekam der Rechner Whirlwind am MIT im Jahr 1953?
+- [ ] DRAM-Chips von Intel
+- [ ] Flipflops aus Transistoren
+- [x] Einen Kernspeicher aus Magnetringen
+- [ ] Eine Festplatte als Arbeitsspeicher
 Erklärung: Jay Forresters Team fädelte winzige Magnetringe auf ein Drahtgitter; jeder Ring speicherte ein Bit durch seine Magnetisierungsrichtung. Der Kernspeicher blieb bis in die 1970er Jahre üblich – erst DRAM-Chips wie der Intel 1103 lösten ihn ab.
 Nachlesen: geschichte
 

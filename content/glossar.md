@@ -368,7 +368,7 @@ folge: s1f05
 id: kernspeicher
 woerter: Kernspeicher, Magnetkernspeicher
 kurz: Arbeitsspeicher aus winzigen Magnetringen auf einem Drahtgitter; jeder Ring speichert ein Bit durch seine Magnetisierungsrichtung.
-mehr: Zuerst 1953 im Rechner Whirlwind (MIT, Jay Forrester); bis in die 1970er üblich. Behielt seinen Inhalt auch ohne Strom.
+mehr: Entwickelt am MIT (Jay Forrester), 1953 im Rechner Whirlwind eingebaut; bis in die 1970er üblich. Behielt seinen Inhalt auch ohne Strom.
 folge: s1f05
 
 ## Cache

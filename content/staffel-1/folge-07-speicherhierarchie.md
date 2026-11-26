@@ -1,6 +1,7 @@
 ---
 id: s1f07
-status: entwurf
+status: freigegeben
+faktencheck: 26.11.2026 – Durchgang 1 bestanden, Überarbeitung in Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/
 dauer: 17
 quellen:
 - Computer History Museum, Storage Engine: 1956 – First commercial hard disk drive shipped (IBM 350 RAMAC) | https://www.computerhistory.org/storageengine/first-commercial-hard-disk-drive-shipped/
@@ -44,11 +45,11 @@ Also stapelt man die Bauarten zu einer Treppe:
 |---|---|---|---|
 | **Register** | im Rechenwerk | einige Hundert Byte bis wenige KB | 1 Takt |
 | **L1-Cache** | in jedem Kern | ca. 32–192 KB | ca. 1 ns |
-| **L2-Cache** | meist je Kern | 0,5–2 MB | ca. 4 ns |
+| **L2-Cache** | meist je Kern | 0,5–3 MB | ca. 4 ns |
 | **L3-Cache** | auf dem Chip, für alle Kerne | 8–64 MB | ca. 10–20 ns |
 | **Arbeitsspeicher (RAM)** | eigene Chips | 4–64 GB | ca. 100 ns |
 | **SSD** | Laufwerk | 250 GB – 4 TB | ca. 20–100 µs |
-| **Festplatte** | Laufwerk | 1–20 TB | ca. 5–10 ms |
+| **Festplatte** | Laufwerk | 1–20 TB | ca. 5–15 ms |
 
 L1, L2, L3 heißen die Cache-Stufen nach ihrer Entfernung vom Rechenwerk (*Level* 1, 2, 3). Eine Nanosekunde (ns) ist eine Milliardstel Sekunde, eine Mikrosekunde (µs) eine Millionstel, eine Millisekunde (ms) eine Tausendstel. Die Zahlen sind grobe, typische Größenordnungen – je nach Gerät weichen sie ab.
 
@@ -89,7 +90,7 @@ Klug lernen heißt: Was du gleich wieder brauchst, bleibt aufgeschlagen auf dem 
 
 > **Im Bild:** Blatt in der Hand = Register. Aufgeschlagene Bücher auf dem Schreibtisch = Cache. Regal im Zimmer = Arbeitsspeicher. Bibliothek in der Stadt = SSD. Fernleihe = Festplatte. Das ganze Buch statt einer Seite holen = einen ganzen Block in den Cache holen.
 
-> **Achtung:** Am Schreibtisch bleibt alles liegen, wenn du schlafen gehst – im Computer sind Register, Cache und Arbeitsspeicher beim Ausschalten sofort leer, nur SSD und Festplatte behalten ihren Inhalt. Außerdem nimmst du ein Buch aus der Bibliothek *mit*, der Cache dagegen legt nur eine *Kopie* an: Das Original bleibt im Arbeitsspeicher. Und SSD und Festplatte sind keine Stufen, die nacheinander durchsucht werden wie Bibliothek und Fernleihe – auf ihnen liegen verschiedene Dateien, sie unterscheiden sich vor allem im Tempo.
+> **Achtung:** Am Schreibtisch bleibt alles liegen, wenn du schlafen gehst – im Computer sind Register, Cache und Arbeitsspeicher beim Ausschalten sofort leer, nur SSD und Festplatte behalten ihren Inhalt. Außerdem nimmst du ein Buch aus dem Regal *mit*, der Cache dagegen legt nur eine *Kopie* an: Das Original bleibt im Arbeitsspeicher. Und SSD und Festplatte sind keine Stufen, die nacheinander durchsucht werden wie Bibliothek und Fernleihe – auf ihnen liegen verschiedene Dateien, sie unterscheiden sich vor allem im Tempo.
 
 ## [selbst] Steig die Treppe selbst hinab
 
