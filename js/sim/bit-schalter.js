@@ -65,3 +65,7 @@ export default function starte({ wurzel, optionen, fertig = () => {}, istFertig 
   if (ziel) wurzel._loesen = () => { an = musterZu(ziel); zeichnen(); };
   zeichnen();
 }
+
+export function pruefe(optionen) {
+  if (optionen.ziel != null && !(typeof optionen.ziel === 'string' && /^[!-~]$/.test(optionen.ziel))) throw new Error('bit-schalter: ziel ist ein einzelnes druckbares ASCII-Zeichen');
+}

@@ -120,6 +120,20 @@ buchstabe: ja
 | `bit-schalter` | `schalter` (1–8, Start), `veraenderbar` (ja/nein), `buchstabe` (ja/nein: bei 8 Schaltern ASCII-Zeichen zeigen), `ziel` (ein Zeichen, z. B. `P` – Übung: dieses Zeichen einstellen) | Lichtschalter = Bits, Anzahl der Muster |
 | `zahlenraten` | `max` (Standard 64) | Zahl mit Ja/Nein-Fragen finden; Übung geschafft, wenn gefunden |
 | `code` | `sprache` (python/javascript), `start` | Platzhalter für Code-Übungen (ab Staffel 3) |
+| `transistor` | `art` (transistor/relais), `anordnung` (einzeln/reihe/parallel/nicht), `tabelle` (ja = Übung: Wahrheitstabelle) | Stromkreis: Steuerstrom schaltet Lampe; Reihe = UND, parallel = ODER |
+| `schaltung` | `eingaenge`, `gatter` (z. B. `S=XODER(A,B); C=UND(A,B)`, Typ `?` = wählbar), `ausgaenge`, `namen`, `start`, `zahl`, `tabelle` (Übung), `ziel` + `auswahl` (Übung: richtiges Gatter wählen) | Logikgatter-Schaltungen, zeichnet sich selbst |
+| `binaer` | `stellen` (1–8), `zaehlen` (ja: Knopf +1), `ziel` (Zahlenliste – Übung) | Schalter mit Stellenwerten, Binär ↔ Dezimal |
+| `flipflop` | `art` (sr/ram), `uebung` (ja, bei sr), `ziel` (bei ram, z. B. `1=0101; 2=0011`) | RS-Flipflop aus NODER; kleiner RAM 4 × 4 Bit |
+| `cpu` | `programm` (Zellen mit `;`), `ziel` (`ende` oder `8=10`), `aenderbar` | Spielzeug-Prozessor: Holen, Entschlüsseln, Ausführen |
+| `zugriffszeit` | `festplatte` (ja/nein) | Zugriffszeiten Register … Festplatte, hochgerechnet auf Alltagszeit |
+| `scheduler` | `zeitscheibe` (1–8), `uebung` (ja) | drei Programme teilen sich einen Kern (Zeitscheiben) |
+| `dateisystem` | `dateien` (`name = Stück\|Stück; …`), `ziel` (Dateiname – Übung) | Blöcke, Inhaltsverzeichnis, verkettete Blöcke |
+| `addierer` | `stellen` (2–8), `ziel` (`3+4, 5+6, ueberlauf` – Übung) | Rechenwerk aus Volladdierern mit Übertragswelle |
+| `sortieren` | `elemente` (richtige Reihenfolge, mit `\|` getrennt), `oben`, `unten` | Übung: in Reihenfolge bringen |
+| `zuordnen` | `gruppen` (mit `\|`), `paare` (`Text = Gruppe \| …`) | Übung: Karten Gruppen zuordnen |
+
+Jeder Simulator beschreibt seine Optionen genau im Kopfkommentar von `js/sim/<name>.js`. `npm run bauen` prüft die Einstellungen
+und meldet z. B. eine unlösbare Übung. Übungen ohne Fingertipp-Weg für die automatische Prüfung brauchen einen Haken `_loesen` (siehe `js/sim/README.md`).
 
 Neue Simulatoren programmiert der Agent (`js/sim/`, Anleitung in `js/sim/README.md`).
 

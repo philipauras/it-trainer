@@ -389,3 +389,164 @@ dialog.blatt::backdrop { background: rgb(10 15 20 / .45); }
 body[data-ansicht="folge"] .update-leiste { display: none; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+
+/* Schaltung, Flipflop: Schaltbild */
+.schalt-eingaenge { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; align-items: center; }
+.schalt-knopf {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 64px; min-height: 56px; padding: 6px 12px;
+  border: 2px solid var(--c-linie); border-radius: 12px; background: var(--c-flaeche); cursor: pointer; touch-action: manipulation; color: var(--c-text);
+}
+.schalt-knopf-klein { min-width: 44px; min-height: 48px; padding: 4px 8px; }
+.schalt-knopf-an { border-color: var(--c-lampe); background: color-mix(in srgb, var(--c-lampe) 18%, var(--c-flaeche)); }
+.schalt-name { font-size: 15px; font-weight: 600; color: var(--c-text-2); }
+.schalt-wert { font: 700 20px var(--schrift-code); }
+.gruppe-label { min-width: 70px; font-size: 15px; font-weight: 700; color: var(--c-text-2); }
+.schaltbild, .strom-bild { overflow-x: auto; margin: 4px 0 10px; }
+.schalt-svg, .strom-svg { display: block; width: 100%; max-width: 560px; height: auto; }
+.leitung, .draht { fill: none; stroke: var(--c-text-3); stroke-width: 3; stroke-linejoin: round; opacity: .55; }
+.abzweig { fill: var(--c-text-3); }
+.abzweig-an { fill: var(--c-lampe); }
+.leitung-an, .draht-an { stroke: var(--c-lampe); opacity: 1; stroke-width: 4; }
+.draht-an { stroke-dasharray: 8 6; animation: strom-fluss .6s linear infinite; }
+@keyframes strom-fluss { to { stroke-dashoffset: -14; } }
+@media (prefers-reduced-motion: reduce) { .draht-an { animation: none; stroke-dasharray: none; } }
+.knoten circle { fill: var(--c-flaeche-2); stroke: var(--c-text-3); stroke-width: 2; }
+.knoten-an circle { fill: var(--c-lampe); stroke: var(--c-lampe); }
+.knoten-text, .gatter-text, .ausgang-text, .bauteil-text { font: 700 15px var(--schrift); fill: var(--c-text); }
+.knoten-an .knoten-text { fill: var(--c-auf-lampe); }
+.gatter rect { fill: var(--c-flaeche); stroke: var(--c-akzent); stroke-width: 2.5; }
+.gatter-an rect { fill: color-mix(in srgb, var(--c-lampe) 22%, var(--c-flaeche)); }
+.gatter-name { font: 700 15px var(--schrift); fill: var(--c-akzent); }
+.gatter-wahl rect { stroke-dasharray: 6 4; }
+.ausgang circle:not(.ausgang-schein) { fill: var(--c-flaeche-2); stroke: var(--c-text-3); stroke-width: 2; }
+.ausgang-an circle:not(.ausgang-schein) { fill: var(--c-lampe); stroke: var(--c-lampe); }
+.ausgang-schein { fill: var(--c-lampe); opacity: .25; }
+.schalt-wahl { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 10px; }
+.schalt-wahl-knopf { font: 700 17px var(--schrift); }
+.wahl-hinweis { font-weight: 400; font-size: 15px; color: var(--c-text-3); }
+
+/* Wahrheitstabellen */
+.tabelle-rahmen { overflow-x: auto; }
+.wahrheit { border-collapse: collapse; margin: 8px 0; font-variant-numeric: tabular-nums; }
+.wahrheit th, .wahrheit td { vertical-align: middle; padding: 2px 6px; text-align: center; border-bottom: 1px solid var(--c-linie); font-size: 16px; }
+.wahrheit th { font-size: 15px; color: var(--c-text-2); }
+.th-aus { color: var(--c-akzent); }
+.tab-ein, .tab-aus { min-width: 44px; min-height: 44px; border: 0; border-radius: 8px; background: transparent; font: 700 18px var(--schrift-code); color: var(--c-text); cursor: pointer; }
+.tab-ein:hover { background: var(--c-flaeche-2); }
+.tab-aus { border: 2px solid var(--c-linie); background: var(--c-flaeche); }
+.tab-leer { color: var(--c-text-3); }
+.tab-falsch { border-color: var(--c-falsch); background: var(--c-falsch-bg); }
+.td-soll { font-weight: 700; }
+.td-ok { color: var(--c-richtig); font-weight: 700; }
+.td-nein { color: var(--c-falsch); font-weight: 700; }
+
+/* Transistor */
+.batterie { fill: var(--c-flaeche-2); stroke: var(--c-text-3); stroke-width: 2; }
+.widerstand { fill: var(--c-flaeche); stroke: var(--c-text-3); stroke-width: 2; }
+.bauteil-kasten { fill: var(--c-flaeche); stroke: var(--c-akzent); stroke-width: 2.5; }
+.kanal { stroke: var(--c-text-3); stroke-width: 3; stroke-dasharray: 4 5; }
+.kanal-an { stroke: var(--c-lampe); stroke-dasharray: none; stroke-width: 5; }
+.steuer { stroke: var(--c-akzent); stroke-width: 2; }
+.bauteil-an .steuer { stroke-width: 3; }
+.kontakt { fill: var(--c-text-3); }
+.steuer-text { font: 600 15px var(--schrift); fill: var(--c-text-3); }
+.steuer-text-an { fill: var(--c-akzent); }
+.zunge { stroke: var(--c-text-2); stroke-width: 4; stroke-linecap: round; transition: all .15s; }
+.bauteil-an .zunge { stroke: var(--c-lampe); }
+.spule { fill: var(--c-flaeche); stroke: var(--c-akzent); stroke-width: 2; }
+.spule-draht { fill: none; stroke: var(--c-akzent); stroke-width: 2; }
+.lampe-kreis { fill: var(--c-flaeche-2); stroke: var(--c-text-3); stroke-width: 2.5; }
+.lampe-kreuz { stroke: var(--c-text-3); stroke-width: 2; }
+.strom-lampe-an .lampe-kreis { fill: var(--c-lampe); stroke: var(--c-lampe); }
+.strom-lampe-an .lampe-kreuz { stroke: var(--c-auf-lampe); }
+
+/* Binär */
+.stellenwert { font: 700 15px var(--schrift-code); color: var(--c-akzent); }
+.binaer-reihe .schalter { min-height: 104px; }
+
+/* Flipflop / RAM / Schrittliste */
+.schritt-liste { margin: 0 0 12px; padding-left: 24px; font-size: 16px; }
+.schritt-liste li { margin: 2px 0; color: var(--c-text-3); }
+.schritt-liste .schritt-jetzt { color: var(--c-text); font-weight: 600; }
+.schritt-liste .schritt-ok { color: var(--c-richtig); }
+.ram td { text-align: left; }
+.ram-bits { font-family: var(--schrift-code); white-space: pre; }
+.ram-gewaehlt { background: var(--c-akzent-weich); }
+.ram-neu .ram-bits { font-weight: 700; }
+
+/* Prozessor */
+.cpu-register { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-bottom: 10px; }
+.cpu-reg { padding: 8px; border-radius: 10px; background: var(--c-flaeche); border: 2px solid var(--c-linie); min-width: 0; }
+.cpu-reg-name { display: block; font-size: 15px; color: var(--c-text-3); line-height: 1.2; }
+.cpu-reg-wert { display: block; font: 700 19px var(--schrift-code); overflow-wrap: anywhere; }
+.cpu-phasen { display: flex; gap: 6px; padding: 0; margin: 0 0 8px; list-style: none; counter-reset: ph; }
+.cpu-phasen li { flex: 1; text-align: center; padding: 6px 2px; border-radius: 8px; background: var(--c-flaeche-2); font-size: 15px; font-weight: 600; color: var(--c-text-3); }
+.cpu-phasen .phase-jetzt { background: var(--c-akzent); color: var(--c-auf-akzent); }
+.cpu-erklaerung { min-height: 52px; margin: 0; font-size: 16px; }
+.cpu-speicher { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; margin-top: 12px; }
+.cpu-zelle { display: flex; align-items: center; gap: 6px; min-height: 40px; padding: 2px 6px; border-radius: 8px; background: var(--c-flaeche); border: 2px solid transparent; min-width: 0; }
+.cpu-zelle-bz { border-color: var(--c-akzent); }
+.cpu-zelle-ziel { background: var(--c-akzent-weich); }
+.cpu-adr { min-width: 22px; font-size: 15px; color: var(--c-text-3); font-variant-numeric: tabular-nums; }
+.cpu-inhalt { flex: 1; font: 600 15px var(--schrift-code); overflow-wrap: anywhere; min-width: 0; }
+.cpu-plusminus { min-width: 44px; min-height: 44px; padding: 0; }
+
+/* Sortieren / Zuordnen */
+.sortier-liste { margin: 0; padding-left: 26px; }
+.sortier-element { display: flex; align-items: center; gap: 6px; margin: 0 0 6px; padding: 4px 4px 4px 10px; border-radius: 10px; border: 2px solid var(--c-linie); background: var(--c-flaeche); }
+.sortier-text { flex: 1; font-size: 17px; }
+.sortier-ok { border-color: var(--c-richtig); background: var(--c-richtig-bg); }
+.sortier-nein { border-color: var(--c-falsch); background: var(--c-falsch-bg); }
+.sortier-ende { margin: 0 0 6px; font-size: 15px; font-weight: 700; color: var(--c-text-2); }
+.zuordnen-liste { display: grid; gap: 8px; }
+.zuordnen-karte { padding: 10px; border-radius: 12px; border: 2px solid var(--c-linie); background: var(--c-flaeche); }
+.zuordnen-ok { border-color: var(--c-richtig); background: var(--c-richtig-bg); }
+.zuordnen-nein { border-color: var(--c-falsch); background: var(--c-falsch-bg); }
+.zuordnen-text { margin: 0 0 8px; font-size: 17px; }
+.zuordnen-gruppen { display: flex; flex-wrap: wrap; gap: 6px; }
+.zuordnen-knopf { min-height: 44px; padding: 6px 12px; border-radius: 99px; border: 2px solid var(--c-linie); background: var(--c-bg); font-size: 15px; font-weight: 600; color: var(--c-text); cursor: pointer; }
+.zuordnen-gewaehlt { border-color: var(--c-akzent); background: var(--c-akzent); color: var(--c-auf-akzent); }
+
+/* Zeitscheiben */
+.zeitleiste { display: grid; grid-template-columns: repeat(36, 1fr); gap: 1px; margin: 12px 0 8px; }
+.zl { height: 34px; border-radius: 2px; }
+.zl.zl-m, .zeit-legende .zl-m i { background: var(--c-akzent); }
+.zl.zl-b, .zeit-legende .zl-b i { background: var(--c-sim-2); }
+.zl.zl-u, .zeit-legende .zl-u i { background: var(--c-sim-3); }
+.zl.zl-w, .zeit-legende .zl-w i { background: repeating-linear-gradient(45deg, var(--c-text-3) 0 3px, transparent 3px 6px); }
+.zeit-legende { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 15px; margin-bottom: 8px; }
+.zeit-legende span { display: inline-flex; align-items: center; gap: 6px; }
+.zeit-legende i { display: inline-block; width: 16px; height: 16px; border-radius: 3px; }
+
+/* Dateisystem */
+.block-raster { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; margin: 10px 0; }
+.block { display: flex; flex-direction: column; align-items: center; gap: 1px; min-height: 66px; padding: 4px 2px; border-radius: 9px; border: 2px solid var(--c-linie); background: var(--c-flaeche); color: var(--c-text); cursor: pointer; min-width: 0; touch-action: manipulation; }
+.block-nr { font-size: 15px; color: var(--c-text-3); }
+.block-text { font: 700 16px var(--schrift-code); white-space: pre; }
+.block-weiter { font-size: 15px; color: var(--c-akzent); }
+.block-frei { opacity: .45; }
+.block-markiert { border-color: var(--c-akzent); background: var(--c-akzent-weich); }
+.block-gelesen { border-color: var(--c-richtig); background: var(--c-richtig-bg); }
+.datei-name { font: 600 16px var(--schrift-code); padding: 0 8px; }
+.datei-ausgabe { font-size: 18px; }
+.datei-hinweis { display: block; margin-top: 4px; color: var(--c-falsch); }
+
+/* Zugriffszeit */
+.zugriff-liste { display: grid; gap: 12px; }
+.zugriff-knopf { width: 100%; justify-content: flex-start; }
+.zugriff-daten { margin: 4px 0; font-size: 15px; color: var(--c-text-2); }
+.zugriff-spur { display: block; height: 10px; border-radius: 99px; background: var(--c-flaeche-2); overflow: hidden; }
+.zugriff-balken { display: block; width: 0; height: 100%; background: var(--c-akzent); }
+.zugriff-ergebnis { display: block; min-height: 22px; margin-top: 4px; font-size: 16px; font-weight: 600; }
+
+/* Addierer */
+.addierer { display: grid; grid-template-columns: 76px repeat(calc(var(--n) - 1), minmax(0, 1fr)); gap: 4px; align-items: center; margin-bottom: 10px; }
+.add-zelle { display: flex; justify-content: center; min-width: 0; }
+.add-titel { justify-content: flex-start; font-size: 15px; font-weight: 700; color: var(--c-text-2); }
+.add-stellenwert { font: 700 15px var(--schrift-code); color: var(--c-akzent); }
+.add-uebertrag { font: 600 15px var(--schrift-code); color: var(--c-text-3); }
+.add-uebertrag.an { color: var(--c-lampe); font-weight: 800; }
+.add-summe { border-top: 2px solid var(--c-text-3); padding-top: 4px; }
+.add-summe-titel { border-top: 2px solid var(--c-text-3); padding-top: 4px; }
+.add-bit { font: 700 22px var(--schrift-code); color: var(--c-text-3); }
+.add-bit.an { color: var(--c-akzent); }

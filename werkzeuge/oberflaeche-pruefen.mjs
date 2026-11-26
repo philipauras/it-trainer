@@ -48,9 +48,9 @@ const los = (t) => { schritt = t; console.log(`  · ${t}`); };
 const warnungen = [];
 
 // ---------------------------------------------------------------- 1. Dateien und Links
-async function holen(pfad, versuche = 1) {
+async function holen(pfad, versuche = 2) {
   for (let i = 0; ; i++) {
-    try { return await fetch(new URL(pfad, url), { cache: 'no-store', redirect: 'manual' }); } catch (e) { if (i + 1 >= versuche) throw e; await new Promise((ok) => setTimeout(ok, 2000)); }
+    try { return await fetch(new URL(pfad, url), { cache: 'no-store', redirect: 'manual', signal: AbortSignal.timeout(20000) }); } catch (e) { if (i + 1 >= versuche) throw e; await new Promise((ok) => setTimeout(ok, 2000)); }
   }
 }
 async function dateienPruefen() {

@@ -34,6 +34,9 @@
   --c-entwurf: #a16207;
   --c-entwurf-bg: #fdf4d8;
   --c-lampe: #f5b301;
+  --c-auf-lampe: #1a1300;
+  --c-sim-2: #c2417a;
+  --c-sim-3: #2b935a;
   --schatten: 0 1px 2px rgb(20 30 45 / .05), 0 6px 20px rgb(20 30 45 / .07);
   --rund: 14px;
   color-scheme: light;

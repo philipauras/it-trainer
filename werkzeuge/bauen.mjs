@@ -14,6 +14,9 @@ import { join, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { leseFolge, leseGlossar, leseNeuigkeiten, ID_MUSTER } from './lib/inhaltsformat.mjs';
 import { SIMULATOREN } from '../js/sim/index.js';
+// Simulatoren dürfen eine Funktion „pruefe(optionen)“ exportieren: Der Build meldet damit falsche Einstellungen oder unlösbare Übungen.
+const PRUEFER = {};
+for (const [name, laden] of Object.entries(SIMULATOREN)) { try { const m = await laden(); if (m.pruefe) PRUEFER[name] = m.pruefe; } catch { /* im Browser-Modul ohne Node-Unterstützung */ } }
 
 export const WURZEL = join(dirname(fileURLToPath(import.meta.url)), '..');
 const HINWEIS = 'ERZEUGT von werkzeuge/bauen.mjs aus content/ und config.json – nicht von Hand bearbeiten (npm run bauen).';
@@ -81,6 +84,7 @@ export function baue({ live = false } = {}) {
     for (const a of folge.abschnitte) for (const t of a.teile) {
       if (t.art !== 'sim') continue;
       if (!Object.hasOwn(SIMULATOREN, t.name)) fehler.push(`${folge.id}/${a.id}: unbekannter Simulator „${t.name}“ (vorhanden: ${Object.keys(SIMULATOREN).join(', ')})`);
+      try { PRUEFER[t.name]?.(t.optionen || {}); } catch (e) { fehler.push(`${folge.id}/${a.id}: ${e.message}`); }
       if (t.id) {
         merke(t.id, folge.id);
         if (!ID_MUSTER.uebung.test(t.id) || !t.id.startsWith(`${folge.id}-`)) fehler.push(`${t.id}: Übungs-id muss „${folge.id}-u01“ … heißen`);

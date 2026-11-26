@@ -18,3 +18,6 @@ Regeln
 - Farben nur über CSS-Variablen aus `css/thema.css`, keine festen Farbwerte im Code (hell/dunkel).
 - Keine Netzwerkzugriffe (CSP erlaubt nur die eigene Adresse); schwere Bibliotheken nur per dynamischem Import.
 - Reine Rechenlogik als eigene, exportierte Funktion schreiben und in `tests/` testen.
+- Optional `export function pruefe(optionen)`: wirft bei falschen Einstellungen – `npm run bauen` zeigt die Meldung mit Folge und Abschnitt.
+- Übungen setzen `wurzel._loesen = () => …` (löst die Übung wie per Fingertipp); die automatische Oberflächen-Prüfung nutzt das.
+- Wahrheitstabellen zum Ausfüllen: Baustein `tabelle.js` (`tabelleAusfuellen`).
