@@ -10,7 +10,7 @@ eine Zeile durch 7–9 Karten im Format:
 Vorne: Frage
 Hinten: kurze Antwort (ein bis zwei Sätze)
 
-Regeln: nur Inhalte, die in der Folge stehen (nichts Neues erfinden); eine Sache je Karte; die wichtigsten Begriffe, Prinzipien,
+Regeln: Karten müssen ohne die Folge vor Augen verständlich sein (Lernpool, gemischt mit anderen Folgen); nur Inhalte, die in der Folge stehen (nichts Neues erfinden); eine Sache je Karte; die wichtigsten Begriffe, Prinzipien,
 ein bis zwei Zahlen/Jahre, eine Karte zum Alltagsbild der Folge („Im Bild“) nur, wenn sie nach dem Begriff fragt; IDs fortlaufend
 k01, k02 …; zwischen Karten eine Leerzeile. Ändere sonst NICHTS an der Datei. Danach `cd /workspace/it-trainer && npm run bauen`
 ausführen; Meldungen zu ANDEREN Folgen ignorieren. Antworte nur mit „fertig, N Karten“ oder dem Fehler.

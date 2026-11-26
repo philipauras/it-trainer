@@ -71,7 +71,7 @@ function leseFrage({ id, zeilen }, fehler) {
     const a = /^\s*-\s+\[( |x|X)\]\s+(.*)$/.exec(z);
     const kv = /^(Erklärung|Nachlesen|Mischen):\s*(.*)$/.exec(z);
     if (a) { if (a[1] !== ' ') { if (f.richtig >= 0) fehler.push(`${id}: mehr als eine richtige Antwort`); f.richtig = f.antworten.length; } f.antworten.push(a[2].trim()); feld = null; }
-    else if (kv) { feld = kv[1]; if (feld === 'Erklärung') f.erklaerung = kv[2].trim(); else if (feld === 'Nachlesen') f.nachlesen = kv[2].trim() || null; else f.mischen = kv[2].trim() !== 'nein'; }
+    else if (kv) { feld = kv[1]; if (feld === 'Erklärung') f.erklaerung = kv[2].trim(); else if (feld === 'Nachlesen') { const [abschnitt, stelle] = kv[2].split('/').map((x) => x.trim()); f.nachlesen = abschnitt || null; if (stelle) f.stelle = stelle; } else f.mischen = kv[2].trim() !== 'nein'; }
     else if (feld === 'Erklärung' && z.trim()) f.erklaerung += ` ${z.trim()}`;
     else if (!f.antworten.length && z.trim()) frage.push(z.trim());
     else if (z.trim()) fehler.push(`${id}: Zeile nicht verstanden: „${z.trim()}“`);
@@ -115,7 +115,8 @@ export function leseFolge(text, { datei = '?', config }) {
   if (status === 'freigegeben' && !kopf.faktencheck) fehler.push(`${wo}: freigegeben ohne Eintrag „faktencheck:“`);
 
   // Abschnitte: „## [schluessel] Titel“
-  const erwartet = config.abschnitte.map((a) => a.id);
+  // Sichtbare Abschnitte der Folge, danach die Lernpool-Abschnitte (Quiz, Karten – erscheinen nicht in der Folge)
+  const erwartet = [...config.abschnitte, ...(config.lernpoolAbschnitte || [])].map((a) => a.id);
   const roh = rumpf.split(/^##\s+/m);
   if (roh.shift().trim()) fehler.push(`${wo}: Text vor dem ersten Abschnitt („## [einstieg] …“)`);
   const abschnitte = [];
@@ -126,7 +127,7 @@ export function leseFolge(text, { datei = '?', config }) {
     if (!m) { fehler.push(`${wo}: Abschnitt „## ${kopfzeile}“ – erwartet „## [schluessel] Titel“`); continue; }
     const [, schluessel, titel] = m;
     const inhalt = rest.join('\n');
-    const vorlage = config.abschnitte.find((a) => a.id === schluessel);
+    const vorlage = [...config.abschnitte, ...(config.lernpoolAbschnitte || [])].find((a) => a.id === schluessel);
     const a = { id: schluessel, titel: titel.trim() || vorlage?.titel || schluessel };
     if (schluessel === 'quiz') {
       const b = bloecke(inhalt);

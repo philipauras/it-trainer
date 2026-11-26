@@ -71,7 +71,11 @@ export function baue({ live = false } = {}) {
       if (q.richtig < 0) fehler.push(`${q.id}: keine richtige Antwort („- [x] …“)`);
       if (!q.erklaerung) fehler.push(`${q.id}: „Erklärung:“ fehlt`);
       if (!q.nachlesen) fehler.push(`${q.id}: „Nachlesen:“ fehlt (Abschnitt, z. B. prinzip)`);
-      else if (!abschnittIds.has(q.nachlesen) || ['quiz', 'karten'].includes(q.nachlesen)) fehler.push(`${q.id}: „Nachlesen: ${q.nachlesen}“ ist kein Inhaltsabschnitt dieser Folge`);
+      else if (!abschnittIds.has(q.nachlesen) || (config.lernpoolAbschnitte || []).some((x) => x.id === q.nachlesen)) fehler.push(`${q.id}: „Nachlesen: ${q.nachlesen}“ ist kein Inhaltsabschnitt dieser Folge`);
+      else if (q.stelle) {
+        const text = folge.abschnitte.find((x) => x.id === q.nachlesen).teile.filter((t) => t.art === 'md').map((t) => t.text).join('\n');
+        if (!new RegExp(`^###\\s+${q.stelle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*$`, 'm').test(text)) fehler.push(`${q.id}: „Nachlesen: ${q.nachlesen} / ${q.stelle}“ – keine Zwischenüberschrift „### ${q.stelle}“ in diesem Abschnitt`);
+      }
     }
     // Karten
     if (folge.karten.length < R.karten.minKarten) fehler.push(`${folge.id}: mindestens ${R.karten.minKarten} Karteikarten nötig (${folge.karten.length})`);
@@ -89,6 +93,12 @@ export function baue({ live = false } = {}) {
         merke(t.id, folge.id);
         if (!ID_MUSTER.uebung.test(t.id) || !t.id.startsWith(`${folge.id}-`)) fehler.push(`${t.id}: Übungs-id muss „${folge.id}-u01“ … heißen`);
       }
+    }
+    const fazit = folge.abschnitte.find((a) => a.id === 'fazit');
+    if (fazit) {
+      const saetze = fazit.teile.filter((t) => t.art === 'md').flatMap((t) => t.text.split('\n')).filter((z) => /^\s*-\s+\S/.test(z)).length;
+      const { minSaetze, maxSaetze } = config.regeln.fazit;
+      if (saetze < minSaetze || saetze > maxSaetze) fehler.push(`${folge.id}/fazit: ${minSaetze}–${maxSaetze} Kernsätze als Liste („- …“) nötig, sind ${saetze}`);
     }
     if (!folge.abschnitte.find((a) => a.id === 'selbst')?.teile.some((t) => t.art === 'sim' && t.id)) fehler.push(`${folge.id}: [selbst] braucht eine Übung (Simulator mit „id: ${folge.id}-u01“)`);
   }
@@ -114,7 +124,7 @@ export function baue({ live = false } = {}) {
         const f = folgen.get(p.id);
         const basis = { id: p.id, nr: i + 1, titel: p.titel, untertitel: p.untertitel || '', schicht: p.schicht, art: p.art || 'folge' };
         if (!sichtbar(f)) return { ...basis, status: 'geplant' };
-        return { ...basis, status: f.status, dauer: f.dauer, datei: `inhalt/folgen/${f.id}.json`, karten: f.karten.map((k) => k.id), fragen: f.quiz.length,
+        return { ...basis, status: f.status, dauer: f.dauer, datei: `inhalt/folgen/${f.id}.json`, karten: f.karten.map((k) => k.id), fragen: f.quiz.length, quiz: f.quiz.map((q) => q.id),
           uebungen: f.abschnitte.flatMap((a) => a.teile.filter((t) => t.id).map((t) => t.id)) };
       }),
     })),

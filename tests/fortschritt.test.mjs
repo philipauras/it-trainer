@@ -33,7 +33,8 @@ test('Besuche, Fertig-Regel und freigeschaltete Karten', () => {
   besuche(z, 's1f01', 'einstieg', { jetzt: 5 });
   besuche(z, 's1f01', 'quiz', { zaehlt: false, jetzt: 6 });
   assert.deepEqual(z.folgen.s1f01, { schritt: 'quiz', besucht: ['einstieg'], fertig: null, ts: 6 });
-  assert.equal(folgenAnteil(z, 's1f01', 8), 1 / 8);
+  assert.equal(folgenAnteil(z, 's1f01', ['einstieg', 'geschichte', 'prinzip', 'werkstatt']), 1 / 4);
+  assert.equal(folgenAnteil({ folgen: { x: { besucht: ['einstieg', 'quiz', 'karten'] } } }, 'x', ['einstieg', 'fazit']), 1 / 2, 'alte Abschnitte zählen nicht');
   assert.deepEqual(freigeschalteteKarten(index, z), []);
   assert.equal(pruefeFertig(z, 's1f01', ['quiz', 'karten'], 7), false);
   besuche(z, 's1f01', 'quiz'); besuche(z, 's1f01', 'karten');
@@ -41,5 +42,19 @@ test('Besuche, Fertig-Regel und freigeschaltete Karten', () => {
   assert.equal(pruefeFertig(z, 's1f01', ['quiz', 'karten'], 9), true);
   assert.equal(z.folgen.s1f01.fertig, 9);
   assert.equal(pruefeFertig(z, 's1f01', ['quiz', 'karten'], 10), false, 'nur einmal');
-  assert.equal(folgenAnteil(z, 's1f01', 8), 1);
+  assert.equal(folgenAnteil(z, 's1f01', ['einstieg']), 1);
+});
+
+test('Lernpool-Freischaltung: mit Abschluss der Folge – alte Stände (Karten schon durchgearbeitet) behalten ihre Karten', async () => {
+  const { freigeschalteteFragen } = await import('../js/kern/fortschritt.js');
+  const idx = { staffeln: [{ nr: 1, schichten: ['strom'], folgen: [
+    { id: 'a', schicht: 'strom', status: 'freigegeben', karten: ['a-k01'], quiz: ['a-q01'] },
+    { id: 'b', schicht: 'strom', status: 'freigegeben', karten: ['b-k01'], quiz: ['b-q01'] },
+  ] }] };
+  const z = leer('t');
+  assert.deepEqual([freigeschalteteKarten(idx, z), freigeschalteteFragen(idx, z)], [[], []]);
+  z.folgen.a = { besucht: ['einstieg'], fertig: 5, ts: 5 };
+  assert.deepEqual([freigeschalteteKarten(idx, z), freigeschalteteFragen(idx, z)], [['a-k01'], ['a-q01']]);
+  z.folgen.b = { besucht: ['karten'], fertig: null, ts: 1 }; // alter Ablauf: Karten gesehen, Quiz nicht
+  assert.deepEqual([freigeschalteteKarten(idx, z), freigeschalteteFragen(idx, z)], [['a-k01', 'b-k01'], ['a-q01']]);
 });

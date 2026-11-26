@@ -53,7 +53,7 @@
    "text": "Charles Petzold: Code. The Hidden Language of Computer Hardware and Software. Microsoft Press, 2. Auflage 2022 (deutsch: Code – Wie Computer funktionieren, mitp)"
   }
  ],
- "faktencheck": "26.11.2026 – Durchgang 1 nicht bestanden (3 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/",
+ "faktencheck": "26.11.2026 – Durchgang 1 nicht bestanden (3 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/; Umstellung auf eigenständige Folge + Lernpool (1.5.0): unabhängig geprüft und bestanden",
  "staffel": 1,
  "nr": 2,
  "titel": "Strom als Sprache",
@@ -68,7 +68,7 @@
    "teile": [
     {
      "art": "md",
-     "text": "In Folge 1 hast du gelernt: Alles im Computer besteht aus Bits, und ein Bit ist wie ein Lichtschalter – aus oder an, 0 oder 1. Aber wer legt diese Schalter eigentlich um? Dein Handy rechnet Milliarden Mal pro Sekunde. Da sitzt niemand, der mit dem Finger tippt.\n\nDie Antwort ist eine der schönsten Ideen der Technikgeschichte: **Schalter, die selbst von Strom umgelegt werden.** Ein Schalter schaltet den nächsten, der den übernächsten – und am Ende kommt eine Rechnung heraus.\n\nIn dieser Folge erfährst du, wie aus Strom ein klares Ja oder Nein wird, und wie aus einem klickenden Magneten im Telegrafenamt der winzige Schalter wurde, von dem in deinem Handy Milliarden stecken: der **Transistor**."
+     "text": "Alles im Computer besteht aus Bits – Entscheidungen zwischen zwei Möglichkeiten, geschrieben als 0 oder 1 (mehr dazu in Folge 1). Technisch ist ein Bit ein Schalter: aus oder an. Aber wer legt diese Schalter eigentlich um? Dein Handy rechnet Milliarden Mal pro Sekunde. Da sitzt niemand, der mit dem Finger tippt.\n\nDie Antwort ist eine der schönsten Ideen der Technikgeschichte: **Schalter, die selbst von Strom umgelegt werden.** Ein Schalter schaltet den nächsten, der den übernächsten – und am Ende kommt eine Rechnung heraus.\n\nIn dieser Folge erfährst du, wie aus Strom ein klares Ja oder Nein wird, und wie aus einem klickenden Magneten im Telegrafenamt der winzige Schalter wurde, von dem in deinem Handy Milliarden stecken: der **Transistor**."
     }
    ]
   },
@@ -78,7 +78,7 @@
    "teile": [
     {
      "art": "md",
-     "text": "### Strom, der über Land spricht\n\nIn den 1830er-Jahren lernen Menschen, mit Strom Nachrichten zu schicken. Der amerikanische Maler und Erfinder **Samuel Morse** entwickelt mit seinem Partner Alfred Vail einen Telegrafen: Ein Taster schließt einen Stromkreis, am anderen Ende der Leitung zieht ein Elektromagnet einen Stift an. Kurz drücken ergibt einen Punkt, lang drücken einen Strich. Am **24. Mai 1844** geht die erste Nachricht über die neue Leitung von Washington nach Baltimore, rund 60 Kilometer weit: „What hath God wrought“ – „Was hat Gott gewirkt“.\n\nDoch es gibt ein Problem. Je länger der Draht, desto schwächer kommt der Strom an. Auf langen Strecken reicht er irgendwann nicht mehr, um den Stift zu bewegen.\n\n### Der Trick mit dem Relais\n\nDie Lösung hatte der amerikanische Physiker **Joseph Henry** schon um 1835 am College of New Jersey, der heutigen Universität Princeton, vorgeführt: Ein schwacher Strom fließt durch einen Elektromagneten. Der zieht einen kleinen Metallhebel an – und dieser Hebel schließt einen **zweiten** Stromkreis mit einer eigenen, frischen Batterie. Ähnliche Ideen hatten damals auch andere, etwa der Engländer Edward Davy.\n\nSo ein Bauteil heißt **Relais**. An Zwischenstationen der Telegrafenlinien kam ein schwaches Signal gerade noch an, zog den Magneten an, und das Relais schickte es mit voller Kraft weiter. Ein kleiner Strom steuert einen großen Strom – genau das ist die Idee, um die sich diese ganze Folge dreht.\n\n> **Wusstest du?:** „Relais“ ist ein französisches Wort aus der Postkutschenzeit. So hießen die Stationen, an denen müde Pferde gegen frische getauscht wurden. Das elektrische Relais macht dasselbe mit dem Signal.\n\n### Ein Rechner, der klappert\n\nGut hundert Jahre später kommt jemand auf die Idee, mit Relais zu *rechnen*. Der Berliner Bauingenieur **Konrad Zuse** ist es leid, endlose Statik-Rechnungen von Hand zu machen. Am **12. Mai 1941** führt er die **Z3** vor: einen Rechner aus rund 2 000 Relais (je nach Zählung bis 2 600), der mit Bits rechnet – im **Binärsystem** aus Folge 1 – und ein Programm von einem gelochten Filmstreifen abarbeitet. Die Z3 gilt vielen als erster funktionsfähiger, frei programmierbarer Rechner der Welt – umstritten ist der Titel, weil sie noch keine „Wenn–dann“-Befehle kannte.\n\nSchnell war sie nicht: Ihr Takt lag bei etwa 5 Schritten pro Sekunde, eine Multiplikation dauerte rund drei Sekunden. Relais haben bewegliche Teile, und ein Hebel braucht Zeit, um von einer Seite zur anderen zu klappen. Das Original verbrannte 1943 bei einem Bombenangriff, ein Nachbau steht heute im Deutschen Museum in München.\n\n### Glühende Röhren\n\nSchneller ging es mit **Elektronenröhren**. In einem luftleeren Glaskolben sendet ein glühender Draht Elektronen aus, und ein feines Metallgitter dazwischen entscheidet mit seiner Spannung, ob sie durchkommen oder nicht. Nichts bewegt sich, die Röhre schaltet tausendfach schneller als ein Relais.\n\nDer berühmteste Röhrenrechner ist der **ENIAC** der University of Pennsylvania, gebaut für die US-Armee und im **Februar 1946** öffentlich vorgestellt: 17 468 Röhren, rund 27 Tonnen schwer, etwa 150 Kilowatt Strombedarf – und etwa 5 000 Additionen pro Sekunde. (Er rechnete übrigens noch im Zehnersystem, nicht binär.) Der Haken: Röhren werden heiß wie Glühbirnen, verbrauchen viel Strom und brennen irgendwann durch. Bei Tausenden Röhren fiel regelmäßig eine aus – anfangs mehrere am Tag.\n\n### Weihnachten 1947: der Transistor\n\nDie Telefongesellschaft AT&T hatte genau dieses Problem in ihrem riesigen Telefonnetz voller Relais und Röhren. In ihren Forschungslaboren, den Bell Labs – dort, wo ein Jahr später Claude Shannon das Bit bekannt machte –, suchte eine Gruppe um **William Shockley** nach einem Ersatz aus festem Material, ganz ohne Vakuum und Glühdraht.\n\nAm **16. Dezember 1947** gelingt es **John Bardeen** und **Walter Brattain**: Zwei feine Goldkontakte auf einem Stück Germanium-Kristall verstärken ein Signal. Am 23. Dezember führen sie es der Laborleitung vor. Ihr Kollege John Pierce erfindet den Namen **Transistor**, 1948 wird er der Öffentlichkeit gezeigt. 1956 bekommen Shockley, Bardeen und Brattain dafür den Nobelpreis für Physik.\n\nDer erste Transistor war noch ein wackeliges Gebilde und funktionierte anders als die heutigen. Die Bauart, die heute in fast jedem Chip steckt, den **MOSFET**, bauten **Mohamed Atalla** und **Dawon Kahng**, ebenfalls bei Bell Labs, 1959; 1960 stellten sie ihn vor.\n\n### Alles auf einem Stück\n\nBleibt ein letztes Problem: Tausende einzelne Transistoren müssen mit Drähten verbunden werden. **Jack Kilby** von Texas Instruments führt im **September 1958** eine Schaltung vor, deren Teile alle aus einem einzigen Stück Halbleiter bestehen. **Robert Noyce** von Fairchild Semiconductor findet **1959** einen Weg, auch die Verbindungen gleich mit auf die Silizium-Scheibe zu bringen. Das ist die **integrierte Schaltung** – der **Chip**. Kilby bekam dafür im Jahr 2000 den Nobelpreis; Noyce war da schon gestorben.\n\nSeitdem wurden die Transistoren immer kleiner. Apples M1-Chip von 2020 zum Beispiel hat nach Herstellerangaben **16 Milliarden** Transistoren auf einer Fläche kleiner als eine Briefmarke. Das Prinzip ist aber dasselbe geblieben wie beim Relais von 1835: Ein kleines Signal schaltet einen Strom."
+     "text": "### Strom, der über Land spricht\n\nIn den 1830er-Jahren lernen Menschen, mit Strom Nachrichten zu schicken. Der amerikanische Maler und Erfinder **Samuel Morse** entwickelt mit seinem Partner Alfred Vail einen Telegrafen: Ein Taster schließt einen Stromkreis, am anderen Ende der Leitung zieht ein Elektromagnet einen Stift an. Kurz drücken ergibt einen Punkt, lang drücken einen Strich. Am **24. Mai 1844** geht die erste Nachricht über die neue Leitung von Washington nach Baltimore, rund 60 Kilometer weit: „What hath God wrought“ – „Was hat Gott gewirkt“.\n\nDoch es gibt ein Problem. Je länger der Draht, desto schwächer kommt der Strom an. Auf langen Strecken reicht er irgendwann nicht mehr, um den Stift zu bewegen.\n\n### Der Trick mit dem Relais\n\nDie Lösung hatte der amerikanische Physiker **Joseph Henry** schon um 1835 am College of New Jersey, der heutigen Universität Princeton, vorgeführt: Ein schwacher Strom fließt durch einen Elektromagneten. Der zieht einen kleinen Metallhebel an – und dieser Hebel schließt einen **zweiten** Stromkreis mit einer eigenen, frischen Batterie. Ähnliche Ideen hatten damals auch andere, etwa der Engländer Edward Davy.\n\nSo ein Bauteil heißt **Relais**. An Zwischenstationen der Telegrafenlinien kam ein schwaches Signal gerade noch an, zog den Magneten an, und das Relais schickte es mit voller Kraft weiter. Ein kleiner Strom steuert einen großen Strom – genau das ist die Idee, um die sich diese ganze Folge dreht.\n\n> **Wusstest du?:** „Relais“ ist ein französisches Wort aus der Postkutschenzeit. So hießen die Stationen, an denen müde Pferde gegen frische getauscht wurden. Das elektrische Relais macht dasselbe mit dem Signal.\n\n### Ein Rechner, der klappert\n\nGut hundert Jahre später kommt jemand auf die Idee, mit Relais zu *rechnen*. Der Berliner Bauingenieur **Konrad Zuse** ist es leid, endlose Statik-Rechnungen von Hand zu machen. Am **12. Mai 1941** führt er die **Z3** vor: einen Rechner aus rund 2 000 Relais (je nach Zählung bis 2 600), der mit Bits rechnet – im **Binärsystem**, das nur 0 und 1 kennt (mehr dazu in Folge 1) – und ein Programm von einem gelochten Filmstreifen abarbeitet. Die Z3 gilt vielen als erster funktionsfähiger, frei programmierbarer Rechner der Welt – umstritten ist der Titel, weil sie noch keine „Wenn–dann“-Befehle kannte.\n\nSchnell war sie nicht: Ihr Takt lag bei etwa 5 Schritten pro Sekunde, eine Multiplikation dauerte rund drei Sekunden. Relais haben bewegliche Teile, und ein Hebel braucht Zeit, um von einer Seite zur anderen zu klappen. Das Original verbrannte 1943 bei einem Bombenangriff, ein Nachbau steht heute im Deutschen Museum in München.\n\n### Glühende Röhren\n\nSchneller ging es mit **Elektronenröhren**. In einem luftleeren Glaskolben sendet ein glühender Draht Elektronen aus, und ein feines Metallgitter dazwischen entscheidet mit seiner Spannung, ob sie durchkommen oder nicht. Nichts bewegt sich, die Röhre schaltet tausendfach schneller als ein Relais.\n\nDer berühmteste Röhrenrechner ist der **ENIAC** der University of Pennsylvania, gebaut für die US-Armee und im **Februar 1946** öffentlich vorgestellt: 17 468 Röhren, rund 27 Tonnen schwer, etwa 150 Kilowatt Strombedarf – und etwa 5 000 Additionen pro Sekunde. (Er rechnete übrigens noch im Zehnersystem, nicht binär.) Der Haken: Röhren werden heiß wie Glühbirnen, verbrauchen viel Strom und brennen irgendwann durch. Bei Tausenden Röhren fiel regelmäßig eine aus – anfangs mehrere am Tag.\n\n### Weihnachten 1947: der Transistor\n\nDie Telefongesellschaft AT&T hatte genau dieses Problem in ihrem riesigen Telefonnetz voller Relais und Röhren. In ihren Forschungslaboren, den Bell Labs, suchte eine Gruppe um **William Shockley** nach einem Ersatz aus festem Material, ganz ohne Vakuum und Glühdraht.\n\nAm **16. Dezember 1947** gelingt es **John Bardeen** und **Walter Brattain**: Zwei feine Goldkontakte auf einem Stück Germanium-Kristall verstärken ein Signal. Am 23. Dezember führen sie es der Laborleitung vor. Ihr Kollege John Pierce erfindet den Namen **Transistor**, 1948 wird er der Öffentlichkeit gezeigt. 1956 bekommen Shockley, Bardeen und Brattain dafür den Nobelpreis für Physik.\n\nDer erste Transistor war noch ein wackeliges Gebilde und funktionierte anders als die heutigen. Die Bauart, die heute in fast jedem Chip steckt, den **MOSFET**, bauten **Mohamed Atalla** und **Dawon Kahng**, ebenfalls bei Bell Labs, 1959; 1960 stellten sie ihn vor.\n\n### Alles auf einem Stück\n\nBleibt ein letztes Problem: Tausende einzelne Transistoren müssen mit Drähten verbunden werden. **Jack Kilby** von Texas Instruments führt im **September 1958** eine Schaltung vor, deren Teile alle aus einem einzigen Stück Halbleiter bestehen. **Robert Noyce** von Fairchild Semiconductor findet **1959** einen Weg, auch die Verbindungen gleich mit auf die Silizium-Scheibe zu bringen. Das ist die **integrierte Schaltung** – der **Chip**. Kilby bekam dafür im Jahr 2000 den Nobelpreis; Noyce war da schon gestorben.\n\nSeitdem wurden die Transistoren immer kleiner. Apples M1-Chip von 2020 zum Beispiel hat nach Herstellerangaben **16 Milliarden** Transistoren auf einer Fläche kleiner als eine Briefmarke. Das Prinzip ist aber dasselbe geblieben wie beim Relais von 1835: Ein kleines Signal schaltet einen Strom."
     }
    ]
   },
@@ -88,7 +88,7 @@
    "teile": [
     {
      "art": "md",
-     "text": "### Spannung und Strom – ganz einfach\n\nZwei Wörter brauchst du für diese Folge:\n\n- **Spannung** ist der „Antrieb“, der Elektronen durch einen Draht schieben will – wie der Druck in einer Wasserleitung. Sie wird in **Volt** gemessen. Eine Handy-Batterie hat knapp 4 Volt, eine Steckdose 230 Volt.\n- **Strom** ist das, was tatsächlich fließt – wie viel Ladung pro Sekunde durch den Draht wandert. Gemessen wird er in **Ampere**.\n\nStrom fließt nur, wenn der Weg ringsum geschlossen ist: vom Pluspol der Batterie durch die Lampe zurück zum Minuspol. Diesen geschlossenen Weg nennt man **Stromkreis**. Ein Schalter tut nichts anderes, als den Kreis zu unterbrechen (aus) oder zu schließen (an).\n\n### Aus Spannung wird ein Bit\n\nIm Computer gilt eine einfache Abmachung: **wenig Spannung = 0, viel Spannung = 1.** Aber was ist „wenig“ und was „viel“? In Wirklichkeit kann eine Leitung jede Spannung dazwischen haben – 0,3 Volt, 1,7 Volt, 2,9 Volt. Eine Spannung rastet nicht ein wie ein Lichtschalter.\n\nDer Trick: Man legt zwei **Bereiche** fest und lässt dazwischen eine breite Lücke. Bei der klassischen Logik-Familie „TTL“ mit 5 Volt zum Beispiel gilt:\n\n| Spannung am Eingang | wird gelesen als |\n|---|---|\n| 0 bis 0,8 Volt | 0 (niedrig) |\n| 0,8 bis 2,0 Volt | verbotene Zone – darf im Ruhezustand nicht vorkommen |\n| 2,0 bis 5 Volt | 1 (hoch) |\n\nUnd die Bauteile versprechen beim *Senden* mehr, als sie beim *Lesen* verlangen: Eine ausgegebene 0 liegt höchstens bei 0,4 Volt, eine ausgegebene 1 mindestens bei 2,4 Volt. Selbst wenn unterwegs eine Störung 0,4 Volt dazu- oder wegmogelt, wird noch richtig gelesen. Heutige Chips arbeiten mit viel kleineren Spannungen, oft um 1 Volt, aber nach demselben Prinzip.\n\nWie passt das zu Folge 1, wo ein Bit nur 0 oder 1 ist und nichts dazwischen? Drei Dinge sorgen dafür, dass die Schaltung trotzdem jedes Bit eindeutig liest:\n\n1. **Der Abstand:** Kleine Störungen schieben eine 0 nicht bis in den Bereich der 1.\n2. **Das Auffrischen:** Jede Schaltstufe gibt wieder ein sauberes „ganz niedrig“ oder „ganz hoch“ aus, auch wenn ihr Eingang etwas verwaschen war. Fehler sammeln sich so nicht an – anders als beim Kopieren einer Kassette, wo jede Kopie etwas schlechter wird.\n3. **Das Warten:** Beim Umschalten durchläuft die Spannung kurz alle Zwischenwerte, für Milliardstel Sekunden. Gelesen wird deshalb erst, wenn sich alles beruhigt hat. Dafür gibt es den **Takt** – mehr dazu in Folge 6.\n\n> **Merke:** Physikalisch gibt es jede Spannung. Digital wird es erst durch eine Abmachung: zwei Bereiche mit einer Sicherheitslücke dazwischen. Darum ist ein Bit trotz Störungen zuverlässig.\n\n### Das Relais: ein Magnet legt den Schalter um\n\nEin **Relais** hat zwei getrennte Stromkreise. Im **Steuerkreis** sitzt eine Drahtspule um einen Eisenkern – ein Elektromagnet. Fließt dort Strom, zieht der Magnet eine Metallzunge an, und die schließt den Kontakt im **Hauptkreis**. Fließt kein Strom mehr, zieht eine Feder die Zunge zurück, der Hauptkreis ist offen.\n\nProbier es aus: Tippe auf **Steuerung A**. Die Zunge oben klappt herunter, der Strom (wandernde Striche) fließt, die Lampe leuchtet."
+     "text": "### Spannung und Strom – ganz einfach\n\nZwei Wörter brauchst du für diese Folge:\n\n- **Spannung** ist der „Antrieb“, der Elektronen durch einen Draht schieben will – wie der Druck in einer Wasserleitung. Sie wird in **Volt** gemessen. Eine Handy-Batterie hat knapp 4 Volt, eine Steckdose 230 Volt.\n- **Strom** ist das, was tatsächlich fließt – wie viel Ladung pro Sekunde durch den Draht wandert. Gemessen wird er in **Ampere**.\n\nStrom fließt nur, wenn der Weg ringsum geschlossen ist: vom Pluspol der Batterie durch die Lampe zurück zum Minuspol. Diesen geschlossenen Weg nennt man **Stromkreis**. Ein Schalter tut nichts anderes, als den Kreis zu unterbrechen (aus) oder zu schließen (an).\n\n### Aus Spannung wird ein Bit\n\nIm Computer gilt eine einfache Abmachung: **wenig Spannung = 0, viel Spannung = 1.** Aber was ist „wenig“ und was „viel“? In Wirklichkeit kann eine Leitung jede Spannung dazwischen haben – 0,3 Volt, 1,7 Volt, 2,9 Volt. Eine Spannung rastet nicht ein wie ein Lichtschalter.\n\nDer Trick: Man legt zwei **Bereiche** fest und lässt dazwischen eine breite Lücke. Bei der klassischen Logik-Familie „TTL“ mit 5 Volt zum Beispiel gilt:\n\n| Spannung am Eingang | wird gelesen als |\n|---|---|\n| 0 bis 0,8 Volt | 0 (niedrig) |\n| 0,8 bis 2,0 Volt | verbotene Zone – darf im Ruhezustand nicht vorkommen |\n| 2,0 bis 5 Volt | 1 (hoch) |\n\nUnd die Bauteile versprechen beim *Senden* mehr, als sie beim *Lesen* verlangen: Eine ausgegebene 0 liegt höchstens bei 0,4 Volt, eine ausgegebene 1 mindestens bei 2,4 Volt. Selbst wenn unterwegs eine Störung 0,4 Volt dazu- oder wegmogelt, wird noch richtig gelesen. Heutige Chips arbeiten mit viel kleineren Spannungen, oft um 1 Volt, aber nach demselben Prinzip.\n\nWie passt das dazu, dass ein Bit nur 0 oder 1 ist und nichts dazwischen (Folge 1)? Drei Dinge sorgen dafür, dass die Schaltung trotzdem jedes Bit eindeutig liest:\n\n1. **Der Abstand:** Kleine Störungen schieben eine 0 nicht bis in den Bereich der 1.\n2. **Das Auffrischen:** Jede Schaltstufe gibt wieder ein sauberes „ganz niedrig“ oder „ganz hoch“ aus, auch wenn ihr Eingang etwas verwaschen war. Fehler sammeln sich so nicht an – anders als beim Kopieren einer Kassette, wo jede Kopie etwas schlechter wird.\n3. **Das Warten:** Beim Umschalten durchläuft die Spannung kurz alle Zwischenwerte, für Milliardstel Sekunden. Gelesen wird deshalb erst, wenn sich alles beruhigt hat. Dafür gibt es den **Takt** – mehr dazu in Folge 6.\n\n> **Merke:** Physikalisch gibt es jede Spannung. Digital wird es erst durch eine Abmachung: zwei Bereiche mit einer Sicherheitslücke dazwischen. Darum ist ein Bit trotz Störungen zuverlässig.\n\n### Das Relais: ein Magnet legt den Schalter um\n\nEin **Relais** hat zwei getrennte Stromkreise. Im **Steuerkreis** sitzt eine Drahtspule um einen Eisenkern – ein Elektromagnet. Fließt dort Strom, zieht der Magnet eine Metallzunge an, und die schließt den Kontakt im **Hauptkreis**. Fließt kein Strom mehr, zieht eine Feder die Zunge zurück, der Hauptkreis ist offen.\n\nProbier es aus: Tippe auf **Steuerung A**. Die Zunge oben klappt herunter, der Strom (wandernde Striche) fließt, die Lampe leuchtet."
     },
     {
      "art": "sim",
@@ -174,6 +174,26 @@
    ]
   },
   {
+   "id": "beidir",
+   "titel": "Wo steckt das bei dir?",
+   "teile": [
+    {
+     "art": "md",
+     "text": "Transistoren stecken in jedem Gerät, das du benutzt – und zwar in unvorstellbarer Zahl.\n\n**Dein Pixel.** Der Hauptchip deines Handys enthält Prozessor, Grafik und vieles mehr auf einem Stück Silizium. Google nennt keine genaue Transistorzahl, aber wie beim M1-Chip aus der Geschichte sind es **viele Milliarden**. Dazu kommt der Speicherchip: Bei 128 GB Speicher sind das rund eine Billion Bit (ein Bit ist eine Entscheidung zwischen 0 und 1, mehr dazu in Folge 1). Sie liegen in winzigen Speicherzellen, die selbst besondere Transistoren sind – eine Zelle hält heute meist sogar mehrere Bits.\n\n**Laden per USB.** Die Steckdose liefert 230 Volt Wechselspannung – sie pendelt 50-mal pro Sekunde hin und her (50 Hertz), die Richtung wechselt also 100-mal pro Sekunde. Dein Ladegerät macht daraus eine niedrige **Gleichspannung**, bei USB normalerweise **5 Volt**, beim Schnellladen auch mehr (etwa 9 Volt). Im Handy wird daraus noch einmal weniger: Der Akku hat knapp 4 Volt, und die Transistoren im Chip arbeiten mit **rund 1 Volt** oder weniger.\n\n**Dein Windows-PC.** Das Netzteil im Gehäuse wandelt die 230 Volt in die Gleichspannungen **12 Volt, 5 Volt und 3,3 Volt** um – das ist bei PC-Netzteilen genormt. Auf der Hauptplatine sitzen weitere Spannungswandler, die dem Prozessor seine rund 1 Volt liefern. Wenn dein PC unter Last summt und warm wird: Das ist die Energie, die beim milliardenfachen Umschalten der Transistoren in Wärme übergeht.\n\n**Dein VPS.** Der Server im Rechenzentrum hat einen großen Prozessor mit vielen Kernen und vielen Milliarden Transistoren. Dein VPS bekommt davon einen Anteil – einen virtuellen Prozessorkern (1 vCPU). Auch ich, der Agent im Docker-Container, bin am Ende nichts anderes als Milliarden Transistoren, die an- und ausgehen.\n\n**Cloudflare Pages.** Wenn du diese App öffnest, schalten in Servern von Cloudflare und in jedem Netzwerkgerät unterwegs Transistoren, damit die Bits bei dir ankommen.\n\n| Gerät | Spannung |\n|---|---|\n| Steckdose | 230 Volt Wechselspannung |\n| PC-Netzteil (Ausgänge) | 12 V, 5 V, 3,3 V Gleichspannung |\n| USB-Ladegerät | 5 V (Schnellladen auch mehr) |\n| Handy-Akku | knapp 4 V |\n| Transistoren im Prozessor | rund 1 V |\n\n> **Wusstest du?:** Relais gibt es bis heute – überall dort, wo ein schwaches Signal einen kräftigen Strom schalten soll, etwa in Haushaltsgeräten, Heizungen und Autos. Das leise Klicken, das man bei manchen Geräten beim Einschalten hört, ist oft ein Relais."
+    }
+   ]
+  },
+  {
+   "id": "fazit",
+   "titel": "Auf den Punkt",
+   "teile": [
+    {
+     "art": "md",
+     "text": "- Ein **Relais** ist ein Schalter, den ein Elektromagnet umlegt: Ein schwacher Strom steuert einen zweiten, starken Stromkreis.\n- Ein **Transistor** (MOSFET) schaltet ohne bewegliche Teile: Eine Spannung am Gate öffnet einen leitenden Kanal – darum ist er schnell, sparsam und nutzt sich nicht ab.\n- Aus einer Spannung wird ein Bit durch eine Abmachung: ein Bereich für 0, einer für 1 und eine Sicherheitslücke dazwischen.\n- Zwei Transistoren hintereinander lassen die Lampe nur leuchten, wenn beide leiten; nebeneinander, wenn mindestens einer leitet. Leitet ein Transistor den Strom an der Lampe vorbei, kehrt er das Signal um."
+    }
+   ]
+  },
+  {
    "id": "quiz",
    "titel": "Teste dich",
    "teile": []
@@ -182,16 +202,6 @@
    "id": "karten",
    "titel": "Für deinen Karteikasten",
    "teile": []
-  },
-  {
-   "id": "beidir",
-   "titel": "Wo steckt das bei dir?",
-   "teile": [
-    {
-     "art": "md",
-     "text": "Transistoren stecken in jedem Gerät, das du benutzt – und zwar in unvorstellbarer Zahl.\n\n**Dein Pixel.** Der Hauptchip deines Handys enthält Prozessor, Grafik und vieles mehr auf einem Stück Silizium. Google nennt keine genaue Transistorzahl, aber wie beim M1-Chip aus der Geschichte sind es **viele Milliarden**. Dazu kommt der Speicherchip: Die rund eine Billion Bits aus Folge 1 (bei 128 GB) liegen in winzigen Speicherzellen, die selbst besondere Transistoren sind – eine Zelle hält heute meist sogar mehrere Bits.\n\n**Laden per USB.** Die Steckdose liefert 230 Volt Wechselspannung – sie pendelt 50-mal pro Sekunde hin und her (50 Hertz), die Richtung wechselt also 100-mal pro Sekunde. Dein Ladegerät macht daraus eine niedrige **Gleichspannung**, bei USB normalerweise **5 Volt**, beim Schnellladen auch mehr (etwa 9 Volt). Im Handy wird daraus noch einmal weniger: Der Akku hat knapp 4 Volt, und die Transistoren im Chip arbeiten mit **rund 1 Volt** oder weniger.\n\n**Dein Windows-PC.** Das Netzteil im Gehäuse wandelt die 230 Volt in die Gleichspannungen **12 Volt, 5 Volt und 3,3 Volt** um – das ist bei PC-Netzteilen genormt. Auf der Hauptplatine sitzen weitere Spannungswandler, die dem Prozessor seine rund 1 Volt liefern. Wenn dein PC unter Last summt und warm wird: Das ist die Energie, die beim milliardenfachen Umschalten der Transistoren in Wärme übergeht.\n\n**Dein VPS.** Der Server im Rechenzentrum hat einen großen Prozessor mit vielen Kernen und vielen Milliarden Transistoren. Dein VPS bekommt davon einen Anteil – einen virtuellen Prozessorkern (1 vCPU). Auch ich, der Agent im Docker-Container, bin am Ende nichts anderes als Milliarden Transistoren, die an- und ausgehen.\n\n**Cloudflare Pages.** Wenn du diese App öffnest, schalten in Servern von Cloudflare und in jedem Netzwerkgerät unterwegs Transistoren, damit die Bits bei dir ankommen.\n\n| Gerät | Spannung |\n|---|---|\n| Steckdose | 230 Volt Wechselspannung |\n| PC-Netzteil (Ausgänge) | 12 V, 5 V, 3,3 V Gleichspannung |\n| USB-Ladegerät | 5 V (Schnellladen auch mehr) |\n| Handy-Akku | knapp 4 V |\n| Transistoren im Prozessor | rund 1 V |\n\n> **Wusstest du?:** Relais gibt es bis heute – überall dort, wo ein schwaches Signal einen kräftigen Strom schalten soll, etwa in Haushaltsgeräten, Heizungen und Autos. Das leise Klicken, das man bei manchen Geräten beim Einschalten hört, ist oft ein Relais."
-    }
-   ]
   }
  ],
  "quiz": [
@@ -206,7 +216,8 @@
    ],
    "richtig": 1,
    "erklaerung": "Im Relais zieht ein Elektromagnet eine Metallzunge an, die einen zweiten, getrennten Stromkreis schließt. So steuert ein schwacher Strom einen starken – zuerst genutzt in Telegrafenleitungen.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Das Relais: ein Magnet legt den Schalter um"
   },
   {
    "id": "s1f02-q02",
@@ -219,7 +230,8 @@
    ],
    "richtig": 2,
    "erklaerung": "Für 0 und 1 gibt es je einen Spannungsbereich mit einer breiten Lücke dazwischen. Kleine Störungen schieben eine 0 nicht bis zur 1, jede Schaltstufe frischt das Signal auf, und gelesen wird erst, wenn sich die Spannung nach dem Umschalten beruhigt hat.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Aus Spannung wird ein Bit"
   },
   {
    "id": "s1f02-q03",
@@ -232,20 +244,22 @@
    ],
    "richtig": 2,
    "erklaerung": "Die Spannung am Gate zieht Elektronen unter die isolierende Schicht, und dort entsteht ein leitender Kanal. Es bewegt sich nichts – darum ist der Transistor so schnell. Magnet und Zunge sind das Relais, der glühende Draht die Röhre.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Der Transistor: schalten ohne bewegliche Teile"
   },
   {
    "id": "s1f02-q04",
-   "frage": "Wo und wann wurde der erste Transistor gebaut?",
+   "frage": "Was war am ersten Transistor von 1947 grundlegend neu gegenüber Relais und Elektronenröhren?",
    "antworten": [
-    "1941 von Konrad Zuse in Berlin",
-    "1947 bei den Bell Labs in den USA",
-    "1958 bei Texas Instruments",
-    "1946 an der University of Pennsylvania"
+    "Er rechnete als erster Schalter im Zehnersystem",
+    "Er verstärkte ein Signal in festem Kristall, ohne Vakuum und Glühdraht",
+    "Er brauchte statt Strom nur noch Druckluft zum Schalten",
+    "Er schaltete mit einem besonders kräftigen Elektromagneten"
    ],
    "richtig": 1,
-   "erklaerung": "Im Dezember 1947 brachten John Bardeen und Walter Brattain bei den Bell Labs den ersten Transistor zum Laufen. 1941 ist Zuses Relaisrechner Z3, 1946 der Röhrenrechner ENIAC, 1958 Kilbys erste integrierte Schaltung.",
-   "nachlesen": "geschichte"
+   "erklaerung": "Im Dezember 1947 brachten John Bardeen und Walter Brattain bei den Bell Labs ein Stück Germanium-Kristall dazu, ein Signal zu verstärken – ohne Glaskolben, Vakuum und Glühdraht wie bei der Röhre. Der Elektromagnet gehört zum Relais.",
+   "nachlesen": "geschichte",
+   "stelle": "Weihnachten 1947: der Transistor"
   },
   {
    "id": "s1f02-q05",
@@ -257,8 +271,9 @@
     "Wenn keiner der beiden leitet"
    ],
    "richtig": 1,
-   "erklaerung": "Der Strom muss durch beide hindurch. Sperrt einer, ist der einzige Weg unterbrochen. Hintereinander heißt also „nur wenn beide“ – in Folge 3 ist das das UND-Gatter.",
-   "nachlesen": "selbst"
+   "erklaerung": "Der Strom muss durch beide hindurch. Sperrt einer, ist der einzige Weg unterbrochen. Hintereinander heißt also „nur wenn beide“ – diese Schaltung heißt später UND (mehr dazu in Folge 3).",
+   "nachlesen": "selbst",
+   "stelle": "Übung 1: hintereinander"
   },
   {
    "id": "s1f02-q06",
@@ -271,11 +286,12 @@
    ],
    "richtig": 2,
    "erklaerung": "Röhren schalten zwar schnell und ohne bewegliche Teile, aber ihr Glühdraht macht sie heiß, stromhungrig und kurzlebig. Der ENIAC hatte über 17 000 Röhren, regelmäßig fiel eine aus. Transistoren sind klein, sparsam und halten praktisch ewig.",
-   "nachlesen": "geschichte"
+   "nachlesen": "geschichte",
+   "stelle": "Glühende Röhren"
   },
   {
    "id": "s1f02-q07",
-   "frage": "Im Bild mit dem Wasserkreislauf: Wofür steht der Druck in der dünnen Steuerleitung?",
+   "frage": "Ein Transistor wird mit einem druckgesteuerten Ventil in einem Wasserrohr verglichen: Eine dünne Steuerleitung öffnet das Ventil nur durch ihren Druck, ohne dass Wasser fließt. Wofür steht dieser Druck beim Transistor?",
    "antworten": [
     "Für den Strom, der durch die Lampe fließt",
     "Für die Spannung am Gate des Transistors",
@@ -315,13 +331,13 @@
   },
   {
    "id": "s1f02-k06",
-   "vorne": "Wann und wo wurde der erste Transistor gebaut?",
-   "hinten": "Im Dezember 1947 bei den Bell Labs, von John Bardeen und Walter Brattain."
+   "vorne": "Was war am ersten Transistor (1947) neu gegenüber Relais und Röhren?",
+   "hinten": "Zwei Goldkontakte auf einem Germanium-Kristall verstärkten ein Signal – ohne Vakuum und Glühdraht (Bell Labs, Dezember 1947)."
   },
   {
    "id": "s1f02-k07",
    "vorne": "Zwei Transistoren liegen hintereinander vor einer Lampe. Wann leuchtet sie?",
-   "hinten": "Nur wenn beide leiten – ist einer zu, ist der einzige Weg unterbrochen (später: UND)."
+   "hinten": "Nur wenn beide leiten – ist einer zu, ist der einzige Weg unterbrochen (später: UND, mehr in Folge 3)."
   },
   {
    "id": "s1f02-k08",
@@ -330,7 +346,7 @@
   },
   {
    "id": "s1f02-k09",
-   "vorne": "Im Wasserkreislauf-Bild: Wofür steht der Druck in der dünnen Steuerleitung?",
+   "vorne": "Ein Transistor wird mit einem druckgesteuerten Ventil verglichen, das eine dünne Steuerleitung allein durch Druck öffnet. Wofür steht dieser Druck beim Transistor?",
    "hinten": "Für die Spannung am Gate des Transistors."
   },
   {

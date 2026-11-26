@@ -33,7 +33,7 @@
    "text": "John L. Hennessy, David A. Patterson: Computer Architecture – A Quantitative Approach, Kapitel „Memory Hierarchy Design“, Standardwerk, mehrere Auflagen"
   }
  ],
- "faktencheck": "26.11.2026 – Durchgang 1 bestanden, Überarbeitung in Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/",
+ "faktencheck": "26.11.2026 – Durchgang 1 bestanden, Überarbeitung in Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/; Umstellung auf eigenständige Folge + Lernpool (1.5.0): unabhängig geprüft und bestanden",
  "staffel": 1,
  "nr": 7,
  "titel": "Speicherhierarchie",
@@ -48,7 +48,7 @@
    "teile": [
     {
      "art": "md",
-     "text": "In der letzten Folge hast du gesehen: Ein Prozessor schafft Milliarden Takte pro Sekunde. Aber bei fast jedem Befehl braucht er etwas aus dem Speicher – einen Befehl, eine Zahl. Und hier kommt die unbequeme Wahrheit: Der Arbeitsspeicher ist im Vergleich zum Prozessor quälend langsam. Bis eine Zahl von dort ankommt, könnte der Prozessor Hunderte Takte lang rechnen.\n\nWürde er jedes Mal einfach warten, wäre dein Computer ein Bruchteil so schnell, wie er ist. Dass er es nicht ist, verdankt er einer cleveren Ordnung: einer Treppe aus Speichern, vom winzigen und blitzschnellen bis zum riesigen und gemächlichen. Diese Treppe heißt **Speicherhierarchie**, und in dieser Folge steigst du sie Stufe für Stufe hinab."
+     "text": "Ein Prozessor schafft Milliarden Takte pro Sekunde – so viele Rechenschritte im festen Rhythmus (mehr dazu in Folge 6). Aber bei fast jedem Befehl braucht er etwas aus dem Speicher – einen Befehl, eine Zahl. Und hier kommt die unbequeme Wahrheit: Der Arbeitsspeicher ist im Vergleich zum Prozessor quälend langsam. Bis eine Zahl von dort ankommt, könnte der Prozessor Hunderte Takte lang rechnen.\n\nWürde er jedes Mal einfach warten, wäre dein Computer ein Bruchteil so schnell, wie er ist. Dass er es nicht ist, verdankt er einer cleveren Ordnung: einer Treppe aus Speichern, vom winzigen und blitzschnellen bis zum riesigen und gemächlichen. Diese Treppe heißt **Speicherhierarchie**, und in dieser Folge steigst du sie Stufe für Stufe hinab."
     }
    ]
   },
@@ -68,7 +68,7 @@
    "teile": [
     {
      "art": "md",
-     "text": "### Schnell, klein, teuer – oder langsam, groß, billig\n\nEs gibt keinen Speicher, der zugleich riesig, blitzschnell, billig und dauerhaft ist. Jede Bauart hat ihren Preis:\n\n- Schneller Speicher braucht viele Transistoren pro Bit und sitzt möglichst nah am Rechenwerk – da ist der Platz knapp. Ein Bit im Cache besteht aus einer kleinen Flipflop-Schaltung (Folge 5) mit meist sechs Transistoren.\n- Der Arbeitsspeicher kommt mit einem Transistor und einem winzigen Kondensator pro Bit aus. Das ist viel dichter und billiger – aber langsamer, und er sitzt auf eigenen Chips, ein paar Zentimeter vom Prozessor entfernt.\n- Flash-Speicher und Festplatten fassen noch mehr für noch weniger Geld, sind aber noch einmal tausendfach langsamer.\n\nAlso stapelt man die Bauarten zu einer Treppe:\n\n| Stufe | Wo? | Größe (grob) | Zugriff (grob) |\n|---|---|---|---|\n| **Register** | im Rechenwerk | einige Hundert Byte bis wenige KB | 1 Takt |\n| **L1-Cache** | in jedem Kern | ca. 32–192 KB | ca. 1 ns |\n| **L2-Cache** | meist je Kern | 0,5–3 MB | ca. 4 ns |\n| **L3-Cache** | auf dem Chip, für alle Kerne | 8–64 MB | ca. 10–20 ns |\n| **Arbeitsspeicher (RAM)** | eigene Chips | 4–64 GB | ca. 100 ns |\n| **SSD** | Laufwerk | 250 GB – 4 TB | ca. 20–100 µs |\n| **Festplatte** | Laufwerk | 1–20 TB | ca. 5–15 ms |\n\nL1, L2, L3 heißen die Cache-Stufen nach ihrer Entfernung vom Rechenwerk (*Level* 1, 2, 3). Eine Nanosekunde (ns) ist eine Milliardstel Sekunde, eine Mikrosekunde (µs) eine Millionstel, eine Millisekunde (ms) eine Tausendstel. Die Zahlen sind grobe, typische Größenordnungen – je nach Gerät weichen sie ab.\n\nSolche Zahlen sind für Menschen kaum greifbar. Darum rechnet der Simulator sie hoch: Bei etwa 3 GHz (Folge 6) dauert ein Takt eine Drittel-Nanosekunde – ein Griff in den Arbeitsspeicher kostet also rund 300 Takte. **Stell dir vor, ein Prozessortakt dauerte eine Sekunde.** Tippe die Stufen nacheinander an:"
+     "text": "### Schnell, klein, teuer – oder langsam, groß, billig\n\nEs gibt keinen Speicher, der zugleich riesig, blitzschnell, billig und dauerhaft ist. Jede Bauart hat ihren Preis:\n\n- Am schnellsten sind die **Register**: eine Handvoll winziger Speicherplätze direkt im **Rechenwerk**, dem Teil des Prozessors, der rechnet (mehr dazu in Folge 6).\n- Schneller Speicher braucht viele Transistoren pro Bit und sitzt möglichst nah am Rechenwerk – da ist der Platz knapp. Ein Bit im Cache besteht aus einer kleinen Flipflop-Schaltung mit meist sechs Transistoren – ein Flipflop ist eine Schaltung, die ein Bit festhält, solange Strom da ist (mehr dazu in Folge 5).\n- Der Arbeitsspeicher kommt mit einem Transistor und einem winzigen Kondensator – einer Art Mini-Akku für Ladung – pro Bit aus. Das ist viel dichter und billiger – aber langsamer, und er sitzt auf eigenen Chips, ein paar Zentimeter vom Prozessor entfernt.\n- Flash-Speicher und Festplatten fassen noch mehr für noch weniger Geld, sind aber noch einmal tausendfach langsamer.\n\nAlso stapelt man die Bauarten zu einer Treppe:\n\n| Stufe | Wo? | Größe (grob) | Zugriff (grob) |\n|---|---|---|---|\n| **Register** | im Rechenwerk | einige Hundert Byte bis wenige KB | 1 Takt |\n| **L1-Cache** | in jedem Kern | ca. 32–192 KB | ca. 1 ns |\n| **L2-Cache** | meist je Kern | 0,5–3 MB | ca. 4 ns |\n| **L3-Cache** | auf dem Chip, für alle Kerne | 8–64 MB | ca. 10–20 ns |\n| **Arbeitsspeicher (RAM)** | eigene Chips | 4–64 GB | ca. 100 ns |\n| **SSD** | Laufwerk | 250 GB – 4 TB | ca. 20–100 µs |\n| **Festplatte** | Laufwerk | 1–20 TB | ca. 5–15 ms |\n\nL1, L2, L3 heißen die Cache-Stufen nach ihrer Entfernung vom Rechenwerk (*Level* 1, 2, 3). Eine Nanosekunde (ns) ist eine Milliardstel Sekunde, eine Mikrosekunde (µs) eine Millionstel, eine Millisekunde (ms) eine Tausendstel. Die Zahlen sind grobe, typische Größenordnungen – je nach Gerät weichen sie ab.\n\nSolche Zahlen sind für Menschen kaum greifbar. Darum rechnet der Simulator sie hoch: Bei etwa 3 GHz (3 Milliarden Takte pro Sekunde) dauert ein Takt eine Drittel-Nanosekunde – ein Griff in den Arbeitsspeicher kostet also rund 300 Takte. **Stell dir vor, ein Prozessortakt dauerte eine Sekunde.** Tippe die Stufen nacheinander an:"
     },
     {
      "art": "sim",
@@ -79,7 +79,7 @@
     },
     {
      "art": "md",
-     "text": "Ein Griff in den Arbeitsspeicher wären etwa fünf Minuten, einer in die SSD fast zwei Tage – und einer in die Festplatte rund acht Monate. Darum gehört alles, womit der Prozessor gerade arbeitet, möglichst weit nach oben auf die Treppe.\n\n> **Merke:** Je näher am Prozessor, desto **schneller, kleiner und teurer** ist der Speicher. Je weiter weg, desto **langsamer, größer und billiger**.\n\n### Warum der Cache funktioniert: Lokalität\n\nEin Cache von wenigen Megabyte soll einen Arbeitsspeicher von vielen Gigabyte ersetzen? Das klappt nur, weil Programme sich sehr vorhersehbar verhalten. Man nennt das **Lokalität** – und es gibt sie in zwei Formen:\n\n- **Zeitliche Lokalität:** Was eben gebraucht wurde, wird bald wieder gebraucht. Denk an die Schleife aus Folge 6: Dieselben Befehle und derselbe Zähler werden immer wieder gelesen. Also behält der Cache, was zuletzt benutzt wurde.\n- **Räumliche Lokalität:** Wird eine Speicherzelle gebraucht, werden bald auch ihre Nachbarn gebraucht. Befehle stehen hintereinander im Speicher, Buchstaben eines Textes ebenso. Darum holt der Cache nie nur ein einzelnes Byte, sondern gleich einen ganzen Block – bei heutigen Prozessoren meist 64 Byte am Stück.\n\nFindet der Prozessor die gesuchten Daten im Cache, ist das ein **Treffer** – sie sind sofort da. Wenn nicht, muss er eine Stufe tiefer nachsehen, und der Block wandert auf dem Rückweg in den Cache. Bei typischen Programmen landet die große Mehrheit der Zugriffe einen Treffer. Dadurch fühlt sich der Arbeitsspeicher fast so schnell an wie der Cache, obwohl er tausendmal größer ist.\n\n> **Beispiel:** Ein Programm addiert die Zahlen einer langen Liste. Beim ersten Element holt der Cache gleich den Block mit den nächsten Elementen mit (räumlich). Der Zwischenstand der Summe und die Befehle der Schleife werden bei jeder Runde wieder gebraucht und bleiben im Cache (zeitlich).\n\n### Flüchtig oder dauerhaft\n\nDie Treppe hat noch eine zweite Grenze, quer durch die Mitte: Register, Cache und Arbeitsspeicher sind **flüchtig**. Ohne Strom vergessen sie alles – das Flipflop kann sich nicht mehr festhalten (beim Einschalten steht es zufällig auf 0 oder 1), der Kondensator verliert seine Ladung. SSD und Festplatte sind **dauerhaft**: Flash-Speicher hält Ladungen in gut isolierten Speicherzellen gefangen, die Festplatte magnetisiert winzige Bereiche ihrer Scheiben. Beides bleibt ohne Strom erhalten, jahrelang.\n\nDeshalb ist ein Text verloren, den du nicht gespeichert hast, wenn der Strom ausfällt: Er stand nur im Arbeitsspeicher. „Speichern“ heißt, ihn eine Stufe tiefer auf die SSD zu schreiben. Und deshalb dauert das Hochfahren: Programme und Daten müssen erst von der SSD in den Arbeitsspeicher geladen werden.\n\n> **Achtung:** Vereinfacht: In Wirklichkeit gibt es noch mehr Stufen und Zwischenspeicher, etwa einen eigenen Cache in jeder SSD. Und welche Daten in welcher Cache-Stufe liegen, entscheidet die Hardware selbst nach festen Regeln – kein Programm muss sich darum kümmern."
+     "text": "Ein Griff in den Arbeitsspeicher wären etwa fünf Minuten, einer in die SSD fast zwei Tage – und einer in die Festplatte rund acht Monate. Darum gehört alles, womit der Prozessor gerade arbeitet, möglichst weit nach oben auf die Treppe.\n\n> **Merke:** Je näher am Prozessor, desto **schneller, kleiner und teurer** ist der Speicher. Je weiter weg, desto **langsamer, größer und billiger**.\n\n### Warum der Cache funktioniert: Lokalität\n\nEin Cache von wenigen Megabyte soll einen Arbeitsspeicher von vielen Gigabyte ersetzen? Das klappt nur, weil Programme sich sehr vorhersehbar verhalten. Man nennt das **Lokalität** – und es gibt sie in zwei Formen:\n\n- **Zeitliche Lokalität:** Was eben gebraucht wurde, wird bald wieder gebraucht. Denk an eine Schleife, die dieselben Befehle immer wieder ausführt: Dieselben Befehle und derselbe Zähler werden immer wieder gelesen. Also behält der Cache, was zuletzt benutzt wurde.\n- **Räumliche Lokalität:** Wird eine Speicherzelle gebraucht, werden bald auch ihre Nachbarn gebraucht. Befehle stehen hintereinander im Speicher, Buchstaben eines Textes ebenso. Darum holt der Cache nie nur ein einzelnes Byte, sondern gleich einen ganzen Block – bei heutigen Prozessoren meist 64 Byte am Stück.\n\nFindet der Prozessor die gesuchten Daten im Cache, ist das ein **Treffer** – sie sind sofort da. Wenn nicht, muss er eine Stufe tiefer nachsehen, und der Block wandert auf dem Rückweg in den Cache. Bei typischen Programmen landet die große Mehrheit der Zugriffe einen Treffer. Dadurch fühlt sich der Arbeitsspeicher fast so schnell an wie der Cache, obwohl er tausendmal größer ist.\n\n> **Beispiel:** Ein Programm addiert die Zahlen einer langen Liste. Beim ersten Element holt der Cache gleich den Block mit den nächsten Elementen mit (räumlich). Der Zwischenstand der Summe und die Befehle der Schleife werden bei jeder Runde wieder gebraucht und bleiben im Cache (zeitlich).\n\n### Flüchtig oder dauerhaft\n\nDie Treppe hat noch eine zweite Grenze, quer durch die Mitte: Register, Cache und Arbeitsspeicher sind **flüchtig**. Ohne Strom vergessen sie alles – das Flipflop kann sich nicht mehr festhalten (beim Einschalten steht es zufällig auf 0 oder 1), der Kondensator verliert seine Ladung. SSD und Festplatte sind **dauerhaft**: Flash-Speicher hält Ladungen in gut isolierten Speicherzellen gefangen, die Festplatte magnetisiert winzige Bereiche ihrer Scheiben. Beides bleibt ohne Strom erhalten, jahrelang.\n\nDeshalb ist ein Text verloren, den du nicht gespeichert hast, wenn der Strom ausfällt: Er stand nur im Arbeitsspeicher. „Speichern“ heißt, ihn eine Stufe tiefer auf die SSD zu schreiben. Und deshalb dauert das Hochfahren: Programme und Daten müssen erst von der SSD in den Arbeitsspeicher geladen werden.\n\n> **Achtung:** Vereinfacht: In Wirklichkeit gibt es noch mehr Stufen und Zwischenspeicher, etwa einen eigenen Cache in jeder SSD. Und welche Daten in welcher Cache-Stufe liegen, entscheidet die Hardware selbst nach festen Regeln – kein Programm muss sich darum kümmern."
     }
    ]
   },
@@ -144,16 +144,6 @@
    ]
   },
   {
-   "id": "quiz",
-   "titel": "Teste dich",
-   "teile": []
-  },
-  {
-   "id": "karten",
-   "titel": "Für deinen Karteikasten",
-   "teile": []
-  },
-  {
    "id": "beidir",
    "titel": "Wo steckt das bei dir?",
    "teile": [
@@ -162,21 +152,42 @@
      "text": "Die Treppe der Speicher findest du in jedem deiner Geräte – und du kannst sie dir sogar anzeigen lassen.\n\n**Dein VPS.** Ich habe auf dem Server nachgesehen. Das Programm `lscpu` meldet dort einen L1-Cache von 64 KiB für Daten und noch einmal 64 KiB für Befehle, 512 KiB L2-Cache und 16 MiB L3-Cache. (Diese Werte legt die Virtualisierung fest – der echte Chip im Rechenzentrum ist anders aufgeteilt, aber die Treppe ist dieselbe.) Darunter liegen **3,8 GB Arbeitsspeicher** und ein Laufwerk mit rund 48 GB, auf dem alle Dateien dauerhaft liegen.\n\nSpannend ist die Ausgabe von `free -h`: Dort stand bei mir unter *buff/cache* gut **1 GB**. Linux nutzt gerade nicht gebrauchten Arbeitsspeicher als Cache für das Laufwerk – Dateien, die eben gelesen wurden, bleiben im schnelleren Arbeitsspeicher, falls sie gleich wieder gebraucht werden. Dieselbe Idee wie der Prozessor-Cache, eine Stufe tiefer. Und umgekehrt: Wird der Arbeitsspeicher knapp, lagert Linux selten benutzte Teile auf das Laufwerk aus (*Swap*). Das geht, ist aber langsam – du weißt jetzt, warum.\n\n**Dein Windows-PC.** Task-Manager öffnen (Strg + Umschalt + Esc), dann **Leistung → CPU**: Unten stehen L1-, L2- und L3-Cache deines Prozessors. Unter **Leistung → Arbeitsspeicher** siehst du, wie viel RAM eingebaut ist und wie viel gerade belegt ist. Dort steht auch **„Im Cache“** – das ist nicht der Prozessor-Cache, sondern wie bei Linux Arbeitsspeicher, den Windows als Zwischenspeicher für Dateien von der SSD nutzt. Das Wort „Cache“ bedeutet immer dasselbe: eine schnellere Stufe, die Kopien bereithält.\n\n**Dein Pixel.** Auch dein Handy hat Register und Caches im Prozessor, dazu Arbeitsspeicher. Der große Speicher für Fotos und Apps (unter **Einstellungen → Speicher**) ist Flash-Speicher – dieselbe Erfindung von Fujio Masuoka, die in SSDs steckt. Darum sind deine Fotos noch da, wenn der Akku einmal leer war, offene Apps aber müssen danach neu starten.\n\n**Ich im Docker-Container.** Was ich mir dauerhaft merken soll, schreibe ich in Dateien auf das Laufwerk – mein „Gedächtnis“. Woran ich gerade arbeite – offene Dateien, Zwischenstände –, liegt im Arbeitsspeicher des Servers und wäre bei einem Neustart weg. (Das Sprachmodell selbst, mit dem ich denke, rechnet nicht auf dem VPS, sondern auf Servern von Anthropic.) Wer dafür sorgt, dass sich viele Programme den knappen Arbeitsspeicher teilen, ohne sich in die Quere zu kommen, erfährst du in Folge 8: das Betriebssystem."
     }
    ]
+  },
+  {
+   "id": "fazit",
+   "titel": "Auf den Punkt",
+   "teile": [
+    {
+     "art": "md",
+     "text": "- Schneller Speicher ist klein und teuer, großer Speicher langsam und billig – darum ordnet ein Computer seine Speicher als Treppe: Register, Cache, Arbeitsspeicher, SSD, Festplatte.\n- Der Cache hält Kopien dessen, was der Prozessor gerade braucht. Das klappt wegen der Lokalität: Was eben gebraucht wurde, wird bald wieder gebraucht (zeitlich), und Nachbardaten werden bald mitgebraucht (räumlich).\n- Register, Cache und Arbeitsspeicher sind flüchtig und vergessen ohne Strom alles; SSD und Festplatte sind dauerhaft.\n- „Speichern“ heißt, Daten aus dem flüchtigen Arbeitsspeicher eine Stufe tiefer auf die dauerhafte SSD zu schreiben."
+    }
+   ]
+  },
+  {
+   "id": "quiz",
+   "titel": "Teste dich",
+   "teile": []
+  },
+  {
+   "id": "karten",
+   "titel": "Für deinen Karteikasten",
+   "teile": []
   }
  ],
  "quiz": [
   {
    "id": "s1f07-q01",
-   "frage": "Welcher Speicher ist am schnellsten?",
+   "frage": "Welcher Speicher eines Computers ist am schnellsten, und warum gibt es davon nur sehr wenige?",
    "antworten": [
-    "Register",
-    "L3-Cache",
-    "Arbeitsspeicher",
-    "SSD"
+    "Die Register: Sie sitzen direkt im Rechenwerk, der Platz dort ist knapp",
+    "Der Arbeitsspeicher: Er sitzt auf eigenen Chips und ist besonders dicht gepackt",
+    "Die SSD: Sie hat keine beweglichen Teile und fasst viele Gigabyte",
+    "Die Festplatte: Sie speichert Daten magnetisch und dauerhaft"
    ],
    "richtig": 0,
-   "erklaerung": "Register sitzen direkt im Rechenwerk des Prozessors; ein Zugriff dauert etwa einen Takt. Dafür gibt es nur sehr wenige davon.",
-   "nachlesen": "prinzip"
+   "erklaerung": "Register sitzen direkt im Rechenwerk des Prozessors; ein Zugriff dauert etwa einen Takt. Dafür ist der Platz dort so knapp, dass es nur einige Hundert Byte bis wenige KB davon gibt.",
+   "nachlesen": "prinzip",
+   "stelle": "Schnell, klein, teuer – oder langsam, groß, billig"
   },
   {
    "id": "s1f07-q02",
@@ -189,11 +200,12 @@
    ],
    "richtig": 1,
    "erklaerung": "Ein Cache-Bit braucht meist sechs Transistoren und muss nah am Rechenwerk sitzen. Gigabytes davon wären riesig und unbezahlbar. Darum kombiniert man wenig schnellen mit viel langsamem Speicher.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Schnell, klein, teuer – oder langsam, groß, billig"
   },
   {
    "id": "s1f07-q03",
-   "frage": "Eine Schleife liest bei jeder Runde denselben Zähler. Welche Eigenschaft macht den Cache dabei nützlich?",
+   "frage": "Ein Programm wiederholt eine Schleife und liest dabei bei jeder Runde denselben Zähler. Welche Eigenschaft von Programmen macht einen Cache dabei nützlich?",
    "antworten": [
     "Zeitliche Lokalität",
     "Räumliche Lokalität",
@@ -202,7 +214,8 @@
    ],
    "richtig": 0,
    "erklaerung": "Zeitliche Lokalität heißt: Was eben gebraucht wurde, wird bald wieder gebraucht. Darum behält der Cache die zuletzt benutzten Daten.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Warum der Cache funktioniert: Lokalität"
   },
   {
    "id": "s1f07-q04",
@@ -215,7 +228,8 @@
    ],
    "richtig": 2,
    "erklaerung": "Das ist räumliche Lokalität: Befehle, Listen und Texte liegen hintereinander im Speicher. Wer eine Zelle braucht, braucht bald auch die Nachbarn – die sind dann schon im Cache.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Warum der Cache funktioniert: Lokalität"
   },
   {
    "id": "s1f07-q05",
@@ -228,24 +242,25 @@
    ],
    "richtig": 1,
    "erklaerung": "Der Arbeitsspeicher ist flüchtig: Ohne Strom ist sein Inhalt weg. „Speichern“ schreibt den Text auf die SSD, die ihn dauerhaft behält.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Flüchtig oder dauerhaft"
   },
   {
    "id": "s1f07-q06",
-   "frage": "Wofür schlug Maurice Wilkes 1965 einen „slave memory“ vor?",
+   "frage": "Ein großer, langsamer Hauptspeicher wird um einen kleinen, schnellen Zusatzspeicher ergänzt (die Idee des Cache). Was soll dieser Zusatzspeicher tun?",
    "antworten": [
-    "Als Ersatz für Magnetbänder",
-    "Als dauerhaften Speicher ohne Strom",
-    "Als kleinen, schnellen Speicher mit Kopien zuletzt benutzter Daten",
-    "Als Speicher nur für das Betriebssystem"
+    "Die Daten dauerhaft sichern, damit sie ohne Strom erhalten bleiben",
+    "Den Hauptspeicher entlasten, indem er selten benutzte Daten aufnimmt",
+    "Kopien der zuletzt benutzten Daten bereithalten, damit der Prozessor sie schnell findet",
+    "Nur die Befehle des Betriebssystems aufbewahren"
    ],
    "richtig": 2,
-   "erklaerung": "Wilkes beschrieb den Vorläufer des Caches: einen kleinen, schnellen Zusatzspeicher, der automatisch Kopien der zuletzt benutzten Daten aus dem großen Hauptspeicher bereithält. Die IBM System/360 Model 85 brachte die Idee 1968 in einen kommerziellen Rechner.",
+   "erklaerung": "Der Cache ist ein kleiner, schneller Zwischenspeicher mit Kopien dessen, was zuletzt benutzt wurde. So muss der Prozessor seltener auf den langsamen Hauptspeicher warten. Die Idee beschrieb der Informatiker Maurice Wilkes 1965 als „slave memory“, den Namen Cache bekam sie 1968.",
    "nachlesen": "geschichte"
   },
   {
    "id": "s1f07-q07",
-   "frage": "Wenn ein Prozessortakt eine Sekunde dauerte – wie lange dauerte dann ungefähr ein Zugriff auf den Arbeitsspeicher?",
+   "frage": "Man rechnet die Zeiten eines Computers so um, dass ein Prozessortakt (ein Rechenschritt im festen Rhythmus) eine Sekunde dauert. Wie lange dauert dann ungefähr ein Zugriff auf den Arbeitsspeicher?",
    "antworten": [
     "Etwa eine Sekunde",
     "Etwa fünf Minuten",
@@ -254,11 +269,12 @@
    ],
    "richtig": 1,
    "erklaerung": "Ein Zugriff auf den Arbeitsspeicher dauert grob 300 Takte, hochgerechnet also etwa fünf Minuten. Zwei Tage wären ungefähr die SSD, acht Monate die Festplatte.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Schnell, klein, teuer – oder langsam, groß, billig"
   },
   {
    "id": "s1f07-q08",
-   "frage": "Im Schreibtisch-Bild: Was entspricht dem Cache?",
+   "frage": "Ein Vergleich: Beim Lernen hältst du ein Blatt in der Hand, auf dem Schreibtisch liegen aufgeschlagene Bücher, im Zimmerregal stehen mehr Bücher, in der Stadtbibliothek noch mehr. Welcher dieser Orte entspricht dem Cache eines Computers?",
    "antworten": [
     "Das Blatt in deiner Hand",
     "Die aufgeschlagenen Bücher auf dem Tisch",
@@ -303,17 +319,17 @@
   },
   {
    "id": "s1f07-k07",
-   "vorne": "Wenn ein Prozessortakt eine Sekunde dauerte: Wie lange dauerten ein Zugriff auf RAM, SSD und Festplatte?",
+   "vorne": "Man rechnet so um, dass ein Prozessortakt eine Sekunde dauert. Wie lange dauern dann ein Zugriff auf RAM, SSD und Festplatte?",
    "hinten": "RAM etwa fünf Minuten, SSD fast zwei Tage, Festplatte rund acht Monate."
   },
   {
    "id": "s1f07-k08",
-   "vorne": "Wer schlug 1965 den „slave memory“ vor, und wie heißt er heute?",
-   "hinten": "Maurice Wilkes. Der Name „Cache“ setzte sich ab 1968 durch (IBM System/360 Model 85)."
+   "vorne": "Wie entstand die Idee des Cache?",
+   "hinten": "Maurice Wilkes beschrieb 1965 einen kleinen, schnellen Zusatzspeicher („slave memory“), der Kopien der zuletzt benutzten Daten aus dem großen, langsamen Hauptspeicher bereithält. Den Namen „Cache“ bekam die Idee 1968 (IBM System/360 Model 85)."
   },
   {
    "id": "s1f07-k09",
-   "vorne": "Im Schreibtisch-Bild: Was entspricht dem Cache?",
+   "vorne": "Beim Lernen am Schreibtisch (Blatt in der Hand, Bücher auf dem Tisch, Regal, Bibliothek): Was entspricht dem Cache eines Computers?",
    "hinten": "Die aufgeschlagenen Bücher auf dem Tisch – mit einem Griff erreichbar, aber der Platz ist knapp."
   }
  ]

@@ -6,7 +6,7 @@
 //
 // Prüft: 1. Dateien und Links (jede App-Datei da und kein HTML-Ersatz, fehlende Dateien → 404, interne Sprungziele gültig,
 //        externe Links erreichbar – nur Warnung), 2. Handy-Format (Pixel-Maße, Touch): Start, Schichten-Karte, jede verfügbare
-//        Folge komplett durchklicken (Übung, Quiz, Karteikarten, abschließen), Karteikasten, Glossar-Blatt, Einstellungen,
+//        Folge komplett durchklicken (Übungen, Auf den Punkt, abschließen), Lernpool (Tagesrunde mit Nachlesen, Schicht, Prüfung), Glossar-Blatt, Einstellungen,
 //        dunkles Thema, kein waagerechtes Scrollen bei 360/412 px, Bildschirmfotos; 3. PC-Format; 4. Export/Import per Code
 //        und Datei in ein „zweites Gerät“; 5. offline nach dem ersten Besuch; 6. keine Fehler in der Konsole, keine fremden Adressen.
 import { createRequire } from 'node:module';
@@ -159,40 +159,51 @@ async function folgeDurchklicken(f, nr) {
     await u.locator('.uebung-fertig').waitFor({ timeout: 3000 });
   }
   await bild(`${p}-e-selbst-geloest`);
-  los(`Folge ${f.id}: Quiz`);
-  await weiter(); await s.locator('.quiz').waitFor();
-  for (let i = 0; i < 30 && !(await s.locator('.quiz-ergebnis').count()); i++) {
-    await s.locator('.antwort').first().click();
-    await s.locator('.rueckmeldung').waitFor();
-    if (i === 0) {
-      await bild(`${p}-f-quiz-rueckmeldung`);
-      // Nachlesen und zurück zum Quiz: dieselbe Frage ist noch da
-      await s.locator('.nachlesen-link').click(); await s.locator('.nachlesen-leiste').waitFor();
-      await s.locator('.nachlesen-leiste a').click(); await s.locator('.rueckmeldung').waitFor();
-    }
-    await s.getByRole('button', { name: /Nächste Frage|Ergebnis zeigen/ }).click();
-  }
-  await s.locator('.quiz-ergebnis').waitFor(); await bild(`${p}-f-quiz-ergebnis`);
-  los(`Folge ${f.id}: Karteikarten`);
-  await weiter(); await s.locator('.lernkarte').waitFor(); await bild(`${p}-g-karte`);
-  for (let i = 0; i < 40 && !(await s.locator('.karten-ende').count()); i++) {
-    await s.getByRole('button', { name: 'Umdrehen' }).click();
-    if (i === 0) await bild(`${p}-g-karte-offen`);
-    await s.getByRole('button', { name: i === 0 ? 'Noch nicht' : 'Wusste ich' }).click();
-  }
-  await s.locator('.karten-ende').waitFor();
-  los(`Folge ${f.id}: Wo steckt das bei dir? – abschließen`);
-  await weiter(); await s.locator('.abschnitt-beidir').waitFor(); await kein_ueberlauf(`${f.id}/beidir`); await bild(`${p}-h-beidir`);
+  assert.equal(await s.locator('.quiz, .lernkarte').count(), 0, 'Quiz/Karten gehören nicht mehr in die Folge');
+  los(`Folge ${f.id}: Wo steckt das bei dir?`);
+  await weiter(); await s.locator('.abschnitt-beidir').waitFor(); await kein_ueberlauf(`${f.id}/beidir`); await bild(`${p}-f-beidir`);
   if (await s.locator('.abschnitt .glossar-wort').count()) {
-    await s.locator('.abschnitt .glossar-wort').first().click(); await s.locator('#dialog-glossar[open]').waitFor(); await bild(`${p}-h-glossar-blatt`);
+    await s.locator('.abschnitt .glossar-wort').first().click(); await s.locator('#dialog-glossar[open]').waitFor(); await bild(`${p}-f-glossar-blatt`);
     await s.locator('#dialog-glossar').getByRole('button', { name: 'Schließen' }).click();
   }
+  los(`Folge ${f.id}: Auf den Punkt – abschließen`);
+  await weiter(); await s.locator('.abschnitt-fazit').waitFor(); await kein_ueberlauf(`${f.id}/fazit`);
+  const hinweis = await s.locator('.pool-hinweis').innerText();
+  assert.match(hinweis, new RegExp(`${f.karten.length + f.fragen} neue Karten im Lernpool`), 'Hinweis „X neue Karten im Lernpool“');
+  await bild(`${p}-g-fazit`);
   await s.getByRole('button', { name: 'Folge abschließen' }).click();
   await s.locator('.start-kopf').waitFor();
   const z = await zustand();
   assert.ok(z.folgen[f.id].fertig, `${f.id} nicht als fertig gespeichert`);
-  for (const k of f.karten) assert.ok(z.karten[k], `Karte ${k} nicht im Kasten`);
   for (const u of f.uebungen) assert.ok(z.uebungen[u], `Übung ${u} nicht gespeichert`);
+  const pool = await s.evaluate((id) => window.__itTrainer.pool().eintraege.filter((e) => e.folge === id).length, f.id);
+  assert.equal(pool, f.karten.length + f.fragen, `${f.id}: nach dem Abschluss nicht im Lernpool`);
+}
+
+/** Eine Lernrunde bis zum Ende spielen. Bei der ersten Frage: nachlesen und zurück (dieselbe Frage ist noch da). */
+async function rundeSpielen(name, { nachlesen = false } = {}) {
+  let erste = true;
+  for (let i = 0; i < 80 && !(await s.locator('.karten-ende').count()); i++) {
+    await s.locator('.lernkarte, .antworten').first().waitFor();
+    if (await s.locator('.lernkarte').count()) {
+      await s.getByRole('button', { name: 'Umdrehen' }).click();
+      await s.getByRole('button', { name: i === 0 ? 'Noch nicht' : 'Wusste ich' }).click();
+      continue;
+    }
+    await s.locator('.antwort').first().click();
+    await s.locator('.rueckmeldung').waitFor();
+    if (erste && nachlesen) {
+      erste = false;
+      await bild(`${name}-rueckmeldung`);
+      const frageText = await s.locator('.quiz-frage').innerText();
+      await s.locator('.nachlesen-link').click(); await s.locator('.nachlesen-leiste').waitFor();
+      await kein_ueberlauf(`${name}/nachlesen`); await bild(`${name}-nachlesen`);
+      await s.locator('.nachlesen-leiste a').click(); await s.locator('.rueckmeldung').waitFor();
+      assert.equal(await s.locator('.quiz-frage').innerText(), frageText, 'nach dem Nachlesen dieselbe Frage');
+    }
+    await s.getByRole('button', { name: /^(Weiter|Ergebnis zeigen)$/ }).click();
+  }
+  await s.locator('.karten-ende').waitFor(); await kein_ueberlauf(`${name}/ende`); await bild(`${name}-ende`);
 }
 
 let gerät2;
@@ -218,9 +229,30 @@ try {
   let nr = 3;
   for (const f of folgen) await folgeDurchklicken(f, nr++);
 
-  los('Handy: Karteikasten');
-  await s.goto(`${url}#karten`); await s.locator('.titel').waitFor(); await kein_ueberlauf('Karteikasten'); await bild('20-karteikasten');
-  if (folgen.length) await s.locator('.faecher').waitFor();
+  if (folgen.length) {
+    los('Lernpool: Startseite zeigt „Heute wiederholen“ und Festigkeit');
+    await s.goto(url); await s.locator('.kasten-karte .grosse-zahl').waitFor();
+    assert.ok(Number(await s.locator('.kasten-karte .grosse-zahl').innerText()) > 0, 'Heute wiederholen: Anzahl');
+    await s.locator('.schicht-runde').first().waitFor(); await bild('20-start-lernpool-ganz');
+    los('Lernpool: Tagesrunde mit Nachlesen und zurück');
+    await s.locator('.kasten-karte').click(); await s.locator('.runde').waitFor();
+    await rundeSpielen('21-tagesrunde', { nachlesen: true });
+    const z = await zustand();
+    assert.ok(Object.values(z.quiz).some((q) => q.fach && q.faellig), 'Fragen bekommen ein Leitner-Fach');
+    assert.ok(Object.keys(z.karten).length, 'Karten bewertet');
+    los('Lernpool: Runde für eine Schicht');
+    await s.goto(url); await s.locator('.schicht-runde').first().click(); await s.locator('.runde').waitFor();
+    await rundeSpielen('22-schicht');
+    los('Lernpool: Übersicht und Prüfung der Staffel');
+    await s.goto(`${url}#lernen`); await s.locator('.faecher').waitFor(); await kein_ueberlauf('Lernpool'); await bild('23-lernpool-ganz');
+    if (await s.locator('a[href^="#lernen/runde/pruefung/"]').count()) {
+      await s.locator('a[href^="#lernen/runde/pruefung/"]').first().click(); await s.locator('.runde').waitFor();
+      await rundeSpielen('24-pruefung');
+      await s.locator('.pruefung-auswertung').waitFor();
+    }
+  } else {
+    await s.goto(`${url}#lernen`); await s.locator('.titel').waitFor(); await kein_ueberlauf('Lernpool');
+  }
   los('Handy: Glossar mit Suche');
   await s.goto(`${url}#glossar`); await s.locator('.glossar-eintrag').first().waitFor();
   await s.getByRole('searchbox').fill('bit'); await s.locator('.glossar-eintrag').first().click(); await kein_ueberlauf('Glossar'); await bild('21-glossar');
@@ -266,7 +298,7 @@ try {
   los('Schmale Bildschirme (360 px): kein waagerechtes Scrollen');
   for (const breite of [360, 412]) {
     await s.setViewportSize({ width: breite, height: 800 });
-    const wege = ['', '#staffel/1', '#karten', '#glossar', '#einstellungen', ...folgen.flatMap((f) => ['einstieg', 'prinzip', 'selbst', 'quiz', 'karten', 'beidir'].map((a) => `#folge/${f.id}/${a}`))];
+    const wege = ['', '#staffel/1', '#lernen', '#karten', '#glossar', '#einstellungen', ...folgen.flatMap((f) => ['einstieg', 'prinzip', 'selbst', 'beidir', 'fazit'].map((a) => `#folge/${f.id}/${a}`))];
     for (const h of wege) { await s.goto(url + h); await s.waitForTimeout(150); await kein_ueberlauf(`${breite}px ${h || 'Start'}`); }
   }
   await bild('25-schmal-360');

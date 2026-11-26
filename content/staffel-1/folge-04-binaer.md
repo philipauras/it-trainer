@@ -1,7 +1,7 @@
 ---
 id: s1f04
 status: freigegeben
-faktencheck: 26.11.2026 – Durchgang 1 bestanden (Empfehlungen umgesetzt); unabhängige Prüfung, Bericht in docs/faktencheck/
+faktencheck: 26.11.2026 – Durchgang 1 bestanden (Empfehlungen umgesetzt); unabhängige Prüfung, Bericht in docs/faktencheck/; Umstellung auf eigenständige Folge + Lernpool (1.5.0): unabhängig geprüft und bestanden
 dauer: 22
 quellen:
 - Gottfried Wilhelm Leibniz: Explication de l'Arithmétique Binaire (1703), Mémoires de l'Académie Royale des Sciences
@@ -14,11 +14,11 @@ quellen:
 
 ## [einstieg] Wie zählt man, wenn es nur 0 und 1 gibt?
 
-In Folge 1 hast du das große **P** mit acht Schaltern eingestellt – durch Probieren, Schalter für Schalter, bis die Anzeige stimmte. Das ging. Aber ein Computer probiert nicht. Für ihn *sind* solche Bitmuster Zahlen, und er zählt zwei davon in einem Bruchteil einer Milliardstelsekunde zusammen.
+Ein **Bit** ist die kleinste Einheit der Information: eine Entscheidung zwischen zwei Möglichkeiten, 0 oder 1 – wie ein Schalter mit zwei Stellungen (mehr dazu in Folge 1). Willst du mit acht solchen Schaltern ein bestimmtes Muster einstellen – etwa das für den Buchstaben P –, kannst du probieren, bis es stimmt. Ein Computer probiert nicht. Für ihn *sind* solche Bitmuster Zahlen, und er zählt zwei davon in einem Bruchteil einer Milliardstelsekunde zusammen.
 
 Dabei kennt er nur zwei Ziffern. Wie zählt man überhaupt, wenn nach der 1 schon Schluss ist? Was kommt nach 1? Und wie rechnet man 1 + 1, wenn es keine 2 gibt?
 
-Die Antwort ist überraschend einfach – du benutzt sie seit der Grundschule, nur mit zehn Ziffern statt mit zwei. Am Ende dieser Folge zählst du binär, rechnest im Kopf um und baust aus zwei Logikgattern eine Schaltung, die rechnen kann: den **Halbaddierer**.
+Die Antwort ist überraschend einfach – du benutzt sie seit der Grundschule, nur mit zehn Ziffern statt mit zwei. Am Ende dieser Folge zählst du binär, rechnest im Kopf um und baust aus zwei Logikgattern (kleinen Schaltungen, die Bits verknüpfen) eine Schaltung, die rechnen kann: den **Halbaddierer**.
 
 ## [geschichte] Von der indischen Null zum Küchentisch
 
@@ -30,15 +30,15 @@ Unser heutiges **Zehnersystem** mit neun Ziffern und der Null entstand in **Indi
 
 Über die arabische Welt – um **825** schrieb **al-Chwarizmi** in Bagdad darüber, aus seinem Namen wurde unser Wort „Algorithmus“ – kam das System nach Europa. Darum heißen die Ziffern bei uns „arabische Ziffern“, obwohl sie aus Indien stammen.
 
-Und dann **Leibniz** – du kennst ihn aus Folge 1. In seinem Aufsatz von **1703** zeigte er, dass das Stellenwertsystem auch mit nur zwei Ziffern funktioniert, und rechnete darin vor: zählen, addieren, sogar multiplizieren. Ihm fiel auf, wie regelmäßig die Spalten beim Zählen aussehen – dazu gleich mehr.
+Und dann **Leibniz**, ein deutscher Universalgelehrter. In seinem Aufsatz von **1703** zeigte er, dass das Stellenwertsystem auch mit nur zwei Ziffern funktioniert, und rechnete darin vor: zählen, addieren, sogar multiplizieren. Ihm fiel auf, wie regelmäßig die Spalten beim Zählen aussehen – dazu gleich mehr.
 
 ### Der Küchentisch von George Stibitz
 
-Über 230 Jahre später, **Ende 1937**, saß der Mathematiker **George Stibitz** von den Bell Telephone Laboratories – derselben Firma, bei der später Claude Shannon das Bit berühmt machte – abends an seinem Küchentisch. Vor ihm lagen zwei ausgemusterte **Relais** aus dem Telefonnetz (Schalter, die von Strom umgelegt werden, siehe Folge 2), zwei Taschenlampenbirnchen und Blechstreifen aus einer Dose. Daraus baute er ein Gerät, das zwei einstellige Binärzahlen addieren konnte: Die Lämpchen zeigten das Ergebnis als Binärzahl an.
+Über 230 Jahre später, **Ende 1937**, saß der Mathematiker **George Stibitz** von den Bell Telephone Laboratories abends an seinem Küchentisch. Vor ihm lagen zwei ausgemusterte **Relais** aus dem Telefonnetz (Schalter, die von einem kleinen Strom umgelegt werden – mehr dazu in Folge 2), zwei Taschenlampenbirnchen und Blechstreifen aus einer Dose. Daraus baute er ein Gerät, das zwei einstellige Binärzahlen addieren konnte: Die Lämpchen zeigten das Ergebnis als Binärzahl an.
 
 Es bekam den Namen **„Model K“** – K wie *kitchen*, Küche. Es war nur ein Bastelstück, aber es bewies etwas Großes: Rechnen lässt sich vollständig auf Schalter zurückführen, die nur an und aus kennen. Bell Labs ließ Stibitz daraufhin eine größere Relais-Rechenmaschine bauen, den „Complex Number Calculator“. Im September 1940 führte er sie auf einer Mathematiker-Tagung in Dartmouth vor. Die Maschine selbst blieb in New York – die Tagungsgäste tippten ihre Aufgaben in Dartmouth in einen Fernschreiber, Hunderte Kilometer entfernt, und bekamen die Ergebnisse über die Leitung zurück.
 
-> **Wusstest du?:** Fast zur gleichen Zeit, ebenfalls 1937, schrieb der junge Claude Shannon am MIT seine Masterarbeit. Darin zeigte er, dass sich Relaisschaltungen mit der Logik von UND und ODER beschreiben lassen – und entwarf als Beispiel eine Schaltung, die im Zweiersystem addiert. Einen Nachbau des „Model K“, den Stibitz 1980 selbst angefertigt hat, kannst du heute im Computer History Museum in Kalifornien sehen.
+> **Wusstest du?:** Fast zur gleichen Zeit, ebenfalls 1937, entwarf der Student Claude Shannon am MIT als Beispiel für seine Masterarbeit eine Relaisschaltung, die im Zweiersystem addiert (mehr zu seiner Masterarbeit in Folge 3). Einen Nachbau des „Model K“, den Stibitz 1980 selbst angefertigt hat, kannst du heute im Computer History Museum in Kalifornien sehen.
 
 ## [prinzip] Stellenwerte, Zählen und der Halbaddierer
 
@@ -77,7 +77,7 @@ Drück jetzt immer wieder auf **+1 zählen** und schau dabei auf den rechten Sch
 
 Es ist dasselbe Spiel wie bei 9 → 10 oder 99 → 100 im Zehnersystem: Wenn eine Stelle keine größere Ziffer mehr hat, springt sie auf 0 zurück, und die nächste Stelle links zählt eins weiter. Im Zehnersystem passiert das nach der 9, im Binärsystem schon nach der 1. Darum gilt: Nach `0111` (7) springen gleich drei Stellen auf einmal um – heraus kommt `1000` (8).
 
-Und wenn alle vier Schalter auf 1 stehen (`1111` = 15) und du noch einmal +1 drückst? Dann springt alles auf `0000`. Die 16 bräuchte eine fünfte Stelle, die es hier nicht gibt – der Übertrag fällt vorne heraus. Das nennt man **Überlauf**. Mit 4 Bit kann man 16 Zahlen darstellen, 0 bis 15; mit 8 Bit 256 Zahlen, 0 bis 255 (die Verdopplung kennst du aus Folge 1).
+Und wenn alle vier Schalter auf 1 stehen (`1111` = 15) und du noch einmal +1 drückst? Dann springt alles auf `0000`. Die 16 bräuchte eine fünfte Stelle, die es hier nicht gibt – der Übertrag fällt vorne heraus. Das nennt man **Überlauf**. Mit 4 Bit kann man 16 Zahlen darstellen, 0 bis 15; mit 8 Bit 256 Zahlen, 0 bis 255 (jede zusätzliche Stelle verdoppelt die Zahl der Möglichkeiten).
 
 > **Merke:** Im Binärsystem sind die Stellenwerte 1, 2, 4, 8, 16, 32, 64, 128 … – jede Stelle ist doppelt so viel wert wie die rechts daneben. Eine 1 heißt: Dieser Wert zählt mit.
 
@@ -89,7 +89,7 @@ Und wenn alle vier Schalter auf 1 stehen (`1111` = 15) und du noch einmal +1 dr�
 
 > **Beispiel:** 13 in vier Stellen. Passt die 8 in 13? Ja → 1, es bleiben 5. Passt die 4 in 5? Ja → 1, es bleibt 1. Passt die 2 in 1? Nein → 0. Passt die 1 in 1? Ja → 1, es bleibt 0. Ergebnis: `1101`.
 
-Erinnerst du dich an das Zahlenraten aus Folge 1? Das ist im Grunde dieselbe Frage-Strategie: Jede Stelle beantwortet eine Ja-Nein-Frage, die die Möglichkeiten halbiert.
+Jede Stelle beantwortet dabei eine Ja-Nein-Frage („Passt dieser Wert noch hinein?“), die die Möglichkeiten halbiert – dieselbe Strategie wie beim Zahlenraten mit Ja-Nein-Fragen.
 
 ### Schriftlich addieren – mit 1 + 1 = 10
 
@@ -129,7 +129,7 @@ Jetzt kommt der Moment, in dem aus Logik Rechnen wird. Schau dir noch einmal die
 | 1 | 0 | 0 | 1 |
 | 1 | 1 | 1 | 0 |
 
-Kommen dir die Spalten bekannt vor? Aus Folge 3 kennst du die Wahrheitstabellen der Logikgatter:
+Kommen dir die Spalten bekannt vor? Logikgatter sind kleine Schaltungen, die Bits nach festen Regeln verknüpfen (mehr dazu in Folge 3). Zwei davon passen genau:
 
 - Die Spalte **S** ist 1, wenn *genau einer* der beiden Eingänge 1 ist. Das ist das **XODER**-Gatter (exklusives ODER).
 - Die Spalte **C** ist 1, wenn *beide* Eingänge 1 sind. Das ist das **UND**-Gatter.
@@ -180,9 +180,9 @@ ziel: 5, 9, 12, 15
 
 Die Lösungen: 5 = 4 + 1 = `0101`, 9 = 8 + 1 = `1001`, 12 = 8 + 4 = `1100`, 15 = 8 + 4 + 2 + 1 = `1111`. Fällt dir etwas auf? 15 ist die größte Zahl, die in vier Stellen passt – alle Schalter an. Sie ist immer eins weniger als der nächste Stellenwert (16).
 
-### Übung 2: Das P aus Folge 1
+### Übung 2: Ein Buchstabe als Zahl
 
-In Folge 1 hast du das große P im ASCII-Code durch Probieren eingestellt. Im ASCII-Code ist jeder Buchstabe einfach eine Nummer: Das A ist 65, das P ist **80**. Stell jetzt die 80 mit acht Stellen ein – diesmal mit System.
+Im ASCII-Code, mit dem Computer Buchstaben speichern, ist jeder Buchstabe einfach eine Nummer: Das A ist 65, das P ist **80**. Stell jetzt die 80 mit acht Stellen ein – mit System statt durch Probieren.
 
 :::sim binaer
 id: s1f04-u02
@@ -190,7 +190,7 @@ stellen: 8
 ziel: 80
 :::
 
-Passt die 128 in 80? Nein. Die 64? Ja – es bleiben 16. Die 32? Nein. Die 16? Ja – es bleibt 0. Alle übrigen Stellen: 0. Ergebnis `01010000` = 64 + 16 = 80. Vergleich es mit Folge 1: Es ist genau das Muster des P. Und das A? 65 = 64 + 1 = `01000001`. Darum beginnen alle Großbuchstaben mit `010`: Sie liegen zwischen 65 und 90, also immer 64 plus etwas Kleineres als 32.
+Passt die 128 in 80? Nein. Die 64? Ja – es bleiben 16. Die 32? Nein. Die 16? Ja – es bleibt 0. Alle übrigen Stellen: 0. Ergebnis `01010000` = 64 + 16 = 80. Das ist genau das Bitmuster des großen P. Und das A? 65 = 64 + 1 = `01000001`. Darum beginnen alle Großbuchstaben mit `010`: Sie liegen zwischen 65 und 90, also immer 64 plus etwas Kleineres als 32.
 
 ### Übung 3: Bau den Halbaddierer selbst
 
@@ -210,6 +210,27 @@ Auflösung: Die Summe braucht ein **XODER** – ein ODER wäre bei 1 + 1 falsch,
 
 **Zum Weiterdenken:** Wie viele verschiedene Zahlen passen in 8 Stellen, und welche ist die größte? (Antwort: 256 Zahlen, von 0 bis 255 – darum reicht in vielen Formaten ein Wert „von 0 bis 255“.)
 
+## [beidir] Wo steckt das bei dir?
+
+Binärzahlen sind nicht nur Theorie – du begegnest ihnen auf allen deinen Geräten, oft gut versteckt.
+
+**Dein Windows-PC.** Öffne den Windows-Rechner und stell ihn im Menü auf **„Programmierer“**. Tipp eine Zahl ein, zum Beispiel 80, und du siehst sie gleichzeitig in mehreren Zahlensystemen – unter **BIN** binär: `0101 0000`. Damit kannst du jede Übung dieser Folge nachprüfen. (HEX daneben ist das Sechzehnersystem; das lernst du später kennen.)
+
+**Deine Fotos auf dem Pixel.** Jeder Bildpunkt eines normalen Fotos besteht aus drei Farbanteilen: Rot, Grün und Blau. Jeder Anteil ist meist eine 8-Bit-Zahl von 0 bis 255 – genau der Bereich, den du gerade berechnet hast. `11111111` heißt „volle Helligkeit“, `00000000` „aus“. Drei mal 8 Bit ergeben 24 Bit pro Bildpunkt und damit 256 × 256 × 256, also gut **16,7 Millionen** mögliche Farben.
+
+**Dein VPS.** Auf dem Server, auf dem ich laufe, haben Dateien Zugriffsrechte, zum Beispiel `755` für ein Programm. Die drei Ziffern gelten für den Besitzer, seine Gruppe und alle anderen. Hinter jeder Ziffer stecken drei Bits mit den Stellenwerten 4, 2 und 1: lesen (4), schreiben (2), ausführen (1). Eine 7 ist also `111` = 4 + 2 + 1 = alles erlaubt, eine 5 ist `101` = 4 + 1 = lesen und ausführen, aber nicht schreiben. Wenn du mich einmal „chmod 755“ tippen siehst: Das sind drei kleine Binärzahlen.
+
+**Dein Internet.** Jedes Gerät im Netz hat eine IP-Adresse wie `192.168.1.20`. Jede der vier Zahlen ist ein Byte (acht Bit), darum geht keine über 255 hinaus. Die Zahl 255 an manchen Stellen deiner Netzwerkeinstellungen (etwa `255.255.255.0`) ist schlicht `11111111` – acht Einsen.
+
+> **Merke:** Wenn dir irgendwo ein Bereich „0 bis 255“ begegnet, steckt fast immer ein Byte dahinter.
+
+## [fazit] Auf den Punkt
+
+- Im Binärsystem ist jede Stelle doppelt so viel wert wie die rechts daneben (1, 2, 4, 8 …); eine 1 heißt: Dieser Wert zählt mit.
+- Binär in Zehnersystem: die Stellenwerte mit einer 1 addieren. Umgekehrt: vom größten Stellenwert an fragen, ob er noch hineinpasst.
+- Beim Addieren gilt 1 + 1 = `10`: 0 hinschreiben, 1 übertragen. Fehlt vorne eine Stelle, fällt der Übertrag heraus – das ist ein Überlauf.
+- Ein Halbaddierer aus XODER (Summe) und UND (Übertrag) addiert zwei einzelne Bits.
+
 ## [quiz] Teste dich
 
 ### s1f04-q01
@@ -219,7 +240,7 @@ Welchen Wert hat die Binärzahl `1011` im Zehnersystem?
 - [ ] 13
 - [ ] 22
 Erklärung: Die Stellenwerte sind 8, 4, 2, 1. Unter 8, 2 und 1 steht eine 1: 8 + 2 + 1 = 11.
-Nachlesen: prinzip
+Nachlesen: prinzip / Umrechnen ohne Probieren
 
 ### s1f04-q02
 Welche Binärzahl kommt beim Zählen direkt nach `0111`?
@@ -228,7 +249,7 @@ Welche Binärzahl kommt beim Zählen direkt nach `0111`?
 - [x] `1000`
 - [ ] `0110`
 Erklärung: Die drei rechten Stellen stehen schon auf 1 und laufen über: Sie springen auf 0, und die vierte Stelle wird 1. Aus 7 wird 8 – wie aus 999 im Zehnersystem 1000 wird.
-Nachlesen: prinzip
+Nachlesen: prinzip / Binär zählen
 
 ### s1f04-q03
 Was ergibt 1 + 1, wenn man es schriftlich im Binärsystem rechnet?
@@ -237,16 +258,16 @@ Was ergibt 1 + 1, wenn man es schriftlich im Binärsystem rechnet?
 - [ ] 1 hinschreiben, 1 übertragen
 - [ ] 1 hinschreiben, kein Übertrag
 Erklärung: Eins plus eins ist zwei, und zwei schreibt man binär als `10`. An dieser Stelle steht also eine 0, die 1 wandert als Übertrag in die nächste Stelle. Eine Ziffer 2 gibt es im Binärsystem nicht.
-Nachlesen: prinzip
+Nachlesen: prinzip / Schriftlich addieren – mit 1 + 1 = 10
 
 ### s1f04-q04
-Aus welchen zwei Gattern besteht ein Halbaddierer?
+Aus welchen zwei Logikgattern besteht ein Halbaddierer (die Schaltung, die zwei einzelne Bits addiert)?
 - [x] XODER für die Summe, UND für den Übertrag
 - [ ] UND für die Summe, XODER für den Übertrag
 - [ ] ODER für die Summe, UND für den Übertrag
 - [ ] ODER für die Summe, NICHT für den Übertrag
 Erklärung: Die Summe ist 1, wenn genau ein Eingang 1 ist – das ist XODER. Der Übertrag ist 1, wenn beide Eingänge 1 sind – das ist UND. Ein ODER würde bei 1 + 1 fälschlich die Summe 1 liefern.
-Nachlesen: prinzip
+Nachlesen: prinzip / Der Halbaddierer: Rechnen mit zwei Gattern
 
 ### s1f04-q05
 Was ist die größte Zahl, die du mit 8 Binärstellen darstellen kannst?
@@ -255,24 +276,24 @@ Was ist die größte Zahl, die du mit 8 Binärstellen darstellen kannst?
 - [x] 255
 - [ ] 99 999 999
 Erklärung: Mit 8 Bit gibt es 256 Muster. Weil die Zählung bei 0 beginnt, reichen sie von 0 bis 255. `11111111` = 128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255.
-Nachlesen: prinzip
+Nachlesen: prinzip / Binär zählen
 
 ### s1f04-q06
-Wofür steht das „K“ in George Stibitz' „Model K“ von 1937?
-- [ ] Für den Kunden Bell Labs
-- [x] Für kitchen, englisch für Küche
-- [ ] Für das Wort Kalkulator
-- [ ] Für die Zahl 1000 (Kilo)
-Erklärung: Stibitz baute den Relais-Addierer abends an seinem Küchentisch – aus ausgemusterten Relais, Taschenlampenbirnchen und Blechstreifen.
-Nachlesen: geschichte
+Ein Mathematiker baute 1937 aus zwei Telefon-Relais (stromgesteuerten Schaltern), zwei Lämpchen und Blechstreifen ein Gerät, das zwei Binärzahlen addierte. Was bewies es?
+- [ ] Dass Rechnen nur mit Röhren und nie mit Schaltern geht
+- [x] Dass Rechnen nur Schalter mit an und aus braucht
+- [ ] Dass man im Zehnersystem schneller rechnet als im Zweiersystem
+- [ ] Dass Telefonrelais zu langsam zum Rechnen sind
+Erklärung: Das Gerät, das „Model K“ (K wie kitchen, Küche), zeigte: Schon zwei Relais reichen, um zwei Binärziffern zu addieren. Rechnen braucht also nur Schalter mit zwei Zuständen.
+Nachlesen: geschichte / Der Küchentisch von George Stibitz
 
 ### s1f04-q07
-Woher stammt das Zehnersystem mit der Null, das wir heute benutzen?
-- [ ] Aus dem antiken Rom
-- [ ] Von den Babyloniern, mit der Grundzahl 10
-- [x] Aus Indien, über die arabische Welt nach Europa
-- [ ] Von Leibniz, aus dem Jahr 1703
-Erklärung: Das Zehnersystem mit der Null entstand in Indien (Brahmagupta beschrieb 628 Rechenregeln für die Null). Über arabische Gelehrte wie al-Chwarizmi kam es nach Europa – darum heißen die Ziffern bei uns „arabisch“. Die Babylonier hatten ein Stellenwertsystem zur Grundzahl 60.
+Welche Aufgabe hat die Null im Zehnersystem?
+- [ ] Sie macht jede Zahl, hinter der sie steht, negativ
+- [x] Sie hält eine Stelle frei, sodass sich 305 und 35 unterscheiden
+- [ ] Sie ist die größte der zehn Ziffern
+- [ ] Sie trennt zwei Zahlen voneinander
+Erklärung: Im Stellenwertsystem bekommt eine Ziffer ihren Wert durch ihren Platz. Die Null besetzt einen Platz, ohne etwas zu zählen – ohne sie wären 305 und 35 nicht auseinanderzuhalten. Das System mit der Null entstand in Indien und kam über die arabische Welt nach Europa.
 Nachlesen: geschichte
 
 ### s1f04-q08
@@ -282,7 +303,7 @@ Ein Zähler mit 4 Binärstellen zeigt `1111`. Was zeigt er nach „+1“?
 - [ ] `1110`
 - [ ] `1112`
 Erklärung: Alle vier Stellen laufen über und springen auf 0. Die 16 bräuchte eine fünfte Stelle, die es nicht gibt – der Übertrag fällt vorne heraus. Das ist ein Überlauf, wie beim Tacho, der nach 99 999 km wieder bei 00 000 anfängt.
-Nachlesen: werkstatt
+Nachlesen: prinzip / Binär zählen
 
 ## [karten] Für deinen Karteikasten
 
@@ -311,7 +332,7 @@ Vorne: Was ist ein Überlauf?
 Hinten: Der Übertrag braucht eine Stelle, die es nicht gibt, und fällt vorne heraus. Bei vier Stellen wird aus `1111` (15) beim Weiterzählen `0000`.
 
 ### s1f04-k07
-Vorne: Aus welchen beiden Gattern besteht ein Halbaddierer?
+Vorne: Aus welchen beiden Logikgattern besteht ein Halbaddierer?
 Hinten: Aus einem XODER für die Summe und einem UND für den Übertrag. Er addiert zwei einzelne Bits.
 
 ### s1f04-k08
@@ -321,17 +342,3 @@ Hinten: Er kann keinen Übertrag von rechts annehmen. Das kann der Volladdierer,
 ### s1f04-k09
 Vorne: Wie viele Zahlen passen in 8 Stellen, und welche ist die größte?
 Hinten: 256 Zahlen, von 0 bis 255.
-
-## [beidir] Wo steckt das bei dir?
-
-Binärzahlen sind nicht nur Theorie – du begegnest ihnen auf allen deinen Geräten, oft gut versteckt.
-
-**Dein Windows-PC.** Öffne den Windows-Rechner und stell ihn im Menü auf **„Programmierer“**. Tipp eine Zahl ein, zum Beispiel 80, und du siehst sie gleichzeitig in mehreren Zahlensystemen – unter **BIN** binär: `0101 0000`. Damit kannst du jede Übung dieser Folge nachprüfen. (HEX daneben ist das Sechzehnersystem; das lernst du später kennen.)
-
-**Deine Fotos auf dem Pixel.** Jeder Bildpunkt eines normalen Fotos besteht aus drei Farbanteilen: Rot, Grün und Blau. Jeder Anteil ist meist eine 8-Bit-Zahl von 0 bis 255 – genau der Bereich, den du gerade berechnet hast. `11111111` heißt „volle Helligkeit“, `00000000` „aus“. Drei mal 8 Bit ergeben 24 Bit pro Bildpunkt und damit 256 × 256 × 256, also gut **16,7 Millionen** mögliche Farben.
-
-**Dein VPS.** Auf dem Server, auf dem ich laufe, haben Dateien Zugriffsrechte, zum Beispiel `755` für ein Programm. Die drei Ziffern gelten für den Besitzer, seine Gruppe und alle anderen. Hinter jeder Ziffer stecken drei Bits mit den Stellenwerten 4, 2 und 1: lesen (4), schreiben (2), ausführen (1). Eine 7 ist also `111` = 4 + 2 + 1 = alles erlaubt, eine 5 ist `101` = 4 + 1 = lesen und ausführen, aber nicht schreiben. Wenn du mich einmal „chmod 755“ tippen siehst: Das sind drei kleine Binärzahlen.
-
-**Dein Internet.** Jedes Gerät im Netz hat eine IP-Adresse wie `192.168.1.20`. Jede der vier Zahlen ist ein Byte, darum geht keine über 255 hinaus. Die Zahl 255 an manchen Stellen deiner Netzwerkeinstellungen (etwa `255.255.255.0`) ist schlicht `11111111` – acht Einsen.
-
-> **Merke:** Wenn dir irgendwo ein Bereich „0 bis 255“ begegnet, steckt fast immer ein Byte dahinter.

@@ -2,6 +2,23 @@
 
 Entscheidungen und Änderungen (für Philip kurz erklärt). Neueste oben. Was Nutzer in der App sehen: `content/neuigkeiten.md`.
 
+## 1.5.0 – 26.11.2026 (eigenständige Folgen + Lernpool, Philips Format-Entscheidung)
+- **Jede Folge steht für sich:** keine Rückgriffe auf Bilder/Geschichten anderer Folgen; nötiges Fachwissen in 1–2 Sätzen neu
+  erklärt mit Verweis. Prüfpunkt in Faktencheck und Auftragsvorlagen.
+- **Lernpool statt Quiz/Karten in der Folge:** Folge = a–f + neuer Schritt g „Auf den Punkt“ (3–4 Kernsätze, Build prüft) mit
+  Hinweis „X neue Karten im Lernpool“. `[quiz]`/`[karten]` bleiben in der Folgen-Datei (Autoren haben alles beieinander), erscheinen
+  aber nur im Pool – freigeschaltet mit „Folge abschließen“. Tagesrunde (max. 15, davon bis 8 neue, frühere Fehler zuerst, Karten und
+  Fragen abwechselnd), Festigkeit je Schicht (Fach/5, Fälliges zählt halb) mit ↻-Runde, Lernpool-Seite mit freiem Üben je Folge/Staffel
+  und Prüfung je Staffel (20 Fragen, Auswertung je Folge). „Im Wissen nachlesen“ springt mit `Nachlesen: abschnitt / Zwischenüberschrift`
+  an die Stelle, „Zurück zur Runde“ setzt die Runde fort. Freies Üben ändert den Leitner-Plan nur bei Fehlern.
+- **Speicherformat bleibt Format 1, nichts geht verloren:** Fragen bekommen optional `fach`/`faellig` (Leitner). Ältere Stände ohne
+  diese Felder werden beim Lesen eingeordnet, nicht umgeschrieben. Wer Quiz/Karten im alten Ablauf schon durchgearbeitet hatte, behält
+  sie freigeschaltet. Test mit einem echten 1.4.0-Stand (Normalisieren, Zusammenführen, Export/Import).
+- Fragen verständnisorientiert umgebaut (IDs unverändert), alle Folgen neu unabhängig geprüft (Durchgang 1: s1f01, 02, 04, 06 bestanden;
+  03, 05, 07, 08, 09, s1g je 1–2 kleine Fehler → behoben → bestanden).
+- Neues Kernmodul `js/kern/lernpool.js` (getestet), `js/ui/lernpool.js` ersetzt `quiz.js`/`karten.js`; Adresse `#karten` leitet auf `#lernen`.
+- GitHub-Sicherung funktioniert (Repo hat die richtige SSH-Einstellung; frühere Fehlmeldungen kamen von meinem eigenen SSH-Befehl).
+
 ## 1.4.0 – 26.11.2026 (Phase 2, erster Teil)
 - **Neu live:** die ganze Staffel 1 – Folgen 2–9 und das Abschlussprojekt (Addierer). Folge 5: Faktencheck 2× gescheitert (zuletzt 1 kleiner
   Fehler), Durchgang 3 bestanden, Freigabe nach Philips OK.

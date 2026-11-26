@@ -35,7 +35,7 @@
    "text": "Microsoft Support: Allgemeine Dateinamenerweiterungen in Windows (Hilfeartikel)"
   }
  ],
- "faktencheck": "26.11.2026 – Durchgang 1 nicht bestanden (2 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/",
+ "faktencheck": "26.11.2026 – Durchgang 1 nicht bestanden (2 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/; Umstellung auf eigenständige Folge + Lernpool (1.5.0): unabhängig geprüft und bestanden",
  "staffel": 1,
  "nr": 9,
  "titel": "Was passiert beim Doppelklick?",
@@ -50,7 +50,7 @@
    "teile": [
     {
      "art": "md",
-     "text": "Auf deinem Bildschirm liegt eine Datei: `urlaub.jpg`. Du klickst zweimal schnell hintereinander – und einen Augenblick später strahlt dich das Meer an.\n\nEine Kleinigkeit, die du hundertmal am Tag tust. Aber in dieser halben Sekunde arbeitet **alles**, was du in dieser Staffel kennengelernt hast: Bits, die als Strom durch Transistoren fließen. Gatter, die rechnen. Flipflops, die sich etwas merken. Ein Prozessor, der Befehle holt und ausführt. Speicher in vielen Stufen. Und ein Betriebssystem, das alles zusammenhält.\n\nDiese Folge ist eine Reise durch all diese Schichten – im Zeitraffer eines einzigen Doppelklicks. Und unterwegs klären wir eine Frage, die wir bisher umgangen haben: Was ist eigentlich eine **Datei**?"
+     "text": "Auf deinem Bildschirm liegt eine Datei: `urlaub.jpg`. Du klickst zweimal schnell hintereinander – und einen Augenblick später strahlt dich das Meer an.\n\nEine Kleinigkeit, die du hundertmal am Tag tust. Aber in dieser halben Sekunde arbeitet **alles**, woraus ein Computer besteht: Bits (die kleinsten Informationen, 0 oder 1), die als Strom durch Transistoren (elektrisch gesteuerte Schalter) fließen. Gatter, kleine Schaltungen, die mit Bits rechnen. Flipflops, die sich ein Bit merken. Ein Prozessor, der Befehle holt und ausführt. Speicher in vielen Stufen. Und ein Betriebssystem, das alles zusammenhält.\n\nDiese Folge ist eine Reise durch all diese Schichten (jede hat eine eigene Folge in Staffel 1) – im Zeitraffer eines einzigen Doppelklicks. Und unterwegs klären wir eine Frage, die kaum jemand stellt: Was ist eigentlich eine **Datei**?"
     }
    ]
   },
@@ -60,7 +60,7 @@
    "teile": [
     {
      "art": "md",
-     "text": "**San Francisco, 9. Dezember 1968.** Vor rund tausend Fachleuten sitzt **Douglas Engelbart** vom Stanford Research Institute an einer Konsole. Neunzig Minuten lang zeigt er auf einer riesigen Leinwand Dinge, die es so noch nie gegeben hat: Text, den man am Bildschirm bearbeitet, Verweise, die per Klick zu anderen Dokumenten springen, eine Videoverbindung zu Kollegen 50 Kilometer entfernt. Und in seiner rechten Hand liegt ein kleines Holzkästchen mit zwei Rädern an der Unterseite und einem Kabel am Ende – die **Maus**. Engelbart hatte sie Jahre zuvor erdacht, sein Ingenieur **Bill English** hatte sie gebaut. Den Namen bekam sie wegen des Kabels, das wie ein Schwanz aussah. Später nannte man diese Vorführung die „Mother of All Demos“ – die Mutter aller Vorführungen.\n\nEinige Jahre danach griff das Forschungszentrum von **Xerox** in Palo Alto (PARC) diese Ideen auf. **1973** lief dort der **Alto**, ein Rechner mit einem hochkant stehenden Bildschirm, auf dem jeder Bildpunkt einzeln gesteuert werden konnte – mit Maus, Fenstern und Schrift, die aussah wie gedruckt. Verkauft wurde der Alto nie im Handel, aber er wurde zum Vorbild. 1981 brachte Xerox mit dem **Star** einen Bürorechner heraus, der den Bildschirm wie einen Schreibtisch zeigte: Dokumente und Ordner als kleine Bildchen, sogenannte **Symbole**.\n\n**1979** besuchte eine Gruppe von Apple, darunter **Steve Jobs**, das PARC. Was sie dort sahen, floss in zwei Rechner ein: die **Lisa** (Januar 1983, rund 10 000 Dollar teuer und kaum verkauft) und den **Macintosh** (Januar 1984), der die **grafische Oberfläche** mit Maus, Fenstern und Symbolen für viele Menschen erschwinglich machte. Seine Maus hatte nur eine Taste – geöffnet wurde eine Datei mit einem **Doppelklick** auf ihr Symbol. Microsoft folgte 1985 mit dem ersten Windows.\n\nDie Ordner auf diesen Schreibtischen haben eine ältere Geschichte. Frühe Rechner legten die Dateien nebeneinander in eine Liste – höchstens eine pro Benutzer. **1965** beschrieben **Robert Daley** und **Peter Neumann** für das Betriebssystem **Multics** (du kennst es aus Folge 8) ein Dateisystem, in dem Verzeichnisse wieder Verzeichnisse enthalten dürfen – eine Baumstruktur, eine **Hierarchie**. Unix übernahm die Idee, und heute arbeitet jedes Betriebssystem so: Ordner in Ordnern in Ordnern.\n\n> **Wusstest du?:** Unter MS-DOS, dem Vorgänger von Windows, durfte ein Dateiname höchstens acht Zeichen haben, dazu eine Endung aus drei Zeichen – etwa `URLAUB.JPG`. MS-DOS übernahm diese Regel von noch älteren Systemen – daher stammen die vielen dreibuchstabigen Endungen, die es bis heute gibt."
+     "text": "**San Francisco, 9. Dezember 1968.** Vor rund tausend Fachleuten sitzt **Douglas Engelbart** vom Stanford Research Institute an einer Konsole. Neunzig Minuten lang zeigt er auf einer riesigen Leinwand Dinge, die es so noch nie gegeben hat: Text, den man am Bildschirm bearbeitet, mehrere Fenster nebeneinander, Verweise, die per Klick zu anderen Dokumenten springen, eine Videoverbindung zu Kollegen 50 Kilometer entfernt. Und in seiner rechten Hand liegt ein kleines Holzkästchen mit zwei Rädern an der Unterseite und einem Kabel am Ende – die **Maus**. Engelbart hatte sie Jahre zuvor erdacht, sein Ingenieur **Bill English** hatte sie gebaut. Den Namen bekam sie wegen des Kabels, das wie ein Schwanz aussah. Später nannte man diese Vorführung die „Mother of All Demos“ – die Mutter aller Vorführungen.\n\nEinige Jahre danach griff das Forschungszentrum von **Xerox** in Palo Alto (PARC) diese Ideen auf. **1973** lief dort der **Alto**, ein Rechner mit einem hochkant stehenden Bildschirm, auf dem jeder Bildpunkt einzeln gesteuert werden konnte – mit Maus, Fenstern und Schrift, die aussah wie gedruckt. Verkauft wurde der Alto nie im Handel, aber er wurde zum Vorbild. 1981 brachte Xerox mit dem **Star** einen Bürorechner heraus, der den Bildschirm wie einen Schreibtisch zeigte: Dokumente und Ordner als kleine Bildchen, sogenannte **Symbole**.\n\n**1979** besuchte eine Gruppe von Apple, darunter **Steve Jobs**, das PARC. Was sie dort sahen, floss in zwei Rechner ein: die **Lisa** (Januar 1983, rund 10 000 Dollar teuer und kaum verkauft) und den **Macintosh** (Januar 1984), der die **grafische Oberfläche** mit Maus, Fenstern und Symbolen für viele Menschen erschwinglich machte. Seine Maus hatte nur eine Taste – geöffnet wurde eine Datei mit einem **Doppelklick** auf ihr Symbol. Microsoft folgte 1985 mit dem ersten Windows.\n\nDie Ordner auf diesen Schreibtischen haben eine ältere Geschichte. Frühe Rechner legten die Dateien nebeneinander in eine Liste – höchstens eine pro Benutzer. **1965** beschrieben **Robert Daley** und **Peter Neumann** für das Betriebssystem **Multics** (ein frühes Betriebssystem, das viele Benutzer gleichzeitig bediente – mehr dazu in Folge 8) ein Dateisystem, in dem Verzeichnisse wieder Verzeichnisse enthalten dürfen – eine Baumstruktur, eine **Hierarchie**. Unix übernahm die Idee, und heute arbeitet jedes Betriebssystem so: Ordner in Ordnern in Ordnern.\n\n> **Wusstest du?:** Unter MS-DOS, dem Vorgänger von Windows, durfte ein Dateiname höchstens acht Zeichen haben, dazu eine Endung aus drei Zeichen – etwa `URLAUB.JPG`. MS-DOS übernahm diese Regel von noch älteren Systemen – daher stammen die vielen dreibuchstabigen Endungen, die es bis heute gibt."
     }
    ]
   },
@@ -70,7 +70,7 @@
    "teile": [
     {
      "art": "md",
-     "text": "### Was ist eine Datei?\n\nEine **Datei** ist eine Folge von Bytes, die unter einem Namen gespeichert ist. Mehr nicht. Eine Textdatei mit dem Inhalt „Hallo“ besteht aus genau fünf Bytes – im ASCII-Code aus Folge 1 beginnt sie mit `01001000` für das H. Ein Foto besteht aus ein paar Millionen Bytes, ein Programm ebenfalls.\n\nZu jeder Datei merkt sich das Betriebssystem außerdem **Metadaten** – „Daten über die Daten“: wie groß sie ist, wann sie zuletzt geändert wurde, wem sie gehört, wer sie lesen darf und wo auf der SSD ihre Bytes liegen.\n\nWas die Bytes *bedeuten*, steht nicht in ihnen selbst. Dieselben Bytes können Buchstaben, Farben oder Befehle für den Prozessor sein – es ist wieder eine Frage der **Kodierung**, wie bei den Laternen in Folge 1. Ein Bildprogramm liest die Bytes als Bildpunkte, ein Texteditor als Buchstaben. Öffnest du ein Foto versehentlich mit einem Texteditor, siehst du darum nur Zeichensalat.\n\n### Das Dateisystem: Inhaltsverzeichnis und Blöcke\n\nEine SSD kennt keine Dateien. Sie kennt nur nummerierte Speicherplätze. Das **Dateisystem**, ein Teil des Betriebssystems, fasst sie zu **Blöcken** fester Größe zusammen, meist je 4 Kibibyte (4 096 Byte), und legt darüber seine Ordnung. Es führt ein **Verzeichnis**: eine Liste, die zu jedem Dateinamen sagt, wo die Datei beginnt.\n\nEine Datei, die größer als ein Block ist, braucht mehrere Blöcke. Und die liegen oft **nicht nebeneinander**: Dateien wachsen, werden gelöscht, neue füllen die Lücken. Das Dateisystem muss sich darum merken, welcher Block auf welchen folgt. Probier es aus: Tippe auf einen Dateinamen im Inhaltsverzeichnis, dann leuchten ihre Blöcke auf. Jeder Block zeigt unten, wo es weitergeht (`→`), oder `Ende`."
+     "text": "### Was ist eine Datei?\n\nEine **Datei** ist eine Folge von Bytes, die unter einem Namen gespeichert ist. Mehr nicht. Ein Byte sind acht Bits. Eine Textdatei mit dem Inhalt „Hallo“ besteht aus genau fünf Bytes – im ASCII-Code, der jedem Buchstaben ein festes Bitmuster zuordnet (mehr in Folge 1), beginnt sie mit `01001000` für das H. Ein Foto besteht aus ein paar Millionen Bytes, ein Programm ebenfalls.\n\nZu jeder Datei merkt sich das Betriebssystem außerdem **Metadaten** – „Daten über die Daten“: wie groß sie ist, wann sie zuletzt geändert wurde, wem sie gehört, wer sie lesen darf und wo auf der SSD ihre Bytes liegen.\n\nWas die Bytes *bedeuten*, steht nicht in ihnen selbst. Dieselben Bytes können Buchstaben, Farben oder Befehle für den Prozessor sein – es ist eine Frage der **Kodierung**, also der Vereinbarung, welches Bitmuster was bedeuten soll. Ein Bildprogramm liest die Bytes als Bildpunkte, ein Texteditor als Buchstaben. Öffnest du ein Foto versehentlich mit einem Texteditor, siehst du darum nur Zeichensalat.\n\n### Das Dateisystem: Inhaltsverzeichnis und Blöcke\n\nEine SSD (ein Datenspeicher aus Flash-Chips ohne bewegliche Teile) kennt keine Dateien. Sie kennt nur nummerierte Speicherplätze. Das **Dateisystem**, ein Teil des Betriebssystems, fasst sie zu **Blöcken** fester Größe zusammen, meist je 4 Kibibyte (4 096 Byte), und legt darüber seine Ordnung. Es führt ein **Verzeichnis**: eine Liste, die zu jedem Dateinamen sagt, wo die Datei beginnt.\n\nEine Datei, die größer als ein Block ist, braucht mehrere Blöcke. Umgekehrt belegt auch eine winzige Datei mindestens einen ganzen Block – das Dateisystem vergibt Platz nur in ganzen Blöcken. Und die liegen oft **nicht nebeneinander**: Dateien wachsen, werden gelöscht, neue füllen die Lücken. Das Dateisystem muss sich darum merken, welcher Block auf welchen folgt. Probier es aus: Tippe auf einen Dateinamen im Inhaltsverzeichnis, dann leuchten ihre Blöcke auf. Jeder Block zeigt unten, wo es weitergeht (`→`), oder `Ende`."
     },
     {
      "art": "sim",
@@ -81,7 +81,7 @@
     },
     {
      "art": "md",
-     "text": "Du siehst: `hallo.txt` ist über vier Blöcke verstreut, und dazwischen liegen Stücke anderer Dateien. Freie Blöcke stehen für neue Daten bereit.\n\n> **Achtung:** Hier ist der Simulator vereinfacht. Dass jeder Block selbst auf den nächsten zeigt, gab es so ähnlich bei älteren Dateisystemen (FAT – dort steht die Kette allerdings in einer eigenen Tabelle). Heutige Dateisysteme wie NTFS (Windows) oder ext4 (Linux) speichern zu jeder Datei lieber eine Liste ganzer Blockbereiche: „Blöcke 812 bis 830, dann 1 200 bis 1 250“. Das Prinzip bleibt: Das Verzeichnis führt zur Datei, und die Datei kann verstreut liegen.\n\nÜbrigens sind **Ordner** selbst nichts anderes als besondere Dateien: Ihr Inhalt ist die Liste „Name → wo liegt das“. Und wer eine Datei löscht, entfernt meist nur den Eintrag im Verzeichnis und markiert die Blöcke als frei – die Bytes selbst bleiben liegen, bis neue Daten sie überschreiben. Deshalb können Rettungsprogramme manchmal versehentlich gelöschte Dateien zurückholen. (Bei SSDs klappt das seltener, weil sie freie Blöcke oft bald selbst leeren.)\n\n### Woher weiß der Rechner, welches Programm passt?\n\nAm **Dateinamen**. Unter Windows entscheidet vor allem die **Dateiendung** – die Buchstaben nach dem letzten Punkt: `.jpg` und `.png` für Bilder, `.txt` für Text, `.mp3` für Musik, `.exe` für Programme. Das Betriebssystem führt eine Liste, welches Programm für welche Endung zuständig ist.\n\nDie Endung ist dabei nur ein Teil des Namens, keine Eigenschaft des Inhalts. Benennst du `urlaub.jpg` in `urlaub.txt` um, wird aus dem Foto kein Text – Windows öffnet die Datei nur mit dem falschen Programm. Viele Dateiformate verraten sich zusätzlich durch ihre ersten Bytes: Jede PDF-Datei beginnt mit den Zeichen `%PDF`, jedes PNG-Bild mit den Buchstaben `PNG` gleich nach dem ersten Byte. Manche Programme schauen deshalb auf solche Merkmale statt auf den Namen – unter Linux etwa der Befehl `file`, der dir sagt, was wirklich in einer Datei steckt.\n\n### Der Doppelklick in Zeitlupe\n\nJetzt hast du alles beisammen. Verfolgen wir den Doppelklick auf `urlaub.jpg` durch alle Schichten:\n\n1. **Die Maus meldet sich.** Unter der Taste schließt sich ein Kontakt, Strom fließt oder stoppt – ein Bit wechselt (Folge 1 und 2). Die Elektronik der Maus schickt eine kurze Nachricht über Kabel oder Funk an den Rechner. Der Maustreiber im Betriebssystem nimmt sie entgegen (Folge 8).\n2. **Das Betriebssystem erkennt den Doppelklick.** Zwei Klicks kurz nacheinander an derselben Stelle – unter Windows standardmäßig innerhalb einer halben Sekunde – gelten als Doppelklick. Die Oberfläche prüft, welches Symbol unter dem Mauszeiger liegt: `urlaub.jpg`.\n3. **Es sucht das passende Programm.** Endung `.jpg` – laut Zuordnungsliste ist die Fotos-App zuständig.\n4. **Es lädt das Programm und legt einen Prozess an.** Das Dateisystem findet über das Verzeichnis die Blöcke der Programmdatei und liest sie von der SSD in den Arbeitsspeicher (Folge 7). Das Betriebssystem richtet einen eigenen Speicherbereich ein und meldet den neuen Prozess beim Scheduler an (Folge 8).\n5. **Der Prozessor beginnt.** Der Befehlszähler wird auf den ersten Befehl des Programms gesetzt. Nun läuft Takt für Takt: holen, entschlüsseln, ausführen (Folge 6) – ausgeführt von Rechenwerken aus Gattern (Folge 3 und 4), die aus Transistoren bestehen (Folge 2).\n6. **Das Programm öffnet die Datei.** Die Fotos-App darf die SSD nicht selbst anfassen. Sie bittet den Kernel mit einem Systemaufruf: „Öffne `urlaub.jpg`.“ Der Kernel prüft die Rechte, sucht im Verzeichnis die Blöcke und lässt sie von der SSD in den Arbeitsspeicher lesen. Von dort wandern die Bytes beim Bearbeiten durch den Cache bis in die Register (Folge 5 und 7).\n7. **Aus Bytes wird ein Bild.** Das Programm wandelt (dekodiert) das JPG-Format in Millionen farbiger Bildpunkte um und übergibt sie dem Betriebssystem, das sie an die Grafik weiterreicht – und auf dem Bildschirm erscheint das Meer.\n\n> **Achtung:** Das ist vereinfacht. In Wirklichkeit ist schon die Oberfläche (unter Windows der Explorer) selbst ein Programm, das den Kernel per Systemaufruf bittet, die Fotos-App zu starten. Die Programmdatei wird meist auch nicht auf einmal geladen, sondern Stück für Stück, sobald ein Teil gebraucht wird. Und zwischen Programm und Bildschirm arbeiten noch Grafikkarte und eigene Treiber. Die Reihenfolge der großen Schritte stimmt aber.\n\n> **Merke:** Eine Datei ist eine Folge von Bytes mit Namen und Metadaten. Das Dateisystem findet über das Verzeichnis ihre – oft verstreuten – Blöcke. Beim Doppelklick wählt das Betriebssystem anhand des Dateityps ein Programm, lädt es als Prozess, und das Programm lässt sich die Datei per Systemaufruf vom Kernel geben."
+     "text": "Du siehst: `hallo.txt` ist über vier Blöcke verstreut, und dazwischen liegen Stücke anderer Dateien. Freie Blöcke stehen für neue Daten bereit.\n\n> **Achtung:** Hier ist der Simulator vereinfacht. Dass jeder Block selbst auf den nächsten zeigt, gab es so ähnlich bei älteren Dateisystemen (FAT – dort steht die Kette allerdings in einer eigenen Tabelle). Heutige Dateisysteme wie NTFS (Windows) oder ext4 (Linux) speichern zu jeder Datei lieber eine Liste ganzer Blockbereiche: „Blöcke 812 bis 830, dann 1 200 bis 1 250“. Das Prinzip bleibt: Das Verzeichnis führt zur Datei, und die Datei kann verstreut liegen.\n\nÜbrigens sind **Ordner** selbst nichts anderes als besondere Dateien: Ihr Inhalt ist die Liste „Name → wo liegt das“. Und wer eine Datei löscht, entfernt meist nur den Eintrag im Verzeichnis und markiert die Blöcke als frei – die Bytes selbst bleiben liegen, bis neue Daten sie überschreiben. Deshalb können Rettungsprogramme manchmal versehentlich gelöschte Dateien zurückholen. (Bei SSDs klappt das seltener, weil sie freie Blöcke oft bald selbst leeren.)\n\n### Woher weiß der Rechner, welches Programm passt?\n\nAm **Dateinamen**. Unter Windows entscheidet vor allem die **Dateiendung** – die Buchstaben nach dem letzten Punkt: `.jpg` und `.png` für Bilder, `.txt` für Text, `.mp3` für Musik, `.exe` für Programme. Das Betriebssystem führt eine Liste, welches Programm für welche Endung zuständig ist.\n\nDie Endung ist dabei nur ein Teil des Namens, keine Eigenschaft des Inhalts. Benennst du `urlaub.jpg` in `urlaub.txt` um, wird aus dem Foto kein Text – Windows öffnet die Datei nur mit dem falschen Programm. Viele Dateiformate verraten sich zusätzlich durch ihre ersten Bytes: Jede PDF-Datei beginnt mit den Zeichen `%PDF`, jedes PNG-Bild mit den Buchstaben `PNG` gleich nach dem ersten Byte. Manche Programme schauen deshalb auf solche Merkmale statt auf den Namen – unter Linux etwa der Befehl `file`, der dir sagt, was wirklich in einer Datei steckt.\n\n### Der Doppelklick in Zeitlupe\n\nJetzt hast du alles beisammen. Ein paar Begriffe kurz vorab: Der **Kernel** ist der Kern des Betriebssystems, der als Einziger den Speicher und die Geräte verwaltet. Ein **Prozess** ist ein gerade laufendes Programm. Der **Scheduler** verteilt die Rechenzeit auf die Prozesse. Ein **Systemaufruf** ist die Bitte eines Programms an den Kernel, etwas für es zu tun (mehr dazu in Folge 8). Verfolgen wir den Doppelklick auf `urlaub.jpg` durch alle Schichten:\n\n1. **Die Maus meldet sich.** Unter der Taste schließt sich ein Kontakt, Strom fließt oder stoppt – ein Bit wechselt (Folge 1 und 2). Die Elektronik der Maus schickt eine kurze Nachricht über Kabel oder Funk an den Rechner. Der Maustreiber im Betriebssystem nimmt sie entgegen (Folge 8).\n2. **Das Betriebssystem erkennt den Doppelklick.** Zwei Klicks kurz nacheinander an derselben Stelle – unter Windows standardmäßig innerhalb einer halben Sekunde – gelten als Doppelklick. Die Oberfläche prüft, welches Symbol unter dem Mauszeiger liegt: `urlaub.jpg`.\n3. **Es sucht das passende Programm.** Endung `.jpg` – laut Zuordnungsliste ist die Fotos-App zuständig.\n4. **Es lädt das Programm und legt einen Prozess an.** Das Dateisystem findet über das Verzeichnis die Blöcke der Programmdatei und liest sie von der SSD in den Arbeitsspeicher (RAM, Folge 7). Das Betriebssystem richtet einen eigenen Speicherbereich ein und meldet den neuen Prozess beim Scheduler an (Folge 8).\n5. **Der Prozessor beginnt.** Der Befehlszähler (er merkt sich, welcher Befehl als Nächster drankommt) wird auf den ersten Befehl des Programms gesetzt. Nun läuft Takt für Takt: holen, entschlüsseln, ausführen (Folge 6) – ausgeführt von Rechenwerken aus Gattern (Folge 3 und 4), die aus Transistoren bestehen (Folge 2).\n6. **Das Programm öffnet die Datei.** Die Fotos-App darf die SSD nicht selbst anfassen. Sie bittet den Kernel mit einem Systemaufruf: „Öffne `urlaub.jpg`.“ Der Kernel prüft die Rechte, sucht im Verzeichnis die Blöcke und lässt sie von der SSD in den Arbeitsspeicher lesen. Von dort wandern die Bytes beim Bearbeiten durch den Cache (einen kleinen, schnellen Zwischenspeicher) bis in die Register, die winzigen Speicherplätze im Prozessor (Folge 7).\n7. **Aus Bytes wird ein Bild.** Das Programm wandelt (dekodiert) das JPG-Format in Millionen farbiger Bildpunkte um und übergibt sie dem Betriebssystem, das sie an die Grafik weiterreicht – und auf dem Bildschirm erscheint das Meer.\n\n> **Achtung:** Das ist vereinfacht. In Wirklichkeit ist schon die Oberfläche (unter Windows der Explorer) selbst ein Programm, das den Kernel per Systemaufruf bittet, die Fotos-App zu starten. Die Programmdatei wird meist auch nicht auf einmal geladen, sondern Stück für Stück, sobald ein Teil gebraucht wird. Und zwischen Programm und Bildschirm arbeiten noch Grafikkarte und eigene Treiber. Die Reihenfolge der großen Schritte stimmt aber.\n\n> **Merke:** Eine Datei ist eine Folge von Bytes mit Namen und Metadaten. Das Dateisystem findet über das Verzeichnis ihre – oft verstreuten – Blöcke. Beim Doppelklick wählt das Betriebssystem anhand des Dateityps ein Programm, lädt es als Prozess, und das Programm lässt sich die Datei per Systemaufruf vom Kernel geben."
     }
    ]
   },
@@ -146,6 +146,26 @@
    ]
   },
   {
+   "id": "beidir",
+   "titel": "Wo steckt das bei dir?",
+   "teile": [
+    {
+     "art": "md",
+     "text": "Dateien, Endungen und Dateisysteme begegnen dir auf jedem deiner Geräte – nur sieht jedes ein bisschen anders aus.\n\n**Dein Windows-PC: Endungen sichtbar machen.** Windows versteckt die Dateiendungen standardmäßig. Im Explorer kannst du sie einblenden: unter Windows 11 über **Anzeigen → Einblenden → Dateinamenerweiterungen**, unter Windows 10 im Menüband **Ansicht** mit dem Häkchen bei **Dateinamenerweiterungen**. Plötzlich heißt dein Foto `urlaub.jpg` statt nur `urlaub`. Das ist auch ein Schutz: Eine Datei namens `rechnung.pdf.exe` gibt sich als PDF aus, ist aber ein Programm – mit sichtbaren Endungen fällt das auf.\n\nMit einem **Rechtsklick → Öffnen mit** wählst du ein anderes Programm für eine Datei – und kannst dort auch festlegen, dass es künftig immer für diese Endung zuständig sein soll. Das ist genau die Zuordnungsliste aus dem Prinzip. Und unter **Rechtsklick → Eigenschaften** stehen zwei Größen: „Größe“ (die echten Bytes) und „Größe auf Datenträger“ – die ist meist etwas größer, weil das Dateisystem NTFS in ganzen Blöcken rechnet. (Winzige Dateien legt NTFS übrigens direkt in ihren Eintrag in seiner Dateitabelle – dann steht dort sogar 0 Byte.)\n\n**Dein Pixel: Apps statt Programmdateien.** Auf Android tippst du einmal statt doppelt – aber dahinter steckt dasselbe: Tippst du in der Dateien-App auf ein Foto, sucht Android eine App, die mit diesem Dateityp umgehen kann. Gibt es mehrere, fragt es dich, womit du öffnen willst. Die Apps selbst werden als `.apk`-Pakete geliefert, und jede gestartete App ist ein eigener Prozess auf dem Linux-Kernel (Folge 8).\n\n**Dein VPS: Unter Linux ist (fast) alles eine Datei.** Unix hat eine schlichte Idee berühmt gemacht: Nicht nur Dokumente, auch Geräte erscheinen als Dateien. Der Bereich der Festplatte, auf dem meine Arbeitsdateien liegen, heißt auf dem VPS `/dev/sda1` (der Befehl `df` zeigt das) und lässt sich dort ansprechen wie eine Datei, und Angaben über den Prozessor lassen sich wie ein Text aus `/proc/cpuinfo` lesen. Der Ordner `/workspace`, in dem ich arbeite und in dem auch diese App liegt, steckt auf einem Dateisystem namens **ext4** mit Blöcken von 4 KiB. Das habe ich ausprobiert: Eine Textdatei mit dem Inhalt „Hallo“ ist 5 Byte groß, belegt aber einen ganzen Block mit 4 096 Byte. Der Befehl `stat` zeigt zu jeder Datei die Metadaten: Größe, belegter Platz, Besitzer, Rechte und Zeitpunkte. (`stat` zählt den Platz in 512-Byte-Stücken: Bei der Hallo-Datei steht dort `Blocks: 8`, und 8 × 512 = 4 096 Byte.)\n\n**Ich und deine Ablage.** Wenn ich dir ein Ergebnis in den Ordner `von_agent` lege, schreibt das Programm Claude Code auf dem VPS Bytes in eine neue Datei (das Sprachmodell dahinter rechnet bei Anthropic, die Datei entsteht aber auf deinem VPS). Von dort wird sie mit deinem Google Drive abgeglichen und landet dort in einem ganz anderen Speichersystem. Der Name und die Bytes bleiben gleich – nur die Blöcke, in denen sie liegen, sind andere.\n\n**Dein Rückblick auf die Staffel.** Wenn du die ganze Staffel gesehen hast, hast du mit dieser Folge den Weg einmal ganz hinaufgeschafft: vom einzelnen **Bit** über **Transistoren** und **Gatter**, die rechnen und sich etwas merken, zum **Prozessor**, durch die Stufen des **Speichers** bis zum **Betriebssystem**, das bei einem Doppelklick all das zusammenspielen lässt. Im Abschlussprojekt baust du selbst ein Stück davon nach: einen Rechner aus Gattern, der zwei Zahlen addiert."
+    }
+   ]
+  },
+  {
+   "id": "fazit",
+   "titel": "Auf den Punkt",
+   "teile": [
+    {
+     "art": "md",
+     "text": "- Eine Datei ist eine Folge von Bytes mit Namen und Metadaten; was die Bytes bedeuten, steht nicht in ihnen selbst.\n- Das Dateisystem teilt den Datenträger in Blöcke ein, und das Verzeichnis sagt zu jedem Dateinamen, wo die Daten liegen – oft verstreut über mehrere Blöcke.\n- Windows wählt das Programm anhand der Dateiendung; die Endung ist nur ein Teil des Namens und ändert den Inhalt nicht.\n- Beim Doppelklick startet zuerst das Programm als Prozess, danach bittet es den Kernel per Systemaufruf, die Datei zu öffnen."
+    }
+   ]
+  },
+  {
    "id": "quiz",
    "titel": "Teste dich",
    "teile": []
@@ -154,16 +174,6 @@
    "id": "karten",
    "titel": "Für deinen Karteikasten",
    "teile": []
-  },
-  {
-   "id": "beidir",
-   "titel": "Wo steckt das bei dir?",
-   "teile": [
-    {
-     "art": "md",
-     "text": "Dateien, Endungen und Dateisysteme begegnen dir auf jedem deiner Geräte – nur sieht jedes ein bisschen anders aus.\n\n**Dein Windows-PC: Endungen sichtbar machen.** Windows versteckt die Dateiendungen standardmäßig. Im Explorer kannst du sie einblenden: unter Windows 11 über **Anzeigen → Einblenden → Dateinamenerweiterungen**, unter Windows 10 im Menüband **Ansicht** mit dem Häkchen bei **Dateinamenerweiterungen**. Plötzlich heißt dein Foto `urlaub.jpg` statt nur `urlaub`. Das ist auch ein Schutz: Eine Datei namens `rechnung.pdf.exe` gibt sich als PDF aus, ist aber ein Programm – mit sichtbaren Endungen fällt das auf.\n\nMit einem **Rechtsklick → Öffnen mit** wählst du ein anderes Programm für eine Datei – und kannst dort auch festlegen, dass es künftig immer für diese Endung zuständig sein soll. Das ist genau die Zuordnungsliste aus dem Prinzip. Und unter **Rechtsklick → Eigenschaften** stehen zwei Größen: „Größe“ (die echten Bytes) und „Größe auf Datenträger“ – die ist meist etwas größer, weil das Dateisystem NTFS in ganzen Blöcken rechnet. (Winzige Dateien legt NTFS übrigens direkt in ihren Eintrag in seiner Dateitabelle – dann steht dort sogar 0 Byte.)\n\n**Dein Pixel: Apps statt Programmdateien.** Auf Android tippst du einmal statt doppelt – aber dahinter steckt dasselbe: Tippst du in der Dateien-App auf ein Foto, sucht Android eine App, die mit diesem Dateityp umgehen kann. Gibt es mehrere, fragt es dich, womit du öffnen willst. Die Apps selbst werden als `.apk`-Pakete geliefert, und jede gestartete App ist ein eigener Prozess auf dem Linux-Kernel (Folge 8).\n\n**Dein VPS: Unter Linux ist (fast) alles eine Datei.** Unix hat eine schlichte Idee berühmt gemacht: Nicht nur Dokumente, auch Geräte erscheinen als Dateien. Der Bereich der Festplatte, auf dem meine Arbeitsdateien liegen, heißt auf dem VPS `/dev/sda1` (der Befehl `df` zeigt das) und lässt sich dort ansprechen wie eine Datei, und Angaben über den Prozessor lassen sich wie ein Text aus `/proc/cpuinfo` lesen. Der Ordner `/workspace`, in dem ich arbeite und in dem auch diese App liegt, steckt auf einem Dateisystem namens **ext4** mit Blöcken von 4 KiB. Das habe ich ausprobiert: Eine Textdatei mit dem Inhalt „Hallo“ ist 5 Byte groß, belegt aber einen ganzen Block mit 4 096 Byte. Der Befehl `stat` zeigt zu jeder Datei die Metadaten: Größe, belegter Platz, Besitzer, Rechte und Zeitpunkte. (`stat` zählt den Platz in 512-Byte-Stücken: Bei der Hallo-Datei steht dort `Blocks: 8`, und 8 × 512 = 4 096 Byte.)\n\n**Ich und deine Ablage.** Wenn ich dir ein Ergebnis in den Ordner `von_agent` lege, schreibt das Programm Claude Code auf dem VPS Bytes in eine neue Datei (das Sprachmodell dahinter rechnet bei Anthropic, die Datei entsteht aber auf deinem VPS). Von dort wird sie mit deinem Google Drive abgeglichen und landet dort in einem ganz anderen Speichersystem. Der Name und die Bytes bleiben gleich – nur die Blöcke, in denen sie liegen, sind andere.\n\n**Dein Rückblick auf die Staffel.** Mit dieser Folge hast du den Weg einmal ganz hinaufgeschafft: vom einzelnen **Bit** über **Transistoren** und **Gatter**, die rechnen und sich etwas merken, zum **Prozessor**, durch die Stufen des **Speichers** bis zum **Betriebssystem**, das bei einem Doppelklick all das zusammenspielen lässt. Im Abschlussprojekt baust du selbst ein Stück davon nach: einen Rechner aus Gattern, der zwei Zahlen addiert."
-    }
-   ]
   }
  ],
  "quiz": [
@@ -178,11 +188,12 @@
    ],
    "richtig": 1,
    "erklaerung": "Eine Datei ist eine Folge von Bytes, gespeichert unter einem Namen. Dazu merkt sich das Betriebssystem Metadaten wie Größe, Datum, Besitzer, Rechte und wo die Bytes liegen.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Was ist eine Datei?"
   },
   {
    "id": "s1f09-q02",
-   "frage": "Wozu braucht das Dateisystem ein Verzeichnis?",
+   "frage": "Wozu braucht das Dateisystem (die Ordnung eines Datenträgers) ein Verzeichnis?",
    "antworten": [
     "Um die Bytes einer Datei zu verschlüsseln",
     "Um die Datei schneller durch den Prozessor zu schicken",
@@ -191,11 +202,12 @@
    ],
    "richtig": 2,
    "erklaerung": "Die SSD kennt nur nummerierte Speicherplätze. Das Verzeichnis ordnet jedem Namen den Ort seiner Daten zu – ohne es wären die Bytes zwar da, aber nicht mehr zu finden.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Das Dateisystem: Inhaltsverzeichnis und Blöcke"
   },
   {
    "id": "s1f09-q03",
-   "frage": "Du benennst `urlaub.jpg` in `urlaub.txt` um. Was passiert?",
+   "frage": "Du benennst eine Fotodatei von `urlaub.jpg` in `urlaub.txt` um (nur der Name ändert sich). Was passiert unter Windows?",
    "antworten": [
     "Windows wandelt das Foto in einen Text um",
     "Die Bytes bleiben gleich, aber Windows wählt ein anderes Programm",
@@ -204,7 +216,8 @@
    ],
    "richtig": 1,
    "erklaerung": "Die Endung ist nur ein Teil des Namens. Am Inhalt ändert das Umbenennen nichts – Windows öffnet die Datei nur mit dem Programm, das für .txt zuständig ist, und zeigt dann Zeichensalat.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Woher weiß der Rechner, welches Programm passt?"
   },
   {
    "id": "s1f09-q04",
@@ -217,7 +230,8 @@
    ],
    "richtig": 3,
    "erklaerung": "Zuerst ermittelt das Betriebssystem anhand der Endung das passende Programm und startet es als Prozess. Erst das laufende Programm bittet dann per Systemaufruf darum, die Datei zu öffnen.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Der Doppelklick in Zeitlupe"
   },
   {
    "id": "s1f09-q05",
@@ -230,33 +244,35 @@
    ],
    "richtig": 0,
    "erklaerung": "Mit der Zeit werden Dateien angelegt, vergrößert und gelöscht. Eine neue oder wachsende Datei bekommt die freien Blöcke, wo immer sie gerade liegen – das Dateisystem merkt sich, in welcher Reihenfolge sie zusammengehören.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Das Dateisystem: Inhaltsverzeichnis und Blöcke"
   },
   {
    "id": "s1f09-q06",
-   "frage": "Wer führte am 9. Dezember 1968 in San Francisco in der berühmten „Mother of All Demos“ die Computermaus vor?",
+   "frage": "Warum gilt Douglas Engelbarts Vorführung von 1968 („Mother of All Demos“), in der die Computermaus erstmals öffentlich vorgeführt wurde, als wegweisend?",
    "antworten": [
-    "Steve Jobs",
-    "Douglas Engelbart",
-    "Linus Torvalds",
-    "Ken Thompson"
+    "Sie zeigte erstmals ein Dateisystem mit Ordnern in Ordnern",
+    "Sie zeigte Arbeiten am Bildschirm mit Maus und Klick auf Verweise",
+    "Sie zeigte erstmals einen Prozessor auf einem einzigen Chip",
+    "Sie zeigte erstmals einen Rechner, den man im Laden kaufen konnte"
    ],
    "richtig": 1,
-   "erklaerung": "Douglas Engelbart führte die Maus in seiner 90-minütigen Vorführung vor, die später „Mother of All Demos“ genannt wurde. Gebaut hatte sie sein Ingenieur Bill English.",
+   "erklaerung": "Engelbart zeigte Text, den man am Bildschirm bearbeitet, Verweise, die per Klick zu anderen Dokumenten springen, eine Videoverbindung – und die Maus, mit der man das bediente. Auch mehrere Fenster auf dem Bildschirm waren schon zu sehen. Die Baumstruktur der Ordner wurde dagegen schon 1965 für Multics beschrieben, und käufliche Rechner mit Fenstern, Symbolen und Maus kamen erst später (Xerox Star 1981, Macintosh 1984).",
    "nachlesen": "geschichte"
   },
   {
    "id": "s1f09-q07",
-   "frage": "Auf dem VPS ist eine Textdatei nur 5 Byte groß. Wie viel Platz belegt sie dort trotzdem auf dem Datenträger?",
+   "frage": "Eine Textdatei ist nur 5 Byte groß, belegt auf dem Datenträger aber deutlich mehr Platz (bei ext4 unter Linux meist 4 096 Byte). Warum?",
    "antworten": [
-    "Genau 5 Byte",
-    "8 Bit, also 1 Byte",
-    "Einen ganzen Block von 4 KiB",
-    "Ein ganzes Gigabyte"
+    "Weil jede Datei zusätzlich eine Sicherungskopie anlegt",
+    "Weil Text auf der SSD immer verschlüsselt gespeichert wird",
+    "Weil das Dateisystem Platz nur in ganzen Blöcken vergibt",
+    "Weil der Dateiname fast den gesamten Platz verbraucht"
    ],
    "richtig": 2,
-   "erklaerung": "Das Dateisystem vergibt Platz nur in ganzen Blöcken. Auf dem VPS ist ein Block 4 KiB (4 096 Byte) groß – auch eine winzige Datei belegt also mindestens einen davon.",
-   "nachlesen": "beidir"
+   "erklaerung": "Das Dateisystem teilt den Datenträger in Blöcke fester Größe ein (hier 4 KiB = 4 096 Byte) und vergibt nur ganze Blöcke. Auch eine winzige Datei belegt also mindestens einen davon.",
+   "nachlesen": "prinzip",
+   "stelle": "Das Dateisystem: Inhaltsverzeichnis und Blöcke"
   }
  ],
  "karten": [
@@ -272,7 +288,7 @@
   },
   {
    "id": "s1f09-k03",
-   "vorne": "Was ist ein Block im Dateisystem?",
+   "vorne": "Was ist ein Block im Dateisystem (der Ordnung eines Datenträgers)?",
    "hinten": "Ein nummerierter Abschnitt fester Größe (meist 4 KiB) – in solche Abschnitte teilt das Dateisystem den Datenträger ein."
   },
   {
@@ -302,8 +318,8 @@
   },
   {
    "id": "s1f09-k09",
-   "vorne": "Wer führte am 9. Dezember 1968 in der berühmten Vorführung in San Francisco die Maus vor?",
-   "hinten": "Douglas Engelbart, in der „Mother of All Demos“. Gebaut hatte die Maus sein Ingenieur Bill English."
+   "vorne": "Was zeigte Douglas Engelbart 1968 in der „Mother of All Demos“?",
+   "hinten": "Arbeiten am Bildschirm: Text bearbeiten, Verweise per Klick, eine Videoverbindung – und die Computermaus (gebaut von seinem Ingenieur Bill English)."
   }
  ]
 }

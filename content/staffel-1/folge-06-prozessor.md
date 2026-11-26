@@ -1,7 +1,7 @@
 ---
 id: s1f06
 status: freigegeben
-faktencheck: 26.11.2026 – Durchgang 1 nicht bestanden (1 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/
+faktencheck: 26.11.2026 – Durchgang 1 nicht bestanden (1 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/; Umstellung auf eigenständige Folge + Lernpool (1.5.0): unabhängig geprüft und bestanden
 dauer: 18
 quellen:
 - John von Neumann: First Draft of a Report on the EDVAC. Moore School of Electrical Engineering, University of Pennsylvania, 30. Juni 1945 | https://web.mit.edu/STS.035/www/PDFs/edvac.pdf
@@ -17,7 +17,7 @@ quellen:
 
 ## [einstieg] Woher weiß ein Haufen Schalter, was er als Nächstes tun soll?
 
-Du hast in den letzten Folgen ein erstaunliches Bauset zusammengetragen: Transistoren, die Strom schalten. Gatter, die UND, ODER und NICHT können. Ein Addierer, der zwei Zahlen zusammenzählt. Ein Speicher, der sich Bits merkt. Aber all das sitzt bisher nur da und wartet. Niemand sagt dem Addierer, *wann* er *welche* Zahlen addieren soll.
+Ein Computer besteht aus Bauteilen, die jedes für sich etwas Einfaches können: Transistoren sind winzige elektrische Schalter (mehr dazu in Folge 2). Aus ihnen entstehen Gatter, die aus Bits (0 oder 1) nach festen Regeln ein Ergebnis bilden, etwa UND, ODER und NICHT (Folge 3), und daraus ein Addierer, der Bits zusammenzählt (Folge 4) – größere Addierer rechnen mit Binärzahlen, also Zahlen, die nur mit 0 und 1 geschrieben werden. Ein Speicher merkt sich Bits (Folge 5). Aber all das sitzt für sich nur da und wartet. Niemand sagt dem Addierer, *wann* er *welche* Zahlen addieren soll.
 
 Genau das ist die Aufgabe des **Prozessors**. Er liest Befehle, einen nach dem anderen, und lässt die Bauteile danach arbeiten – Milliarden Mal pro Sekunde. Und das Verblüffende: Die Befehle, denen er gehorcht, sind selbst nur Zahlen, die im selben Speicher liegen wie die Daten. In dieser Folge baust du dir im Kopf einen Prozessor zusammen und lässt ihn Takt für Takt rechnen.
 
@@ -33,7 +33,7 @@ Wer zuerst eine solche Maschine zum Laufen brachte, waren nicht die Amerikaner. 
 
 > **Wusstest du?:** Das Baby kannte nur sieben Befehle – addieren konnte es nicht einmal direkt, nur subtrahieren. Addition ging trotzdem: Wer etwas Negatives abzieht, zählt dazu. Unser Spielzeug-Prozessor unten hat zufällig auch sieben Befehle.
 
-23 Jahre später passt ein ganzer Prozessor auf einen Chip. Im **November 1971** bringt Intel den **4004** heraus, entwickelt für die Rechenmaschinen der japanischen Firma Busicom. Er besteht aus etwa **2 300 Transistoren** – den Schaltern aus Folge 2 – und taktet mit bis zu 740 000 Schlägen pro Sekunde. Er gilt als erster frei käuflicher **Mikroprozessor**. Der Bauplan von 1945 steckt bis heute in praktisch jedem Computer – auch in deinem Handy.
+23 Jahre später passt ein ganzer Prozessor auf einen Chip. Im **November 1971** bringt Intel den **4004** heraus, entwickelt für die Rechenmaschinen der japanischen Firma Busicom. Er besteht aus etwa **2 300 Transistoren** – winzigen elektrischen Schaltern – und taktet mit bis zu 740 000 Schlägen pro Sekunde. Er gilt als erster frei käuflicher **Mikroprozessor**. Der Bauplan von 1945 steckt bis heute in praktisch jedem Computer – auch in deinem Handy.
 
 ## [prinzip] Holen, Entschlüsseln, Ausführen
 
@@ -41,12 +41,12 @@ Wer zuerst eine solche Maschine zum Laufen brachte, waren nicht die Amerikaner. 
 
 Ein Prozessor braucht nur wenige Teile, um zu funktionieren:
 
-- **Speicher** (aus Folge 5): viele nummerierte Zellen. Die Nummer einer Zelle heißt **Adresse**. In den Zellen stehen Zahlen – manche davon sind Daten, manche sind Befehle.
+- **Speicher** (mehr dazu in Folge 5): viele nummerierte Zellen. Die Nummer einer Zelle heißt **Adresse**. In den Zellen stehen Zahlen – manche davon sind Daten, manche sind Befehle.
 - **Register**: ein paar winzige Speicherplätze direkt im Prozessor, in die er Zahlen zum Rechnen holt. Unser Spielzeug hat ein einziges Rechenregister, das **Register A**.
 - **Befehlszähler**: ein Register, das sich die Adresse des *nächsten* Befehls merkt.
 - **Befehlsregister**: hier liegt der Befehl, der gerade bearbeitet wird.
-- **Rechenwerk** (englisch ALU, *Arithmetic Logic Unit*): rechnet – im Wesentlichen der Addierer aus Folge 4, ergänzt um Subtrahieren, Vergleichen und Logik (UND, ODER, NICHT aus Folge 3).
-- **Steuerwerk**: erkennt, welcher Befehl im Befehlsregister steht, und schaltet die anderen Teile passend zusammen. Auch das ist nur eine geschickte Schaltung aus Gattern (Folge 3).
+- **Rechenwerk** (englisch ALU, *Arithmetic Logic Unit*): rechnet – im Wesentlichen ein Addierer für Binärzahlen (Folge 4), ergänzt um Subtrahieren, Vergleichen und Logik. Logik heißt: UND, ODER, NICHT, also Gatter, die aus 0 und 1 nach einer festen Regel ein Ergebnis bilden (Folge 3).
+- **Steuerwerk**: erkennt, welcher Befehl im Befehlsregister steht, und schaltet die anderen Teile passend zusammen. Auch das ist nur eine geschickte Schaltung aus Gattern.
 
 ### Der Befehlszyklus
 
@@ -70,7 +70,7 @@ Nach zwölf Takten hält der Prozessor an, und in Zelle 8 steht die 7. Vier Befe
 
 ### Befehle sind auch nur Zahlen
 
-Im Simulator steht in den Zellen „LADE 6“, damit du es lesen kannst. Im echten Speicher gibt es aber nur Bits. Jeder Befehl ist ein vereinbartes Bitmuster – eine Kodierung wie ASCII in Folge 1. Ein ausgedachtes Beispiel: Die ersten vier Bit sagen, *was* zu tun ist (`0001` = LADE), die letzten vier, *mit welcher Zelle* (`0110` = 6). Zusammen: `00010110`. Für den Speicher ist das einfach eine Zahl, die 22. Erst der Befehlszähler macht sie zum Befehl, indem er auf sie zeigt.
+Im Simulator steht in den Zellen „LADE 6“, damit du es lesen kannst. Im echten Speicher gibt es aber nur Bits. Jeder Befehl ist ein vereinbartes Bitmuster – eine Kodierung, so wie Buchstaben als Zahlencodes gespeichert werden (mehr dazu in Folge 1). Ein ausgedachtes Beispiel: Die ersten vier Bit sagen, *was* zu tun ist (`0001` = LADE), die letzten vier, *mit welcher Zelle* (`0110` = 6). Zusammen: `00010110`. Für den Speicher ist das einfach eine Zahl, die 22 (16 + 4 + 2; wie man binär rechnet, zeigt Folge 4). Erst der Befehlszähler macht sie zum Befehl, indem er auf sie zeigt.
 
 Das ist die Idee von 1945 in einem Satz: **Programm und Daten liegen im selben Speicher und sehen gleich aus.** Darum kann ein Computer heute ein Programm herunterladen und ausführen – es sind ja nur Daten.
 
@@ -161,6 +161,25 @@ unten: zuletzt
 
 Schritt 2 ist das **Holen**, Schritt 3 das **Entschlüsseln**, Schritt 4 das **Ausführen**. Wichtig: Der Befehlszähler zählt schon beim Holen weiter. Ein Sprungbefehl überschreibt ihn dann beim Ausführen einfach wieder.
 
+## [beidir] Wo steckt das bei dir?
+
+Der Befehlszyklus läuft gerade in jedem deiner Geräte – milliardenfach pro Sekunde.
+
+**Dein VPS.** Der Server, auf dem ich arbeite, hat **1 vCPU**, einen *virtuellen* Prozessorkern. Ich habe nachgeschaut, was das Programm `lscpu` dort meldet: Der Rechner im Rechenzentrum hat einen **AMD EPYC 9354P** mit 32 echten Kernen. Laut AMD läuft er mit einem Grundtakt von **3,25 GHz** und kurzzeitig bis 3,8 GHz. Diesen großen Prozessor teilen sich viele gemietete Server. Die Virtualisierung teilt jedem einen Anteil zu – dein VPS sieht davon genau einen Kern. Alles, was auf dem VPS läuft – auch das Programm, über das ich Dateien lese und Befehle ausführe –, geht also durch einen einzigen Befehlszyklus nach dem anderen. (Das Sprachmodell selbst, mit dem ich denke, rechnet übrigens nicht hier, sondern auf großen Servern von Anthropic.) Wie dann trotzdem viele Programme „gleichzeitig“ laufen, zeigt Folge 8.
+
+**Dein Windows-PC.** Öffne den Task-Manager (Strg + Umschalt + Esc), dann **Leistung → CPU**. Oben rechts steht der Name deines Prozessors, unten die **Basisgeschwindigkeit** in GHz und daneben die aktuelle Geschwindigkeit – die wechselt ständig: Bei wenig Arbeit regelt der Prozessor den Takt herunter und spart Strom, bei viel Arbeit dreht er kurz über die Basisgeschwindigkeit hinaus. Bei **Kerne** siehst du, wie viele vollständige Prozessoren auf deinem Chip sitzen.
+
+**Dein Pixel.** Neuere Pixel-Handys haben acht oder neun Prozessorkerne, und die sind nicht alle gleich: einige große, schnelle für anspruchsvolle Aufgaben und mehrere kleine, sparsame für Dinge im Hintergrund. So hält der Akku länger. Jeder einzelne Kern arbeitet aber nach demselben Prinzip wie unser Spielzeug: Holen, Entschlüsseln, Ausführen.
+
+**Ich im Docker-Container.** Auch mein Programm hier im Container ist für den Prozessor nur eine lange Folge von Befehlen im Arbeitsspeicher, die der Befehlszähler eine nach der anderen abholt. Dass dabei alles – Befehle und Daten – durch dieselbe enge Verbindung zwischen Prozessor und Speicher muss, ist ein echtes Problem. Der Informatiker John Backus nannte es 1977 den „Von-Neumann-Flaschenhals“. Heute dauert ein Zugriff auf den Arbeitsspeicher sogar viel länger als eine Rechnung. Wie Computer ihn mit einem Trick namens Cache entschärfen, erfährst du in Folge 7.
+
+## [fazit] Auf den Punkt
+
+- Ein Prozessor arbeitet im Befehlszyklus: Holen, Entschlüsseln, Ausführen – immer wieder. Der Befehlszähler sagt ihm, wo der nächste Befehl steht.
+- Befehle sind nur Zahlen im selben Speicher wie die Daten (Von-Neumann-Architektur); erst der Befehlszähler macht eine Zahl zum Befehl.
+- Der Takt gibt den Rhythmus vor: 1 GHz sind eine Milliarde Takte pro Sekunde, bei jedem Schlag macht die Schaltung einen Schritt.
+- Sprungbefehle schreiben eine neue Adresse in den Befehlszähler und ermöglichen so Schleifen und Entscheidungen.
+
 ## [quiz] Teste dich
 
 ### s1f06-q01
@@ -170,7 +189,7 @@ In welcher Reihenfolge bearbeitet ein Prozessor einen Befehl?
 - [ ] Ausführen, Holen, Speichern
 - [ ] Holen, Ausführen, Entschlüsseln
 Erklärung: Erst wird der Befehl aus dem Speicher ins Befehlsregister geholt, dann erkennt das Steuerwerk, was er bedeutet, dann wird er ausgeführt. Danach beginnt der Zyklus von vorn.
-Nachlesen: prinzip
+Nachlesen: prinzip / Der Befehlszyklus
 
 ### s1f06-q02
 Was merkt sich der Befehlszähler?
@@ -179,15 +198,15 @@ Was merkt sich der Befehlszähler?
 - [ ] Das Ergebnis der letzten Rechnung
 - [ ] Wie viele Takte pro Sekunde möglich sind
 Erklärung: Trotz seines Namens zählt er keine erledigten Befehle. Er zeigt auf die Zelle, aus der als Nächstes geholt wird. Ein Sprungbefehl schreibt einfach eine neue Adresse hinein.
-Nachlesen: prinzip
+Nachlesen: prinzip / Der Aufbau
 
 ### s1f06-q03
-Was war die zentrale neue Idee im „First Draft of a Report on the EDVAC“ von 1945?
-- [ ] Rechnen mit Transistoren statt mit Röhren
-- [ ] Rechnen mit Lochkarten statt mit Röhren
-- [x] Das Programm im selben Speicher wie die Daten
-- [ ] Mehrere Prozessorkerne auf einem Chip
-Erklärung: Statt das Programm wie bei ENIAC zu verkabeln, steht es als Zahlen im Speicher, genau wie die Daten. Ein neues Programm heißt nur: neue Zahlen in den Speicher schreiben. Transistoren gab es 1945 noch nicht.
+Frühe Rechner wie ENIAC bekamen ihr Programm durch Umstecken von Kabeln. Welche Idee der Von-Neumann-Architektur ersetzte das?
+- [ ] Das Programm wird auf Lochkarten neben dem Prozessor gelesen
+- [x] Das Programm steht als Zahlen im selben Speicher wie die Daten
+- [ ] Jedes Programm bekommt einen eigenen kleinen Prozessor
+- [ ] Das Programm wird fest in die Transistoren eingebrannt
+Erklärung: Statt das Programm zu verkabeln, steht es als Zahlen im Speicher, genau wie die Daten. Ein neues Programm heißt nur: neue Zahlen in den Speicher schreiben, kein Kabel muss sich bewegen.
 Nachlesen: geschichte
 
 ### s1f06-q04
@@ -197,16 +216,16 @@ Ein Prozessor läuft mit 3 GHz. Was bedeutet das?
 - [x] Sein Takt schlägt drei Milliarden Mal pro Sekunde
 - [ ] Er verbraucht drei Gigawatt Strom
 Erklärung: Hertz heißt „pro Sekunde“, Giga heißt Milliarde. Bei jedem Takt macht die Schaltung einen Schritt weiter.
-Nachlesen: prinzip
+Nachlesen: prinzip / Der Takt
 
 ### s1f06-q05
-Welcher Befehl macht in unserem Spielzeug-Prozessor eine Schleife möglich?
-- [ ] LADE
-- [ ] SPEICHERE
-- [ ] ADDIERE
-- [x] SPRINGE
-Erklärung: SPRINGE setzt den Befehlszähler auf eine frühere Adresse zurück – der Prozessor wiederholt dann dieselben Befehle. Mit SPRINGE_WENN_NULL kommt die Entscheidung dazu, wann die Schleife endet.
-Nachlesen: prinzip
+Wie kann ein Prozessor einen Programmteil mehrfach wiederholen (eine Schleife)?
+- [ ] Das Rechenwerk zählt die Takte rückwärts bis zum Programmanfang
+- [ ] Das Steuerwerk löscht den Speicher und beginnt das Programm neu
+- [x] Ein Sprungbefehl setzt den Befehlszähler auf eine frühere Adresse zurück
+- [ ] Der Prozessor lädt das ganze Programm noch einmal ins Rechenregister
+Erklärung: Ein Sprungbefehl schreibt eine frühere Adresse in den Befehlszähler – der Prozessor wiederholt dann dieselben Befehle. Mit einem bedingten Sprung (zum Beispiel „wenn Register A gleich 0 ist“) entscheidet er, wann die Schleife endet.
+Nachlesen: prinzip / Sprünge: Schleifen und Entscheidungen
 
 ### s1f06-q06
 Im Speicher steht das Bitmuster `00010110`. Ist das ein Befehl oder eine Zahl?
@@ -215,24 +234,24 @@ Im Speicher steht das Bitmuster `00010110`. Ist das ein Befehl oder eine Zahl?
 - [x] Das hängt davon ab, ob der Befehlszähler darauf zeigt
 - [ ] Das steht in einem eigenen Bit am Anfang
 Erklärung: Befehle und Daten sehen im Speicher gleich aus – es sind nur Bits. Holt der Prozessor die Zelle als nächsten Befehl, wird sie als Befehl entschlüsselt; lädt ein Befehl sie als Wert, ist sie eine Zahl.
-Nachlesen: prinzip
+Nachlesen: prinzip / Befehle sind auch nur Zahlen
 
 ### s1f06-q07
-Wie viele Transistoren hatte der Intel 4004 von 1971 ungefähr?
-- [ ] 23
-- [x] 2 300
-- [ ] 230 000
-- [ ] 23 Millionen
-Erklärung: Etwa 2 300 Transistoren – genug für einen ganzen, wenn auch sehr einfachen Prozessor auf einem Chip. Heutige Prozessoren haben Milliarden.
+Warum war der Intel 4004 von 1971 mit seinen etwa 2 300 Transistoren etwas Neues?
+- [ ] Er war der erste Rechner, der sein Programm im Speicher ablegte
+- [x] Ein ganzer Prozessor passte erstmals auf einen einzigen Chip
+- [ ] Er war der erste Prozessor mit mehreren Kernen
+- [ ] Er rechnete als Erster mit Gattern statt mit Schaltern
+Erklärung: Der 4004 gilt als erster frei käuflicher Mikroprozessor: Steuerwerk, Rechenwerk und Register saßen auf einem einzigen Chip aus etwa 2 300 Transistoren; der Speicher kam in eigenen Chips dazu. Heutige Prozessoren haben Milliarden.
 Nachlesen: geschichte
 
 ### s1f06-q08
-Im Bild von der Köchin: Was entspricht dem Befehlszähler?
+Eine Köchin arbeitet Rezeptkärtchen aus nummerierten Regalfächern ab, in denen auch die Zutaten liegen. Was entspricht in diesem Bild dem Befehlszähler des Prozessors?
 - [ ] Die Rührschüssel in ihrer Hand
 - [x] Das Lesezeichen, das auf ein Fach zeigt
 - [ ] Das Regal mit den Fächern
 - [ ] Die Zutaten in den Fächern
-Erklärung: Das Lesezeichen zeigt auf das Fach mit dem nächsten Rezeptschritt und wird nach jedem Holen weitergeschoben – genau wie der Befehlszähler. Die Rührschüssel ist das Register A, das Regal der Speicher.
+Erklärung: Das Lesezeichen zeigt auf das Fach mit dem nächsten Rezeptschritt und wird nach jedem Holen weitergeschoben – genau wie der Befehlszähler. Die Rührschüssel ist das Rechenregister, das Regal der Speicher.
 Nachlesen: werkstatt
 
 ## [karten] Für deinen Karteikasten
@@ -266,21 +285,9 @@ Vorne: Wie entsteht im Prozessor eine Schleife?
 Hinten: Ein Sprungbefehl (z. B. SPRINGE 0) schreibt eine frühere Adresse in den Befehlszähler, sodass dieselben Befehle wiederholt werden.
 
 ### s1f06-k08
-Vorne: Wie viele Transistoren hatte der Intel 4004 von 1971 ungefähr?
-Hinten: Etwa 2 300. Er gilt als erster frei käuflicher Mikroprozessor.
+Vorne: Was war am Intel 4004 (1971) neu?
+Hinten: Ein ganzer Prozessor passte auf einen einzigen Chip (etwa 2 300 Transistoren). Er gilt als erster frei käuflicher Mikroprozessor.
 
 ### s1f06-k09
-Vorne: Im Bild der Köchin: Was entspricht dem Befehlszähler?
-Hinten: Das Lesezeichen, das auf das Fach mit dem nächsten Rezeptschritt zeigt.
-
-## [beidir] Wo steckt das bei dir?
-
-Der Befehlszyklus läuft gerade in jedem deiner Geräte – milliardenfach pro Sekunde.
-
-**Dein VPS.** Der Server, auf dem ich arbeite, hat **1 vCPU**, einen *virtuellen* Prozessorkern. Ich habe nachgeschaut, was das Programm `lscpu` dort meldet: Der Rechner im Rechenzentrum hat einen **AMD EPYC 9354P** mit 32 echten Kernen. Laut AMD läuft er mit einem Grundtakt von **3,25 GHz** und kurzzeitig bis 3,8 GHz. Diesen großen Prozessor teilen sich viele gemietete Server. Die Virtualisierung teilt jedem einen Anteil zu – dein VPS sieht davon genau einen Kern. Alles, was auf dem VPS läuft – auch das Programm, über das ich Dateien lese und Befehle ausführe –, geht also durch einen einzigen Befehlszyklus nach dem anderen. (Das Sprachmodell selbst, mit dem ich denke, rechnet übrigens nicht hier, sondern auf großen Servern von Anthropic.) Wie dann trotzdem viele Programme „gleichzeitig“ laufen, zeigt Folge 8.
-
-**Dein Windows-PC.** Öffne den Task-Manager (Strg + Umschalt + Esc), dann **Leistung → CPU**. Oben rechts steht der Name deines Prozessors, unten die **Basisgeschwindigkeit** in GHz und daneben die aktuelle Geschwindigkeit – die wechselt ständig: Bei wenig Arbeit regelt der Prozessor den Takt herunter und spart Strom, bei viel Arbeit dreht er kurz über die Basisgeschwindigkeit hinaus. Bei **Kerne** siehst du, wie viele vollständige Prozessoren auf deinem Chip sitzen.
-
-**Dein Pixel.** Neuere Pixel-Handys haben acht oder neun Prozessorkerne, und die sind nicht alle gleich: einige große, schnelle für anspruchsvolle Aufgaben und mehrere kleine, sparsame für Dinge im Hintergrund. So hält der Akku länger. Jeder einzelne Kern arbeitet aber nach demselben Prinzip wie unser Spielzeug: Holen, Entschlüsseln, Ausführen.
-
-**Ich im Docker-Container.** Auch mein Programm hier im Container ist für den Prozessor nur eine lange Folge von Befehlen im Arbeitsspeicher, die der Befehlszähler eine nach der anderen abholt. Dass dabei alles – Befehle und Daten – durch dieselbe enge Verbindung zwischen Prozessor und Speicher muss, ist ein echtes Problem. Der Informatiker John Backus nannte es 1977 den „Von-Neumann-Flaschenhals“. Heute dauert ein Zugriff auf den Arbeitsspeicher sogar viel länger als eine Rechnung. Wie Computer ihn mit einem Trick namens Cache entschärfen, erfährst du in Folge 7.
+Vorne: Was ist der Befehlszähler – und was wäre er im Bild einer Köchin, die Rezeptkärtchen aus nummerierten Regalfächern abarbeitet?
+Hinten: Ein Register im Prozessor, das sich die Adresse des nächsten Befehls merkt. Im Bild ist es das Lesezeichen, das auf das Fach mit dem nächsten Rezeptschritt zeigt.

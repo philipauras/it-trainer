@@ -9,7 +9,8 @@ import { zeigeBegriff } from './ui/text.js';
 import { zeigeStart } from './ui/start.js';
 import { zeigeStaffel } from './ui/staffel.js';
 import { zeigeFolge } from './ui/folge.js';
-import { zeigeKarteikasten } from './ui/karten.js';
+import { zeigeLernen } from './ui/lernpool.js';
+import { geheZu } from './kern/router.js';
 import { zeigeGlossar } from './ui/glossar.js';
 import { zeigeEinstellungen } from './ui/einstellungen.js';
 import { setzeAppName } from './ui/bausteine.js';
@@ -43,12 +44,13 @@ async function init() {
   // Blätter schließen sich auch beim Tippen neben das Blatt
   for (const d of $$('dialog.blatt')) d.addEventListener('click', (ev) => { if (ev.target === d) d.close(); });
 
-  const navi = { start: 'start', staffel: 'start', folge: 'start', karten: 'karten', glossar: 'glossar', einstellungen: 'einstellungen' };
+  const navi = { start: 'start', staffel: 'start', folge: 'start', lernen: 'lernen', glossar: 'glossar', einstellungen: 'einstellungen' };
   starteRouter({
     start: () => zeigeStart(ctx),
     staffel: (t) => zeigeStaffel(ctx, t),
     folge: (t) => zeigeFolge(ctx, t),
-    karten: () => zeigeKarteikasten(ctx),
+    lernen: (t) => zeigeLernen(ctx, t),
+    karten: () => geheZu('lernen', { ersetzen: true }), // alte Adresse des Karteikastens
     glossar: (t) => zeigeGlossar(ctx, t),
     einstellungen: () => zeigeEinstellungen(ctx),
   }, {

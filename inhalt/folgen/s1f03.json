@@ -36,7 +36,7 @@
    "text": "James Gleick: Die Information. Geschichte, Theorie, Flut. Redline, 2011"
   }
  ],
- "faktencheck": "26.11.2026 – Durchgang 1 nicht bestanden (1 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/",
+ "faktencheck": "26.11.2026 – Durchgang 1 nicht bestanden (1 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/; Umstellung auf eigenständige Folge + Lernpool (1.5.0): unabhängig geprüft und bestanden",
  "staffel": 1,
  "nr": 3,
  "titel": "Logikgatter",
@@ -51,7 +51,7 @@
    "teile": [
     {
      "art": "md",
-     "text": "Dein Handy entscheidet ständig: Soll der Bildschirm angehen? Ist das Passwort richtig? Ist die Zahl größer als die andere? Dabei kann es nur eines: Transistoren an- und ausschalten.\n\nIn Folge 2 hast du gesehen, dass zwei Transistoren schon etwas Erstaunliches können. Hintereinander geschaltet leuchtet die Lampe „nur, wenn beide“ an sind, nebeneinander „wenn mindestens einer“ an ist. Das sind keine Zufälle. Es sind die Grundwörter der Logik – **UND**, **ODER**, **NICHT** –, gebaut aus Strom.\n\nIn dieser Folge lernst du diese Bausteine kennen. Sie heißen **Logikgatter**, und aus ihnen ist jeder Prozessor der Welt zusammengesetzt. Und du erfährst, wie ein englischer Lehrer und ein junger Student aus Michigan sie gefunden haben, gut achtzig Jahre auseinander."
+     "text": "Dein Handy entscheidet ständig: Soll der Bildschirm angehen? Ist das Passwort richtig? Ist die Zahl größer als die andere? Dabei kann es nur eines: Transistoren an- und ausschalten.\n\nEin **Transistor** ist ein winziger elektrischer Schalter ohne bewegliche Teile, den eine kleine elektrische Spannung ein- und ausschaltet (mehr dazu in Folge 2). Schon zwei davon können etwas Erstaunliches: Hintereinander geschaltet lassen sie den Strom nur durch, wenn beide an sind; nebeneinander, wenn mindestens einer an ist. Das sind keine Zufälle. Es sind die Grundwörter der Logik – **UND**, **ODER**, **NICHT** –, gebaut aus Strom.\n\nIn dieser Folge lernst du diese Bausteine kennen. Sie heißen **Logikgatter**, und aus ihnen ist jeder Prozessor der Welt zusammengesetzt. Und du erfährst, wie ein englischer Lehrer und ein junger Student aus Michigan sie gefunden haben, gut achtzig Jahre auseinander."
     }
    ]
   },
@@ -61,7 +61,7 @@
    "teile": [
     {
      "art": "md",
-     "text": "### George Boole: Logik als Rechnung\n\n**George Boole** wird 1815 im englischen Lincoln geboren, als Sohn eines Schuhmachers. Eine Universität kann die Familie nicht bezahlen. Boole bringt sich Mathematik und mehrere Sprachen selbst bei und eröffnet schon als junger Mann eine eigene Schule. Nebenbei schreibt er mathematische Aufsätze, die so gut sind, dass er 1849 Mathematikprofessor am Queen's College im irischen Cork wird – ohne je selbst studiert zu haben.\n\nBoole hat eine kühne Idee: Man kann mit Gedanken *rechnen* wie mit Zahlen. Eine Aussage ist entweder wahr oder falsch – schreib dafür **1** und **0**. Dann wird aus „und“ eine Multiplikation: „Es regnet *und* es ist kalt“ ist nur wahr, wenn beides wahr ist – und tatsächlich ergibt 1 × 1 = 1, aber 1 × 0, 0 × 1 und 0 × 0 ergeben 0.\n\n**1847** veröffentlicht er „The Mathematical Analysis of Logic“, **1854** sein Hauptwerk „An Investigation of the Laws of Thought“ („Eine Untersuchung der Gesetze des Denkens“). Man nennt diese Rechenart heute **boolesche Algebra**. Zu Booles Lebzeiten gilt sie als schöne, aber recht abgehobene Mathematik. Mit Maschinen hat sie nichts zu tun.\n\n### Claude Shannon: Logik aus Relais\n\nGut achtzig Jahre später sitzt ein junger Mann am Massachusetts Institute of Technology (MIT) vor einer riesigen Rechenmaschine: dem „Differential Analyzer“ von Vannevar Bush. Die riesige Maschine rechnet mit Wellen und Zahnrädern, gesteuert wird sie aber von einer verwickelten Schaltung aus Relais – genau den klickenden Schaltern aus Folge 2. Der junge Mann heißt **Claude Shannon** – derselbe Shannon, der elf Jahre später bei den Bell Labs das Bit bekannt macht (Folge 1).\n\nShannon hatte an der Universität von Michigan nicht nur Elektrotechnik, sondern auch Mathematik studiert und dort Booles Logik kennengelernt. Jetzt fällt ihm auf: Relais, die hintereinander geschaltet sind, verhalten sich genau wie Booles „und“. Relais nebeneinander verhalten sich wie „oder“. Die Logik von Boole passt eins zu eins auf Schaltkreise.\n\n**1937** schreibt er darüber seine Masterarbeit, **1938** erscheint sie gedruckt: „A Symbolic Analysis of Relay and Switching Circuits“ („Eine symbolische Untersuchung von Relais- und Schaltkreisen“). Damit können Ingenieure Schaltungen systematisch *berechnen* statt nur ausprobieren – und umgekehrt jede logische Aufgabe in eine Schaltung übersetzen. Etwa zur selben Zeit kam auch der Japaner Akira Nakashima auf ähnliche Ideen, aber Shannons Arbeit wurde weltweit bekannt. Der Psychologe Howard Gardner nannte sie später „vielleicht die wichtigste Masterarbeit des Jahrhunderts“.\n\n> **Wusstest du?:** Booles Logik und Shannons Schaltkreise brauchen genau die zwei Werte, die du aus Folge 1 kennst: 0 und 1. Darum passt das Bit so perfekt zu Strom und Schaltern – wahr oder falsch, an oder aus."
+     "text": "### George Boole: Logik als Rechnung\n\n**George Boole** wird 1815 im englischen Lincoln geboren, als Sohn eines Schuhmachers. Eine Universität kann die Familie nicht bezahlen. Boole bringt sich Mathematik und mehrere Sprachen selbst bei und eröffnet schon als junger Mann eine eigene Schule. Nebenbei schreibt er mathematische Aufsätze, die so gut sind, dass er 1849 Mathematikprofessor am Queen's College im irischen Cork wird – ohne je selbst studiert zu haben.\n\nBoole hat eine kühne Idee: Man kann mit Gedanken *rechnen* wie mit Zahlen. Eine Aussage ist entweder wahr oder falsch – schreib dafür **1** und **0**. Dann wird aus „und“ eine Multiplikation: „Es regnet *und* es ist kalt“ ist nur wahr, wenn beides wahr ist – und tatsächlich ergibt 1 × 1 = 1, aber 1 × 0, 0 × 1 und 0 × 0 ergeben 0.\n\n**1847** veröffentlicht er „The Mathematical Analysis of Logic“, **1854** sein Hauptwerk „An Investigation of the Laws of Thought“ („Eine Untersuchung der Gesetze des Denkens“). Man nennt diese Rechenart heute **boolesche Algebra**. Zu Booles Lebzeiten gilt sie als schöne, aber recht abgehobene Mathematik. Mit Maschinen hat sie nichts zu tun.\n\n### Claude Shannon: Logik aus Relais\n\nGut achtzig Jahre später sitzt ein junger Mann am Massachusetts Institute of Technology (MIT) vor einer riesigen Rechenmaschine: dem „Differential Analyzer“ von Vannevar Bush. Die riesige Maschine rechnet mit Wellen und Zahnrädern, gesteuert wird sie aber von einer verwickelten Schaltung aus Relais – klickenden Schaltern mit beweglichen Teilen, die ein kleiner Strom umlegt (mehr dazu in Folge 2). Der junge Mann heißt **Claude Shannon**; elf Jahre später macht er bei den Bell Labs auch das Bit bekannt (mehr dazu in Folge 1).\n\nShannon hatte an der Universität von Michigan nicht nur Elektrotechnik, sondern auch Mathematik studiert und dort Booles Logik kennengelernt. Jetzt fällt ihm auf: Relais, die hintereinander geschaltet sind, verhalten sich genau wie Booles „und“. Relais nebeneinander verhalten sich wie „oder“. Die Logik von Boole passt eins zu eins auf Schaltkreise.\n\n**1937** schreibt er darüber seine Masterarbeit, **1938** erscheint sie gedruckt: „A Symbolic Analysis of Relay and Switching Circuits“ („Eine symbolische Untersuchung von Relais- und Schaltkreisen“). Damit können Ingenieure Schaltungen systematisch *berechnen* statt nur ausprobieren – und umgekehrt jede logische Aufgabe in eine Schaltung übersetzen. Etwa zur selben Zeit kam auch der Japaner Akira Nakashima auf ähnliche Ideen, aber Shannons Arbeit wurde weltweit bekannt. Der Psychologe Howard Gardner nannte sie später „vielleicht die wichtigste Masterarbeit des Jahrhunderts“.\n\n> **Wusstest du?:** Booles Logik und Shannons Schaltkreise brauchen genau zwei Werte: 0 und 1, die beiden Zustände eines **Bits**, der kleinsten Einheit der Information (mehr dazu in Folge 1). Darum passt das Bit so perfekt zu Strom und Schaltern – wahr oder falsch, an oder aus."
     }
    ]
   },
@@ -85,7 +85,7 @@
     },
     {
      "art": "md",
-     "text": "| A | B | A UND B | A ODER B |\n|---|---|---|---|\n| 0 | 0 | 0 | 0 |\n| 0 | 1 | 0 | 1 |\n| 1 | 0 | 0 | 1 |\n| 1 | 1 | 1 | 1 |\n\nKommt dir bekannt vor? Genau diese Tabellen hast du in Folge 2 mit Transistoren ausgefüllt: **hintereinander = UND, nebeneinander = ODER.**\n\n> **Achtung:** Im Alltag meint „oder“ oft „entweder – oder“ („Kaffee oder Tee?“). Das ODER der Logik ist großzügiger: Beide gleichzeitig zählt auch.\n\n### NICHT\n\n**NICHT** hat nur einen Eingang und dreht ihn um: aus 0 wird 1, aus 1 wird 0. Das ist der Transistor mit der Abkürzung an der Lampe vorbei aus Folge 2."
+     "text": "| A | B | A UND B | A ODER B |\n|---|---|---|---|\n| 0 | 0 | 0 | 0 |\n| 0 | 1 | 0 | 1 |\n| 1 | 0 | 0 | 1 |\n| 1 | 1 | 1 | 1 |\n\nDas passt zu den Schaltern aus der Einleitung: **zwei Schalter hintereinander = UND, nebeneinander = ODER.** (Mit Transistoren siehst du das in Folge 2.)\n\n> **Achtung:** Im Alltag meint „oder“ oft „entweder – oder“ („Kaffee oder Tee?“). Das ODER der Logik ist großzügiger: Beide gleichzeitig zählt auch.\n\n### NICHT\n\n**NICHT** hat nur einen Eingang und dreht ihn um: aus 0 wird 1, aus 1 wird 0. Elektrisch ist das ein Schalter, der den Strom *an der Lampe vorbei* ableitet, sobald er eingeschaltet ist: Der Strom nimmt den bequemen Weg an der Lampe vorbei, die Lampe geht aus. (Ein Widerstand davor sorgt dafür, dass dabei kein echter Kurzschluss entsteht.)"
     },
     {
      "art": "sim",
@@ -135,7 +135,7 @@
    "teile": [
     {
      "art": "md",
-     "text": "Logikgatter sind keine Erfindung der Computerwelt – du benutzt sie jeden Tag, ohne es zu merken. Vier kleine Schaltungen aus dem Alltag, jede für ein Gatter.\n\n### UND: das Bankschließfach\n\nEin klassisches Bankschließfach hat zwei Schlösser. Einen Schlüssel hast du, den anderen hat die Bank. Das Fach geht **nur auf, wenn beide Schlüssel stecken und gedreht sind**. Dein Schlüssel allein: zu. Der Bankschlüssel allein: zu. Beide: auf. Das ist die UND-Tabelle.\n\n### ODER: die Klingel mit zwei Tastern\n\nIn vielen Mehrfamilienhäusern läutet dieselbe Wohnungsklingel über zwei Taster: einen unten an der Haustür und einen oben an der Wohnungstür. Die Klingel läutet, **solange an irgendeinem der beiden gedrückt wird** – und natürlich auch, wenn zwei Leute gleichzeitig drücken. Lässt man los, ist sie still. Elektrisch liegen die Taster nebeneinander (parallel): genau das ODER aus Folge 2.\n\n### NICHT: das Kühlschranklicht\n\nIm Kühlschrank sitzt ein kleiner Taster an der Tür. Ist die Tür zu, drückt sie den Taster hinein – und das Licht ist **aus**. Öffnest du die Tür, springt der Taster heraus, und das Licht geht **an**. Der Eingang „Tür drückt den Taster“ wird umgedreht: Das ist NICHT.\n\n### XODER: die Wechselschaltung im Flur\n\nIn einem langen Flur hängt an jedem Ende ein Lichtschalter, beide steuern dieselbe Lampe. Das Besondere: **Jedes Umlegen eines Schalters ändert den Zustand der Lampe** – egal, wie der andere steht. Ist die Anlage so verdrahtet, dass das Licht aus ist, wenn beide Schalter unten sind, dann gilt: Licht an, wenn **genau einer** oben ist. Beide oben: wieder aus. Das ist XODER. (Bei anderer Verdrahtung ist es genau umgekehrt – dann verhält sich die Lampe wie das Gegenteil von XODER. Das Umschalt-Verhalten ist dasselbe.)\n\nDas Bild erlaubt richtige Vorhersagen: Ein Schließfach mit drei Schlössern geht nur auf, wenn alle drei Schlüssel stecken – ein UND mit drei Eingängen. Hätte die Klingel fünf Taster, reichte ein einziger gedrückter – ein ODER mit fünf Eingängen.\n\n> **Im Bild:** Bankschließfach mit zwei Schlüsseln = UND · Klingel mit zwei Tastern (Haustür und Wohnungstür) = ODER · Kühlschranktaster, den die geschlossene Tür drückt = NICHT · Wechselschaltung mit zwei Schaltern im Flur = XODER.\n\n> **Achtung:** Im Alltag legt immer ein Mensch die Schalter um, und am Ende steht eine Lampe, eine Klingel oder eine Tür. Im Computer ist der Ausgang eines Gatters selbst wieder der Eingang des nächsten – Tausende Gatter schalten sich gegenseitig, ganz ohne Hand. Erst diese Verkettung macht aus einzelnen Entscheidungen eine Rechnung."
+     "text": "Logikgatter sind keine Erfindung der Computerwelt – du benutzt sie jeden Tag, ohne es zu merken. Vier kleine Schaltungen aus dem Alltag, jede für ein Gatter.\n\n### UND: das Bankschließfach\n\nEin klassisches Bankschließfach hat zwei Schlösser. Einen Schlüssel hast du, den anderen hat die Bank. Das Fach geht **nur auf, wenn beide Schlüssel stecken und gedreht sind**. Dein Schlüssel allein: zu. Der Bankschlüssel allein: zu. Beide: auf. Das ist die UND-Tabelle.\n\n### ODER: die Klingel mit zwei Tastern\n\nIn vielen Mehrfamilienhäusern läutet dieselbe Wohnungsklingel über zwei Taster: einen unten an der Haustür und einen oben an der Wohnungstür. Die Klingel läutet, **solange an irgendeinem der beiden gedrückt wird** – und natürlich auch, wenn zwei Leute gleichzeitig drücken. Lässt man los, ist sie still. Elektrisch liegen die Taster nebeneinander (parallel): Es genügt, dass einer den Strom durchlässt.\n\n### NICHT: das Kühlschranklicht\n\nIm Kühlschrank sitzt ein kleiner Taster an der Tür. Ist die Tür zu, drückt sie den Taster hinein – und das Licht ist **aus**. Öffnest du die Tür, springt der Taster heraus, und das Licht geht **an**. Der Eingang „Tür drückt den Taster“ wird umgedreht: Das ist NICHT.\n\n### XODER: die Wechselschaltung im Flur\n\nIn einem langen Flur hängt an jedem Ende ein Lichtschalter, beide steuern dieselbe Lampe. Das Besondere: **Jedes Umlegen eines Schalters ändert den Zustand der Lampe** – egal, wie der andere steht. Ist die Anlage so verdrahtet, dass das Licht aus ist, wenn beide Schalter unten sind, dann gilt: Licht an, wenn **genau einer** oben ist. Beide oben: wieder aus. Das ist XODER. (Bei anderer Verdrahtung ist es genau umgekehrt – dann verhält sich die Lampe wie das Gegenteil von XODER. Das Umschalt-Verhalten ist dasselbe.)\n\nDas Bild erlaubt richtige Vorhersagen: Ein Schließfach mit drei Schlössern geht nur auf, wenn alle drei Schlüssel stecken – ein UND mit drei Eingängen. Hätte die Klingel fünf Taster, reichte ein einziger gedrückter – ein ODER mit fünf Eingängen.\n\n> **Im Bild:** Bankschließfach mit zwei Schlüsseln = UND · Klingel mit zwei Tastern (Haustür und Wohnungstür) = ODER · Kühlschranktaster, den die geschlossene Tür drückt = NICHT · Wechselschaltung mit zwei Schaltern im Flur = XODER.\n\n> **Achtung:** Im Alltag legt immer ein Mensch die Schalter um, und am Ende steht eine Lampe, eine Klingel oder eine Tür. Im Computer ist der Ausgang eines Gatters selbst wieder der Eingang des nächsten – Tausende Gatter schalten sich gegenseitig, ganz ohne Hand. Erst diese Verkettung macht aus einzelnen Entscheidungen eine Rechnung."
     }
    ]
   },
@@ -145,7 +145,7 @@
    "teile": [
     {
      "art": "md",
-     "text": "Jetzt kommen vier Übungen. Bei den Wahrheitstabellen gehst du vor wie in Folge 2: Tippe links auf eine Zeile, die Schalter springen auf diese Kombination, und dann trage den Ausgang ein (? → 0 → 1). Bei den Gatter-Übungen tippst du auf den Knopf mit dem Fragezeichen, um das Gatter zu wechseln, bis alle Zeilen der Ziel-Tabelle ein ✓ haben.\n\n### Übung 1: die Wechselschaltung\n\nZwei Schalter im Flur, „unten“ (am Treppenabsatz) und „oben“ (am anderen Ende), steuern das Licht. Die Schaltung ist ein XODER. Fülle die Tabelle aus – zuerst im Kopf, dann prüfe mit den Schaltern."
+     "text": "Jetzt kommen vier Übungen. Bei den Wahrheitstabellen gehst du so vor: Tippe links auf eine Zeile, die Schalter springen auf diese Kombination, und dann trage den Ausgang ein (? → 0 → 1). Bei den Gatter-Übungen tippst du auf den Knopf mit dem Fragezeichen, um das Gatter zu wechseln, bis alle Zeilen der Ziel-Tabelle ein ✓ haben.\n\n### Übung 1: die Wechselschaltung\n\nZwei Schalter im Flur, „unten“ (am Treppenabsatz) und „oben“ (am anderen Ende), steuern das Licht. Die Schaltung ist ein XODER. Fülle die Tabelle aus – zuerst im Kopf, dann prüfe mit den Schaltern."
     },
     {
      "art": "sim",
@@ -175,7 +175,7 @@
     },
     {
      "art": "md",
-     "text": "### Übung 3: die Alarmanlage\n\nEine Alarmanlage soll losgehen, wenn sie **scharf** geschaltet ist **und** das **Fenster oder die Tür** offen ist. Ist sie nicht scharf, darfst du lüften, so viel du willst. Wähle für beide Gatter den richtigen Typ. Die Tabelle hat diesmal acht Zeilen, weil drei Schalter 2 × 2 × 2 = 8 Kombinationen haben (wie in Folge 1)."
+     "text": "### Übung 3: die Alarmanlage\n\nEine Alarmanlage soll losgehen, wenn sie **scharf** geschaltet ist **und** das **Fenster oder die Tür** offen ist. Ist sie nicht scharf, darfst du lüften, so viel du willst. Wähle für beide Gatter den richtigen Typ. Die Tabelle hat diesmal acht Zeilen, weil drei Schalter 2 × 2 × 2 = 8 Kombinationen haben (jeder Schalter verdoppelt die Möglichkeiten)."
     },
     {
      "art": "sim",
@@ -210,6 +210,26 @@
    ]
   },
   {
+   "id": "beidir",
+   "titel": "Wo steckt das bei dir?",
+   "teile": [
+    {
+     "art": "md",
+     "text": "**In jedem Prozessor.** Der Prozessor in deinem Pixel, in deinem Windows-PC und im Server deines VPS besteht im Kern aus Gattern – Hunderte Millionen bis Milliarden davon, jedes aus einer Handvoll Transistoren. Wenn dein PC zwei Zahlen addiert, laufen die Bits durch XODER- und UND-Gatter – wie das geht, siehst du in Folge 4.\n\n**In Programmen.** Dieselben drei Wörter tauchen in Software wieder auf. In der Programmiersprache Python, die du in Staffel 3 kennenlernst, heißen sie wörtlich `and`, `or` und `not`. Eine Bedingung wie „zeige die Warnung, wenn der Akku unter 20 Prozent ist **und** das Handy nicht am Ladegerät hängt“ ist ein UND mit einem NICHT – nur eben als Text geschrieben statt als Schaltung.\n\n**Auf deinem VPS.** Auch Regeln für Server sind oft boolesche Logik. Ein Beispiel, wie so eine Regel aussehen könnte: „Lass eine Verbindung herein, wenn sie zur Webseite will **oder** von einem bekannten Absender kommt.“ Ich im Docker-Container prüfe ständig solche Bedingungen, etwa: Darf ich etwas live stellen? Nur wenn die Vorschau-Prüfung bestanden ist **und** der Stand derselbe ist wie in der Vorschau.\n\n**Beim Suchen.** Viele Suchfelder verstehen solche Verknüpfungen. In Gmail etwa findest du mit `from:bank OR from:versicherung` die Mails beider Absender.\n\n> **Wusstest du?:** Wenn du im Kopf sagst „Ich gehe raus, wenn es nicht regnet und ich Zeit habe“, hast du eine boolesche Formel aufgestellt: NICHT Regen UND Zeit. George Boole hätte seine Freude gehabt."
+    }
+   ]
+  },
+  {
+   "id": "fazit",
+   "titel": "Auf den Punkt",
+   "teile": [
+    {
+     "art": "md",
+     "text": "- Ein Logikgatter ist eine kleine Schaltung, die Bits (0 oder 1) nach einer festen Regel verknüpft; die Regel steht in einer Wahrheitstabelle.\n- UND ist nur 1, wenn alle Eingänge 1 sind; ODER ist 1, wenn mindestens einer 1 ist; NICHT dreht um; XODER ist 1, wenn genau einer 1 ist.\n- NUND und NODER sind das Gegenteil von UND und ODER; aus NUND allein lässt sich jedes andere Gatter bauen.\n- Boole machte aus Logik eine Rechnung mit 0 und 1, Shannon zeigte, dass sie auf Schaltungen passt – darum bestehen Prozessoren aus Gattern."
+    }
+   ]
+  },
+  {
    "id": "quiz",
    "titel": "Teste dich",
    "teile": []
@@ -218,16 +238,6 @@
    "id": "karten",
    "titel": "Für deinen Karteikasten",
    "teile": []
-  },
-  {
-   "id": "beidir",
-   "titel": "Wo steckt das bei dir?",
-   "teile": [
-    {
-     "art": "md",
-     "text": "**In jedem Prozessor.** Der Prozessor in deinem Pixel, in deinem Windows-PC und im Server deines VPS besteht im Kern aus Gattern – Hunderte Millionen bis Milliarden davon, jedes aus einer Handvoll Transistoren. Wenn dein PC zwei Zahlen addiert, laufen die Bits durch XODER- und UND-Gatter, genau wie du es in Folge 4 sehen wirst.\n\n**In Programmen.** Dieselben drei Wörter tauchen in Software wieder auf. In der Programmiersprache Python, die du in Staffel 3 kennenlernst, heißen sie wörtlich `and`, `or` und `not`. Eine Bedingung wie „zeige die Warnung, wenn der Akku unter 20 Prozent ist **und** das Handy nicht am Ladegerät hängt“ ist ein UND mit einem NICHT – nur eben als Text geschrieben statt als Schaltung.\n\n**Auf deinem VPS.** Auch Regeln für Server sind oft boolesche Logik. Ein Beispiel, wie so eine Regel aussehen könnte: „Lass eine Verbindung herein, wenn sie zur Webseite will **oder** von einem bekannten Absender kommt.“ Ich im Docker-Container prüfe ständig solche Bedingungen, etwa: Darf ich etwas live stellen? Nur wenn die Vorschau-Prüfung bestanden ist **und** der Stand derselbe ist wie in der Vorschau.\n\n**Beim Suchen.** Viele Suchfelder verstehen solche Verknüpfungen. In Gmail etwa findest du mit `from:bank OR from:versicherung` die Mails beider Absender.\n\n> **Wusstest du?:** Wenn du im Kopf sagst „Ich gehe raus, wenn es nicht regnet und ich Zeit habe“, hast du eine boolesche Formel aufgestellt: NICHT Regen UND Zeit. George Boole hätte seine Freude gehabt."
-    }
-   ]
   }
  ],
  "quiz": [
@@ -241,8 +251,9 @@
     "Wenn beide Eingänge 0 sind"
    ],
    "richtig": 1,
-   "erklaerung": "UND verlangt, dass alle Eingänge 1 sind. In jeder anderen Zeile der Wahrheitstabelle ist der Ausgang 0 – wie beim Schließfach, das nur mit beiden Schlüsseln aufgeht.",
-   "nachlesen": "prinzip"
+   "erklaerung": "UND verlangt, dass alle Eingänge 1 sind. In jeder anderen Zeile der Wahrheitstabelle ist der Ausgang 0 – wie bei einem Schließfach mit zwei Schlössern, das nur mit beiden Schlüsseln aufgeht.",
+   "nachlesen": "prinzip",
+   "stelle": "UND und ODER"
   },
   {
    "id": "s1f03-q02",
@@ -255,11 +266,12 @@
    ],
    "richtig": 2,
    "erklaerung": "Der Ausgang ist 1, wenn genau ein Eingang 1 ist, also wenn die Eingänge verschieden sind. Das ist das exklusive ODER. ODER wäre 0111, NUND 1110, NODER 1000.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Die Verwandten: XODER, NUND, NODER"
   },
   {
    "id": "s1f03-q03",
-   "frage": "Was wollte Claude Shannon mit seiner Masterarbeit von 1937 zeigen?",
+   "frage": "Was bedeutete es für Schaltungen, als man erkannte, dass Relais (Schalter, die ein kleiner Strom umlegt) hintereinander wie „und“ und nebeneinander wie „oder“ wirken?",
    "antworten": [
     "Dass Röhren schneller schalten als Relais",
     "Dass ein Bit die kleinste Einheit der Information ist",
@@ -267,8 +279,9 @@
     "Dass Computer im Zehnersystem rechnen sollten"
    ],
    "richtig": 2,
-   "erklaerung": "Shannon erkannte, dass Relais hintereinander wie „und“ und nebeneinander wie „oder“ funktionieren. Damit konnte man Schaltungen mit boolescher Algebra planen. Das Bit machte er erst 1948 bekannt (Folge 1).",
-   "nachlesen": "geschichte"
+   "erklaerung": "Shannon erkannte, dass Relais hintereinander wie „und“ und nebeneinander wie „oder“ funktionieren. Damit konnte man Schaltungen mit boolescher Algebra planen. Das Bit machte er erst 1948 bekannt.",
+   "nachlesen": "geschichte",
+   "stelle": "Claude Shannon: Logik aus Relais"
   },
   {
    "id": "s1f03-q04",
@@ -281,7 +294,8 @@
    ],
    "richtig": 1,
    "erklaerung": "Gibt man beiden Eingängen dasselbe Signal, wird NUND zum NICHT. Damit lassen sich UND und ODER und alle anderen Gatter zusammensetzen. In echten Chips braucht NUND außerdem weniger Transistoren als UND.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Ein Gatter für alles: NUND"
   },
   {
    "id": "s1f03-q05",
@@ -294,7 +308,8 @@
    ],
    "richtig": 0,
    "erklaerung": "Fenster oder Tür, auch beide gleichzeitig, ist ein ODER. Das Ergebnis muss zusammen mit „scharf“ zutreffen – das ist ein UND. Ein XODER würde schweigen, wenn Fenster und Tür beide offen sind.",
-   "nachlesen": "selbst"
+   "nachlesen": "selbst",
+   "stelle": "Übung 3: die Alarmanlage"
   },
   {
    "id": "s1f03-q06",
@@ -307,20 +322,22 @@
    ],
    "richtig": 2,
    "erklaerung": "Der Eingang „Taster gedrückt“ wird umgedreht: gedrückt (1) ergibt Licht aus (0), losgelassen (0) ergibt Licht an (1). Das ist NICHT.",
-   "nachlesen": "werkstatt"
+   "nachlesen": "werkstatt",
+   "stelle": "NICHT: das Kühlschranklicht"
   },
   {
    "id": "s1f03-q07",
-   "frage": "Welches Werk veröffentlichte George Boole 1854?",
+   "frage": "Wie machte George Boole aus dem Wort „und“ eine Rechnung?",
    "antworten": [
-    "A Mathematical Theory of Communication",
-    "An Investigation of the Laws of Thought",
-    "A Symbolic Analysis of Relay and Switching Circuits",
-    "Explication de l'Arithmétique Binaire"
+    "„Und“ wird addiert, wobei 1 + 1 gleich 2 ergibt",
+    "Wahr wird 1, falsch wird 0, „und“ wird zum Malnehmen",
+    "„Und“ wird als Abstand zweier Zahlen auf dem Zahlenstrahl gelesen",
+    "Jede Aussage bekommt je nach Wichtigkeit eine Zahl von 1 bis 10"
    ],
    "richtig": 1,
-   "erklaerung": "In „An Investigation of the Laws of Thought“ beschrieb Boole, wie man mit wahren und falschen Aussagen rechnen kann. Die anderen Titel stammen von Shannon (1948 und 1938) und Leibniz (1703).",
-   "nachlesen": "geschichte"
+   "erklaerung": "Bei Boole ist 1 „wahr“ und 0 „falsch“. „Es regnet und es ist kalt“ ist nur wahr, wenn beides wahr ist – und 1 × 1 ergibt als einziges Produkt aus 0 und 1 wieder 1. So wurde Logik zu einer Rechenart, der booleschen Algebra.",
+   "nachlesen": "geschichte",
+   "stelle": "George Boole: Logik als Rechnung"
   }
  ],
  "karten": [
@@ -332,12 +349,12 @@
   {
    "id": "s1f03-k02",
    "vorne": "Wann ist der Ausgang eines UND-Gatters 1?",
-   "hinten": "Nur wenn alle Eingänge 1 sind. In der Transistor-Schaltung entspricht das zwei Schaltern hintereinander."
+   "hinten": "Nur wenn alle Eingänge 1 sind. Elektrisch entspricht das Schaltern, die hintereinander liegen: Der Strom fließt nur, wenn alle an sind."
   },
   {
    "id": "s1f03-k03",
    "vorne": "Wann ist der Ausgang eines ODER-Gatters 1?",
-   "hinten": "Wenn mindestens ein Eingang 1 ist, auch wenn beide 1 sind. Das entspricht zwei Schaltern nebeneinander."
+   "hinten": "Wenn mindestens ein Eingang 1 ist, auch wenn beide 1 sind. Elektrisch entspricht das Schaltern, die nebeneinander liegen."
   },
   {
    "id": "s1f03-k04",
@@ -356,12 +373,12 @@
   },
   {
    "id": "s1f03-k07",
-   "vorne": "Wer entwickelte 1847 und 1854 die Logik, mit der man wie mit Zahlen rechnet (boolesche Algebra)?",
-   "hinten": "George Boole, ein englischer Lehrer und später Professor in Cork. Wahr und falsch schrieb er als 1 und 0."
+   "vorne": "Was ist boolesche Algebra?",
+   "hinten": "Eine Logik, mit der man wie mit Zahlen rechnet: Wahr und falsch werden als 1 und 0 geschrieben. Entwickelt hat sie der Engländer George Boole (1847 und 1854)."
   },
   {
    "id": "s1f03-k08",
-   "vorne": "Was zeigte Claude Shannon in seiner Masterarbeit von 1937/1938?",
+   "vorne": "Was zeigte Claude Shannon in seiner Masterarbeit von 1937/1938 über Schaltungen aus Relais (Schalter, die ein Strom umlegt)?",
    "hinten": "Dass Booles Logik genau auf Relais-Schaltkreise passt: Relais hintereinander sind UND, nebeneinander ODER."
   }
  ]

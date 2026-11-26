@@ -6,12 +6,13 @@ export const alleFolgen = (index) => index.staffeln.flatMap((s) => s.folgen.map(
 export const verfuegbar = (f) => f.status !== 'geplant';
 export const istFertig = (zustand, id) => !!zustand.folgen[id]?.fertig;
 
-/** Anteil der besuchten Abschnitte einer Folge (0…1). */
-export function folgenAnteil(zustand, id, abschnittAnzahl) {
+/** Anteil der besuchten Abschnitte einer Folge (0…1). abschnitte: IDs der sichtbaren Abschnitte (ältere Stände können
+ *  noch „quiz“/„karten“ in „besucht“ haben – die zählen nicht mit). */
+export function folgenAnteil(zustand, id, abschnitte) {
   const f = zustand.folgen[id];
   if (!f) return 0;
   if (f.fertig) return 1;
-  return Math.min(1, f.besucht.length / abschnittAnzahl);
+  return Math.min(1, f.besucht.filter((b) => abschnitte.includes(b)).length / abschnitte.length);
 }
 
 /** Die nächste Folge zum Weiterlernen: erste verfügbare, nicht fertige Folge (oder null). */
@@ -43,9 +44,19 @@ export function aktuelleSchicht(index, zustand) {
   return fertig.at(-1)?.schicht || alleFolgen(index)[0]?.schicht || null;
 }
 
-/** Karten, die schon im Karteikasten liegen: aus Folgen, deren Abschnitt „karten“ besucht wurde. */
+/**
+ * Ist der Lernpool-Teil einer Folge freigeschaltet? Seit 1.5.0 mit „Folge abschließen“. Ältere Stände: Wer Quiz bzw.
+ * Karteikarten einer Folge schon durchgearbeitet hat (alter Ablauf), behält sie – nichts geht verloren.
+ */
+export const poolFrei = (zustand, f, alt) => !!zustand.folgen[f.id]?.fertig || !!zustand.folgen[f.id]?.besucht.includes(alt);
+
+/** Karten im Lernpool (freigeschaltete Folgen). */
 export function freigeschalteteKarten(index, zustand) {
-  return alleFolgen(index).filter((f) => verfuegbar(f) && zustand.folgen[f.id]?.besucht.includes('karten')).flatMap((f) => f.karten || []);
+  return alleFolgen(index).filter((f) => verfuegbar(f) && poolFrei(zustand, f, 'karten')).flatMap((f) => f.karten || []);
+}
+/** Quizfragen im Lernpool (freigeschaltete Folgen). */
+export function freigeschalteteFragen(index, zustand) {
+  return alleFolgen(index).filter((f) => verfuegbar(f) && poolFrei(zustand, f, 'quiz')).flatMap((f) => f.quiz || []);
 }
 
 /** Folge als fertig markieren, wenn alle Pflicht-Abschnitte (config regeln.folgeFertigAb) besucht sind. Gibt true zurück, wenn neu fertig. */

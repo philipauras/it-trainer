@@ -6,7 +6,7 @@
     "kurzname": "IT",
     "untertitel": "Vom Sandkorn zur KI",
     "beschreibung": "IT und Programmieren von Grund auf – Folge für Folge, offline nutzbar.",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "speicherSchluessel": "ittrainer.v1",
     "codePraefix": "IT1"
   },
@@ -65,9 +65,13 @@
     { "id": "prinzip", "buchstabe": "c", "titel": "Das Prinzip", "symbol": "◎" },
     { "id": "werkstatt", "buchstabe": "d", "titel": "Im Bild", "symbol": "◐" },
     { "id": "selbst", "buchstabe": "e", "titel": "Selbst machen", "symbol": "✋" },
-    { "id": "quiz", "buchstabe": "f", "titel": "Quiz", "symbol": "✓" },
-    { "id": "karten", "buchstabe": "g", "titel": "Karteikarten", "symbol": "▤" },
-    { "id": "beidir", "buchstabe": "h", "titel": "Wo steckt das bei dir?", "symbol": "⌂" }
+    { "id": "beidir", "buchstabe": "f", "titel": "Wo steckt das bei dir?", "symbol": "⌂" },
+    { "id": "fazit", "buchstabe": "g", "titel": "Auf den Punkt", "symbol": "✦" }
+  ],
+  "_lernpool": "Abschnitte am Ende jeder Folgen-Datei, die NICHT in der Folge erscheinen, sondern im Lernpool (content/README.md).",
+  "lernpoolAbschnitte": [
+    { "id": "quiz", "titel": "Quizfragen" },
+    { "id": "karten", "titel": "Karteikarten" }
   ],
   "boxen": { "Merke": "merke", "Im Bild": "bild", "Achtung": "achtung", "Beispiel": "beispiel", "Wusstest du?": "wusstest" },
   "regeln": {
@@ -75,7 +79,9 @@
     "liveStatus": "freigegeben",
     "quiz": { "minAntworten": 2, "maxAntworten": 4, "minFragen": 4 },
     "karten": { "minKarten": 4 },
-    "leitner": { "intervalleTage": [1, 2, 4, 8, 16], "maxJeRunde": 20, "neuJeRunde": 10 },
-    "folgeFertigAb": ["quiz", "karten"]
+    "leitner": { "intervalleTage": [1, 2, 4, 8, 16], "maxJeRunde": 15, "neuJeRunde": 8 },
+    "lernpool": { "pruefungFragen": 20, "minFragenFuerPruefung": 5 },
+    "fazit": { "minSaetze": 3, "maxSaetze": 4 },
+    "folgeFertigAb": []
   }
 }

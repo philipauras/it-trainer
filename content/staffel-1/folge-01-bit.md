@@ -1,7 +1,7 @@
 ---
 id: s1f01
 status: freigegeben
-faktencheck: 26.11.2026 – Durchgang 1 nicht bestanden (4 Fehler behoben), Durchgang 2 bestanden; Überarbeitung (neues Bild, Übung u02): Durchgang 3 nicht bestanden (1 Fehler behoben), Durchgang 4 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/
+faktencheck: 26.11.2026 – Durchgang 1 nicht bestanden (4 Fehler behoben), Durchgang 2 bestanden; Überarbeitung (neues Bild, Übung u02): Durchgang 3 nicht bestanden (1 Fehler behoben), Durchgang 4 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/; Umstellung auf eigenständige Folge + Lernpool (1.5.0): unabhängig geprüft und bestanden
 dauer: 15
 quellen:
 - Claude E. Shannon: A Mathematical Theory of Communication. Bell System Technical Journal 27 (1948), S. 379–423 und 623–656 | https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf
@@ -110,6 +110,37 @@ Wie du Bitmuster „hochzählst“, ohne zu probieren, lernst du in Folge 4.
 
 **Zum Weiterdenken:** Wie viele Fragen bräuchtest du für eine Zahl zwischen 1 und 1000? (Tipp: Schau in die Tabelle im Abschnitt „Das Prinzip“. Die Antwort ist 10, denn 2¹⁰ = 1 024 reicht gerade.)
 
+## [beidir] Wo steckt das bei dir?
+
+Bits sind überall um dich herum – auch in den Geräten, die du jeden Tag benutzt.
+
+**Dein Pixel.** Hat dein Handy zum Beispiel 128 GB Speicher, sind das 128 Milliarden Byte – mal 8 also rund **eine Billion Bit**. Eine Billion winzige Schalter, jeder entweder 0 oder 1, und zusammen ergeben sie deine Fotos, Nachrichten und Apps.
+
+**Dein VPS.** Der gemietete Server im Rechenzentrum, auf dem ich arbeite, hat 3,8 GB Arbeitsspeicher. Das sind gut **30 Milliarden Bit**, die gleichzeitig „gemerkt“ werden können, solange der Server läuft.
+
+**Ich im Docker-Container.** Ich laufe auf dem VPS in einem Docker-Container – einem abgeschotteten Bereich, in dem ein Programm mit allem läuft, was es braucht. Jede Nachricht, die ich dir schreibe, besteht aus Bits. Ein normaler Buchstabe wie „a“ braucht in der heute üblichen Kodierung **UTF-8** genau ein Byte (dasselbe Muster wie in ASCII), ein Umlaut wie „ä“ zwei Byte, andere Schriftzeichen und Emojis bis zu vier. Der Satz „Fertig: Bericht liegt bereit.“ sind 29 Byte (Leerzeichen und Punkt zählen mit), also 232 Bit.
+
+**bim-trainer auf Cloudflare.** Wenn du den bim-trainer öffnest, schickt ein Server von Cloudflare dir einige Hundert Kilobyte – Hunderttausende Bytes mit Text, Bildern und Programmcode. Auch dein Lernfortschritt dort ist nur eine Folge von Bits im Speicher deines Browsers.
+
+**Dein Windows-PC und dein Internet.** Achte auf die Schreibweise: Beim Internetanschluss steht die Geschwindigkeit in **Mbit/s** (Megabit pro Sekunde), bei Dateigrößen im Explorer die Menge in **MB** (Megabyte). Zwischen Megabit und Megabyte liegt der Faktor 8 – ein 100-Mbit/s-Anschluss lädt also höchstens 12,5 Megabyte pro Sekunde.
+
+| Einheit | Größe | Beispiel |
+|---|---|---|
+| 1 Bit | 0 oder 1 | das Laternen-Signal: Land oder Wasser |
+| 1 Byte | 8 Bit | ein Buchstabe in ASCII |
+| 1 Kilobyte (kB) | 1 000 Byte | eine halbe Seite Text |
+| 1 Megabyte (MB) | 1 000 kB | ein Handyfoto (grob 2–5 MB) |
+| 1 Gigabyte (GB) | 1 000 MB | ein Spielfilm in mittlerer Qualität |
+
+> **Achtung:** Windows rechnet bei Dateigrößen mit 1 024 statt 1 000 (weil 1 024 = 2¹⁰), schreibt aber trotzdem „KB“, „MB“ und „GB“. Darum zeigt der Explorer eine „1-TB-Festplatte“ nur mit etwa 931 GB an. Wer es genau meint, schreibt KiB, MiB, GiB für die 1 024er-Einheiten.
+
+## [fazit] Auf den Punkt
+
+- Ein **Bit** ist die kleinste Einheit der Information: eine Entscheidung zwischen zwei Möglichkeiten, geschrieben als 0 oder 1.
+- Jedes weitere Bit **verdoppelt** die Zahl der möglichen Muster; 8 Bit sind ein **Byte** mit 256 Mustern.
+- Was ein Bitmuster bedeutet, legt eine **Kodierung** fest (zum Beispiel ASCII: `01000001` ist „A“) – die Bedeutung steckt nicht in den Bits selbst.
+- Jede geschickte Ja-Nein-Frage halbiert die Möglichkeiten – darum reichen 20 Fragen für eine Zahl zwischen 1 und einer Million.
+
 ## [quiz] Teste dich
 
 ### s1f01-q01
@@ -140,30 +171,30 @@ Erklärung: Jede Antwort halbiert die Möglichkeiten: 64 → 32 → 16 → 8 →
 Nachlesen: selbst
 
 ### s1f01-q04
-Was ist ein Byte?
-- [ ] Ein einzelnes Bit
-- [x] Eine Gruppe aus 8 Bit
-- [ ] Eine Gruppe aus 10 Bit
-- [ ] Tausend Bit
-Erklärung: 8 Bit bilden ein Byte. Ein Byte hat 2⁸ = 256 mögliche Muster – genug für alle Buchstaben, Ziffern und Satzzeichen im ASCII-Code.
-Nachlesen: prinzip
+Ein Byte besteht aus 8 Bit. Warum reicht das, um jedem Buchstaben, jeder Ziffer und jedem Satzzeichen des englischen Alphabets ein eigenes Bitmuster zu geben?
+- [ ] Weil jedes Bit für genau ein Zeichen steht
+- [x] Weil 8 Bit 2⁸ = 256 verschiedene Muster ergeben
+- [ ] Weil 8 Bit sich in acht Zeichen aufteilen lassen
+- [ ] Weil jedes Muster zwei Zeichen gleichzeitig darstellt
+Erklärung: Jedes zusätzliche Bit verdoppelt die Muster: 8 Bit ergeben 256 Muster. Das ist mehr als genug für die rund 95 druckbaren Zeichen des ASCII-Codes, der sogar mit 7 Bit auskommt.
+Nachlesen: prinzip / Acht Bits sind ein Byte
 
 ### s1f01-q05
-Warum wussten Paul Reveres Freunde 1775, dass zwei Laternen „über das Wasser“ bedeuteten?
-- [ ] Zwei Lichter standen damals allgemein für Gefahr
-- [ ] Die Laternen leuchteten in verschiedenen Farben
-- [x] Die Bedeutung war vorher vereinbart worden
-- [ ] Die Laternen wurden im Morsecode geschwenkt
+Zwei Menschen vereinbaren: Eine Laterne im Kirchturm bedeutet „Soldaten kommen über Land“, zwei bedeuten „übers Wasser“. Woher weiß der Beobachter, was zwei Laternen heißen?
+- [ ] Zwei Lichter bedeuten überall auf der Welt Gefahr
+- [ ] Die Zahl der Lichter verrät es, ohne Absprache
+- [x] Die Bedeutung wurde vorher abgesprochen
+- [ ] Der Beobachter errät es aus der Helligkeit
 Erklärung: Zeichen tragen ihre Bedeutung nicht in sich. Die Laternen-Abmachung war eine Kodierung – genau wie ASCII festlegt, dass 01000001 ein „A“ ist.
-Nachlesen: geschichte
+Nachlesen: prinzip
 
 ### s1f01-q06
-Wofür steht das Wort „Bit“?
-- [ ] Basic information transfer
-- [x] Binary digit
-- [ ] Binary item
-- [ ] Basic unit
-Erklärung: „Bit“ ist ein Kunstwort aus *binary digit*, auf Deutsch „Binärziffer“ – eine Ziffer, die nur 0 oder 1 sein kann. Gedruckt erschien es zuerst 1948 in Claude Shannons Arbeit; Shannon nennt John Tukey als Erfinder des Wortes.
+„Bit“ ist ein Kunstwort aus *binary digit*, auf Deutsch „Binärziffer“. Was sagt das über ein Bit aus?
+- [ ] Es kann beliebig viele verschiedene Werte annehmen
+- [x] Es ist eine Ziffer, die nur 0 oder 1 sein kann
+- [ ] Es ist eine Ziffer von 0 bis 9
+- [ ] Es ist die Zahl der Schalter in einem Byte
+Erklärung: „Binär“ heißt zweiwertig: Ein Bit ist eine Ziffer, die nur 0 oder 1 sein kann – die Antwort auf eine einzige Ja-Nein-Frage.
 Nachlesen: geschichte
 
 ### s1f01-q07
@@ -190,12 +221,12 @@ Vorne: Wie viele Bit hat ein Byte, und wie viele Muster kann es zeigen?
 Hinten: Ein Byte sind 8 Bit. Das ergibt 2⁸ = 256 mögliche Muster.
 
 ### s1f01-k04
-Vorne: Warum ist `01000001` ein „A“?
-Hinten: Das steht nicht in den Bits selbst, sondern ist eine Kodierung: eine Vereinbarung, die alle Beteiligten kennen müssen (hier ASCII).
+Vorne: Warum steht das Bitmuster `01000001` für ein „A“?
+Hinten: Das steht nicht in den Bits selbst, sondern ist eine Kodierung: eine Vereinbarung, die alle Beteiligten kennen müssen (hier der ASCII-Code für Buchstaben).
 
 ### s1f01-k05
-Vorne: In wessen Arbeit von 1948 erschien das Wort „Bit“ zum ersten Mal gedruckt?
-Hinten: In Claude Shannons „A Mathematical Theory of Communication“ (Bell Labs). Geprägt hatte das Wort sein Kollege John Tukey.
+Vorne: Was ist Information – und was ist ihre kleinste Portion?
+Hinten: Information ist das, was Ungewissheit beseitigt (so sah es Claude Shannon). Die kleinste Portion ist die Antwort auf eine einzige Ja-Nein-Frage: ein Bit.
 
 ### s1f01-k06
 Vorne: Wie findest du eine Zahl zwischen 1 und 64 mit den wenigsten Ja-Nein-Fragen?
@@ -206,29 +237,5 @@ Vorne: Dein Internet hat 100 Mbit/s. Wie viele Megabyte pro Sekunde sind das hö
 Hinten: 12,5 MB/s – denn 1 Byte = 8 Bit, also 100 Megabit ÷ 8 = 12,5 Megabyte.
 
 ### s1f01-k08
-Vorne: Im Parkhaus-Bild ist ein Lämpchen (frei oder belegt) ein Bit. Was ist dann eine Reihe aus acht Stellplätzen?
-Hinten: Ein Byte: 8 Bit, die zusammen 256 verschiedene Belegungen zeigen können.
-
-## [beidir] Wo steckt das bei dir?
-
-Bits sind überall um dich herum – auch in den Geräten, die du jeden Tag benutzt.
-
-**Dein Pixel.** Hat dein Handy zum Beispiel 128 GB Speicher, sind das 128 Milliarden Byte – mal 8 also rund **eine Billion Bit**. Eine Billion winzige Schalter, jeder entweder 0 oder 1, und zusammen ergeben sie deine Fotos, Nachrichten und Apps.
-
-**Dein VPS.** Der gemietete Server im Rechenzentrum, auf dem ich arbeite, hat 3,8 GB Arbeitsspeicher. Das sind gut **30 Milliarden Bit**, die gleichzeitig „gemerkt“ werden können, solange der Server läuft.
-
-**Ich im Docker-Container.** Ich laufe auf dem VPS in einem Docker-Container – einem abgeschotteten Bereich, in dem ein Programm mit allem läuft, was es braucht. Jede Nachricht, die ich dir schreibe, besteht aus Bits. Ein normaler Buchstabe wie „a“ braucht in der heute üblichen Kodierung **UTF-8** genau ein Byte (dasselbe Muster wie in ASCII), ein Umlaut wie „ä“ zwei Byte, andere Schriftzeichen und Emojis bis zu vier. Der Satz „Fertig: Bericht liegt bereit.“ sind 29 Byte (Leerzeichen und Punkt zählen mit), also 232 Bit.
-
-**bim-trainer auf Cloudflare.** Wenn du den bim-trainer öffnest, schickt ein Server von Cloudflare dir einige Hundert Kilobyte – Hunderttausende Bytes mit Text, Bildern und Programmcode. Auch dein Lernfortschritt dort ist nur eine Folge von Bits im Speicher deines Browsers.
-
-**Dein Windows-PC und dein Internet.** Achte auf die Schreibweise: Beim Internetanschluss steht die Geschwindigkeit in **Mbit/s** (Megabit pro Sekunde), bei Dateigrößen im Explorer die Menge in **MB** (Megabyte). Zwischen Megabit und Megabyte liegt der Faktor 8 – ein 100-Mbit/s-Anschluss lädt also höchstens 12,5 Megabyte pro Sekunde.
-
-| Einheit | Größe | Beispiel |
-|---|---|---|
-| 1 Bit | 0 oder 1 | das Laternen-Signal: Land oder Wasser |
-| 1 Byte | 8 Bit | ein Buchstabe in ASCII |
-| 1 Kilobyte (kB) | 1 000 Byte | eine halbe Seite Text |
-| 1 Megabyte (MB) | 1 000 kB | ein Handyfoto (grob 2–5 MB) |
-| 1 Gigabyte (GB) | 1 000 MB | ein Spielfilm in mittlerer Qualität |
-
-> **Achtung:** Windows rechnet bei Dateigrößen mit 1 024 statt 1 000 (weil 1 024 = 2¹⁰), schreibt aber trotzdem „KB“, „MB“ und „GB“. Darum zeigt der Explorer eine „1-TB-Festplatte“ nur mit etwa 931 GB an. Wer es genau meint, schreibt KiB, MiB, GiB für die 1 024er-Einheiten.
+Vorne: Eine Reihe aus acht Lämpchen, jedes entweder an oder aus, soll Bits darstellen. Wie viele verschiedene Zustände kann die Reihe zeigen – und wie heißt so eine Achtergruppe?
+Hinten: 2⁸ = 256 verschiedene Zustände. Eine Gruppe aus 8 Bit heißt Byte.

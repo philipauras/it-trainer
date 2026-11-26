@@ -1,7 +1,7 @@
 ---
 id: s1f08
 status: freigegeben
-faktencheck: 26.11.2026 – Durchgang 1 nicht bestanden (1 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/
+faktencheck: 26.11.2026 – Durchgang 1 nicht bestanden (1 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/; Umstellung auf eigenständige Folge + Lernpool (1.5.0): unabhängig geprüft und bestanden
 dauer: 18
 quellen:
 - Andrew S. Tanenbaum, Herbert Bos: Moderne Betriebssysteme. 4. Auflage, Pearson, 2016 (Standardwerk: Prozesse, Scheduling, Speicherverwaltung, Geschichte)
@@ -23,7 +23,7 @@ quellen:
 
 Auf deinem Handy läuft Musik. Gleichzeitig scrollst du durch eine Webseite, und im Hintergrund lädt eine App ein Update herunter. Alles läuft, nichts ruckelt.
 
-Dabei weißt du aus Folge 6: Ein Prozessorkern arbeitet **einen Befehl nach dem anderen** ab – holen, entschlüsseln, ausführen. Er kann nicht gleichzeitig Musik abspielen und eine Webseite aufbauen. Wie also geht das?
+Dabei gilt: Ein Prozessorkern arbeitet **einen Befehl nach dem anderen** ab – holen, entschlüsseln, ausführen (mehr dazu in Folge 6). Er kann nicht gleichzeitig Musik abspielen und eine Webseite aufbauen. Wie also geht das?
 
 Die Antwort ist ein Programm, das du fast nie bewusst siehst, obwohl es ständig arbeitet: das **Betriebssystem**. Es verteilt die Zeit des Prozessors, teilt den Speicher auf, spricht mit allen Geräten und bewacht deine Dateien. In dieser Folge schaust du ihm bei der Arbeit zu – und entdeckst einen Trick, der so schnell ist, dass er wie Gleichzeitigkeit aussieht.
 
@@ -35,7 +35,7 @@ Die Antwort ist ein Programm, das du fast nie bewusst siehst, obwohl es ständig
 
 Am **Massachusetts Institute of Technology (MIT)** fand eine Gruppe um **Fernando Corbató** das unerträglich. Ihre Idee: Viele Menschen sitzen gleichzeitig an eigenen Terminals, und der Computer wechselt so schnell zwischen ihnen hin und her, dass jeder glaubt, er habe die Maschine für sich allein. Im **November 1961** führten sie dieses **Time-Sharing** (übersetzt etwa „Zeit teilen“) zum ersten Mal vor – mit dem System **CTSS** auf einem IBM-Großrechner. Corbató erhielt dafür später den Turing Award, die höchste Auszeichnung der Informatik.
 
-Danach wurde es ehrgeizig. MIT, General Electric und die **Bell Labs** – dieselben Labore, in denen Claude Shannon das Bit beschrieben hatte (Folge 1) – entwickelten ab Mitte der 1960er-Jahre **Multics**, ein Betriebssystem, das alles können sollte. Es wurde groß und kompliziert, und **1969** stiegen die Bell Labs aus dem Projekt aus.
+Danach wurde es ehrgeizig. MIT, General Electric und die **Bell Labs** – ein großes Forschungslabor in den USA – entwickelten ab Mitte der 1960er-Jahre **Multics**, ein Betriebssystem, das alles können sollte. Es wurde groß und kompliziert, und **1969** stiegen die Bell Labs aus dem Projekt aus.
 
 Zwei ihrer Forscher, **Ken Thompson** und **Dennis Ritchie**, wollten trotzdem ein gutes System zum Arbeiten haben. Noch 1969 schrieb Thompson auf einem kaum genutzten Kleinrechner (einer PDP-7) die Grundlage eines viel einfacheren Systems: **Unix**. Seine Idee war Schlichtheit – kleine Werkzeuge, die je eine Sache gut können und sich kombinieren lassen. 1973 schrieben die beiden Unix in der Programmiersprache **C** neu, die Ritchie dafür entwickelt hatte. Damit ließ es sich auf andere Computer übertragen – ein Grund, warum seine Ideen bis heute überall stecken.
 
@@ -59,13 +59,13 @@ Diesen Unterschied macht der Prozessor selbst: Er kennt mindestens zwei Betriebs
 
 ### Prozesse: Programme, die gerade laufen
 
-Ein Programm ist zunächst nur eine Datei auf der SSD – eine Folge von Befehlen. Startest du es, lädt das Betriebssystem es in den Arbeitsspeicher und macht daraus einen **Prozess**: ein laufendes Programm mit eigenem Speicherbereich und eigenem Zustand. Zum Zustand gehört alles, was der Prozessor gerade „im Kopf“ hat – vor allem die Inhalte seiner Register und der Befehlszähler, der sagt, welcher Befehl als Nächstes dran ist (Folge 6).
+Ein Programm ist zunächst nur eine Datei auf der SSD – eine Folge von Befehlen. Startest du es, lädt das Betriebssystem es in den Arbeitsspeicher und macht daraus einen **Prozess**: ein laufendes Programm mit eigenem Speicherbereich und eigenem Zustand. Zum Zustand gehört alles, was der Prozessor gerade „im Kopf“ hat – vor allem die Inhalte seiner Register (winzige Speicherplätze direkt im Prozessor) und der Befehlszähler, der sagt, welcher Befehl als Nächstes dran ist (mehr dazu in Folge 6).
 
 Startest du dasselbe Programm zweimal, entstehen in der Regel zwei Prozesse, die nichts voneinander wissen. (Manche Programme öffnen stattdessen nur ein neues Fenster im schon laufenden Prozess, und Browser verteilen sich umgekehrt sogar auf viele Prozesse.)
 
 ### Zeitscheiben: der schnelle Wechsel
 
-Jetzt zum Trick vom Anfang. Auf einem Prozessorkern läuft **immer nur ein Prozess**. Damit trotzdem alle vorankommen, gibt ein Teil des Kernels, der **Scheduler** („Planer“), jedem Prozess der Reihe nach eine kurze **Zeitscheibe** – typischerweise einige bis einige Dutzend Millisekunden, je nach System (Linux eher wenige, Windows eher einige Dutzend). Dann ist der Nächste dran.
+Jetzt zum Trick vom Anfang. Auf einem Prozessorkern läuft im Grundsatz **immer nur ein Prozess** (Sonderfall Hyper-Threading: siehe „Wo steckt das bei dir?“). Damit trotzdem alle vorankommen, gibt ein Teil des Kernels, der **Scheduler** („Planer“), jedem Prozess der Reihe nach eine kurze **Zeitscheibe** – typischerweise einige bis einige Dutzend Millisekunden, je nach System (Linux eher wenige, Windows eher einige Dutzend). Dann ist der Nächste dran.
 
 Woher weiß der Kernel, dass die Zeit um ist? Ein eingebauter Zeitgeber meldet sich regelmäßig beim Prozessor – eine **Unterbrechung** (englisch *Interrupt*). Der Prozessor lässt dann das laufende Programm liegen und springt in den Kernel. Der Kernel tut nun Folgendes:
 
@@ -76,25 +76,25 @@ Woher weiß der Kernel, dass die Zeit um ist? Ein eingebauter Zeitgeber meldet s
 
 Diesen Wechsel nennt man **Kontextwechsel**. Weil er hunderte Male pro Sekunde passiert, wirkt es für dich, als liefe alles gleichzeitig – so wie ein Film aus Einzelbildern als flüssige Bewegung erscheint.
 
-Aber der Wechsel ist nicht gratis. Während der Kernel Zustände sichert und lädt, kommt keines der Programme voran. Ein Kontextwechsel dauert grob einige Mikrosekunden; dazu kommt, dass der neue Prozess seine Daten oft erst wieder in den Cache holen muss (Folge 7). Probier aus, was die Länge der Zeitscheibe bewirkt:
+Aber der Wechsel ist nicht gratis. Während der Kernel Zustände sichert und lädt, kommt keines der Programme voran. Ein Kontextwechsel dauert grob einige Mikrosekunden; dazu kommt, dass der neue Prozess seine Daten oft erst wieder in den Cache holen muss, den kleinen, schnellen Zwischenspeicher des Prozessors (mehr dazu in Folge 7). Probier aus, was die Länge der Zeitscheibe bewirkt:
 
 :::sim scheduler
 zeitscheibe: 4
 :::
 
-Jedes Kästchen ist ein Zeitschritt. Der Simulator nennt ihn „Takt“ – mit dem Prozessortakt aus Folge 6, der nur Nanosekunden dauert, hat er nichts zu tun. Die drei Farben sind drei Prozesse, die schraffierten Kästchen sind Umschalten. Mach die Zeitscheibe mit **−** ganz kurz: Die Musik kommt sehr oft dran – aber die Hälfte der Zeit geht fürs Umschalten verloren. Mach sie mit **+** lang: Fast keine Zeit geht verloren – aber die Musik muss lange warten, bis sie wieder dran ist.
+Jedes Kästchen ist ein Zeitschritt. Der Simulator nennt ihn „Takt“ – mit dem Prozessortakt (dem Rhythmus des Prozessors, nur Nanosekunden lang; Folge 6) hat er nichts zu tun. Die drei Farben sind drei Prozesse, die schraffierten Kästchen sind Umschalten. Mach die Zeitscheibe mit **−** ganz kurz: Die Musik kommt sehr oft dran – aber die Hälfte der Zeit geht fürs Umschalten verloren. Mach sie mit **+** lang: Fast keine Zeit geht verloren – aber die Musik muss lange warten, bis sie wieder dran ist.
 
 > **Achtung:** Der Simulator übertreibt bewusst: Bei ihm kostet ein Umschalten so viel wie ein ganzer Arbeitsschritt. Im echten Rechner ist eine Zeitscheibe (Millisekunden) tausend- bis zehntausendmal länger als ein Kontextwechsel (Mikrosekunden). Das Prinzip – kürzere Scheiben, mehr Verlust – bleibt aber dasselbe.
 
 Zwei Dinge macht der echte Scheduler klüger als der Simulator. Erstens wollen die meisten Prozesse gar nicht ständig rechnen: Ein Chat-Programm wartet fast immer auf deine nächste Eingabe. Solche wartenden Prozesse überspringt der Scheduler einfach, bis etwas für sie ankommt. Zweitens kann er Prioritäten vergeben – etwa Musik und alles, was du gerade bedienst, bevorzugen. Und hat ein Rechner mehrere Prozessorkerne, laufen tatsächlich mehrere Prozesse gleichzeitig: einer je Kern.
 
-> **Merke:** Ein Prozessorkern führt immer nur einen Prozess aus. Der Scheduler wechselt so schnell zwischen den Prozessen, dass es gleichzeitig wirkt. Jeder Wechsel kostet etwas Zeit.
+> **Merke:** Ein Prozessorkern führt im Grundsatz immer nur einen Prozess aus (Hyper-Threading bei PC-Prozessoren: höchstens zwei verschränkt). Der Scheduler wechselt so schnell zwischen den Prozessen, dass es gleichzeitig wirkt. Jeder Wechsel kostet etwas Zeit.
 
 ### Speicher: jedem sein eigener Bereich
 
 Würden alle Programme denselben Arbeitsspeicher frei benutzen, könnte ein fehlerhaftes Spiel die Daten deines Browsers überschreiben. Darum gibt das Betriebssystem jedem Prozess einen **eigenen Speicherbereich**. Das Programm sieht nur „seine“ Adressen; ein Baustein im Prozessor übersetzt sie bei jedem Zugriff in echte Adressen im RAM – und schlägt Alarm, wenn ein Programm einen Bereich anfasst, der ihm nicht gehört. Dieser **Speicherschutz** sorgt dafür, dass bei einem Fehler nur das eine Programm abstürzt und nicht der ganze Rechner.
 
-Wird der Arbeitsspeicher knapp, kann das Betriebssystem selten benutzte Teile vorübergehend auf die SSD auslagern. Das funktioniert, ist aber deutlich langsamer – du erinnerst dich an die Zugriffszeiten aus Folge 7.
+Wird der Arbeitsspeicher knapp, kann das Betriebssystem selten benutzte Teile vorübergehend auf die SSD auslagern. Das funktioniert, ist aber deutlich langsamer, denn die SSD ist um ein Vielfaches langsamer als der Arbeitsspeicher (mehr dazu in Folge 7).
 
 ### Geräte und Treiber
 
@@ -165,16 +165,41 @@ unten: zuletzt
 
 **Auflösung:** Erst die Unterbrechung, dann übernimmt der Kernel. Er muss den alten Zustand sichern, *bevor* er den neuen lädt – sonst würde er die Registerinhalte der Musik überschreiben, und sie könnte nie an der richtigen Stelle weitermachen. Alle Schritte zwischen dem ersten und dem letzten sind die Zeit, die beim Umschalten „verloren“ geht.
 
+## [beidir] Wo steckt das bei dir?
+
+Betriebssysteme arbeiten in jedem deiner Geräte – und du kannst ihnen bei der Arbeit zusehen.
+
+**Dein VPS: ein Kern für alle.** Der gemietete Server, auf dem ich arbeite, hat genau **einen** virtuellen Prozessorkern (1 vCPU). Der Befehl `nproc` antwortet dort schlicht mit `1`. Genau genommen läuft von mir dort nur das Programm **Claude Code**, das Befehle ausführt und Dateien bearbeitet; das Sprachmodell selbst, das die Antworten formuliert, rechnet auf Servern von Anthropic. Alles, was auf dem VPS läuft – Claude Code, die Befehle, die es startet, die Datensicherung, der Webserver für Tests –, teilt sich also diesen einen Kern im Zeitscheiben-Verfahren, genau wie die drei Programme im Simulator. Der Befehl `top` zeigt live, welche Prozesse gerade wie viel Rechenzeit bekommen. Und auch der Kern selbst ist schon geteilt: „Virtuell“ heißt, dass der Anbieter einen echten Prozessor in seinem Rechenzentrum auf mehrere solcher Server aufteilt – wieder mit Zeitscheiben, nur eine Ebene tiefer.
+
+**Ich im Docker-Container: kein eigener Kernel.** Auf dem VPS läuft Linux, und mein Docker-Container bringt **keinen eigenen Kernel** mit. Er benutzt den Linux-Kernel des VPS mit. Dass ich trotzdem wie in einem eigenen kleinen Rechner arbeite, macht der Kernel selbst möglich: Mit sogenannten **Namensräumen** gibt er dem Container eine eigene Sicht auf Prozesse, Dateien und Netzwerk. Lasse ich mir im Container alle Prozesse anzeigen (`ps -e`), sehe ich nur etwa zwanzig – die des Containers –, nicht die übrigen Prozesse des VPS. Zusätzlich kann der Kernel begrenzen, wie viel Prozessorzeit und Speicher ein Container verbrauchen darf. Fragst du im Container nach der Kernel-Version (`uname -r`), bekommst du die des VPS – zurzeit beginnt sie mit `6.8`.
+
+> **Beispiel:** Ein Container ist darum viel leichter als ein vollständiger zweiter Rechner: Er startet in Sekunden, weil kein Betriebssystem hochfahren muss – der Kernel läuft ja schon.
+
+**Dein Pixel: Linux in der Hosentasche.** Android baut auf dem Linux-Kernel auf, den Torvalds 1991 begonnen hat. Jede App läuft dort als eigener Prozess, und Android geht beim Abschotten noch weiter als ein normaler PC: Jede App bekommt sogar ein eigenes Benutzerkonto im Linux-Sinn und darf nur an ihre eigenen Dateien. Zusätzlich muss eine App dich fragen, bevor sie an deine Fotos oder dein Mikrofon darf.
+
+**Dein Windows-PC: der Task-Manager.** Drück **Strg + Umschalt + Esc**. Der Task-Manager öffnet sich und zeigt unter „Prozesse“ alle laufenden Programme, jeweils mit ihrem Anteil an Prozessorzeit und Arbeitsspeicher. Du wirst staunen, wie viele es sind, obwohl du vielleicht nur zwei Fenster offen hast – die meisten warten still im Hintergrund und kosten fast keine Rechenzeit. Unter „Leistung“ siehst du, wie viele Prozessorkerne dein PC hat. Steht bei „Logische Prozessoren“ die doppelte Zahl, kann jeder Kern zwei Befehlsströme ineinander verschränkt abarbeiten (Hyper-Threading) – das Betriebssystem behandelt jeden davon wie einen eigenen Kern. Darunter arbeitet der Kernel aus der Windows-NT-Familie.
+
+**bim-trainer und diese App.** Auch die Server von Cloudflare, die dir den bim-trainer und diese App schicken, laufen mit einem Betriebssystem, das Zeit, Speicher und Netzwerk an viele Kunden gleichzeitig verteilt. Und in deinem Browser ist diese App selbst ein Prozess (oft sogar mehrere), den Android oder Windows im Zeitscheiben-Takt mit allen anderen drankommen lässt.
+
+Wie das Betriebssystem eine Datei findet und ein Programm startet, wenn du doppelklickst, erfährst du in der nächsten Folge – dem großen Rückblick auf die ganze Staffel.
+
+## [fazit] Auf den Punkt
+
+- Das Betriebssystem verwaltet den ganzen Rechner: Prozesse (wer rechnet wann), Speicher, Geräte (über Treiber) und Dateien. Sein Herz ist der Kernel mit allen Rechten; Programme haben eingeschränkte Rechte und bitten den Kernel per Systemaufruf um Hilfe.
+- Ein Prozessorkern arbeitet im Grundsatz nur einen Prozess zur Zeit ab (mit Hyper-Threading bei PC-Prozessoren höchstens zwei verschränkt). Der Scheduler wechselt in kurzen Zeitscheiben so schnell zwischen den Prozessen, dass es gleichzeitig wirkt.
+- Jeder Kontextwechsel kostet Zeit: Zu kurze Zeitscheiben verschwenden Rechenzeit, zu lange lassen Programme warten.
+- Jeder Prozess hat einen eigenen Speicherbereich (Speicherschutz), sodass ein Fehler nur ein Programm abstürzen lässt – nur Fehler im Kernel, etwa in einem Treiber, können den ganzen Rechner lahmlegen.
+
 ## [quiz] Teste dich
 
 ### s1f08-q01
-Ein Rechner hat einen einzigen Prozessorkern. Wie viele Prozesse führt dieser Kern in einem bestimmten Augenblick aus?
+Ein Rechner hat einen einzigen Prozessorkern ohne Hyper-Threading. Wie viele Prozesse führt dieser Kern in einem bestimmten Augenblick aus?
 - [x] Genau einen
 - [ ] Alle gestarteten
 - [ ] Immer genau zwei
 - [ ] So viele, wie in den RAM passen
-Erklärung: Ein Kern arbeitet im Grundsatz immer nur einen Befehlsstrom ab (Hyper-Threading verschränkt höchstens zwei). Dass trotzdem mehrere Programme zu laufen scheinen, liegt am schnellen Wechsel der Zeitscheiben.
-Nachlesen: prinzip
+Erklärung: Ein Kern arbeitet im Grundsatz immer nur einen Befehlsstrom ab (Hyper-Threading verschränkt bei PC-Prozessoren höchstens zwei). Dass trotzdem mehrere Programme zu laufen scheinen, liegt am schnellen Wechsel der Zeitscheiben.
+Nachlesen: prinzip / Zeitscheiben: der schnelle Wechsel
 
 ### s1f08-q02
 Was passiert bei einem Kontextwechsel?
@@ -183,16 +208,16 @@ Was passiert bei einem Kontextwechsel?
 - [ ] Der Prozessor wird kurz ausgeschaltet und neu gestartet
 - [ ] Alle Programme werden auf einmal angehalten und beendet
 Erklärung: Der Kernel sichert Registerinhalte und Befehlszähler des bisherigen Prozesses im Arbeitsspeicher und lädt den gesicherten Zustand des nächsten. So kann jeder Prozess genau dort weitermachen, wo er unterbrochen wurde.
-Nachlesen: prinzip
+Nachlesen: prinzip / Zeitscheiben: der schnelle Wechsel
 
 ### s1f08-q03
-Warum macht man die Zeitscheiben nicht einfach so kurz wie möglich?
+Ein Betriebssystem lässt jedes Programm nur eine kurze Zeitscheibe am Stück rechnen. Warum macht man diese Zeitscheiben nicht einfach so kurz wie möglich?
 - [ ] Weil der Prozessor sonst zu heiß wird
 - [ ] Weil kurze Zeitscheiben mehr Arbeitsspeicher verbrauchen
 - [x] Weil jedes Umschalten Zeit kostet, in der nichts vorankommt
 - [ ] Weil Programme dann ihre Daten auf der SSD verlieren
 Erklärung: Je kürzer die Zeitscheiben, desto öfter wird umgeschaltet – und desto größer wird der Anteil der Zeit, der nur fürs Sichern und Laden der Zustände draufgeht. Zu lange Zeitscheiben lassen dagegen Programme warten.
-Nachlesen: selbst
+Nachlesen: prinzip / Zeitscheiben: der schnelle Wechsel
 
 ### s1f08-q04
 Ein Spiel hat einen Fehler und versucht, in den Speicherbereich des Browsers zu schreiben. Was verhindert, dass der Browser beschädigt wird?
@@ -201,7 +226,7 @@ Ein Spiel hat einen Fehler und versucht, in den Speicherbereich des Browsers zu 
 - [x] Der Speicherschutz des Betriebssystems
 - [ ] Das Dateisystem auf der SSD
 Erklärung: Jeder Prozess hat seinen eigenen Speicherbereich. Greift ein Programm auf einen fremden Bereich zu, schlägt der Prozessor Alarm, und das Betriebssystem beendet nur das fehlerhafte Programm.
-Nachlesen: prinzip
+Nachlesen: prinzip / Speicher: jedem sein eigener Bereich
 
 ### s1f08-q05
 Ein Programm möchte eine Datei von der SSD lesen. Wie kommt es an die Daten?
@@ -210,24 +235,24 @@ Ein Programm möchte eine Datei von der SSD lesen. Wie kommt es an die Daten?
 - [ ] Es kopiert sich selbst vorher auf die SSD
 - [ ] Es wartet, bis der Scheduler die Datei liefert
 Erklärung: Programme laufen im Benutzermodus und dürfen Geräte nicht selbst ansprechen. Über einen Systemaufruf bitten sie den Kernel, der prüft, ob sie das dürfen, und die Arbeit mit Hilfe des Treibers erledigt.
-Nachlesen: prinzip
+Nachlesen: prinzip / Systemaufrufe: der Schalter zum Kernel
 
 ### s1f08-q06
-Welches Betriebssystem entstand 1969 bei den Bell Labs, entwickelt von Ken Thompson und Dennis Ritchie?
-- [ ] Linux
-- [ ] Windows NT
-- [ ] CTSS
-- [x] Unix
-Erklärung: Unix begann 1969 als bewusst schlichtes System, nachdem die Bell Labs aus dem großen Multics-Projekt ausgestiegen waren. Linux (1991) wurde später nach dem Vorbild von Unix gebaut.
+Unix entstand 1969, nachdem die Bell Labs aus dem großen, komplizierten Betriebssystem-Projekt Multics ausgestiegen waren. Welche Idee prägt Unix bis heute?
+- [ ] Ein einziges großes Programm, das alle Aufgaben selbst erledigt
+- [x] Schlichtheit: kleine Werkzeuge, die je eine Sache gut können und sich kombinieren lassen
+- [ ] Jeder Benutzer bekommt einen eigenen Computer und muss nichts teilen
+- [ ] Programme sprechen die Geräte direkt an, ganz ohne Kernel
+Erklärung: Ken Thompson und Dennis Ritchie wollten nach Multics ein einfaches System zum Arbeiten. Ihre Idee war Schlichtheit: kleine Werkzeuge, die je eine Sache gut können und sich kombinieren lassen – das Gegenteil des großen, komplizierten Multics.
 Nachlesen: geschichte
 
 ### s1f08-q07
-Was trifft auf den Docker-Container zu, in dem der Agent auf dem VPS läuft?
-- [ ] Er bringt einen eigenen Kernel mit, unabhängig vom VPS
-- [x] Er nutzt den Linux-Kernel des VPS mit, aber abgeschottet
+Ein Docker-Container läuft auf einem Linux-Server (VPS). Was gilt für seinen Kernel?
+- [ ] Er bringt einen eigenen Kernel mit, unabhängig vom Server
+- [x] Er nutzt den Linux-Kernel des Servers mit, aber abgeschottet
 - [ ] Er läuft auf einem eigenen, zusätzlichen Prozessor
-- [ ] Er verwendet den Windows-Kernel deines PCs
-Erklärung: Container haben keinen eigenen Kernel. Der Linux-Kernel des VPS gibt jedem Container eine eigene, abgeschottete Sicht auf Prozesse, Dateien und Netzwerk und begrenzt, wie viel er verbrauchen darf.
+- [ ] Er verwendet den Kernel des Computers, von dem aus man ihn bedient
+Erklärung: Container haben keinen eigenen Kernel. Der Linux-Kernel des Servers gibt jedem Container eine eigene, abgeschottete Sicht auf Prozesse, Dateien und Netzwerk und begrenzt, wie viel er verbrauchen darf.
 Nachlesen: beidir
 
 ## [karten] Für deinen Karteikasten
@@ -265,23 +290,5 @@ Vorne: Was sind die vier großen Aufgaben des Betriebssystems?
 Hinten: Prozesse (wer darf wann rechnen), Speicher (wer bekommt welchen Bereich), Geräte (über Treiber) und Dateien (samt Rechten).
 
 ### s1f08-k09
-Vorne: Wer schrieb 1969 die Grundlage von Unix, und in welchem Jahr wurde es in C neu geschrieben?
-Hinten: Ken Thompson (mit Dennis Ritchie) 1969 bei den Bell Labs; 1973 folgte die Neufassung in der Sprache C.
-
-## [beidir] Wo steckt das bei dir?
-
-Betriebssysteme arbeiten in jedem deiner Geräte – und du kannst ihnen bei der Arbeit zusehen.
-
-**Dein VPS: ein Kern für alle.** Der gemietete Server, auf dem ich arbeite, hat genau **einen** virtuellen Prozessorkern (1 vCPU). Der Befehl `nproc` antwortet dort schlicht mit `1`. Genau genommen läuft von mir dort nur das Programm **Claude Code**, das Befehle ausführt und Dateien bearbeitet; das Sprachmodell selbst, das die Antworten formuliert, rechnet auf Servern von Anthropic. Alles, was auf dem VPS läuft – Claude Code, die Befehle, die es startet, die Datensicherung, der Webserver für Tests –, teilt sich also diesen einen Kern im Zeitscheiben-Verfahren, genau wie die drei Programme im Simulator. Der Befehl `top` zeigt live, welche Prozesse gerade wie viel Rechenzeit bekommen. Und auch der Kern selbst ist schon geteilt: „Virtuell“ heißt, dass der Anbieter einen echten Prozessor in seinem Rechenzentrum auf mehrere solcher Server aufteilt – wieder mit Zeitscheiben, nur eine Ebene tiefer.
-
-**Ich im Docker-Container: kein eigener Kernel.** Auf dem VPS läuft Linux, und mein Docker-Container bringt **keinen eigenen Kernel** mit. Er benutzt den Linux-Kernel des VPS mit. Dass ich trotzdem wie in einem eigenen kleinen Rechner arbeite, macht der Kernel selbst möglich: Mit sogenannten **Namensräumen** gibt er dem Container eine eigene Sicht auf Prozesse, Dateien und Netzwerk. Lasse ich mir im Container alle Prozesse anzeigen (`ps -e`), sehe ich nur etwa zwanzig – die des Containers –, nicht die übrigen Prozesse des VPS. Zusätzlich kann der Kernel begrenzen, wie viel Prozessorzeit und Speicher ein Container verbrauchen darf. Fragst du im Container nach der Kernel-Version (`uname -r`), bekommst du die des VPS – zurzeit beginnt sie mit `6.8`.
-
-> **Beispiel:** Ein Container ist darum viel leichter als ein vollständiger zweiter Rechner: Er startet in Sekunden, weil kein Betriebssystem hochfahren muss – der Kernel läuft ja schon.
-
-**Dein Pixel: Linux in der Hosentasche.** Android baut auf dem Linux-Kernel auf, den Torvalds 1991 begonnen hat. Jede App läuft dort als eigener Prozess, und Android geht beim Abschotten noch weiter als ein normaler PC: Jede App bekommt sogar ein eigenes Benutzerkonto im Linux-Sinn und darf nur an ihre eigenen Dateien. Zusätzlich muss eine App dich fragen, bevor sie an deine Fotos oder dein Mikrofon darf.
-
-**Dein Windows-PC: der Task-Manager.** Drück **Strg + Umschalt + Esc**. Der Task-Manager öffnet sich und zeigt unter „Prozesse“ alle laufenden Programme, jeweils mit ihrem Anteil an Prozessorzeit und Arbeitsspeicher. Du wirst staunen, wie viele es sind, obwohl du vielleicht nur zwei Fenster offen hast – die meisten warten still im Hintergrund und kosten fast keine Rechenzeit. Unter „Leistung“ siehst du, wie viele Prozessorkerne dein PC hat. Steht bei „Logische Prozessoren“ die doppelte Zahl, kann jeder Kern zwei Befehlsströme ineinander verschränkt abarbeiten (Hyper-Threading) – das Betriebssystem behandelt jeden davon wie einen eigenen Kern. Darunter arbeitet der Kernel aus der Windows-NT-Familie.
-
-**bim-trainer und diese App.** Auch die Server von Cloudflare, die dir den bim-trainer und diese App schicken, laufen mit einem Betriebssystem, das Zeit, Speicher und Netzwerk an viele Kunden gleichzeitig verteilt. Und in deinem Browser ist diese App selbst ein Prozess (oft sogar mehrere), den Android oder Windows im Zeitscheiben-Takt mit allen anderen drankommen lässt.
-
-Wie das Betriebssystem eine Datei findet und ein Programm startet, wenn du doppelklickst, erfährst du in der nächsten Folge – dem großen Rückblick auf die ganze Staffel.
+Vorne: Wodurch ließ sich Unix auf andere Computer übertragen?
+Hinten: Ken Thompson und Dennis Ritchie schrieben es 1973 in der Programmiersprache C neu, die Ritchie dafür entwickelt hatte.

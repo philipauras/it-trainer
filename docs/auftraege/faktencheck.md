@@ -15,6 +15,11 @@ Prüfe streng:
    Auflösungen richtig? Rechne Beispiele nach (Binärzahlen, Wahrheitstabellen, Programme im cpu-Simulator Schritt für Schritt).
 5. **Quiz**: genau eine richtige Antwort, Erklärungen korrekt, keine missverständlichen Ablenker, `Nachlesen:` sinnvoll.
 6. **Karteikarten** (falls vorhanden): korrekt, eine Sache je Karte.
+8. **Folge steht für sich:** Funktioniert die Folge ohne Vorwissen aus früheren Bildern/Geschichten? Kein Rückgriff auf
+   Bilder oder Geschichten anderer Folgen; nötiges Fachwissen von vorher in 1–2 Sätzen neu erklärt (mit Verweis). Verstoß = Fehler.
+9. **Auf den Punkt** (`[fazit]`): 3–4 Kernsätze, die genau das Wichtigste der Folge treffen und fachlich stimmen.
+10. **Lernpool-Tauglichkeit:** Fragen und Karten verstehen sich ohne die Folge vor Augen; Fragen eher verständnisorientiert
+   („Was passiert, wenn …?“) statt Jahreszahlen/Namen; `Nachlesen: abschnitt / Stelle` zeigt auf die passende Stelle.
 7. **Verständlichkeit** für Einsteiger; Fachbegriffe beim ersten Auftreten erklärt; Format-Regeln (keine Werkstatt-/Handwerks-Wörter
    wie Lehrling, Geselle, Meister, Gesellenstück, Werkbank).
 

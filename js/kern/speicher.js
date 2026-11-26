@@ -8,7 +8,9 @@
 //   format: 1, app: '<app-id>',
 //   einstellungen: { thema: 'auto' | 'hell' | 'dunkel' },
 //   folgen:   { <folgenId>: { schritt: '<abschnitt>', besucht: ['<abschnitt>', …], fertig: <ms> | null, ts } },
-//   quiz:     { <frageId>:  { gesehen, richtig, falsch, zuletzt: bool, ts } },
+//   quiz:     { <frageId>:  { gesehen, richtig, falsch, zuletzt: bool, ts, [fach, faellig] } },
+//             fach/faellig (Leitner für den Lernpool, seit 1.5.0) sind optional: ältere Stände ohne sie bleiben gültig
+//             und werden beim Lesen aus „zuletzt“ eingeordnet (js/kern/lernpool.js → standVon). Kein Formatwechsel nötig.
 //   karten:   { <kartenId>: { fach: 1…n, faellig: 'JJJJ-MM-TT', gesehen, gewusst, ts } },
 //   uebungen: { <uebungId>: { fertig: <ms>, ts } },
 //   neuGesehen: '<Version, deren „Was ist neu“ schon gezeigt wurde>',
@@ -34,7 +36,11 @@ const PRUEFER = {
     fertig: Number.isFinite(e.fertig) ? e.fertig : null,
     ts: zahl(e.ts),
   }),
-  quiz: (e) => ({ gesehen: zahl(e.gesehen), richtig: zahl(e.richtig), falsch: zahl(e.falsch), zuletzt: e.zuletzt === true, ts: zahl(e.ts) }),
+  quiz: (e) => {
+    const q = { gesehen: zahl(e.gesehen), richtig: zahl(e.richtig), falsch: zahl(e.falsch), zuletzt: e.zuletzt === true, ts: zahl(e.ts) };
+    if (Number.isInteger(e.fach) && e.fach >= 1 && TAG.test(e.faellig)) { q.fach = e.fach; q.faellig = e.faellig; }
+    return q;
+  },
   karten: (e) => {
     if (!Number.isInteger(e.fach) || e.fach < 1 || !TAG.test(e.faellig)) return null;
     return { fach: e.fach, faellig: e.faellig, gesehen: zahl(e.gesehen), gewusst: zahl(e.gewusst), ts: zahl(e.ts) };

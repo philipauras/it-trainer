@@ -51,9 +51,10 @@ Text …
 ## [prinzip] …
 ## [werkstatt] …   (in der App „Im Bild“)
 ## [selbst] …
-## [quiz] …
-## [karten] …
 ## [beidir] Wo steckt das bei dir?
+## [fazit] Auf den Punkt
+## [quiz] …          (Lernpool – erscheint nicht in der Folge)
+## [karten] …        (Lernpool – erscheint nicht in der Folge)
 ```
 
 **Kopf** (zwischen den beiden `---`):
@@ -66,8 +67,9 @@ Text …
 | `quellen` | ja | Liste, je Zeile `- Text` oder `- Text \| https://link` |
 | `faktencheck` | bei `freigegeben` | Datum, Ergebnis, wer geprüft hat |
 
-**Abschnitte** – genau diese acht, genau in dieser Reihenfolge. Hinter `[schlüssel]` steht die Überschrift,
-die in der App erscheint (frei wählbar, gern als Frage):
+**Abschnitte** – genau diese neun, genau in dieser Reihenfolge. Die ersten sieben bilden die Folge, `[quiz]` und
+`[karten]` stehen nur in der Datei und kommen in den **Lernpool** (siehe unten). Hinter `[schlüssel]` steht die
+Überschrift, die in der App erscheint (frei wählbar, gern als Frage):
 
 | Schlüssel | In der App | Wozu |
 |---|---|---|
@@ -76,9 +78,10 @@ die in der App erscheint (frei wählbar, gern als Frage):
 | `[prinzip]` | c · Das Prinzip | das Konzept, mit interaktiver Grafik/Simulator |
 | `[werkstatt]` | d · Im Bild | ein Alltagsbild, das das Prinzip trifft (siehe „Bilder“ unten) – und wo es hinkt. Der Schlüssel heißt aus Speichergründen weiter `werkstatt` |
 | `[selbst]` | e · Selbst machen | mindestens eine **Übung** (Simulator mit `id:`) |
-| `[quiz]` | f · Quiz | Fragen mit Erklärung (Format unten) |
-| `[karten]` | g · Karteikarten | Karten für den Karteikasten (Format unten) |
-| `[beidir]` | h · Wo steckt das bei dir? | Bezug zu Philips echten Systemen (siehe unten) |
+| `[beidir]` | f · Wo steckt das bei dir? | Bezug zu Philips echten Systemen (siehe unten) |
+| `[fazit]` | g · Auf den Punkt | **3–4 Kernsätze** als Liste (`- …`). Die App ergänzt darunter „X neue Karten im Lernpool“ und den Knopf „Folge abschließen“ |
+| `[quiz]` | – (Lernpool) | Quizfragen (Format unten) – nach dem Abschluss der Folge im Lernpool |
+| `[karten]` | – (Lernpool) | Karteikarten (Format unten) – nach dem Abschluss der Folge im Lernpool |
 
 ## Text schreiben (Markdown)
 
@@ -137,6 +140,19 @@ und meldet z. B. eine unlösbare Übung. Übungen ohne Fingertipp-Weg für die a
 
 Neue Simulatoren programmiert der Agent (`js/sim/`, Anleitung in `js/sim/README.md`).
 
+## Lernpool (Philip, 26.11.2026)
+
+Quiz und Karteikarten unterbrechen den Fluss einer Folge – darum stehen sie nicht mehr in der Folge, sondern in einem
+gemeinsamen **Lernpool**. Mit „Folge abschließen“ (am Ende von „Auf den Punkt“) werden Fragen und Karten der Folge
+freigeschaltet.
+
+- **Heute wiederholen** (Startseite): Runde von 5–10 Minuten, gemischt aus fälligen Karten und Fragen, Fragen aus kürzlich
+  abgeschlossenen Folgen und früheren Fehlern. Leitner-System für beide (5 Fächer: täglich, alle 2, 4, 8, 16 Tage).
+- **Schichten-Karte** zeigt je Schicht die Festigkeit des Wissens; fällige Wiederholungen lassen sie verblassen. Der Knopf ↻
+  startet eine Runde nur für diese Schicht.
+- **Lernen** (unten in der Leiste): freies Üben je Staffel/Folge und eine **Prüfung je Staffel** (Fragen aller Folgen gemischt, mit Auswertung).
+- Falsch beantwortet → „Im Wissen nachlesen“ springt an die passende Stelle der Folge, „Zurück zur Runde“ führt zurück.
+
 ## Quiz
 
 ```markdown
@@ -156,7 +172,10 @@ Nachlesen: prinzip
 - Danach der Fragetext, dann 2–4 Antworten: `- [x]` = richtig (genau eine), `- [ ]` = falsch. Die App mischt die Reihenfolge.
 - `Mischen: nein` hält die Reihenfolge fest (z. B. bei „Alle genannten“).
 - `Erklärung:` Pflicht – warum die richtige Antwort richtig ist (darf mehrere Zeilen haben).
-- `Nachlesen:` Pflicht – Schlüssel des Abschnitts, in den „Im Wissen nachlesen“ springt (`prinzip`, `geschichte`, …).
+- `Nachlesen:` Pflicht – Abschnitt, in den „Im Wissen nachlesen“ springt (`prinzip`, `geschichte`, …). Mit Stelle:
+  `Nachlesen: prinzip / Acht Bits sind ein Byte` springt zur Zwischenüberschrift `### Acht Bits sind ein Byte` (der Build prüft, dass es sie gibt).
+- **Verständnis statt Detailwissen:** Fragen eher „Was passiert, wenn …?“, „Warum …?“, „Woran erkennst du …?“ –
+  nicht Jahreszahlen oder Namen abfragen. Die Frage muss **ohne die Folge vor Augen** verständlich sein (sie erscheint im Lernpool gemischt mit anderen Folgen).
 - Mindestens 4 Fragen je Folge. Antworten ähnlich lang halten, damit die Länge nichts verrät.
 
 ## Karteikarten
@@ -171,7 +190,7 @@ Hinten: Die kleinste Einheit der Information: eine Entscheidung zwischen zwei M�
 
 - ID-Schema `<folge>-k01`, … Mindestens 4 Karten je Folge.
 - Eine Karte = eine Sache. Vorne eine Frage, hinten eine kurze Antwort (ein bis zwei Sätze).
-- Die Karten kommen nach Schritt g in den Karteikasten (Leitner-System, 5 Fächer: täglich, alle 2, 4, 8, 16 Tage).
+- Auch Karten müssen für sich allein verständlich sein (im Lernpool gemischt). Lieber nach dem Begriff fragen als nach dem Bild.
 
 ## Stabile IDs – wichtig für den Lernfortschritt
 
@@ -189,6 +208,17 @@ Der Fortschritt im Browser hängt an den IDs von Folgen, Fragen, Karten und Übu
 | Karteikarte | `<folge>-k<nr>` | `s1f01-k07` |
 | Übung | `<folge>-u<nr>` | `s1f01-u01` |
 | Glossarbegriff | Kleinbuchstaben, Bindestriche | `bit`, `utf-8` |
+
+## Jede Folge steht für sich (Philip, 26.11.2026)
+
+Philip will in **jede Folge springen können, ohne die vorigen zu kennen**.
+
+- **Bild und Geschichte gehören nur zu ihrer Folge.** Keine Rückgriffe auf Bilder oder Geschichten aus früheren Folgen
+  (nicht „wie die Laternen aus Folge 1“, keine Wiederkehr einer Geschichte in einer späteren Folge).
+- **Fachwissen darf aufeinander aufbauen.** Braucht eine Folge einen Begriff oder ein Prinzip von vorher, wird es in
+  **1–2 Sätzen neu erklärt**, mit Verweis („mehr dazu in Folge 3“). Ein Bild von vorher wird nie vorausgesetzt.
+- Ausblicke auf spätere Folgen sind erlaubt, solange nichts davon zum Verstehen nötig ist.
+- Prüfpunkt im Faktencheck: „Folge funktioniert ohne Vorwissen aus früheren Bildern/Geschichten.“
 
 ## Bilder, Grafiken und Mitmachen (gilt für alle Folgen – Philip, 26.11.2026)
 
@@ -275,6 +305,7 @@ alle Punkte, die der Nutzer noch nicht gesehen hat.
 | `stufen` | Grundlagen, Aufbau, Vertiefung (die IDs `lehrling`/`geselle`/`meister` sind historisch und bleiben) |
 | `schichten` | die Schichten-Karte „Vom Sandkorn zur KI“ (von unten nach oben) |
 | `staffeln` | Plan: Staffeln mit Stufe, Schichten und Folgen (ID, Titel, Untertitel, Schicht, ggf. `art: abschlussprojekt`) |
-| `abschnitte` | die acht Abschnitte einer Folge (Titel, Buchstabe, Symbol) |
+| `abschnitte` | die sieben sichtbaren Abschnitte einer Folge (Titel, Buchstabe, Symbol) |
+| `lernpoolAbschnitte` | `quiz` und `karten` – stehen in der Datei, erscheinen im Lernpool |
 | `boxen` | erlaubte Hinweisboxen |
-| `regeln` | Status-Stufen, Mindestzahlen für Quiz/Karten, Leitner-Abstände, wann eine Folge „fertig“ ist |
+| `regeln` | Status-Stufen, Mindestzahlen für Quiz/Karten, Leitner-Abstände und Rundengröße, Prüfung, Kernsätze im Fazit |

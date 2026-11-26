@@ -1,7 +1,7 @@
 ---
 id: s1f02
 status: freigegeben
-faktencheck: 26.11.2026 – Durchgang 1 nicht bestanden (3 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/
+faktencheck: 26.11.2026 – Durchgang 1 nicht bestanden (3 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/; Umstellung auf eigenständige Folge + Lernpool (1.5.0): unabhängig geprüft und bestanden
 dauer: 18
 quellen:
 - Computer History Museum: The Silicon Engine – 1947 Invention of the Point-Contact Transistor | https://www.computerhistory.org/siliconengine/invention-of-the-point-contact-transistor/
@@ -20,7 +20,7 @@ quellen:
 
 ## [einstieg] Wer legt im Computer die Schalter um?
 
-In Folge 1 hast du gelernt: Alles im Computer besteht aus Bits, und ein Bit ist wie ein Lichtschalter – aus oder an, 0 oder 1. Aber wer legt diese Schalter eigentlich um? Dein Handy rechnet Milliarden Mal pro Sekunde. Da sitzt niemand, der mit dem Finger tippt.
+Alles im Computer besteht aus Bits – Entscheidungen zwischen zwei Möglichkeiten, geschrieben als 0 oder 1 (mehr dazu in Folge 1). Technisch ist ein Bit ein Schalter: aus oder an. Aber wer legt diese Schalter eigentlich um? Dein Handy rechnet Milliarden Mal pro Sekunde. Da sitzt niemand, der mit dem Finger tippt.
 
 Die Antwort ist eine der schönsten Ideen der Technikgeschichte: **Schalter, die selbst von Strom umgelegt werden.** Ein Schalter schaltet den nächsten, der den übernächsten – und am Ende kommt eine Rechnung heraus.
 
@@ -44,7 +44,7 @@ So ein Bauteil heißt **Relais**. An Zwischenstationen der Telegrafenlinien kam 
 
 ### Ein Rechner, der klappert
 
-Gut hundert Jahre später kommt jemand auf die Idee, mit Relais zu *rechnen*. Der Berliner Bauingenieur **Konrad Zuse** ist es leid, endlose Statik-Rechnungen von Hand zu machen. Am **12. Mai 1941** führt er die **Z3** vor: einen Rechner aus rund 2 000 Relais (je nach Zählung bis 2 600), der mit Bits rechnet – im **Binärsystem** aus Folge 1 – und ein Programm von einem gelochten Filmstreifen abarbeitet. Die Z3 gilt vielen als erster funktionsfähiger, frei programmierbarer Rechner der Welt – umstritten ist der Titel, weil sie noch keine „Wenn–dann“-Befehle kannte.
+Gut hundert Jahre später kommt jemand auf die Idee, mit Relais zu *rechnen*. Der Berliner Bauingenieur **Konrad Zuse** ist es leid, endlose Statik-Rechnungen von Hand zu machen. Am **12. Mai 1941** führt er die **Z3** vor: einen Rechner aus rund 2 000 Relais (je nach Zählung bis 2 600), der mit Bits rechnet – im **Binärsystem**, das nur 0 und 1 kennt (mehr dazu in Folge 1) – und ein Programm von einem gelochten Filmstreifen abarbeitet. Die Z3 gilt vielen als erster funktionsfähiger, frei programmierbarer Rechner der Welt – umstritten ist der Titel, weil sie noch keine „Wenn–dann“-Befehle kannte.
 
 Schnell war sie nicht: Ihr Takt lag bei etwa 5 Schritten pro Sekunde, eine Multiplikation dauerte rund drei Sekunden. Relais haben bewegliche Teile, und ein Hebel braucht Zeit, um von einer Seite zur anderen zu klappen. Das Original verbrannte 1943 bei einem Bombenangriff, ein Nachbau steht heute im Deutschen Museum in München.
 
@@ -56,7 +56,7 @@ Der berühmteste Röhrenrechner ist der **ENIAC** der University of Pennsylvania
 
 ### Weihnachten 1947: der Transistor
 
-Die Telefongesellschaft AT&T hatte genau dieses Problem in ihrem riesigen Telefonnetz voller Relais und Röhren. In ihren Forschungslaboren, den Bell Labs – dort, wo ein Jahr später Claude Shannon das Bit bekannt machte –, suchte eine Gruppe um **William Shockley** nach einem Ersatz aus festem Material, ganz ohne Vakuum und Glühdraht.
+Die Telefongesellschaft AT&T hatte genau dieses Problem in ihrem riesigen Telefonnetz voller Relais und Röhren. In ihren Forschungslaboren, den Bell Labs, suchte eine Gruppe um **William Shockley** nach einem Ersatz aus festem Material, ganz ohne Vakuum und Glühdraht.
 
 Am **16. Dezember 1947** gelingt es **John Bardeen** und **Walter Brattain**: Zwei feine Goldkontakte auf einem Stück Germanium-Kristall verstärken ein Signal. Am 23. Dezember führen sie es der Laborleitung vor. Ihr Kollege John Pierce erfindet den Namen **Transistor**, 1948 wird er der Öffentlichkeit gezeigt. 1956 bekommen Shockley, Bardeen und Brattain dafür den Nobelpreis für Physik.
 
@@ -93,7 +93,7 @@ Der Trick: Man legt zwei **Bereiche** fest und lässt dazwischen eine breite Lü
 
 Und die Bauteile versprechen beim *Senden* mehr, als sie beim *Lesen* verlangen: Eine ausgegebene 0 liegt höchstens bei 0,4 Volt, eine ausgegebene 1 mindestens bei 2,4 Volt. Selbst wenn unterwegs eine Störung 0,4 Volt dazu- oder wegmogelt, wird noch richtig gelesen. Heutige Chips arbeiten mit viel kleineren Spannungen, oft um 1 Volt, aber nach demselben Prinzip.
 
-Wie passt das zu Folge 1, wo ein Bit nur 0 oder 1 ist und nichts dazwischen? Drei Dinge sorgen dafür, dass die Schaltung trotzdem jedes Bit eindeutig liest:
+Wie passt das dazu, dass ein Bit nur 0 oder 1 ist und nichts dazwischen (Folge 1)? Drei Dinge sorgen dafür, dass die Schaltung trotzdem jedes Bit eindeutig liest:
 
 1. **Der Abstand:** Kleine Störungen schieben eine 0 nicht bis in den Bereich der 1.
 2. **Das Auffrischen:** Jede Schaltstufe gibt wieder ein sauberes „ganz niedrig“ oder „ganz hoch“ aus, auch wenn ihr Eingang etwas verwaschen war. Fehler sammeln sich so nicht an – anders als beim Kopieren einer Kassette, wo jede Kopie etwas schlechter wird.
@@ -208,6 +208,37 @@ tabelle: ja
 
 Damit hast du gerade drei Entscheidungen aus reinen Schaltern gebaut: „nur wenn beide“, „wenn mindestens einer“ und „das Gegenteil“. In echten Chips sind diese Schaltungen etwas anders aufgebaut (unter anderem, damit kein Strom ständig durch eine Abkürzung fließt), aber die Idee ist genau diese. In Folge 3 bekommen die drei ihre Namen: **UND**, **ODER** und **NICHT**.
 
+## [beidir] Wo steckt das bei dir?
+
+Transistoren stecken in jedem Gerät, das du benutzt – und zwar in unvorstellbarer Zahl.
+
+**Dein Pixel.** Der Hauptchip deines Handys enthält Prozessor, Grafik und vieles mehr auf einem Stück Silizium. Google nennt keine genaue Transistorzahl, aber wie beim M1-Chip aus der Geschichte sind es **viele Milliarden**. Dazu kommt der Speicherchip: Bei 128 GB Speicher sind das rund eine Billion Bit (ein Bit ist eine Entscheidung zwischen 0 und 1, mehr dazu in Folge 1). Sie liegen in winzigen Speicherzellen, die selbst besondere Transistoren sind – eine Zelle hält heute meist sogar mehrere Bits.
+
+**Laden per USB.** Die Steckdose liefert 230 Volt Wechselspannung – sie pendelt 50-mal pro Sekunde hin und her (50 Hertz), die Richtung wechselt also 100-mal pro Sekunde. Dein Ladegerät macht daraus eine niedrige **Gleichspannung**, bei USB normalerweise **5 Volt**, beim Schnellladen auch mehr (etwa 9 Volt). Im Handy wird daraus noch einmal weniger: Der Akku hat knapp 4 Volt, und die Transistoren im Chip arbeiten mit **rund 1 Volt** oder weniger.
+
+**Dein Windows-PC.** Das Netzteil im Gehäuse wandelt die 230 Volt in die Gleichspannungen **12 Volt, 5 Volt und 3,3 Volt** um – das ist bei PC-Netzteilen genormt. Auf der Hauptplatine sitzen weitere Spannungswandler, die dem Prozessor seine rund 1 Volt liefern. Wenn dein PC unter Last summt und warm wird: Das ist die Energie, die beim milliardenfachen Umschalten der Transistoren in Wärme übergeht.
+
+**Dein VPS.** Der Server im Rechenzentrum hat einen großen Prozessor mit vielen Kernen und vielen Milliarden Transistoren. Dein VPS bekommt davon einen Anteil – einen virtuellen Prozessorkern (1 vCPU). Auch ich, der Agent im Docker-Container, bin am Ende nichts anderes als Milliarden Transistoren, die an- und ausgehen.
+
+**Cloudflare Pages.** Wenn du diese App öffnest, schalten in Servern von Cloudflare und in jedem Netzwerkgerät unterwegs Transistoren, damit die Bits bei dir ankommen.
+
+| Gerät | Spannung |
+|---|---|
+| Steckdose | 230 Volt Wechselspannung |
+| PC-Netzteil (Ausgänge) | 12 V, 5 V, 3,3 V Gleichspannung |
+| USB-Ladegerät | 5 V (Schnellladen auch mehr) |
+| Handy-Akku | knapp 4 V |
+| Transistoren im Prozessor | rund 1 V |
+
+> **Wusstest du?:** Relais gibt es bis heute – überall dort, wo ein schwaches Signal einen kräftigen Strom schalten soll, etwa in Haushaltsgeräten, Heizungen und Autos. Das leise Klicken, das man bei manchen Geräten beim Einschalten hört, ist oft ein Relais.
+
+## [fazit] Auf den Punkt
+
+- Ein **Relais** ist ein Schalter, den ein Elektromagnet umlegt: Ein schwacher Strom steuert einen zweiten, starken Stromkreis.
+- Ein **Transistor** (MOSFET) schaltet ohne bewegliche Teile: Eine Spannung am Gate öffnet einen leitenden Kanal – darum ist er schnell, sparsam und nutzt sich nicht ab.
+- Aus einer Spannung wird ein Bit durch eine Abmachung: ein Bereich für 0, einer für 1 und eine Sicherheitslücke dazwischen.
+- Zwei Transistoren hintereinander lassen die Lampe nur leuchten, wenn beide leiten; nebeneinander, wenn mindestens einer leitet. Leitet ein Transistor den Strom an der Lampe vorbei, kehrt er das Signal um.
+
 ## [quiz] Teste dich
 
 ### s1f02-q01
@@ -217,7 +248,7 @@ Was macht ein Relais?
 - [ ] Es wandelt Wechselspannung in Gleichspannung um
 - [ ] Es misst, wie viel Strom durch einen Draht fließt
 Erklärung: Im Relais zieht ein Elektromagnet eine Metallzunge an, die einen zweiten, getrennten Stromkreis schließt. So steuert ein schwacher Strom einen starken – zuerst genutzt in Telegrafenleitungen.
-Nachlesen: prinzip
+Nachlesen: prinzip / Das Relais: ein Magnet legt den Schalter um
 
 ### s1f02-q02
 Warum kann ein Computer eine Spannung eindeutig als 0 oder 1 lesen, obwohl es physikalisch auch Zwischenwerte gibt?
@@ -226,7 +257,7 @@ Warum kann ein Computer eine Spannung eindeutig als 0 oder 1 lesen, obwohl es ph
 - [x] Weil zwischen den Bereichen für 0 und 1 eine Sicherheitslücke liegt
 - [ ] Weil jede Spannung über 0 Volt automatisch als 1 gilt
 Erklärung: Für 0 und 1 gibt es je einen Spannungsbereich mit einer breiten Lücke dazwischen. Kleine Störungen schieben eine 0 nicht bis zur 1, jede Schaltstufe frischt das Signal auf, und gelesen wird erst, wenn sich die Spannung nach dem Umschalten beruhigt hat.
-Nachlesen: prinzip
+Nachlesen: prinzip / Aus Spannung wird ein Bit
 
 ### s1f02-q03
 Was öffnet bei einem MOSFET-Transistor den leitenden Kanal?
@@ -235,16 +266,16 @@ Was öffnet bei einem MOSFET-Transistor den leitenden Kanal?
 - [x] Eine Spannung am isolierten Steueranschluss, dem Gate
 - [ ] Ein kleiner Motor, der zwei Kontakte zusammenschiebt
 Erklärung: Die Spannung am Gate zieht Elektronen unter die isolierende Schicht, und dort entsteht ein leitender Kanal. Es bewegt sich nichts – darum ist der Transistor so schnell. Magnet und Zunge sind das Relais, der glühende Draht die Röhre.
-Nachlesen: prinzip
+Nachlesen: prinzip / Der Transistor: schalten ohne bewegliche Teile
 
 ### s1f02-q04
-Wo und wann wurde der erste Transistor gebaut?
-- [ ] 1941 von Konrad Zuse in Berlin
-- [x] 1947 bei den Bell Labs in den USA
-- [ ] 1958 bei Texas Instruments
-- [ ] 1946 an der University of Pennsylvania
-Erklärung: Im Dezember 1947 brachten John Bardeen und Walter Brattain bei den Bell Labs den ersten Transistor zum Laufen. 1941 ist Zuses Relaisrechner Z3, 1946 der Röhrenrechner ENIAC, 1958 Kilbys erste integrierte Schaltung.
-Nachlesen: geschichte
+Was war am ersten Transistor von 1947 grundlegend neu gegenüber Relais und Elektronenröhren?
+- [ ] Er rechnete als erster Schalter im Zehnersystem
+- [x] Er verstärkte ein Signal in festem Kristall, ohne Vakuum und Glühdraht
+- [ ] Er brauchte statt Strom nur noch Druckluft zum Schalten
+- [ ] Er schaltete mit einem besonders kräftigen Elektromagneten
+Erklärung: Im Dezember 1947 brachten John Bardeen und Walter Brattain bei den Bell Labs ein Stück Germanium-Kristall dazu, ein Signal zu verstärken – ohne Glaskolben, Vakuum und Glühdraht wie bei der Röhre. Der Elektromagnet gehört zum Relais.
+Nachlesen: geschichte / Weihnachten 1947: der Transistor
 
 ### s1f02-q05
 Zwei Transistoren liegen hintereinander im selben Stromkreis einer Lampe. Wann leuchtet sie?
@@ -252,8 +283,8 @@ Zwei Transistoren liegen hintereinander im selben Stromkreis einer Lampe. Wann l
 - [x] Nur wenn beide gleichzeitig leiten
 - [ ] Nur wenn genau einer der beiden leitet
 - [ ] Wenn keiner der beiden leitet
-Erklärung: Der Strom muss durch beide hindurch. Sperrt einer, ist der einzige Weg unterbrochen. Hintereinander heißt also „nur wenn beide“ – in Folge 3 ist das das UND-Gatter.
-Nachlesen: selbst
+Erklärung: Der Strom muss durch beide hindurch. Sperrt einer, ist der einzige Weg unterbrochen. Hintereinander heißt also „nur wenn beide“ – diese Schaltung heißt später UND (mehr dazu in Folge 3).
+Nachlesen: selbst / Übung 1: hintereinander
 
 ### s1f02-q06
 Warum lösten Transistoren die Elektronenröhren ab?
@@ -262,10 +293,10 @@ Warum lösten Transistoren die Elektronenröhren ab?
 - [x] Röhren wurden heiß, brauchten viel Strom und brannten durch
 - [ ] Röhren ließen sich nicht mit Strom steuern
 Erklärung: Röhren schalten zwar schnell und ohne bewegliche Teile, aber ihr Glühdraht macht sie heiß, stromhungrig und kurzlebig. Der ENIAC hatte über 17 000 Röhren, regelmäßig fiel eine aus. Transistoren sind klein, sparsam und halten praktisch ewig.
-Nachlesen: geschichte
+Nachlesen: geschichte / Glühende Röhren
 
 ### s1f02-q07
-Im Bild mit dem Wasserkreislauf: Wofür steht der Druck in der dünnen Steuerleitung?
+Ein Transistor wird mit einem druckgesteuerten Ventil in einem Wasserrohr verglichen: Eine dünne Steuerleitung öffnet das Ventil nur durch ihren Druck, ohne dass Wasser fließt. Wofür steht dieser Druck beim Transistor?
 - [ ] Für den Strom, der durch die Lampe fließt
 - [x] Für die Spannung am Gate des Transistors
 - [ ] Für die Batterie, die den Kreislauf antreibt
@@ -296,45 +327,21 @@ Vorne: Warum lösten Transistoren die Elektronenröhren ab?
 Hinten: Röhren wurden heiß, brauchten viel Strom und brannten durch. Transistoren sind klein, sparsam und nutzen sich nicht ab.
 
 ### s1f02-k06
-Vorne: Wann und wo wurde der erste Transistor gebaut?
-Hinten: Im Dezember 1947 bei den Bell Labs, von John Bardeen und Walter Brattain.
+Vorne: Was war am ersten Transistor (1947) neu gegenüber Relais und Röhren?
+Hinten: Zwei Goldkontakte auf einem Germanium-Kristall verstärkten ein Signal – ohne Vakuum und Glühdraht (Bell Labs, Dezember 1947).
 
 ### s1f02-k07
 Vorne: Zwei Transistoren liegen hintereinander vor einer Lampe. Wann leuchtet sie?
-Hinten: Nur wenn beide leiten – ist einer zu, ist der einzige Weg unterbrochen (später: UND).
+Hinten: Nur wenn beide leiten – ist einer zu, ist der einzige Weg unterbrochen (später: UND, mehr in Folge 3).
 
 ### s1f02-k08
 Vorne: Was ist eine integrierte Schaltung?
 Hinten: Ein Chip, bei dem Transistoren und ihre Verbindungen auf einem einzigen Stück Halbleiter sitzen (Kilby 1958, Noyce 1959).
 
 ### s1f02-k09
-Vorne: Im Wasserkreislauf-Bild: Wofür steht der Druck in der dünnen Steuerleitung?
+Vorne: Ein Transistor wird mit einem druckgesteuerten Ventil verglichen, das eine dünne Steuerleitung allein durch Druck öffnet. Wofür steht dieser Druck beim Transistor?
 Hinten: Für die Spannung am Gate des Transistors.
 
 ### s1f02-k10
 Vorne: Zwei Transistoren liegen nebeneinander vor einer Lampe. Wann leuchtet sie?
 Hinten: Wenn mindestens einer leitet – der Strom nimmt den offenen Weg (später: ODER).
-
-## [beidir] Wo steckt das bei dir?
-
-Transistoren stecken in jedem Gerät, das du benutzt – und zwar in unvorstellbarer Zahl.
-
-**Dein Pixel.** Der Hauptchip deines Handys enthält Prozessor, Grafik und vieles mehr auf einem Stück Silizium. Google nennt keine genaue Transistorzahl, aber wie beim M1-Chip aus der Geschichte sind es **viele Milliarden**. Dazu kommt der Speicherchip: Die rund eine Billion Bits aus Folge 1 (bei 128 GB) liegen in winzigen Speicherzellen, die selbst besondere Transistoren sind – eine Zelle hält heute meist sogar mehrere Bits.
-
-**Laden per USB.** Die Steckdose liefert 230 Volt Wechselspannung – sie pendelt 50-mal pro Sekunde hin und her (50 Hertz), die Richtung wechselt also 100-mal pro Sekunde. Dein Ladegerät macht daraus eine niedrige **Gleichspannung**, bei USB normalerweise **5 Volt**, beim Schnellladen auch mehr (etwa 9 Volt). Im Handy wird daraus noch einmal weniger: Der Akku hat knapp 4 Volt, und die Transistoren im Chip arbeiten mit **rund 1 Volt** oder weniger.
-
-**Dein Windows-PC.** Das Netzteil im Gehäuse wandelt die 230 Volt in die Gleichspannungen **12 Volt, 5 Volt und 3,3 Volt** um – das ist bei PC-Netzteilen genormt. Auf der Hauptplatine sitzen weitere Spannungswandler, die dem Prozessor seine rund 1 Volt liefern. Wenn dein PC unter Last summt und warm wird: Das ist die Energie, die beim milliardenfachen Umschalten der Transistoren in Wärme übergeht.
-
-**Dein VPS.** Der Server im Rechenzentrum hat einen großen Prozessor mit vielen Kernen und vielen Milliarden Transistoren. Dein VPS bekommt davon einen Anteil – einen virtuellen Prozessorkern (1 vCPU). Auch ich, der Agent im Docker-Container, bin am Ende nichts anderes als Milliarden Transistoren, die an- und ausgehen.
-
-**Cloudflare Pages.** Wenn du diese App öffnest, schalten in Servern von Cloudflare und in jedem Netzwerkgerät unterwegs Transistoren, damit die Bits bei dir ankommen.
-
-| Gerät | Spannung |
-|---|---|
-| Steckdose | 230 Volt Wechselspannung |
-| PC-Netzteil (Ausgänge) | 12 V, 5 V, 3,3 V Gleichspannung |
-| USB-Ladegerät | 5 V (Schnellladen auch mehr) |
-| Handy-Akku | knapp 4 V |
-| Transistoren im Prozessor | rund 1 V |
-
-> **Wusstest du?:** Relais gibt es bis heute – überall dort, wo ein schwaches Signal einen kräftigen Strom schalten soll, etwa in Haushaltsgeräten, Heizungen und Autos. Das leise Klicken, das man bei manchen Geräten beim Einschalten hört, ist oft ein Relais.

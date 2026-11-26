@@ -1,7 +1,7 @@
 ---
 id: s1g
 status: freigegeben
-faktencheck: 26.11.2026 – Durchgang 1 nicht bestanden (2 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/
+faktencheck: 26.11.2026 – Durchgang 1 nicht bestanden (2 Fehler behoben), Durchgang 2 bestanden; unabhängige Prüfung, Berichte in docs/faktencheck/; Umstellung auf eigenständige Folge + Lernpool (1.5.0): unabhängig geprüft und bestanden
 dauer: 20
 quellen:
 - Computer History Museum: Timeline of Computer History, 1937 – George Stibitz' „Model K“ | https://www.computerhistory.org/timeline/1937/
@@ -17,7 +17,7 @@ quellen:
 
 ## [einstieg] Kannst du aus ein paar Gattern einen Rechner bauen?
 
-Du hast in dieser Staffel einen weiten Weg zurückgelegt: vom einzelnen Bit über den Transistor bis zu den Logikgattern, vom Flipflop bis zum Prozessor und zum Betriebssystem. Jetzt kommt die Probe aufs Exempel. Du nimmst ein paar der einfachsten Bausteine – UND, ODER, XODER – und baust daraus etwas, das wirklich **rechnet**.
+Ein Computer besteht aus Schichten: Bits (0 oder 1) als Strom, der fließt oder nicht, Transistoren als Schalter, die ihn steuern, und darüber **Logikgatter** – kleine Schaltungen, die aus Ja/Nein-Eingaben ein Ja/Nein berechnen (mehr dazu in Folge 3). Jetzt kommt die Probe aufs Exempel: Du nimmst ein paar der einfachsten Gatter – UND, ODER, XODER – und baust daraus etwas, das wirklich **rechnet**.
 
 Das Ziel: ein **4-Bit-Addierer**. Zwei Zahlen von 0 bis 15 rein, ihre Summe raus. Klingt bescheiden? Genau so ein Baustein steckt – nur breiter und schneller – in jedem Prozessor der Welt, auch in deinem Handy. Jede Rechnung, jedes Pixel, jede Zeile dieser App läuft am Ende auch über Schaltungen wie die, die du gleich zusammensetzt.
 
@@ -25,7 +25,7 @@ Dieses Abschlussprojekt ist ein Mitmach-Projekt. Erst schauen wir kurz, wer so e
 
 ## [geschichte] Vom Küchentisch auf den Chip
 
-**November 1937.** George Stibitz, Mathematiker bei den Bell Telephone Laboratories, nimmt ein paar ausgemusterte **Relais** mit nach Hause – die elektrischen Schalter aus Folge 2. Am Küchentisch verdrahtet er sie mit zwei Taschenlampen-Birnchen und Blechstreifen. Drückt er die Blechstreifen, gibt er zwei einstellige Binärzahlen ein; die Birnchen zeigen das Ergebnis, ebenfalls binär. Später bekam das Gerät den Spitznamen „Model K“ – K wie *kitchen*, Küche. Es war nicht mehr als das, was du in Folge 4 als Halbaddierer kennengelernt hast. Aber es bewies: Relais können binär rechnen. Daraus wurde bei Bell Labs bald ein richtiger Relais-Rechner.
+**November 1937.** George Stibitz, Mathematiker bei den Bell Telephone Laboratories, nimmt ein paar ausgemusterte **Relais** mit nach Hause – die elektrisch gesteuerten Schalter (mehr dazu in Folge 2). Am Küchentisch verdrahtet er sie mit zwei Taschenlampen-Birnchen und Blechstreifen. Drückt er die Blechstreifen, gibt er zwei einstellige Binärzahlen ein; die Birnchen zeigen das Ergebnis, ebenfalls binär. Später bekam das Gerät den Spitznamen „Model K“ – K wie *kitchen*, Küche. Es war nicht mehr als ein **Halbaddierer** (siehe unten im Bauplan). Aber es bewies: Relais können binär rechnen. Daraus wurde bei Bell Labs bald ein richtiger Relais-Rechner.
 
 Fast zur gleichen Zeit, ohne voneinander zu wissen, tüftelte in Berlin der Bauingenieur **Konrad Zuse**. Statische Berechnungen kosteten ihn endlose Stunden – das wollte er einer Maschine überlassen. Seine **Z1** war 1938 fertig: ganz mechanisch, aus Blechen gesägt, und sie rechnete schon im Binärsystem. Sie war allerdings unzuverlässig. Die **Z3**, die Zuse **1941** vorführte, arbeitete mit Telefonrelais und gilt vielen als erster funktionsfähiger, frei programmierbarer Rechner. Das Original verbrannte 1943 bei einem Luftangriff; einen Nachbau kannst du im Deutschen Museum in München sehen.
 
@@ -33,13 +33,13 @@ Dreißig Jahre später passte ein kompletter Prozessor – samt Rechenwerk – a
 
 > **Wusstest du?:** 4 Bit reichen für eine Dezimalziffer von 0 bis 9 (und es bleiben sogar Muster übrig). Für einen Taschenrechner, der Ziffer für Ziffer rechnet, war ein 4-Bit-Rechenwerk deshalb eine naheliegende Wahl.
 
-## [prinzip] Der Bauplan: vom Halbaddierer zum Rechenwerk
+## [prinzip] Der Bauplan: vom Halbaddierer zum Addierwerk
 
 ### Was der Halbaddierer nicht kann
 
-In Folge 4 hast du den **Halbaddierer** kennengelernt: Er addiert zwei Bits A und B. Die **Summe** ist A XODER B, der **Übertrag** ist A UND B. Für 1 + 1 heißt das: Summe 0, Übertrag 1 – binär `10`, also zwei.
+Der **Halbaddierer** (mehr dazu in Folge 4) addiert zwei Bits A und B. XODER liefert 1, wenn genau eines der beiden Bits 1 ist; UND liefert 1, wenn beide 1 sind. Die **Summe** ist A XODER B, der **Übertrag** ist A UND B. Für 1 + 1 heißt das: Summe 0, Übertrag 1 – binär `10`, also zwei.
 
-Für die allerletzte Stelle rechts reicht das. Aber schau, was beim schriftlichen Addieren ab der zweiten Stelle passiert. Hier 5 + 6, binär `0101` + `0110`:
+Für die allerletzte Stelle rechts reicht das. Aber schau, was beim schriftlichen Addieren ab der zweiten Stelle passiert. Hier 5 + 6, binär `0101` + `0110` (die vier Stellen zählen von rechts 1, 2, 4 und 8):
 
 ```
 Übertrag:  1
@@ -88,7 +88,7 @@ Stell alle drei auf 1: 1 + 1 + 1 = 3, binär `11` – Übertrag 1, Summe 1. Die 
 
 > **Wusstest du?:** Die beiden Überträge C1 und C2 sind nie gleichzeitig 1: Wenn A und B beide 1 sind, ist die Zwischensumme X = 0 – dann kann der zweite Halbaddierer keinen Übertrag mehr erzeugen. Deshalb würde statt des ODER auch ein XODER funktionieren. Üblich ist das ODER.
 
-### Volladdierer hintereinander: das Rechenwerk
+### Volladdierer hintereinander: das Addierwerk
 
 Für eine 4-stellige Zahl stellst du vier Volladdierer nebeneinander – einen je Stelle. Der Übertrag-Ausgang jeder Stelle wird mit dem Übertrag-Eingang ihres linken Nachbarn verbunden. Ganz rechts kommt kein Übertrag herein, dort ist Cein einfach immer 0.
 
@@ -110,7 +110,7 @@ Verbreitete Prozessoren wie die in PCs (x86) und Handys (ARM) werfen ihn nicht k
 
 Der Bauplan ist derselbe, nur größer: Heutige Prozessoren rechnen meist mit **64 Stellen**. Ein Ripple-Carry-Addierer mit 64 Volladdierern wäre aber zu langsam, weil der Übertrag im schlimmsten Fall durch alle 64 Stellen laufen muss. Darum rechnen echte Rechenwerke die Überträge mit zusätzlichen Gattern **vorab** aus: Man sieht jeder Stelle schon an, ob sie selbst einen Übertrag erzeugt (A und B beide 1) oder einen ankommenden nur weiterreicht (genau eins von beiden ist 1). Dieses Verfahren heißt **Carry-Lookahead** („Übertrag vorausschauen“); heute stecken meist noch schnellere Abwandlungen davon in den Chips. Es kostet mehr Gatter, spart aber viel Zeit. Am Prinzip – Bits addieren, Überträge weitergeben – ändert sich nichts.
 
-Ein solches Addierwerk ist das Herzstück des **Rechenwerks** eines Prozessors (englisch *ALU*, Arithmetic Logic Unit), das du in Folge 6 kennengelernt hast. Es kann noch mehr, etwa subtrahieren oder Bits vergleichen – aber Addieren ist seine Grundaufgabe.
+Ein solches Addierwerk ist das Herzstück des **Rechenwerks** eines Prozessors (englisch *ALU*, Arithmetic Logic Unit), der Teil, der in einem Prozessor die Rechnungen ausführt (mehr zum Prozessor in Folge 6). Es kann noch mehr, etwa subtrahieren oder Bits vergleichen – aber Addieren ist seine Grundaufgabe.
 
 ## [werkstatt] Die Dominoreihe
 
@@ -124,7 +124,7 @@ Auch der schnelle Trick aus dem Prinzip passt ins Bild: Carry-Lookahead ist, als
 
 > **Achtung:** Hier hinkt das Bild: In einer Dominoreihe fällt jeder Stein, sobald der Nachbar fällt. Im Addierer gibt eine Stelle den Übertrag nur weiter, wenn genau eines ihrer beiden Bits 1 ist; sind beide 0, bleibt die Welle dort stehen, und sind beide 1, startet dort von selbst eine neue Welle – wie eine Reihe mit Lücken und Steinen, die ohne Anstoß umfallen.
 
-## [selbst] Bau dein Rechenwerk – in drei Bauabschnitten
+## [selbst] Bau dein Addierwerk – in drei Bauabschnitten
 
 ### Bauabschnitt 1: Der Volladdierer
 
@@ -132,7 +132,7 @@ Zuerst der Grundbaustein. Unten siehst du einen Volladdierer, bei dem zwei Gatte
 
 Deine Aufgabe: Wähle für C1 und C2 das richtige Gatter, sodass die Schaltung für alle acht Kombinationen den richtigen Übertrag liefert. Die Ziel-Tabelle zeigt dir, was herauskommen muss.
 
-Tipp: C1 gehört zum ersten Halbaddierer (A und B), C2 zum zweiten (X und Cein). Und wie war das in Folge 4 mit dem Übertrag eines Halbaddierers?
+Tipp: C1 gehört zum ersten Halbaddierer (A und B), C2 zum zweiten (X und Cein). Schau oben im Bauplan nach: Wie wird der Übertrag eines Halbaddierers gebildet?
 
 :::sim schaltung
 id: s1g-u01
@@ -149,7 +149,7 @@ zahl: ja
 
 ### Bauabschnitt 2: Vier Volladdierer in Reihe
 
-Jetzt setzt du vier deiner Volladdierer nebeneinander – das Rechenwerk ist fertig. Rechne damit drei Aufgaben. Stell jeweils A und B mit den Schaltern ein (die Stellenwerte 8, 4, 2, 1 stehen oben) und beobachte die Übertragswelle.
+Jetzt setzt du vier deiner Volladdierer nebeneinander – das Addierwerk ist fertig. Rechne damit drei Aufgaben. Stell jeweils A und B mit den Schaltern ein (die Stellenwerte 8, 4, 2, 1 stehen oben) und beobachte die Übertragswelle.
 
 :::sim addierer
 id: s1g-u02
@@ -165,7 +165,7 @@ ziel: 3+4, 7+1, 5+6
 
 ### Bauabschnitt 3: Die Grenze finden
 
-Dein Rechenwerk hat vier Stellen. Finde zwei Zahlen, deren Summe nicht mehr hineinpasst – der Übertrag ganz links muss aufleuchten.
+Dein Addierwerk hat vier Stellen. Finde zwei Zahlen, deren Summe nicht mehr hineinpasst – der Übertrag ganz links muss aufleuchten.
 
 :::sim addierer
 id: s1g-u03
@@ -185,114 +185,11 @@ Schau einmal zurück, durch wie viele Schichten dein kleiner Rechner reicht:
 2. **Transistor** (Folge 2): Jede 0 und 1 ist ein Strom, der fließt oder nicht – und Transistoren schalten ihn.
 3. **Gatter** (Folge 3): Aus Transistoren entstehen UND, ODER, XODER.
 4. **Halbaddierer** (Folge 4): Zwei Gatter addieren zwei Bits.
-5. **Volladdierer und Rechenwerk** (heute): Zwei Halbaddierer und ein ODER ergeben eine Stelle, vier Stellen ergeben einen Rechner für 0 bis 15.
+5. **Volladdierer und Addierwerk** (heute): Zwei Halbaddierer und ein ODER ergeben eine Stelle, vier Stellen ergeben einen Rechner für 0 bis 15.
 
-Von hier ist es nicht mehr weit zum Prozessor aus Folge 6: Er holt Befehle und Zahlen aus dem Arbeitsspeicher, legt die Zahlen in seinen Registern bereit (dort stecken Flipflops, Folge 5), schickt sie durch so ein Rechenwerk und schreibt das Ergebnis zurück – Milliarden Mal pro Sekunde. Und das Betriebssystem (Folgen 8 und 9) sorgt dafür, dass viele Programme sich diese Rechenwerke teilen.
+Von hier ist es nicht mehr weit zu einem Prozessor (Folge 6): Er holt Befehle und Zahlen aus dem Arbeitsspeicher, legt die Zahlen in seinen Registern bereit (winzige Speicherplätze aus Flipflops, Schaltungen, die sich ein Bit merken – Folge 5), schickt sie durch so ein Rechenwerk und schreibt das Ergebnis zurück – Milliarden Mal pro Sekunde. Und das Betriebssystem (Folgen 8 und 9) sorgt dafür, dass viele Programme sich diese Rechenwerke teilen.
 
-Damit hast du die erste Staffel geschafft: Du weißt jetzt, was in einem Computer passiert. In **Staffel 2 „Wie Computer reden“** geht es nach draußen – wie Computer über Netzwerke und das Internet Bits austauschen, wie eine Webseite zu dir kommt und wie Verschlüsselung dafür sorgt, dass niemand mitliest.
-
-## [quiz] Teste dich
-
-### s1g-q01
-Warum reicht ein Halbaddierer ab der zweiten Stelle nicht mehr aus?
-- [ ] Weil er bei 1 + 1 die falsche Summe liefert
-- [x] Weil dort auch der Übertrag von rechts mitzählt
-- [ ] Weil ihm ein NICHT-Gatter für die Summe fehlt
-- [ ] Weil er für große Zahlen zu langsam schaltet
-Erklärung: Ab der zweiten Stelle müssen drei Bits addiert werden: A, B und der Übertrag aus der Stelle rechts daneben. Ein Halbaddierer hat aber nur zwei Eingänge – dafür braucht man den Volladdierer.
-Nachlesen: prinzip
-
-### s1g-q02
-Woraus besteht ein Volladdierer?
-- [ ] Aus drei UND-Gattern und einem NICHT-Gatter
-- [ ] Aus einem Halbaddierer und einem Flipflop
-- [x] Aus zwei Halbaddierern und einem ODER-Gatter
-- [ ] Aus vier XODER-Gattern hintereinander
-Erklärung: Der erste Halbaddierer addiert A und B, der zweite addiert die Zwischensumme und den Übertrag von rechts. Ein ODER-Gatter fasst die beiden möglichen Überträge zu einem zusammen.
-Nachlesen: prinzip
-
-### s1g-q03
-Ein Volladdierer bekommt A = 1, B = 1 und einen Übertrag von rechts = 1. Was liefert er?
-- [ ] Summe 0, Übertrag 1
-- [ ] Summe 1, Übertrag 0
-- [ ] Summe 0, Übertrag 0
-- [x] Summe 1, Übertrag 1
-Erklärung: 1 + 1 + 1 = 3, binär `11`. Die Summe für diese Stelle ist 1, und eine 1 wandert als Übertrag nach links.
-Nachlesen: prinzip
-
-### s1g-q04
-Bei welcher Aufgabe muss der Übertrag in einem 4-Bit-Ripple-Carry-Addierer den weitesten Weg zurücklegen?
-- [ ] 3 + 4
-- [x] 7 + 1
-- [ ] 8 + 4
-- [ ] 2 + 1
-Erklärung: Bei 7 + 1 (`0111` + `0001`) erzeugt die rechte Stelle einen Übertrag, der durch drei Stellen nach links weitergereicht wird. Bei 3 + 4, 8 + 4 und 2 + 1 entsteht überhaupt kein Übertrag.
-Nachlesen: selbst
-
-### s1g-q05
-Dein 4-Bit-Rechenwerk rechnet 12 + 6. Was passiert?
-- [ ] Es zeigt 18 an, weil 4 Bit bis 31 reichen
-- [x] Es läuft über, in den 4 Stellen bleibt 2 übrig
-- [ ] Es läuft über, in den 4 Stellen bleibt 0 übrig
-- [ ] Es zeigt 15 an, die größte mögliche Zahl
-Erklärung: Mit 4 Bit ist 15 die größte Zahl. 18 ist binär `10010` und braucht fünf Stellen. Der vorderste Einser landet im Übertrag ganz links, in den vier Stellen bleibt `0010` = 2 (18 − 16).
-Nachlesen: prinzip
-
-### s1g-q06
-Warum benutzen echte Prozessoren nicht einfach 64 Volladdierer in einer Ripple-Carry-Kette?
-- [ ] Weil Volladdierer keine Zahlen über 15 schaffen
-- [ ] Weil der Übertrag dort von links nach rechts läuft
-- [x] Weil jede Stelle auf den Übertrag von rechts warten müsste
-- [ ] Weil 64 Volladdierer nicht auf einen Chip passen
-Erklärung: In einer Ripple-Carry-Kette wartet jede Stelle auf den Übertrag ihres rechten Nachbarn – bei 64 Stellen dauert das zu lange. Verfahren wie Carry-Lookahead rechnen die Überträge mit zusätzlichen Gattern vorab aus.
-Nachlesen: prinzip
-
-### s1g-q07
-Welche Rechenmaschine baute George Stibitz 1937 auf seinem Küchentisch?
-- [x] Einen Addierer für zwei einstellige Binärzahlen aus Relais
-- [ ] Einen vollständigen Rechner mit Programmspeicher aus Röhren
-- [ ] Eine mechanische Rechenmaschine aus gesägten Blechen
-- [ ] Den ersten Mikroprozessor auf einem Siliziumchip
-Erklärung: Das „Model K“ (K für *kitchen*) addierte mit Relais und Birnchen zwei einstellige Binärzahlen – im Grunde ein Halbaddierer. Die gesägten Bleche gehören zu Zuses Z1, der erste Mikroprozessor kam 1971 von Intel.
-Nachlesen: geschichte
-
-## [karten] Für deinen Karteikasten
-
-### s1g-k01
-Vorne: Was kann ein Halbaddierer nicht, was ein Volladdierer kann?
-Hinten: Er hat nur zwei Eingänge (A und B). Der Volladdierer zählt drei Bits zusammen: A, B und den Übertrag von rechts.
-
-### s1g-k02
-Vorne: Woraus besteht ein Volladdierer?
-Hinten: Aus zwei Halbaddierern und einem ODER-Gatter, das die beiden Überträge zusammenfasst.
-
-### s1g-k03
-Vorne: Was liefert ein Volladdierer bei A = 1, B = 1 und Übertrag von rechts = 1?
-Hinten: 1 + 1 + 1 = 3, binär `11`: Summe 1 und Übertrag 1.
-
-### s1g-k04
-Vorne: Wie heißt ein Rechenwerk aus hintereinandergeschalteten Volladdierern, und warum?
-Hinten: Ripple-Carry-Addierer: Der Übertrag läuft wie eine Welle (englisch *ripple*) von Stelle zu Stelle nach links.
-
-### s1g-k05
-Vorne: Was bedeutet Überlauf?
-Hinten: Das Ergebnis passt nicht mehr in die vorhandenen Stellen. Mit 4 Bit ergibt 15 + 1 zum Beispiel nur `0000`, weil der fünfte Einser keinen Platz hat.
-
-### s1g-k06
-Vorne: Wo merken sich verbreitete Prozessoren (x86, ARM) den letzten Übertrag?
-Hinten: Im Übertrags-Flag (englisch *carry flag*). Ein Programm kann danach nachsehen, ob die Rechnung übergelaufen ist.
-
-### s1g-k07
-Vorne: Was macht Carry-Lookahead anders als ein Ripple-Carry-Addierer?
-Hinten: Es rechnet die Überträge mit zusätzlichen Gattern vorab aus, statt auf die Übertragswelle zu warten – mehr Gatter, aber viel schneller.
-
-### s1g-k08
-Vorne: Was konnte George Stibitz' „Model K“ (1937, Küchentisch)?
-Hinten: Mit Relais und Birnchen zwei einstellige Binärzahlen addieren – im Grunde ein Halbaddierer.
-
-### s1g-k09
-Vorne: Wie breit rechnete der Intel 4004 (1971), der als erster käuflicher Mikroprozessor gilt?
-Hinten: 4 Bit – er verarbeitete Zahlen in Häppchen von vier Stellen, genau wie dein Rechner aus Gattern.
+Damit hast du das Abschlussprojekt der ersten Staffel geschafft: Du weißt jetzt, was im Inneren eines Computers passiert. In **Staffel 2 „Wie Computer reden“** geht es nach draußen – wie Computer über Netzwerke und das Internet Bits austauschen, wie eine Webseite zu dir kommt und wie Verschlüsselung dafür sorgt, dass niemand mitliest.
 
 ## [beidir] Wo steckt das bei dir?
 
@@ -318,3 +215,113 @@ Dein Rechner aus Gattern hat 4 Stellen. Die Geräte, mit denen du jeden Tag arbe
 Ein Überlauf ist damit sehr viel seltener als bei deinen 4 Stellen – aber nicht unmöglich. Darum gibt es das Übertrags-Flag auch in deinem PC und deinem Handy: Programme, die mit noch größeren Zahlen rechnen müssen (etwa bei der Verschlüsselung in Staffel 2), setzen mehrere 64-Bit-Additionen hintereinander und reichen den Übertrag von einer zur nächsten weiter. Genau wie deine Volladdierer – nur eine Ebene höher.
 
 > **Merke:** Dein 4-Bit-Addierer und das Rechenwerk in deinem Handy folgen demselben Bauplan: Volladdierer je Stelle, Übertrag nach links. Der Unterschied ist die Breite (64 statt 4 Stellen) und ein schnelleres Verfahren für die Überträge.
+
+## [fazit] Auf den Punkt
+
+- Ein Halbaddierer zählt nur zwei Bits zusammen; ab der zweiten Stelle muss auch der Übertrag von rechts mitgezählt werden – das kann der Volladdierer aus zwei Halbaddierern und einem ODER-Gatter.
+- Mehrere Volladdierer nebeneinander ergeben ein Addierwerk (Ripple-Carry): Der Übertrag läuft wie eine Welle von Stelle zu Stelle nach links.
+- Passt eine Summe nicht in die vorhandenen Stellen, gibt es einen Überlauf; verbreitete Prozessoren merken sich den letzten Übertrag im Übertrags-Flag (bei Zahlen ohne Vorzeichen).
+- Schnelle Prozessoren in PCs und Handys rechnen heute meist mit 64 Stellen und berechnen die Überträge vorab (Carry-Lookahead und schnellere Abwandlungen), weil die Welle sonst zu langsam wäre.
+
+## [quiz] Teste dich
+
+### s1g-q01
+Beim schriftlichen Addieren in Binärzahlen: Warum reicht ein Halbaddierer (er addiert nur zwei Bits) ab der zweiten Stelle nicht mehr aus?
+- [ ] Weil er bei 1 + 1 die falsche Summe liefert
+- [x] Weil dort auch der Übertrag von rechts mitzählt
+- [ ] Weil ihm ein NICHT-Gatter für die Summe fehlt
+- [ ] Weil er für große Zahlen zu langsam schaltet
+Erklärung: Ab der zweiten Stelle müssen drei Bits addiert werden: A, B und der Übertrag aus der Stelle rechts daneben. Ein Halbaddierer hat aber nur zwei Eingänge – dafür braucht man den Volladdierer.
+Nachlesen: prinzip / Was der Halbaddierer nicht kann
+
+### s1g-q02
+Woraus besteht ein Volladdierer (die Schaltung, die A, B und einen Übertrag von rechts addiert)?
+- [ ] Aus drei UND-Gattern und einem NICHT-Gatter
+- [ ] Aus einem Halbaddierer und einem Flipflop
+- [x] Aus zwei Halbaddierern und einem ODER-Gatter
+- [ ] Aus vier XODER-Gattern hintereinander
+Erklärung: Der erste Halbaddierer addiert A und B, der zweite addiert die Zwischensumme und den Übertrag von rechts. Ein ODER-Gatter fasst die beiden möglichen Überträge zu einem zusammen.
+Nachlesen: prinzip / Der Volladdierer
+
+### s1g-q03
+Ein Volladdierer bekommt A = 1, B = 1 und einen Übertrag von rechts = 1. Was liefert er?
+- [ ] Summe 0, Übertrag 1
+- [ ] Summe 1, Übertrag 0
+- [ ] Summe 0, Übertrag 0
+- [x] Summe 1, Übertrag 1
+Erklärung: 1 + 1 + 1 = 3, binär `11`. Die Summe für diese Stelle ist 1, und eine 1 wandert als Übertrag nach links.
+Nachlesen: prinzip / Der Volladdierer
+
+### s1g-q04
+In einem Addierer mit vier Stellen, in dem der Übertrag Stelle für Stelle nach links wandert (Ripple-Carry): Bei welcher Aufgabe legt der Übertrag den weitesten Weg zurück?
+- [ ] 3 + 4
+- [x] 7 + 1
+- [ ] 8 + 4
+- [ ] 2 + 1
+Erklärung: Bei 7 + 1 (`0111` + `0001`) erzeugt die rechte Stelle einen Übertrag, der durch drei Stellen nach links weitergereicht wird. Bei 3 + 4, 8 + 4 und 2 + 1 entsteht überhaupt kein Übertrag.
+Nachlesen: selbst / Bauabschnitt 2: Vier Volladdierer in Reihe
+
+### s1g-q05
+Ein Addierwerk mit 4 Bit (größte Zahl: 15) rechnet 12 + 6. Was passiert?
+- [ ] Es zeigt 18 an, weil 4 Bit bis 31 reichen
+- [x] Es läuft über, in den 4 Stellen bleibt 2 übrig
+- [ ] Es läuft über, in den 4 Stellen bleibt 0 übrig
+- [ ] Es zeigt 15 an, die größte mögliche Zahl
+Erklärung: Mit 4 Bit ist 15 die größte Zahl. 18 ist binär `10010` und braucht fünf Stellen. Der vorderste Einser landet im Übertrag ganz links, in den vier Stellen bleibt `0010` = 2 (18 − 16).
+Nachlesen: prinzip / Wenn die Stellen nicht reichen: der Überlauf
+
+### s1g-q06
+Warum benutzen echte Prozessoren nicht einfach 64 Volladdierer in einer Kette, in der jede Stelle den Übertrag an die nächste weiterreicht (Ripple-Carry)?
+- [ ] Weil Volladdierer keine Zahlen über 15 schaffen
+- [ ] Weil der Übertrag dort von links nach rechts läuft
+- [x] Weil jede Stelle auf den Übertrag von rechts warten müsste
+- [ ] Weil 64 Volladdierer nicht auf einen Chip passen
+Erklärung: In einer Ripple-Carry-Kette wartet jede Stelle auf den Übertrag ihres rechten Nachbarn – bei 64 Stellen dauert das zu lange. Verfahren wie Carry-Lookahead rechnen die Überträge mit zusätzlichen Gattern vorab aus.
+Nachlesen: prinzip / Und in echten Prozessoren?
+
+### s1g-q07
+Ein Gerät aus Relais (elektrisch gesteuerten Schaltern) addiert zwei einzelne Bits und zeigt Summe und Übertrag an. Welcher Schaltung aus dem Bauplan eines Addierers entspricht es?
+- [x] Einem Halbaddierer
+- [ ] Einem Volladdierer
+- [ ] Einem Flipflop
+- [ ] Einem Ripple-Carry-Addierer
+Erklärung: Zwei Bits ohne Übertrag von rechts zu addieren ist die Aufgabe eines Halbaddierers. Genau das tat das „Model K“, das George Stibitz 1937 am Küchentisch aus Relais, Blechstreifen und Birnchen baute. Es zeigte, dass Relais binär rechnen können.
+Nachlesen: geschichte
+
+## [karten] Für deinen Karteikasten
+
+### s1g-k01
+Vorne: Was kann ein Halbaddierer (addiert zwei Bits) nicht, was ein Volladdierer kann?
+Hinten: Er hat nur zwei Eingänge (A und B). Der Volladdierer zählt drei Bits zusammen: A, B und den Übertrag von rechts.
+
+### s1g-k02
+Vorne: Woraus besteht ein Volladdierer?
+Hinten: Aus zwei Halbaddierern und einem ODER-Gatter, das die beiden Überträge zusammenfasst.
+
+### s1g-k03
+Vorne: Was liefert ein Volladdierer bei A = 1, B = 1 und Übertrag von rechts = 1?
+Hinten: 1 + 1 + 1 = 3, binär `11`: Summe 1 und Übertrag 1.
+
+### s1g-k04
+Vorne: Wie heißt ein Addierwerk aus hintereinandergeschalteten Volladdierern, und warum?
+Hinten: Ripple-Carry-Addierer: Der Übertrag läuft wie eine Welle (englisch *ripple*) von Stelle zu Stelle nach links.
+
+### s1g-k05
+Vorne: Was bedeutet Überlauf?
+Hinten: Das Ergebnis passt nicht mehr in die vorhandenen Stellen. Mit 4 Bit ergibt 15 + 1 zum Beispiel nur `0000`, weil der fünfte Einser keinen Platz hat.
+
+### s1g-k06
+Vorne: Wo merken sich verbreitete Prozessoren (x86, ARM) den letzten Übertrag?
+Hinten: Im Übertrags-Flag (englisch *carry flag*). Ein Programm kann danach nachsehen, ob die Rechnung übergelaufen ist.
+
+### s1g-k07
+Vorne: Was macht Carry-Lookahead anders als ein Ripple-Carry-Addierer?
+Hinten: Es rechnet die Überträge mit zusätzlichen Gattern vorab aus, statt auf die Übertragswelle zu warten – mehr Gatter, aber viel schneller.
+
+### s1g-k08
+Vorne: Was zeigte George Stibitz' „Model K“ von 1937, ein Küchentisch-Gerät aus Relais, Blechstreifen und Birnchen?
+Hinten: Dass Relais binär rechnen können: Es addierte zwei einstellige Binärzahlen – im Grunde ein Halbaddierer.
+
+### s1g-k09
+Vorne: Wie breit rechnete der Intel 4004 (1971), der als erster käuflicher Mikroprozessor gilt?
+Hinten: 4 Bit – er verarbeitete Zahlen in Häppchen von vier Stellen, genau die Breite des 4-Bit-Addierers aus dem Abschlussprojekt.

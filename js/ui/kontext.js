@@ -1,8 +1,8 @@
 // Gemeinsamer Zustand aller Ansichten: Konfiguration, Inhalte, Fortschritt. Wird einmal in app.js angelegt.
 import { browserSpeicher } from '../kern/speicher.js';
 import { glossarMuster } from '../kern/glossar.js';
-import { freigeschalteteKarten } from '../kern/fortschritt.js';
-import { kastenUebersicht, tag } from '../kern/leitner.js';
+import { tag } from '../kern/leitner.js';
+import { poolEintraege, tagesrunde } from '../kern/lernpool.js';
 import { $, toast } from '../kern/dom.js';
 
 export async function ladeJson(url) {
@@ -41,17 +41,19 @@ export function erstelleKontext({ config, index, glossar, build }) {
       for (const s of index.staffeln) { const f = s.folgen.find((x) => x.id === id); if (f) return { ...f, staffel: s }; }
       return null;
     },
-    kasten() {
-      const ids = freigeschalteteKarten(index, ctx.zustand);
-      return { ids, ...kastenUebersicht(ids, ctx.zustand.karten, { heute: tag(), intervalle: config.regeln.leitner.intervalleTage }) };
+    /** Lernpool: freigeschaltete Einträge und Größe der heutigen Runde. */
+    pool() {
+      const eintraege = poolEintraege(index, ctx.zustand);
+      const L = config.regeln.leitner;
+      return { eintraege, heute: tagesrunde(eintraege, ctx.zustand, { heute: tag(), max: L.maxJeRunde, neuMax: L.neuJeRunde }).length };
     },
     naviAktualisieren() {
       const z = $('#navi-faellig');
       if (!z) return;
-      const { faellig } = ctx.kasten();
-      z.hidden = !faellig;
-      z.textContent = faellig > 99 ? '99+' : String(faellig);
-      z.setAttribute('aria-label', `${faellig} Karten fällig`);
+      const { heute } = ctx.pool();
+      z.hidden = !heute;
+      z.textContent = String(heute);
+      z.setAttribute('aria-label', `${heute} heute zu wiederholen`);
     },
   };
   return ctx;

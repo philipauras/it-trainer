@@ -1,6 +1,6 @@
 {
  "_hinweis": "ERZEUGT von werkzeuge/bauen.mjs aus content/ und config.json – nicht von Hand bearbeiten (npm run bauen).",
- "version": "1.4.0",
+ "version": "1.5.0",
  "live": false,
  "staffeln": [
   {
@@ -38,6 +38,15 @@
       "s1f01-k08"
      ],
      "fragen": 7,
+     "quiz": [
+      "s1f01-q01",
+      "s1f01-q02",
+      "s1f01-q03",
+      "s1f01-q04",
+      "s1f01-q05",
+      "s1f01-q06",
+      "s1f01-q07"
+     ],
      "uebungen": [
       "s1f01-u01",
       "s1f01-u02"
@@ -66,6 +75,15 @@
       "s1f02-k10"
      ],
      "fragen": 7,
+     "quiz": [
+      "s1f02-q01",
+      "s1f02-q02",
+      "s1f02-q03",
+      "s1f02-q04",
+      "s1f02-q05",
+      "s1f02-q06",
+      "s1f02-q07"
+     ],
      "uebungen": [
       "s1f02-u01",
       "s1f02-u02",
@@ -93,6 +111,15 @@
       "s1f03-k08"
      ],
      "fragen": 7,
+     "quiz": [
+      "s1f03-q01",
+      "s1f03-q02",
+      "s1f03-q03",
+      "s1f03-q04",
+      "s1f03-q05",
+      "s1f03-q06",
+      "s1f03-q07"
+     ],
      "uebungen": [
       "s1f03-u01",
       "s1f03-u02",
@@ -122,6 +149,16 @@
       "s1f04-k09"
      ],
      "fragen": 8,
+     "quiz": [
+      "s1f04-q01",
+      "s1f04-q02",
+      "s1f04-q03",
+      "s1f04-q04",
+      "s1f04-q05",
+      "s1f04-q06",
+      "s1f04-q07",
+      "s1f04-q08"
+     ],
      "uebungen": [
       "s1f04-u01",
       "s1f04-u02",
@@ -152,6 +189,16 @@
       "s1f05-k11"
      ],
      "fragen": 8,
+     "quiz": [
+      "s1f05-q01",
+      "s1f05-q02",
+      "s1f05-q03",
+      "s1f05-q04",
+      "s1f05-q05",
+      "s1f05-q06",
+      "s1f05-q07",
+      "s1f05-q08"
+     ],
      "uebungen": [
       "s1f05-u01",
       "s1f05-u02",
@@ -180,6 +227,16 @@
       "s1f06-k09"
      ],
      "fragen": 8,
+     "quiz": [
+      "s1f06-q01",
+      "s1f06-q02",
+      "s1f06-q03",
+      "s1f06-q04",
+      "s1f06-q05",
+      "s1f06-q06",
+      "s1f06-q07",
+      "s1f06-q08"
+     ],
      "uebungen": [
       "s1f06-u01",
       "s1f06-u02",
@@ -208,6 +265,16 @@
       "s1f07-k09"
      ],
      "fragen": 8,
+     "quiz": [
+      "s1f07-q01",
+      "s1f07-q02",
+      "s1f07-q03",
+      "s1f07-q04",
+      "s1f07-q05",
+      "s1f07-q06",
+      "s1f07-q07",
+      "s1f07-q08"
+     ],
      "uebungen": [
       "s1f07-u01",
       "s1f07-u02",
@@ -236,6 +303,15 @@
       "s1f08-k09"
      ],
      "fragen": 7,
+     "quiz": [
+      "s1f08-q01",
+      "s1f08-q02",
+      "s1f08-q03",
+      "s1f08-q04",
+      "s1f08-q05",
+      "s1f08-q06",
+      "s1f08-q07"
+     ],
      "uebungen": [
       "s1f08-u01",
       "s1f08-u02",
@@ -264,6 +340,15 @@
       "s1f09-k09"
      ],
      "fragen": 7,
+     "quiz": [
+      "s1f09-q01",
+      "s1f09-q02",
+      "s1f09-q03",
+      "s1f09-q04",
+      "s1f09-q05",
+      "s1f09-q06",
+      "s1f09-q07"
+     ],
      "uebungen": [
       "s1f09-u01",
       "s1f09-u02",
@@ -292,6 +377,15 @@
       "s1g-k09"
      ],
      "fragen": 7,
+     "quiz": [
+      "s1g-q01",
+      "s1g-q02",
+      "s1g-q03",
+      "s1g-q04",
+      "s1g-q05",
+      "s1g-q06",
+      "s1g-q07"
+     ],
      "uebungen": [
       "s1g-u01",
       "s1g-u02",
@@ -393,6 +487,17 @@
   }
  ],
  "neuigkeiten": [
+  {
+   "version": "1.5.0",
+   "datum": "26.11.2026",
+   "punkte": [
+    "Neu: der Lernpool. Quiz und Karteikarten stehen nicht mehr in den Folgen, sondern kommen mit „Folge abschließen“ in einen gemeinsamen Pool.",
+    "Auf der Startseite: „Heute wiederholen“ – eine kurze Runde aus fälligen Karten, neuen Fragen und früheren Fehlern.",
+    "Die Schichten-Karte zeigt, wie fest dein Wissen sitzt, und verblasst, wenn Wiederholungen dran sind. ↻ startet eine Runde nur für diese Schicht.",
+    "Unter „Lernen“: gezielt üben je Folge oder Staffel und eine Prüfung über die ganze Staffel. Bei falschen Antworten führt „Im Wissen nachlesen“ direkt an die passende Stelle.",
+    "Jede Folge endet mit „Auf den Punkt“ und steht jetzt für sich – du kannst in jede Folge springen. Dein bisheriger Fortschritt bleibt erhalten."
+   ]
+  },
   {
    "version": "1.4.0",
    "datum": "26.11.2026",

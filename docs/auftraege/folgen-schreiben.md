@@ -22,12 +22,20 @@ Ziel 15–20 Minuten je Folge.
   **mindestens zwei Übungen** (Simulator mit `id: <folge>-u01`, `-u02` …), dazwischen kurze Anleitung und hinterher Auflösung/Erklärung.
 - Box-Marken nur: `Merke`, `Im Bild`, `Achtung`, `Beispiel`, `Wusstest du?`.
 
+## Jede Folge steht für sich (Philip, 26.11.2026)
+- Bild und Geschichte gehören nur zu ihrer Folge – keine Rückgriffe auf Bilder/Geschichten früherer Folgen.
+- Fachwissen von vorher in 1–2 Sätzen neu erklären, mit Verweis („mehr in Folge 3“). Ein früheres Bild nie voraussetzen.
+
+## Ende der Folge und Lernpool
+- `[fazit]` „Auf den Punkt“: 3–4 Kernsätze als Liste. Danach `[quiz]` und `[karten]` – sie erscheinen nicht in der Folge,
+  sondern im Lernpool (README). Fragen verständnisorientiert, für sich allein verständlich, `Nachlesen:` mit Stelle wo sinnvoll.
+
 ## Fachliche Sorgfalt
 - Jede Jahreszahl, Zahl, Person muss stimmen; lieber weglassen als raten. Ungefähre Zahlen als ungefähr kennzeichnen („etwa“).
 - Quellen im Kopf (`quellen:`) – echte, prüfbare Quellen (Originalarbeiten, Museen, Hersteller, Standardwerke), mit https-Link wo möglich.
 - Vereinfachen ja, Falsches nein. Wo vereinfacht wird, kurz sagen („in Wirklichkeit etwas komplizierter: …“).
 - Ein unabhängiger Faktenprüfer prüft danach alles, auch ob die Bilder stimmen und die Übungen lösbar sind.
-- Rückbezüge auf frühere Folgen und Ausblicke auf spätere sind erwünscht (Plan in config.json).
+- Fachliche Rückbezüge (mit kurzer Neu-Erklärung) und Ausblicke sind erlaubt, Bilder/Geschichten anderer Folgen nicht.
 
 ## Technisches
 - Datei: `content/staffel-1/folge-NN-stichwort.md`, Kopf mit `id`, `status: entwurf`, `dauer`, `quellen`. Kein `faktencheck:`.

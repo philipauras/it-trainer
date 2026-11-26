@@ -15,6 +15,8 @@ wie eine gute Doku, Schichten-Karte „Vom Sandkorn zur KI“. Live: https://it-
 ## Regeln
 - **Stabile IDs** (Folgen, Fragen, Karten, Übungen, Glossar): nie ändern/löschen – `tests/fixtures/ids.json`, neue mit `npm run ids-aufnehmen`.
   Speicherformat (`js/kern/speicher.js`, Schlüssel `ittrainer.v1`) nur mit Migration und **nach Rückfrage bei Philip**.
+- **Format (Philip, 26.11.2026):** Jede Folge steht für sich (keine Bilder/Geschichten anderer Folgen, Fachwissen kurz neu erklären).
+  Quiz und Karten gehören in den **Lernpool**, nicht in die Folge; Folge endet mit „Auf den Punkt“. Details: `content/README.md`.
 - Folgen-Status `entwurf → geprueft → freigegeben`. `geprueft` nur nach bestandenem **unabhängigem Faktencheck** (Subagent, der nicht
   geschrieben hat; Bericht in `docs/faktencheck/`). `freigegeben` erst bei bestandenem Check + grünen Tests. Live zeigt nur `freigegeben`.
 - Scheitert ein Faktencheck **zweimal**: Philip nur fragen, wenn **grundsätzliche fachliche Fehler oder Verständnisprobleme** bleiben.
@@ -40,5 +42,5 @@ wie eine gute Doku, Schichten-Karte „Vom Sandkorn zur KI“. Live: https://it-
 3. Push an Philip mit „Was ist neu“. Screenshots selbst ansehen (Automatik findet nicht alles).
 - Phase 1 abgeschlossen; Format-Feedback (26.11.2026) ist in `content/README.md` → „Bilder, Grafiken und Mitmachen“ festgehalten:
   kein durchgehendes Bild, pro Thema das treffendste Alltagsbild, mehr interaktive Übungen, Stufen Grundlagen/Aufbau/Vertiefung, Abschlussprojekt.
-- GitHub: privates Repo `philipauras/it-trainer` per Deploy-Key `~/.claude/ssh/it-trainer_deploy` (Repo/Key legt Philip an), nur Sicherung.
+- GitHub: privates Repo `philipauras/it-trainer` per Deploy-Key (eingerichtet; SSH-Befehl steht in `git config core.sshCommand` – einfach `git push`), nur Sicherung.
 - Zugangsdaten `~/.claude/secrets/cloudflare.env` – nie anzeigen, nie `source`n.

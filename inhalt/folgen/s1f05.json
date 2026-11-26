@@ -36,7 +36,7 @@
    "text": "Charles Petzold: Code. The Hidden Language of Computer Hardware and Software. 2. Auflage, Microsoft Press, 2022"
   }
  ],
- "faktencheck": "26.11.2026 – Durchgang 1 nicht bestanden (2 Fehler), Durchgang 2 nicht bestanden (1 kleiner Fehler), Durchgang 3 bestanden; Freigabe nach Philips OK; Berichte in docs/faktencheck/",
+ "faktencheck": "26.11.2026 – Durchgang 1 nicht bestanden (2 Fehler), Durchgang 2 nicht bestanden (1 kleiner Fehler), Durchgang 3 bestanden; Freigabe nach Philips OK; Berichte in docs/faktencheck/; Umstellung auf eigenständige Folge + Lernpool (1.5.0): unabhängig geprüft und bestanden",
  "staffel": 1,
  "nr": 5,
  "titel": "Wie sich ein Computer etwas merkt",
@@ -51,7 +51,7 @@
    "teile": [
     {
      "art": "md",
-     "text": "Du tippst auf deinem Handy einen Buchstaben. Dein Finger berührt das Glas vielleicht eine Zehntelsekunde lang, dann ist er wieder weg. Trotzdem steht der Buchstabe danach auf dem Bildschirm – und bleibt dort, bis du ihn löschst.\n\nMit allem, was du bisher kennst, geht das eigentlich nicht. Die Logikgatter aus Folge 3 und der Halbaddierer aus Folge 4 haben kein Gedächtnis: Ihr Ausgang hängt nur davon ab, was *gerade jetzt* an den Eingängen anliegt. Nimmst du den Finger vom Schalter, ist auch das Ergebnis weg.\n\nEin Computer, der rechnen, aber nichts behalten kann, wäre nutzlos. Er muss sich Zahlen merken, Zwischenergebnisse, Buchstaben, ganze Programme. In dieser Folge erfährst du, mit welchem verblüffend einfachen Trick eine Schaltung zu einem Gedächtnis kommt – und warum der Arbeitsspeicher deines Computers trotzdem ganz anders funktioniert."
+     "text": "Du tippst auf deinem Handy einen Buchstaben. Dein Finger berührt das Glas vielleicht eine Zehntelsekunde lang, dann ist er wieder weg. Trotzdem steht der Buchstabe danach auf dem Bildschirm – und bleibt dort, bis du ihn löschst.\n\nMit den Bauteilen, die in den Folgen davor vorkommen, geht das eigentlich nicht. **Logikgatter** sind kleine Schaltungen, die aus an/aus-Signalen (Bits, also 0 oder 1) nach einer festen Regel ein Ergebnis bilden (mehr dazu in Folge 3). Auch ein Addierer, der Bits zusammenzählt (Folge 4), besteht aus solchen Gattern. Alle haben kein Gedächtnis: Ihr Ausgang hängt nur davon ab, was *gerade jetzt* an den Eingängen anliegt. Nimmst du den Finger vom Schalter, ist auch das Ergebnis weg.\n\nEin Computer, der rechnen, aber nichts behalten kann, wäre nutzlos. Er muss sich Zahlen merken, Zwischenergebnisse, Buchstaben, ganze Programme. In dieser Folge erfährst du, mit welchem verblüffend einfachen Trick eine Schaltung zu einem Gedächtnis kommt – und warum der Arbeitsspeicher deines Computers trotzdem ganz anders funktioniert."
     }
    ]
   },
@@ -61,7 +61,7 @@
    "teile": [
     {
      "art": "md",
-     "text": "**1918**, mitten im Ersten Weltkrieg, meldeten die beiden britischen Physiker **William Eccles** und **Frank Jordan** ein Patent an. Sie hatten zwei **Elektronenröhren** – die Vorläufer des Transistors (Folge 2) – so miteinander verschaltet, dass jede die andere steuerte. Die Schaltung hatte zwei stabile Zustände: Entweder leitete die erste Röhre und die zweite sperrte, oder umgekehrt. Ein kurzer Stromstoß ließ sie umkippen, und dann *blieb* sie im neuen Zustand. Später bekam die Schaltung den Namen, unter dem sie heute jeder kennt: **Flipflop**.\n\nZunächst fand die Schaltung nur wenige Anwendungen. Dann kamen die ersten elektronischen Rechenmaschinen der 1940er Jahre, und sie hielten ihre Zahlen in Röhren-Flipflops fest. Das war schnell, aber teuer: Für jedes einzelne Bit brauchte man ein Röhrenpaar, das Strom fraß, heiß wurde und irgendwann durchbrannte. Für einen großen Speicher war das undenkbar.\n\n### Ringe, die sich erinnern\n\nDie Lösung kam aus einer ganz anderen Richtung. Am Massachusetts Institute of Technology (MIT) baute ein Team um den Ingenieur **Jay Forrester** den Rechner **Whirlwind**. Sein Speicher war langsam und unzuverlässig, und Forrester suchte nach etwas Besserem. Er fand es in winzigen Ringen aus einem magnetisierbaren Material, kaum größer als ein Stecknadelkopf. Ein Ring kann in die eine oder in die andere Richtung magnetisiert sein – das ist ein Bit. Die Ringe wurden wie Perlen auf ein Gitter aus Drähten gefädelt, in Whirlwind jede Ebene mit 32 × 32 Ringen. Durch einen waagerechten und einen senkrechten Draht floss zugleich Strom, aber jeder führte nur halb so viel, wie zum Umpolen nötig ist. Nur am Ring an der Kreuzung kamen beide Hälften zusammen – so traf man genau einen Ring.\n\nIm **August 1953** lief Whirlwind zum ersten Mal mit diesem **Kernspeicher**. Er war schneller und viel zuverlässiger als der Speicher, den Whirlwind vorher hatte – und er vergaß nichts, selbst wenn man den Strom abschaltete. Bis in die 1970er Jahre war der Kernspeicher die häufigste Art von Arbeitsspeicher. Die Ringe wurden oft von Hand aufgefädelt.\n\n> **Wusstest du?:** Wenn ein Programm unter Linux abstürzt, steht manchmal „core dumped“ da – „Kernspeicher ausgekippt“. Das Programm hat beim Absturz den Inhalt seines Speichers in eine Datei geschrieben, damit man den Fehler suchen kann. Die Magnetkerne sind seit Jahrzehnten verschwunden, das Wort ist geblieben.\n\n### Ein Transistor und ein Kondensator\n\nMitte der 1960er Jahre konnte man bereits Flipflops aus Transistoren auf Chips unterbringen. Robert **Dennard**, Ingenieur bei **IBM**, sah das Problem: Eine solche Speicherzelle brauchte sechs Transistoren pro Bit. **1966** hatte er die Idee, es mit einem einzigen Transistor und einem winzigen **Kondensator** zu versuchen – einem Bauteil, das elektrische Ladung speichert wie ein Mini-Akku. Ist er geladen, ist das eine 1; ist er leer, eine 0. IBM meldete die Erfindung 1967 zum Patent an, erteilt wurde es **1968**.\n\nDen Durchbruch auf dem Markt schaffte ab **1970** die junge Firma **Intel** mit dem Chip **1103**. Er speicherte 1024 Bit, kostete etwa einen US-Cent pro Bit und wurde der erste weit verbreitete Arbeitsspeicher aus Halbleiterchips. Seine Zellen brauchten noch drei Transistoren pro Bit; Dennards Ein-Transistor-Zelle setzte sich wenige Jahre später durch. Diese Art Speicher heißt **DRAM** – und Dennards Zelle steckt bis heute, enorm verkleinert und milliardenfach vervielfältigt, in jedem Computer, jedem Server und jedem Handy."
+     "text": "**1918**, mitten im Ersten Weltkrieg, meldeten die beiden britischen Physiker **William Eccles** und **Frank Jordan** ein Patent an. Sie hatten zwei **Elektronenröhren** – gläserne Vorläufer des Transistors, des heutigen winzigen elektrischen Schalters (mehr dazu in Folge 2) – so miteinander verschaltet, dass jede die andere steuerte. Die Schaltung hatte zwei stabile Zustände: Entweder leitete die erste Röhre und die zweite sperrte, oder umgekehrt. Ein kurzer Stromstoß ließ sie umkippen, und dann *blieb* sie im neuen Zustand. Später bekam die Schaltung den Namen, unter dem sie heute jeder kennt: **Flipflop**.\n\nZunächst fand die Schaltung nur wenige Anwendungen. Dann kamen die ersten elektronischen Rechenmaschinen der 1940er Jahre, und sie hielten ihre Zahlen in Röhren-Flipflops fest. Das war schnell, aber teuer: Für jedes einzelne Bit brauchte man ein Röhrenpaar, das Strom fraß, heiß wurde und irgendwann durchbrannte. Für einen großen Speicher war das undenkbar.\n\n### Ringe, die sich erinnern\n\nDie Lösung kam aus einer ganz anderen Richtung. Am Massachusetts Institute of Technology (MIT) baute ein Team um den Ingenieur **Jay Forrester** den Rechner **Whirlwind**. Sein Speicher war langsam und unzuverlässig, und Forrester suchte nach etwas Besserem. Er fand es in winzigen Ringen aus einem magnetisierbaren Material, kaum größer als ein Stecknadelkopf. Ein Ring kann in die eine oder in die andere Richtung magnetisiert sein – das ist ein Bit. Die Ringe wurden wie Perlen auf ein Gitter aus Drähten gefädelt, in Whirlwind jede Ebene mit 32 × 32 Ringen. Durch einen waagerechten und einen senkrechten Draht floss zugleich Strom, aber jeder führte nur halb so viel, wie zum Umpolen nötig ist. Nur am Ring an der Kreuzung kamen beide Hälften zusammen – so traf man genau einen Ring.\n\nIm **August 1953** lief Whirlwind zum ersten Mal mit diesem **Kernspeicher**. Er war schneller und viel zuverlässiger als der Speicher, den Whirlwind vorher hatte – und er vergaß nichts, selbst wenn man den Strom abschaltete. Bis in die 1970er Jahre war der Kernspeicher die häufigste Art von Arbeitsspeicher. Die Ringe wurden oft von Hand aufgefädelt.\n\n> **Wusstest du?:** Wenn ein Programm unter Linux abstürzt, steht manchmal „core dumped“ da – „Kernspeicher ausgekippt“. Das Programm hat beim Absturz den Inhalt seines Speichers in eine Datei geschrieben, damit man den Fehler suchen kann. Die Magnetkerne sind seit Jahrzehnten verschwunden, das Wort ist geblieben.\n\n### Ein Transistor und ein Kondensator\n\nMitte der 1960er Jahre konnte man bereits Flipflops aus Transistoren auf Chips unterbringen. Robert **Dennard**, Ingenieur bei **IBM**, sah das Problem: Eine solche Speicherzelle brauchte sechs Transistoren pro Bit. **1966** hatte er die Idee, es mit einem einzigen Transistor und einem winzigen **Kondensator** zu versuchen – einem Bauteil, das elektrische Ladung speichert wie ein Mini-Akku. Ist er geladen, ist das eine 1; ist er leer, eine 0. IBM meldete die Erfindung 1967 zum Patent an, erteilt wurde es **1968**.\n\nDen Durchbruch auf dem Markt schaffte ab **1970** die junge Firma **Intel** mit dem Chip **1103**. Er speicherte 1024 Bit, kostete etwa einen US-Cent pro Bit und wurde der erste weit verbreitete Arbeitsspeicher aus Halbleiterchips. Seine Zellen brauchten noch drei Transistoren pro Bit; Dennards Ein-Transistor-Zelle setzte sich wenige Jahre später durch. Diese Art Speicher heißt **DRAM** – und Dennards Zelle steckt bis heute, enorm verkleinert und milliardenfach vervielfältigt, in jedem Computer, jedem Server und jedem Handy."
     }
    ]
   },
@@ -71,7 +71,7 @@
    "teile": [
     {
      "art": "md",
-     "text": "### Der Trick: den Ausgang zurückführen\n\nEin Logikgatter rechnet aus seinen Eingängen einen Ausgang aus – immer nur in eine Richtung, von links nach rechts. Was passiert, wenn man den Ausgang wieder zum Eingang zurückführt? Das nennt man **Rückkopplung**.\n\nEin einfaches Gedankenexperiment: Nimm ein ODER-Gatter und verbinde seinen Ausgang mit einem seiner beiden Eingänge. Am anderen Eingang sitzt ein Taster. Solange niemand drückt, ist alles 0. Drückst du den Taster einmal kurz, wird der Ausgang 1 – und diese 1 läuft zurück in den Eingang. Jetzt hält sich das Gatter selbst auf 1, auch wenn du den Taster längst losgelassen hast. Die Schaltung hat sich etwas gemerkt!\n\nLeider merkt sie es sich für immer: Es gibt keinen Weg, die 1 wieder zu löschen. Man braucht eine zweite Steuerleitung zum Zurücksetzen.\n\n### Das RS-Flipflop aus zwei NODER-Gattern\n\nDie klassische Lösung besteht aus zwei **NODER**-Gattern. NODER heißt „nicht ODER“: Sein Ausgang ist genau dann 1, wenn *beide* Eingänge 0 sind – das Gegenteil von ODER, du kennst es aus Folge 3. Die beiden Gatter werden **über Kreuz** verbunden: Der Ausgang des oberen geht in einen Eingang des unteren und umgekehrt. Die zwei freien Eingänge heißen:\n\n- **S** wie *setzen*: eine 1 speichern\n- **R** wie *rücksetzen*: die gespeicherte 1 löschen, also eine 0 speichern\n\nDer Ausgang des oberen Gatters heißt **Q** – das ist das gespeicherte Bit. Der untere Ausgang ist immer das Gegenteil davon („nicht Q“). Weil die Eingänge R und S heißen, sagt man **RS-Flipflop** (oft auch SR-Flipflop). Probier es aus: Schalte S ein und wieder aus. Dann R ein und wieder aus. Beobachte, was Q macht, wenn beide Schalter aus sind."
+     "text": "### Der Trick: den Ausgang zurückführen\n\nEin Logikgatter rechnet aus seinen Eingängen einen Ausgang aus – immer nur in eine Richtung, von links nach rechts. Was passiert, wenn man den Ausgang wieder zum Eingang zurückführt? Das nennt man **Rückkopplung**.\n\nEin einfaches Gedankenexperiment: Nimm ein ODER-Gatter und verbinde seinen Ausgang mit einem seiner beiden Eingänge. Am anderen Eingang sitzt ein Taster. Solange niemand drückt, ist alles 0. Drückst du den Taster einmal kurz, wird der Ausgang 1 – und diese 1 läuft zurück in den Eingang. Jetzt hält sich das Gatter selbst auf 1, auch wenn du den Taster längst losgelassen hast. Die Schaltung hat sich etwas gemerkt!\n\nLeider merkt sie es sich für immer: Es gibt keinen Weg, die 1 wieder zu löschen. Man braucht eine zweite Steuerleitung zum Zurücksetzen.\n\n### Das RS-Flipflop aus zwei NODER-Gattern\n\nDie klassische Lösung besteht aus zwei **NODER**-Gattern. NODER heißt „nicht ODER“: Sein Ausgang ist genau dann 1, wenn *beide* Eingänge 0 sind – das Gegenteil von ODER (mehr zu den Gattern in Folge 3). Die beiden Gatter werden **über Kreuz** verbunden: Der Ausgang des oberen geht in einen Eingang des unteren und umgekehrt. Die zwei freien Eingänge heißen:\n\n- **S** wie *setzen*: eine 1 speichern\n- **R** wie *rücksetzen*: die gespeicherte 1 löschen, also eine 0 speichern\n\nDer Ausgang des oberen Gatters heißt **Q** – das ist das gespeicherte Bit. Der untere Ausgang ist immer das Gegenteil davon („nicht Q“). Weil die Eingänge R und S heißen, sagt man **RS-Flipflop** (oft auch SR-Flipflop). Probier es aus: Schalte S ein und wieder aus. Dann R ein und wieder aus. Beobachte, was Q macht, wenn beide Schalter aus sind."
     },
     {
      "art": "sim",
@@ -82,7 +82,7 @@
     },
     {
      "art": "md",
-     "text": "Was passiert hier Schritt für Schritt?\n\n1. **S an:** Das untere Gatter bekommt eine 1 und liefert deshalb 0 („nicht Q“ = 0). Das obere Gatter bekommt jetzt zweimal 0 (R ist aus, „nicht Q“ ist 0) und liefert 1. **Q = 1.**\n2. **S wieder aus:** Das untere Gatter bekommt jetzt S = 0, aber über die Rückführung Q = 1 – und liefert weiter 0. Das obere bekommt weiter zweimal 0 und bleibt bei 1. **Q bleibt 1.** Die beiden Gatter halten sich gegenseitig fest.\n3. **R an:** Das obere Gatter bekommt eine 1 und liefert 0. Damit bekommt das untere zweimal 0 und liefert 1. **Q = 0.**\n4. **R wieder aus:** Das obere Gatter bekommt über die Rückführung „nicht Q“ = 1 und bleibt bei 0. **Q bleibt 0.**\n\nSind S und R beide aus, *hält* das Flipflop einfach seinen Zustand – egal, ob das eine 0 oder eine 1 ist. Das ist Speichern.\n\n> **Achtung:** S und R gleichzeitig einzuschalten ist verboten. Dann sind beide Ausgänge 0 (auch „nicht Q“ ist dann nicht mehr das Gegenteil von Q), und lässt man beide im selben Augenblick los, ist nicht vorhersagbar, in welchem Zustand das Flipflop landet. Echte Schaltungen sind so gebaut, dass dieser Fall nicht vorkommt.\n\n> **Merke:** Ein Flipflop speichert genau ein Bit. Der Trick heißt Rückkopplung: Die Ausgänge werden wieder zu Eingängen, und die Schaltung hält sich selbst in ihrem Zustand – solange Strom fließt.\n\n### Mehrere Flipflops: das Register\n\nEin Flipflop merkt sich ein Bit. Stellt man acht nebeneinander, merken sie sich ein ganzes Byte, zum Beispiel die Zahl 80 aus Folge 4 oder den Buchstaben P. So eine Reihe von Flipflops, die gemeinsam eine Zahl festhalten, heißt **Register**. Register sitzen direkt im Prozessor; dort liegen die Zahlen, mit denen er gerade rechnet (mehr in Folge 6). In Wirklichkeit benutzt man dafür eine etwas ausgefeiltere Flipflop-Art, die nur auf ein Taktsignal hin etwas Neues übernimmt – das Prinzip „Merken durch Rückkopplung“ ist aber dasselbe.\n\n### Viele Register: der Arbeitsspeicher\n\nJetzt stapeln wir solche Speicherzeilen übereinander und geben jeder Zeile eine Nummer, die **Adresse**. Das ist im Kern ein **Arbeitsspeicher**, englisch RAM. Er kann zwei Dinge:\n\n- **Schreiben:** Adresse wählen, Daten anlegen, „Schreiben“ auslösen – die Daten landen in genau dieser Zeile.\n- **Lesen:** Adresse wählen – der Inhalt dieser Zeile erscheint am Ausgang. Beim Lesen bleibt der Inhalt erhalten; es wird nur eine Kopie geliefert.\n\nDie Adresse ist selbst eine Binärzahl. Mit zwei Adressbits gibt es vier Adressen (0 bis 3), mit drei Bits acht – du kennst die Verdopplung aus Folge 1. Mit 32 Adressbits sind es schon gut vier Milliarden Adressen.\n\nHier ein Mini-Arbeitsspeicher mit vier Adressen zu je vier Bit. Stell mit A1 und A0 eine Adresse ein, mit D3 bis D0 die Daten, und tippe auf **Schreiben**. Wechsle dann die Adresse: Unter der Tabelle siehst du, was beim Lesen herauskommt."
+     "text": "Was passiert hier Schritt für Schritt?\n\n1. **S an:** Das untere Gatter bekommt eine 1 und liefert deshalb 0 („nicht Q“ = 0). Das obere Gatter bekommt jetzt zweimal 0 (R ist aus, „nicht Q“ ist 0) und liefert 1. **Q = 1.**\n2. **S wieder aus:** Das untere Gatter bekommt jetzt S = 0, aber über die Rückführung Q = 1 – und liefert weiter 0. Das obere bekommt weiter zweimal 0 und bleibt bei 1. **Q bleibt 1.** Die beiden Gatter halten sich gegenseitig fest.\n3. **R an:** Das obere Gatter bekommt eine 1 und liefert 0. Damit bekommt das untere zweimal 0 und liefert 1. **Q = 0.**\n4. **R wieder aus:** Das obere Gatter bekommt über die Rückführung „nicht Q“ = 1 und bleibt bei 0. **Q bleibt 0.**\n\nSind S und R beide aus, *hält* das Flipflop einfach seinen Zustand – egal, ob das eine 0 oder eine 1 ist. Das ist Speichern.\n\n> **Achtung:** S und R gleichzeitig einzuschalten ist verboten. Dann sind beide Ausgänge 0 (auch „nicht Q“ ist dann nicht mehr das Gegenteil von Q), und lässt man beide im selben Augenblick los, ist nicht vorhersagbar, in welchem Zustand das Flipflop landet. Echte Schaltungen sind so gebaut, dass dieser Fall nicht vorkommt.\n\n> **Merke:** Ein Flipflop speichert genau ein Bit. Der Trick heißt Rückkopplung: Die Ausgänge werden wieder zu Eingängen, und die Schaltung hält sich selbst in ihrem Zustand – solange Strom fließt.\n\n### Mehrere Flipflops: das Register\n\nEin Flipflop merkt sich ein Bit. Stellt man acht nebeneinander, merken sie sich ein ganzes **Byte** (acht Bit), zum Beispiel die Zahl 80 oder den Buchstaben P. So eine Reihe von Flipflops, die gemeinsam eine Zahl festhalten, heißt **Register**. Register sitzen direkt im Prozessor; dort liegen die Zahlen, mit denen er gerade rechnet (mehr in Folge 6). In Wirklichkeit benutzt man dafür eine etwas ausgefeiltere Flipflop-Art, die nur auf ein Taktsignal hin etwas Neues übernimmt – das Prinzip „Merken durch Rückkopplung“ ist aber dasselbe.\n\n### Viele Register: der Arbeitsspeicher\n\nJetzt stapeln wir solche Speicherzeilen übereinander und geben jeder Zeile eine Nummer, die **Adresse**. Das ist im Kern ein **Arbeitsspeicher**, englisch RAM. Er kann zwei Dinge:\n\n- **Schreiben:** Adresse wählen, Daten anlegen, „Schreiben“ auslösen – die Daten landen in genau dieser Zeile.\n- **Lesen:** Adresse wählen – der Inhalt dieser Zeile erscheint am Ausgang. Beim Lesen bleibt der Inhalt erhalten; es wird nur eine Kopie geliefert.\n\nDie Adresse ist selbst eine Binärzahl. Mit zwei Adressbits gibt es vier Adressen (0 bis 3), mit drei Bits acht: Jedes zusätzliche Bit verdoppelt die Zahl der möglichen Muster (mehr dazu in Folge 1). Mit 32 Adressbits sind es schon gut vier Milliarden Adressen.\n\nHier ein Mini-Arbeitsspeicher mit vier Adressen zu je vier Bit. Stell mit A1 und A0 eine Adresse ein, mit D3 bis D0 die Daten, und tippe auf **Schreiben**. Wechsle dann die Adresse: Unter der Tabelle siehst du, was beim Lesen herauskommt."
     },
     {
      "art": "sim",
@@ -126,7 +126,7 @@
     },
     {
      "art": "md",
-     "text": "Hast du es gesehen? In Schritt 2 und Schritt 4 sind beide Schalter aus – genau dieselben Eingänge. Trotzdem ist Q einmal 1 und einmal 0. Der Ausgang hängt also nicht mehr nur von den Eingängen ab, sondern auch davon, *was vorher war*. Das unterscheidet ein Flipflop von allen Gattern aus Folge 3.\n\n### Übung 2: In den Arbeitsspeicher schreiben\n\nErinnerst du dich an Folge 4? Die 5 ist binär `0101`, die 12 ist `1100`. Schreib die 5 an Adresse 1 und die 12 an Adresse 2. Tipp: Adresse 1 ist binär `01` (A1 aus, A0 an), Adresse 2 ist `10` (A1 an, A0 aus). Erst Adresse und Daten einstellen, dann **Schreiben** antippen."
+     "text": "Hast du es gesehen? In Schritt 2 und Schritt 4 sind beide Schalter aus – genau dieselben Eingänge. Trotzdem ist Q einmal 1 und einmal 0. Der Ausgang hängt also nicht mehr nur von den Eingängen ab, sondern auch davon, *was vorher war*. Das unterscheidet ein Flipflop von einem einfachen Gatter.\n\n### Übung 2: In den Arbeitsspeicher schreiben\n\nIm Speicher stehen Zahlen als Folge von Bits, also binär: Die 5 ist `0101`, die 12 ist `1100`. Jede Stelle zählt doppelt so viel wie die rechts daneben (8, 4, 2, 1): Die 5 ist 4 + 1, also `0101` – wie man Zahlen binär schreibt, erklärt Folge 4. Schreib die 5 an Adresse 1 und die 12 an Adresse 2. Tipp: Adresse 1 ist binär `01` (A1 aus, A0 an), Adresse 2 ist `10` (A1 an, A0 aus). Erst Adresse und Daten einstellen, dann **Schreiben** antippen."
     },
     {
      "art": "sim",
@@ -157,6 +157,26 @@
    ]
   },
   {
+   "id": "beidir",
+   "titel": "Wo steckt das bei dir?",
+   "teile": [
+    {
+     "art": "md",
+     "text": "**Dein VPS.** Gib auf dem Server den Befehl `free -h` ein (das mache ich gern für dich), dann steht in der Zeile „Mem“ unter „total“: `3.8Gi`. Das „Gi“ heißt Gibibyte: eine Einheit, bei der jeder Schritt nicht 1 000, sondern 1 024 beträgt (mehr dazu in Folge 1). 3,8 GiB sind etwa 4,1 Milliarden Byte, mal 8 also gut **32 Milliarden Bit**.\n\nWie viel Technik steckt dahinter? Weil das DRAM ist, braucht jedes dieser Bits einen Kondensator und einen Transistor – zusammen also gut 32 Milliarden winzige Kondensatoren. Wäre derselbe Speicher aus Flipflops gebaut (SRAM, sechs Transistoren pro Bit), bräuchte man rund **200 Milliarden Transistoren** allein dafür. Genau deshalb ist der große Arbeitsspeicher DRAM. Ehrlicherweise: Dein VPS ist virtuell – die 3,8 GiB sind ein Anteil an den Speicherriegeln eines großen Servers im Rechenzentrum, die er sich mit anderen Kunden teilt.\n\nIn derselben Ausgabe steht eine Zeile „Swap“ mit `4.0Gi`. Das ist ein Ausweichplatz auf dem Datenträger des Servers: Wird der Arbeitsspeicher knapp, lagert Linux selten benutzte Teile dorthin aus. Das funktioniert, ist aber viel langsamer – warum, erfährst du in Folge 7.\n\n**Ich im Docker-Container.** Starte ich neu oder wird der Server neu gestartet, ist alles im Arbeitsspeicher weg – flüchtig eben. Was ich mir dauerhaft merken soll, schreibe ich deshalb in Dateien auf den Datenträger des Servers. Die überleben jeden Neustart.\n\n**Dein Windows-PC.** Öffne den Task-Manager (Strg + Umschalt + Esc) und geh auf **Leistung → Arbeitsspeicher**. Dort siehst du, wie viel Arbeitsspeicher dein PC hat, wie viel gerade belegt ist und meist auch den Typ, zum Beispiel **DDR4** oder **DDR5**. DDR steht für *Double Data Rate*, eine Übertragungstechnik – dahinter steckt DRAM mit Dennards Zellen. Wenn du den PC herunterfährst, wird all das gelöscht; nach dem Einschalten lädt Windows sich und deine Programme wieder von der SSD oder Festplatte.\n\n**Dein Pixel.** Neuere Pixel-Handys haben je nach Modell etwa 8 bis 16 GB Arbeitsspeicher. Hast du viele Apps offen und wechselst nach einer Weile zu einer alten zurück, lädt sie manchmal von vorn. Dann hat Android sie aus dem Arbeitsspeicher geworfen, um Platz für andere zu schaffen – sie musste von dort, wo sie dauerhaft liegt, neu geladen werden.\n\n> **Merke:** Arbeitsspeicher ist schnell, aber flüchtig. Was ein Neustart überleben soll, muss auf die SSD oder Festplatte."
+    }
+   ]
+  },
+  {
+   "id": "fazit",
+   "titel": "Auf den Punkt",
+   "teile": [
+    {
+     "art": "md",
+     "text": "- Ein Flipflop merkt sich ein Bit durch Rückkopplung: Die Ausgänge werden wieder zu Eingängen, und die Schaltung hält sich selbst in ihrem Zustand – solange Strom fließt.\n- Beim RS-Flipflop speichert S eine 1 und R löscht sie; sind beide aus, bleibt der Zustand erhalten. S und R gleichzeitig ist verboten.\n- Mehrere Flipflops nebeneinander (zum Beispiel acht für ein Byte) bilden ein Register im Prozessor; viele Zeilen mit Adressen bilden den Arbeitsspeicher (RAM), in dem jede Adresse direkt erreichbar ist.\n- SRAM (ein Flipflop je Bit) ist schnell, braucht aber viel Platz und steckt im Cache. Der große Arbeitsspeicher ist DRAM (ein Kondensator plus Transistor je Bit): platzsparend und billig, muss aber ständig aufgefrischt werden. Beide sind flüchtig."
+    }
+   ]
+  },
+  {
    "id": "quiz",
    "titel": "Teste dich",
    "teile": []
@@ -165,22 +185,12 @@
    "id": "karten",
    "titel": "Für deinen Karteikasten",
    "teile": []
-  },
-  {
-   "id": "beidir",
-   "titel": "Wo steckt das bei dir?",
-   "teile": [
-    {
-     "art": "md",
-     "text": "**Dein VPS.** Gib auf dem Server den Befehl `free -h` ein (das mache ich gern für dich), dann steht in der Zeile „Mem“ unter „total“: `3.8Gi`. Das „Gi“ heißt Gibibyte, die 1 024er-Einheit aus Folge 1. 3,8 GiB sind etwa 4,1 Milliarden Byte, mal 8 also gut **32 Milliarden Bit**.\n\nWie viel Technik steckt dahinter? Weil das DRAM ist, braucht jedes dieser Bits einen Kondensator und einen Transistor – zusammen also gut 32 Milliarden winzige Kondensatoren. Wäre derselbe Speicher aus Flipflops gebaut (SRAM, sechs Transistoren pro Bit), bräuchte man rund **200 Milliarden Transistoren** allein dafür. Genau deshalb ist der große Arbeitsspeicher DRAM. Ehrlicherweise: Dein VPS ist virtuell – die 3,8 GiB sind ein Anteil an den Speicherriegeln eines großen Servers im Rechenzentrum, die er sich mit anderen Kunden teilt.\n\nIn derselben Ausgabe steht eine Zeile „Swap“ mit `4.0Gi`. Das ist ein Ausweichplatz auf dem Datenträger des Servers: Wird der Arbeitsspeicher knapp, lagert Linux selten benutzte Teile dorthin aus. Das funktioniert, ist aber viel langsamer – warum, erfährst du in Folge 7.\n\n**Ich im Docker-Container.** Starte ich neu oder wird der Server neu gestartet, ist alles im Arbeitsspeicher weg – flüchtig eben. Was ich mir dauerhaft merken soll, schreibe ich deshalb in Dateien auf den Datenträger des Servers. Die überleben jeden Neustart.\n\n**Dein Windows-PC.** Öffne den Task-Manager (Strg + Umschalt + Esc) und geh auf **Leistung → Arbeitsspeicher**. Dort siehst du, wie viel Arbeitsspeicher dein PC hat, wie viel gerade belegt ist und meist auch den Typ, zum Beispiel **DDR4** oder **DDR5**. DDR steht für *Double Data Rate*, eine Übertragungstechnik – dahinter steckt DRAM mit Dennards Zellen. Wenn du den PC herunterfährst, wird all das gelöscht; nach dem Einschalten lädt Windows sich und deine Programme wieder von der SSD oder Festplatte.\n\n**Dein Pixel.** Neuere Pixel-Handys haben je nach Modell etwa 8 bis 16 GB Arbeitsspeicher. Hast du viele Apps offen und wechselst nach einer Weile zu einer alten zurück, lädt sie manchmal von vorn. Dann hat Android sie aus dem Arbeitsspeicher geworfen, um Platz für andere zu schaffen – sie musste von dort, wo sie dauerhaft liegt, neu geladen werden.\n\n> **Merke:** Arbeitsspeicher ist schnell, aber flüchtig. Was ein Neustart überleben soll, muss auf die SSD oder Festplatte."
-    }
-   ]
   }
  ],
  "quiz": [
   {
    "id": "s1f05-q01",
-   "frage": "Mit welchem Trick kann sich eine Schaltung aus Gattern etwas merken?",
+   "frage": "Mit welchem Trick kann sich eine Schaltung aus Logikgattern etwas merken?",
    "antworten": [
     "Mit einem besonders großen Gatter",
     "Mit Rückkopplung: Ausgänge werden wieder Eingänge",
@@ -189,7 +199,8 @@
    ],
    "richtig": 1,
    "erklaerung": "Beim Flipflop laufen die Ausgänge der beiden NODER-Gatter über Kreuz zurück in die Eingänge. Dadurch halten sich die Gatter gegenseitig in ihrem Zustand, auch wenn S und R wieder aus sind.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Der Trick: den Ausgang zurückführen"
   },
   {
    "id": "s1f05-q02",
@@ -202,7 +213,8 @@
    ],
    "richtig": 0,
    "erklaerung": "S setzt eine 1 – die war schon gespeichert, also ändert sich nichts. Sind S und R beide aus, hält das Flipflop seinen Zustand. Nur R könnte die 1 löschen.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Das RS-Flipflop aus zwei NODER-Gattern"
   },
   {
    "id": "s1f05-q03",
@@ -215,7 +227,8 @@
    ],
    "richtig": 1,
    "erklaerung": "Eine DRAM-Zelle besteht aus einem Transistor und einem Kondensator (Robert Dennard, IBM). Flipflops aus sechs Transistoren sind SRAM – sie stecken im Cache. Magnetringe waren der Kernspeicher der 1950er bis 1970er Jahre.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Dein echter Arbeitsspeicher: Kondensatoren statt Flipflops"
   },
   {
    "id": "s1f05-q04",
@@ -228,7 +241,8 @@
    ],
    "richtig": 2,
    "erklaerung": "Die Kondensatoren verlieren ihre Ladung schon nach Bruchteilen einer Sekunde. Deshalb wird jede Zeile regelmäßig gelesen und neu beschrieben – bei üblichen Speicherriegeln mindestens alle 64 Millisekunden.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Dein echter Arbeitsspeicher: Kondensatoren statt Flipflops"
   },
   {
    "id": "s1f05-q05",
@@ -241,7 +255,8 @@
    ],
    "richtig": 1,
    "erklaerung": "Wahlfrei heißt: Du kannst jede beliebige Adresse direkt ansprechen, ohne vorher an den anderen vorbeizumüssen – anders als bei einem Magnetband oder einer Kassette.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Viele Register: der Arbeitsspeicher"
   },
   {
    "id": "s1f05-q06",
@@ -254,24 +269,26 @@
    ],
    "richtig": 1,
    "erklaerung": "Zwei Bits ergeben 2 × 2 = 4 Muster: 00, 01, 10, 11 – also die Adressen 0 bis 3. Jedes weitere Adressbit verdoppelt die Zahl der Adressen.",
-   "nachlesen": "prinzip"
+   "nachlesen": "prinzip",
+   "stelle": "Viele Register: der Arbeitsspeicher"
   },
   {
    "id": "s1f05-q07",
-   "frage": "Welche neue Speicherart bekam der Rechner Whirlwind am MIT im Jahr 1953?",
+   "frage": "Der frühe Kernspeicher (Rechner Whirlwind, 1953) bestand aus winzigen Ringen auf einem Drahtgitter. Wie speicherte ein Ring ein Bit?",
    "antworten": [
-    "DRAM-Chips von Intel",
-    "Flipflops aus Transistoren",
-    "Einen Kernspeicher aus Magnetringen",
-    "Eine Festplatte als Arbeitsspeicher"
+    "Als Ladung in einem winzigen Kondensator",
+    "Durch die Richtung seiner Magnetisierung",
+    "Durch den Zustand zweier gekoppelter Röhren",
+    "Durch die Helligkeit eines kleinen Lämpchens"
    ],
-   "richtig": 2,
-   "erklaerung": "Jay Forresters Team fädelte winzige Magnetringe auf ein Drahtgitter; jeder Ring speicherte ein Bit durch seine Magnetisierungsrichtung. Der Kernspeicher blieb bis in die 1970er Jahre üblich – erst DRAM-Chips wie der Intel 1103 lösten ihn ab.",
-   "nachlesen": "geschichte"
+   "richtig": 1,
+   "erklaerung": "Ein Ring kann in die eine oder die andere Richtung magnetisiert sein – das ist ein Bit. Strom in einem waagerechten und einem senkrechten Draht traf genau einen Ring an der Kreuzung. Der Kernspeicher behielt seinen Inhalt auch ohne Strom und blieb bis in die 1970er Jahre üblich; erst DRAM-Chips lösten ihn ab.",
+   "nachlesen": "geschichte",
+   "stelle": "Ringe, die sich erinnern"
   },
   {
    "id": "s1f05-q08",
-   "frage": "Im Bild der Fußgängerampel: Was entspricht dem Zurücksetzen (R) des Flipflops?",
+   "frage": "An einer Fußgängerampel leuchtet nach einem kurzen Tastendruck „Signal kommt“ und bleibt an, auch wenn du loslässt – ein Bild für ein Flipflop, das sich eine Anforderung merkt. Was entspricht dabei dem Zurücksetzen (R)?",
    "antworten": [
     "Ein erneuter Druck auf den Taster",
     "Das Loslassen des Tasters",

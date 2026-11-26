@@ -1,7 +1,8 @@
-// Startseite: Weiterlernen, Karteikasten, Schichten-Karte „Vom Sandkorn zur KI“, Staffeln nach Stufen.
+// Startseite: Weiterlernen, Heute wiederholen (Lernpool), Schichten-Karte „Vom Sandkorn zur KI“ mit Festigkeit, Staffeln nach Stufen.
 import { el } from '../kern/dom.js';
 import { naechsteFolge, schichtStaende, aktuelleSchicht, istFertig, verfuegbar, folgenAnteil } from '../kern/fortschritt.js';
 import { versionVergleich } from '../kern/logik.js';
+import { festigkeit } from '../kern/lernpool.js';
 import { ansichtSetzen, statusMarke, balken } from './bausteine.js';
 
 export function zeigeStart(ctx) {
@@ -17,7 +18,7 @@ export function zeigeStart(ctx) {
   if (index.live === false && index.staffeln.some((s) => s.folgen.some((f) => f.status === 'entwurf' || f.status === 'geprueft'))) {
     kinder.push(el('p', { class: 'vorschau-hinweis', text: 'Vorschau: Hier erscheinen auch Folgen, die noch nicht freigegeben sind (markiert als Entwurf bzw. Geprüft).' }));
   }
-  kinder.push(el('div', { class: 'start-raster' }, [weiterKarte(ctx), kastenKarte(ctx)]));
+  kinder.push(el('div', { class: 'start-raster' }, [weiterKarte(ctx), wiederholenKarte(ctx)]));
   kinder.push(schichtenKarte(ctx));
   kinder.push(staffelListe(ctx));
   ansichtSetzen(kinder, { titel: config.app.name });
@@ -46,11 +47,11 @@ function weiterKarte(ctx) {
     return el('section', { class: 'karte weiter-karte' }, [
       el('p', { class: 'kicker', text: 'Weiterlernen' }),
       el('h2', { class: 'karte-titel', text: 'Alle verfügbaren Folgen geschafft' }),
-      el('p', { class: 'karte-text', text: 'Neue Folgen erscheinen hier, sobald sie fertig sind. Bis dahin: Karteikarten wiederholen.' }),
+      el('p', { class: 'karte-text', text: 'Neue Folgen erscheinen hier, sobald sie fertig sind. Bis dahin: im Lernpool wiederholen.' }),
     ]);
   }
   const angefangen = ctx.zustand.folgen[n.id];
-  const anteil = folgenAnteil(ctx.zustand, n.id, ctx.config.abschnitte.length);
+  const anteil = folgenAnteil(ctx.zustand, n.id, ctx.config.abschnitte.map((a) => a.id));
   return el('a', { class: 'karte weiter-karte karte-link', href: `#folge/${n.id}` }, [
     el('p', { class: 'kicker', text: angefangen ? 'Weitermachen' : 'Als Nächstes' }),
     el('h2', { class: 'karte-titel', text: n.titel }),
@@ -61,14 +62,15 @@ function weiterKarte(ctx) {
   ]);
 }
 
-function kastenKarte(ctx) {
-  const k = ctx.kasten();
-  const text = !k.gesamt ? 'Nach jeder Folge kommen ihre Karteikarten hierher. Fällige Karten wiederholst du in kurzen Runden.'
-    : k.faellig ? `${k.faellig} ${k.faellig === 1 ? 'Karte ist' : 'Karten sind'} heute dran.` : 'Heute ist nichts fällig. Gut gemacht!';
-  return el('a', { class: 'karte kasten-karte karte-link', href: '#karten' }, [
-    el('p', { class: 'kicker', text: 'Karteikasten' }),
-    el('h2', { class: 'karte-titel' }, [el('span', { class: 'grosse-zahl', text: String(k.faellig) }), ' fällig']),
+function wiederholenKarte(ctx) {
+  const { eintraege, heute } = ctx.pool();
+  const text = !eintraege.length ? 'Schließe eine Folge ab – dann kommen ihre Fragen und Karten in deinen Lernpool. Hier wiederholst du sie in kurzen Runden.'
+    : heute ? `Eine Runde von 5–10 Minuten: fällige Karten, Fragen aus neuen Folgen und frühere Fehler.` : 'Heute ist nichts mehr dran. Gut gemacht!';
+  return el('a', { class: 'karte kasten-karte karte-link', href: heute ? '#lernen/runde/heute' : '#lernen' }, [
+    el('p', { class: 'kicker', text: 'Lernpool' }),
+    el('h2', { class: 'karte-titel' }, ['Heute wiederholen ', el('span', { class: 'grosse-zahl', text: String(heute) })]),
     el('p', { class: 'karte-text', text }),
+    heute ? el('span', { class: 'knopf weiter-knopf', text: 'Runde starten' }) : null,
   ]);
 }
 
@@ -76,17 +78,22 @@ function schichtenKarte(ctx) {
   const { config, index, zustand } = ctx;
   const staende = schichtStaende(index, config.schichten, zustand);
   const hier = aktuelleSchicht(index, zustand);
+  const { eintraege: pool } = ctx.pool();
   // Von unten (Strom) nach oben (KI) – wie ein Gebäude, das auf seinem Fundament steht
   const zeilen = [...staende].reverse().map((st, i) => {
     const offen = st.schicht.id === hier;
     const nr = config.schichten.length - i;
     const fortschrittText = st.geplant ? `${st.fertig} von ${st.geplant} Folgen` : `Staffel ${st.staffeln.map((s) => s.symbol || s.nr).join(', ')} · folgt`;
-    const details = el('details', { class: `schicht${offen ? ' schicht-hier' : ''}${st.fertig && st.fertig === st.geplant ? ' schicht-fertig' : ''}`, open: offen });
+    const fest = festigkeit(pool.filter((e) => e.schicht === st.schicht.id), zustand, { faecher: config.regeln.leitner.intervalleTage.length });
+    const details = el('details', { class: `schicht${offen ? ' schicht-hier' : ''}${st.fertig && st.fertig === st.geplant ? ' schicht-fertig' : ''}${fest ? ' schicht-mit-pool' : ''}`, open: offen });
     details.style.setProperty('--s-farbe', st.schicht.farbe);
+    // Festigkeit: Die Schicht leuchtet kräftiger, je fester das Wissen sitzt, und verblasst, wenn Wiederholungen fällig sind
+    details.style.setProperty('--fest', `${Math.round(25 + 75 * (fest?.wert || 0))}%`);
     details.append(
       el('summary', { class: 'schicht-kopf' }, [
         el('span', { class: 'schicht-nr', text: String(nr), 'aria-hidden': 'true' }),
-        el('span', { class: 'schicht-name' }, [el('strong', { text: st.schicht.titel }), el('span', { class: 'schicht-kurz', text: st.schicht.kurz })]),
+        el('span', { class: 'schicht-name' }, [el('strong', { text: st.schicht.titel }), el('span', { class: 'schicht-kurz', text: st.schicht.kurz }),
+          fest ? el('span', { class: 'schicht-fest' }, [balken(fest.wert, `Festigkeit ${Math.round(fest.wert * 100)} %`), el('span', { class: 'schicht-fest-text', text: `Festigkeit ${Math.round(fest.wert * 100)} %${fest.faellig ? ` · ${fest.faellig} dran` : ''}` })]) : null]),
         offen ? el('span', { class: 'hier-marke', text: 'Du bist hier' }) : el('span', { class: 'schicht-stand', text: st.geplant ? `${st.fertig}/${st.geplant}` : '' }),
       ]),
       el('div', { class: 'schicht-inhalt' }, [
@@ -94,11 +101,16 @@ function schichtenKarte(ctx) {
         st.folgen.length ? el('ul', { class: 'schicht-folgen' }, st.folgen.map((f) => folgenZeile(ctx, f, { klein: true }))) : null,
       ]),
     );
-    return details;
+    if (!fest) return details;
+    // Eigener Knopf neben der Zeile: startet eine Runde nur für diese Schicht
+    return el('div', { class: 'schicht-zeile' }, [details, el('a', {
+      class: `schicht-runde${fest.faellig ? ' schicht-runde-dran' : ''}`, href: `#lernen/runde/schicht/${st.schicht.id}`,
+      'aria-label': `Runde nur für die Schicht ${st.schicht.titel}${fest.faellig ? ` (${fest.faellig} dran)` : ''}`,
+    }, [el('span', { 'aria-hidden': 'true', text: '↻' }), fest.faellig ? el('span', { class: 'schicht-runde-zahl', text: String(fest.faellig), 'aria-hidden': 'true' }) : null])]);
   });
   return el('section', { class: 'schichten', 'aria-labelledby': 'schichten-titel' }, [
     el('h2', { class: 'abschnitt-titel', id: 'schichten-titel', text: 'Vom Sandkorn zur KI' }),
-    el('p', { class: 'abschnitt-text', text: 'Jede Schicht baut auf der darunter auf: Ganz unten fließt Strom, ganz oben antwortet eine KI. Tippe eine Schicht an, um ihre Folgen zu sehen.' }),
+    el('p', { class: 'abschnitt-text', text: 'Jede Schicht baut auf der darunter auf: Ganz unten fließt Strom, ganz oben antwortet eine KI. Tippe eine Schicht an, um ihre Folgen zu sehen. Je kräftiger sie leuchtet, desto fester sitzt dein Wissen – ↻ startet eine Runde nur für diese Schicht.' }),
     el('div', { class: 'schichten-stapel' }, zeilen),
   ]);
 }
@@ -107,7 +119,7 @@ function schichtenKarte(ctx) {
 export function folgenZeile(ctx, f, { klein = false } = {}) {
   const fertig = istFertig(ctx.zustand, f.id);
   const da = verfuegbar(f);
-  const anteil = folgenAnteil(ctx.zustand, f.id, ctx.config.abschnitte.length);
+  const anteil = folgenAnteil(ctx.zustand, f.id, ctx.config.abschnitte.map((a) => a.id));
   const kennung = f.art === 'abschlussprojekt' ? '★' : String(f.nr);
   const inhalt = [
     el('span', { class: `folge-nr${fertig ? ' folge-nr-fertig' : ''}`, text: fertig ? '✓' : kennung, 'aria-hidden': 'true' }),

@@ -2,6 +2,13 @@
 
 Erscheint in der App als „Was ist neu“ nach einem Update. Oberster Eintrag = Version aus config.json.
 
+## 1.5.0 – 26.11.2026
+- Neu: der Lernpool. Quiz und Karteikarten stehen nicht mehr in den Folgen, sondern kommen mit „Folge abschließen“ in einen gemeinsamen Pool.
+- Auf der Startseite: „Heute wiederholen“ – eine kurze Runde aus fälligen Karten, neuen Fragen und früheren Fehlern.
+- Die Schichten-Karte zeigt, wie fest dein Wissen sitzt, und verblasst, wenn Wiederholungen dran sind. ↻ startet eine Runde nur für diese Schicht.
+- Unter „Lernen“: gezielt üben je Folge oder Staffel und eine Prüfung über die ganze Staffel. Bei falschen Antworten führt „Im Wissen nachlesen“ direkt an die passende Stelle.
+- Jede Folge endet mit „Auf den Punkt“ und steht jetzt für sich – du kannst in jede Folge springen. Dein bisheriger Fortschritt bleibt erhalten.
+
 ## 1.4.0 – 26.11.2026
 - Die ganze Staffel 1 ist da! Neue Folgen: 2 „Strom als Sprache“ (Relais und Transistor), 3 „Logikgatter“, 4 „Binär zählen und rechnen“, 5 „Wie sich ein Computer etwas merkt“, 6 „Der Prozessor“, 7 „Speicherhierarchie“, 8 „Das Betriebssystem“ und 9 „Was passiert beim Doppelklick?“.
 - Abschlussprojekt der Staffel 1: Bau aus Gattern einen Rechner, der zwei Zahlen addiert.

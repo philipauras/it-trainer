@@ -71,3 +71,27 @@ test('Export/Import: Datei und Code ergeben denselben Stand, Fehler werden verst
   await assert.rejects(ausCode(code.slice(0, -6) + code.slice(-5), 'IT1', APP), /unvollständig|kein Fortschritts-Code/);
   await assert.rejects(ausCode('BIM1Z.abc.0000', 'IT1', APP), /kein Fortschritts-Code/);
 });
+
+test('Lernpool (1.5.0): ein Stand aus 1.4.0 bleibt vollständig erhalten, neue Felder überleben Speichern, Zusammenführen und Export', async () => {
+  // So sieht ein echter Fortschritt aus dem alten Ablauf aus: Folge 1 mit Quiz und Karten durchgearbeitet, Fragen ohne Fach
+  const alt = {
+    format: 1, app: APP, einstellungen: { thema: 'dunkel' },
+    folgen: { s1f01: { schritt: 'beidir', besucht: ['einstieg', 'geschichte', 'prinzip', 'werkstatt', 'selbst', 'quiz', 'karten', 'beidir'], fertig: 500, ts: 500 } },
+    quiz: { 's1f01-q01': { gesehen: 1, richtig: 1, falsch: 0, zuletzt: true, ts: 400 }, 's1f01-q02': { gesehen: 1, richtig: 0, falsch: 1, zuletzt: false, ts: 400 } },
+    karten: { 's1f01-k01': { fach: 2, faellig: '2026-11-28', gesehen: 1, gewusst: 1, ts: 450 } },
+    uebungen: { 's1f01-u01': { fertig: 300, ts: 300 } }, neuGesehen: '1.4.0', geaendert: 500,
+  };
+  assert.deepEqual(normalisiere(structuredClone(alt), APP), alt, 'nichts geht verloren, nichts wird hinzugedichtet');
+  // Neue Felder (Leitner für Fragen) bleiben beim Lesen erhalten …
+  const neu = structuredClone(alt);
+  neu.quiz['s1f01-q02'] = { gesehen: 2, richtig: 1, falsch: 1, zuletzt: true, ts: 600, fach: 2, faellig: '2026-11-30' };
+  assert.deepEqual(normalisiere(structuredClone(neu), APP).quiz['s1f01-q02'], neu.quiz['s1f01-q02']);
+  // … kaputte Werte werden nur weggelassen, der Eintrag bleibt
+  assert.deepEqual(normalisiere({ ...structuredClone(alt), quiz: { x: { gesehen: 1, zuletzt: true, ts: 1, fach: 0, faellig: 'bald' } } }, APP).quiz.x, { gesehen: 1, richtig: 0, falsch: 0, zuletzt: true, ts: 1 });
+  // … beim Zusammenführen gewinnt der neuere Eintrag samt Fach
+  assert.deepEqual(zusammenfuehren(normalisiere(structuredClone(alt), APP), normalisiere(structuredClone(neu), APP)).quiz['s1f01-q02'], neu.quiz['s1f01-q02']);
+  // … und Export/Import (Datei und Code) geben sie unverändert zurück
+  const z = normalisiere(structuredClone(neu), APP);
+  assert.deepEqual(ausDateiText(alsDateiText(z), APP).quiz, z.quiz);
+  assert.deepEqual((await ausCode(await alsCode(z, 'IT1'), 'IT1', APP)).quiz, z.quiz);
+});

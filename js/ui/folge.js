@@ -1,12 +1,11 @@
 // Eine Folge Schritt für Schritt: a Einstieg · b Geschichte · c Prinzip · d Im Bild · e Selbst machen ·
-// f Quiz · g Karteikarten · h Wo steckt das bei dir? (Reihenfolge und Titel aus config.json → abschnitte)
+// f Wo steckt das bei dir? · g Auf den Punkt (Reihenfolge und Titel aus config.json → abschnitte).
+// Quizfragen und Karteikarten erscheinen nicht hier, sondern im Lernpool (js/ui/lernpool.js) – freigeschaltet mit „Folge abschließen“.
 import { el, $$, toast } from '../kern/dom.js';
 import { besuche, pruefeFertig } from '../kern/fortschritt.js';
 import { ansichtSetzen, statusMarke, zurueckLink } from './bausteine.js';
 import { textBlock } from './text.js';
 import { simBlock } from './sim-rahmen.js';
-import { quizAnzeigen } from './quiz.js';
-import { kartenRunde } from './karten.js';
 import { geheZu } from '../kern/router.js';
 
 const STATUS_TEXT = {
@@ -35,7 +34,6 @@ export async function zeigeFolge(ctx, [id, abschnittId]) {
   const vorlage = config.abschnitte[pos];
   const pflicht = config.regeln.folgeFertigAb;
 
-  // Textabschnitte zählen beim Öffnen; Quiz und Karten erst, wenn sie durchgearbeitet sind
   besuche(zustand, id, abschnittId, { zaehlt: !pflicht.includes(abschnittId) });
   ctx.speichern();
 
@@ -72,27 +70,37 @@ export async function zeigeFolge(ctx, [id, abschnittId]) {
       : el('button', { class: 'knopf', type: 'button', text: 'Folge abschließen', onclick: () => abschliessen(ctx, folge) }),
   ]);
 
-  if (abschnittId === 'quiz') {
-    inhalt.append(quizAnzeigen(ctx, folge, {
-      beiFertig: () => { besuche(zustand, id, 'quiz'); pruefeFertig(zustand, id, pflicht); ctx.speichern(); markiereErledigt(schritte, 'quiz'); },
-    }));
-  }
-  if (abschnittId === 'karten') {
-    inhalt.append(kartenRunde(ctx, folge.karten, {
-      einfuehrung: true,
-      beiFertig: () => { besuche(zustand, id, 'karten'); pruefeFertig(zustand, id, pflicht); ctx.speichern(); markiereErledigt(schritte, 'karten'); },
-    }));
-  }
   if (abschnittId === 'beidir') inhalt.append(quellenBlock(folge));
+  if (abschnittId === 'fazit') inhalt.append(poolHinweis(ctx, folge));
 
-  const nachlesenLeiste = zurueckZu && abschnittId !== 'quiz'
-    ? el('div', { class: 'nachlesen-leiste' }, [el('a', { class: 'knopf', href: `#folge/${id}/quiz` }, [`↩ Zurück zum Quiz (Frage ${zurueckZu.frage})`])])
+  // Aus einer Lernrunde zum Nachlesen gekommen: Leiste zurück zur Runde
+  const nachlesenLeiste = zurueckZu?.runde
+    ? el('div', { class: 'nachlesen-leiste' }, [el('a', {
+      class: 'knopf', href: `#lernen/runde/${zurueckZu.runde}`, onclick: () => { ctx.unterwegs.zurueckZurRunde = zurueckZu.runde; delete ctx.unterwegs.nachlesen; },
+    }, [`↩ Zurück zur Runde${zurueckZu.nr ? ` (Nr. ${zurueckZu.nr})` : ''}`])])
     : null;
-  if (abschnittId === 'quiz') delete ctx.unterwegs.nachlesen;
 
   ansichtSetzen([kopf, schritte, nachlesenLeiste, inhalt, fuss], { titel: `${folge.titel} – ${vorlage.titel}`, klasse: 'ansicht-folge' });
   // Aktiven Schritt in der waagerechten Leiste sichtbar machen (Handy)
   $$('.schritt-aktiv')[0]?.scrollIntoView({ block: 'nearest', inline: 'center' });
+  // „Im Wissen nachlesen“ mit Stelle: zur Zwischenüberschrift springen und sie kurz hervorheben (nur einmal)
+  if (zurueckZu?.stelle && zurueckZu.abschnitt === abschnittId) {
+    const ziel = [...inhalt.querySelectorAll('h3')].find((h) => h.textContent.trim() === zurueckZu.stelle);
+    if (ziel) { ziel.classList.add('stelle-markiert'); ziel.scrollIntoView({ block: 'start' }); scrollBy(0, -80); }
+    zurueckZu.stelle = null;
+  }
+}
+
+/** Am Ende der Folge: wie viele Fragen und Karten in den Lernpool kommen (bzw. schon dort sind). */
+function poolHinweis(ctx, folge) {
+  const n = folge.quiz.length + folge.karten.length;
+  const fertig = !!ctx.zustand.folgen[folge.id]?.fertig;
+  return el('div', { class: 'pool-hinweis' }, [
+    el('p', { class: 'pool-hinweis-zahl' }, [el('strong', { text: `${n} neue Karten im Lernpool` }), ` (${folge.quiz.length} Fragen, ${folge.karten.length} Karteikarten)`]),
+    el('p', { class: 'pool-hinweis-text', text: fertig
+      ? 'Diese Folge ist abgeschlossen – ihre Fragen und Karten sind schon in deinem Lernpool und melden sich, wenn sie dran sind.'
+      : 'Mit „Folge abschließen“ kommen sie in deinen Lernpool. Er erinnert dich, wenn sie dran sind – auf der Startseite unter „Heute wiederholen“.' }),
+  ]);
 }
 
 function markiereErledigt(schritte, abschnittId) {
@@ -109,15 +117,9 @@ function quellenBlock(folge) {
 }
 
 function abschliessen(ctx, folge) {
-  const f = ctx.zustand.folgen[folge.id];
-  const fehlt = ctx.config.regeln.folgeFertigAb.filter((p) => !f?.besucht.includes(p));
-  if (fehlt.length) {
-    const namen = fehlt.map((p) => ctx.config.abschnitte.find((a) => a.id === p).titel).join(' und ');
-    geheZu(`folge/${folge.id}/${fehlt[0]}`);
-    setTimeout(() => toast(`Fast geschafft – es fehlt noch: ${namen}.`), 50);
-    return;
-  }
-  pruefeFertig(ctx.zustand, folge.id, ctx.config.regeln.folgeFertigAb);
+  const neu = pruefeFertig(ctx.zustand, folge.id, ctx.config.regeln.folgeFertigAb);
   ctx.speichern();
   geheZu('');
+  const n = folge.quiz.length + folge.karten.length;
+  if (neu) setTimeout(() => toast(`Folge abgeschlossen – ${n} neue Karten im Lernpool.`), 50);
 }
