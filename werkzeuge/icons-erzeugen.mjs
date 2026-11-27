@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 // Erzeugt die App-Icons: eine abstrakte Kugel aus flachen, übereinanderliegenden Ellipsen – keine Verläufe, keine Linien.
-// Farben = Schicht-Farben der App aus config.json („Vom Sandkorn zur KI“): außen Strom, innen KI, jede zweite Farbe.
-// Verlauf: Rauchglas-Linse (26.11.2026) → graue Ellipsen-Schichten (27.11.2026, Entwürfe …/ellipsen, „A2“)
-// → farbige Schichten (Philip, 27.11.2026, Entwürfe /workspace/entwuerfe/it-trainer-icon/farbig, gewählt: „A“).
-// Aufbau: Grundkreis in Strom-Farbe · hellere Sichel unten rechts (zurückgeworfenes Licht) · darauf je Farbe eine Ellipse,
+// Vier Schichten, innen hell und gelb, außen dunkel und lila (Philip, 27.11.2026: Entwurf „1 · vier Streifen“,
+// /workspace/entwuerfe/it-trainer-icon/gelb-lila). Gelb, Orange, Rot = Schicht-Farben Strom, Transistor, Logik aus
+// config.json (nach dem alten Apple-Regenbogen); das dunkle Lila außen steht nur hier.
+// Verlauf: Rauchglas-Linse (26.11.) → graue Ellipsen (…/ellipsen) → bunte Schichten (…/farbig) → gelb-lila (1.7.0).
+// Aufbau: Grundkreis Lila · hellere Sichel unten rechts (zurückgeworfenes Licht) · darauf je Farbe eine Ellipse,
 // Schritt für Schritt kleiner und zum Licht (oben links) verschoben – die Stufen ergeben die Kugelform.
 // resvg ist keine Projektabhängigkeit; es liegt dauerhaft in /workspace/werkzeuge/resvg:
 //   RESVG_ORDNER=/workspace/werkzeuge/resvg node werkzeuge/icons-erzeugen.mjs
@@ -18,10 +19,12 @@ import { fileURLToPath } from 'node:url';
 
 const ZIEL = join(dirname(fileURLToPath(import.meta.url)), '..', 'icons');
 const config = JSON.parse(readFileSync(join(ZIEL, '..', 'config.json'), 'utf8'));
-const FARBEN = config.schichten.map((s) => s.farbe).filter((_, i) => i % 2 === 0);   // 11 → 6: Strom, Logik, …, KI
+const schicht = (id) => config.schichten.find((s) => s.id === id).farbe;
+const AUSSEN = '#6e2a78';    // dunkles Lila
+const FARBEN = [AUSSEN, schicht('logik'), schicht('transistor'), schicht('strom')];   // außen → innen
 const SCHRUMPF = 0.8;         // innerste Schicht hat 20 % des Kugelradius
 const LICHT = [-70, -100];    // Verschiebung der obersten Schicht (Richtung oben links), bei Radius 256
-const AUFHELLEN = 0.35;       // Sichel = Grundfarbe, zu 35 % mit Weiß gemischt
+const AUFHELLEN = 0.3;        // Sichel = Grundfarbe, zu 30 % mit Weiß gemischt
 const UMGEBUNG = '#08080b';   // Fläche um die Kugel (Android, iPhone)
 const SICHER = 0.8;           // sichtbarer Kreis bei Android-„maskable“-Icons: 80 % Durchmesser
 

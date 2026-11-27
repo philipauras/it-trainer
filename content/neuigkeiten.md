@@ -2,6 +2,10 @@
 
 Erscheint in der App als „Was ist neu“ nach einem Update. Oberster Eintrag = Version aus config.json.
 
+## 1.7.0 – 27.11.2026
+- Frischere Farben: Die Schichten von Strom bis KI leuchten jetzt in klaren Regenbogen-Farben. Auf hellen Farben sind die Nummern dunkel, damit du sie gut lesen kannst.
+- Neues App-Icon: vier Schichten, innen Gelb, nach außen Orange, Rot und dunkles Lila. Auf dem iPhone erscheint es erst, wenn du die App vom Home-Bildschirm löschst und neu hinzufügst.
+
 ## 1.6.2 – 27.11.2026
 - Das App-Icon ist jetzt bunt: Jede Schicht der Kugel trägt eine Farbe aus der Schichten-Karte – außen Strom, ganz innen KI. Auf dem iPhone erscheint es erst, wenn du die App vom Home-Bildschirm löschst und neu hinzufügst.
 

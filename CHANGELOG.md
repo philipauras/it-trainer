@@ -2,6 +2,14 @@
 
 Entscheidungen und Änderungen (für Philip kurz erklärt). Neueste oben. Was Nutzer in der App sehen: `content/neuigkeiten.md`.
 
+## 1.7.0 – 27.11.2026 (frischere Farben + Icon gelb-lila, Philips Wunsch)
+- **Schicht-Farben** neu nach dem alten Apple-Regenbogen (Grün #61bb46, Gelb #fdb827, Orange #f5821f, Rot #e03a3e,
+  Lila #963d97, Blau #009ddc), Lücken als Zwischentöne; Reihenfolge Strom → KI unverändert.
+- **Schrift auf Schicht-Farben** (Nummer, „Du bist hier“, ✓) wird automatisch gewählt (`schriftAuf` in `js/kern/thema.js`,
+  höherer WCAG-Kontrast): dunkel auf Gelb/Orange/Grün/Cyan, weiß auf dunklen Farben.
+- **Icon** „1 · vier Streifen“: innen Gelb (Strom), Orange (Transistor), Rot (Logik), außen dunkles Lila #6e2a78.
+  Entwürfe: `/workspace/entwuerfe/it-trainer-icon/gelb-lila`.
+
 ## 1.6.2 – 27.11.2026 (farbige Icon-Schichten, Philips Wahl „A“)
 - Ellipsen-Schichten in den Schicht-Farben aus `config.json` (jede zweite: Strom, Logik, Betriebssystem, Programmieren,
   Daten, KI – außen nach innen), Sichel = Strom-Farbe aufgehellt, kein Glanzpunkt. Farben werden beim Erzeugen aus der
