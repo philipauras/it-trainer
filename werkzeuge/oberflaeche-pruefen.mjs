@@ -173,7 +173,7 @@ async function folgeDurchklicken(f, nr) {
   assert.equal(await s.locator('.pool-hinweis a[href="#lernen"]').count(), 1, 'Link zum Reiter Lernen');
   await bild(`${p}-g-fazit`);
   await s.getByRole('button', { name: 'Folge abschließen' }).click();
-  await s.locator('.start-kopf').waitFor();
+  await s.locator('#schichten-titel').waitFor();
   const z = await zustand();
   assert.ok(z.folgen[f.id].fertig, `${f.id} nicht als fertig gespeichert`);
   for (const u of f.uebungen) assert.ok(z.uebungen[u], `Übung ${u} nicht gespeichert`);
@@ -214,7 +214,7 @@ try {
 
   los('Handy: Startseite und Schichten-Karte');
   await s.goto(url);
-  await s.locator('.start-kopf').waitFor();
+  await s.locator('#schichten-titel').waitFor();
   await s.evaluate(() => navigator.serviceWorker?.ready);
   assert.equal(await s.locator('.schicht').count(), 11);
   await s.locator('.schicht-hier .hier-marke').waitFor();
@@ -298,7 +298,7 @@ try {
   await c3.close();
 
   los('Dunkles Thema');
-  await s.emulateMedia({ colorScheme: 'dark' }); await s.goto(url); await s.locator('.start-kopf').waitFor();
+  await s.emulateMedia({ colorScheme: 'dark' }); await s.goto(url); await s.locator('#schichten-titel').waitFor();
   assert.equal(await s.evaluate(() => document.documentElement.dataset.theme), 'dunkel'); await bild('23-dunkel-start');
   if (folgen[0]) { await s.goto(`${url}#folge/${folgen[0].id}/prinzip`); await s.locator('.sim .schalter, .sim-info').first().waitFor(); await bild('24-dunkel-prinzip'); }
   await s.emulateMedia({ colorScheme: 'light' });
@@ -313,7 +313,7 @@ try {
 
   los('Offline nach dem ersten Besuch');
   await c.setOffline(true);
-  await s.goto(url); await s.locator('.start-kopf').waitFor({ timeout: 8000 });
+  await s.goto(url); await s.locator('#schichten-titel').waitFor({ timeout: 8000 });
   if (folgen[0]) { await s.goto(`${url}#folge/${folgen[0].id}/selbst`); await s.locator('.sim-flaeche :is(.zahlen-raster, .schalter-reihe)').first().waitFor({ timeout: 8000 }); }
   await c.setOffline(false);
   await c.close();
@@ -321,7 +321,7 @@ try {
   los('PC-Format (1280 × 800)');
   const pc = await browser.newContext({ viewport: { width: 1280, height: 800 }, locale: 'de-DE' });
   s = await pc.newPage(); horche(s);
-  await s.goto(url); await s.locator('.start-kopf').waitFor(); await kein_ueberlauf('PC Start'); await bild('30-pc-start');
+  await s.goto(url); await s.locator('#schichten-titel').waitFor(); await kein_ueberlauf('PC Start'); await bild('30-pc-start');
   if (folgen[0]) { await s.goto(`${url}#folge/${folgen[0].id}/prinzip`); await s.locator('.abschnitt').waitFor(); await bild('31-pc-folge'); }
   await pc.close();
 

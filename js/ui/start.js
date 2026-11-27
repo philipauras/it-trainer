@@ -6,12 +6,8 @@ import { schriftAuf } from '../kern/thema.js';
 
 export function zeigeStart(ctx) {
   const { config, index, zustand } = ctx;
-  const kinder = [
-    el('header', { class: 'start-kopf' }, [
-      el('img', { class: 'start-logo', src: 'icons/icon.svg', alt: '', width: 44, height: 44 }),
-      el('div', {}, [el('h1', { class: 'start-titel', text: config.app.name }), el('p', { class: 'start-untertitel', text: config.app.untertitel })]),
-    ]),
-  ];
+  // Kein Logo und kein App-Name auf der Startseite – die gehören nur zum App-Icon (Philip, 27.11.2026).
+  const kinder = [];
   if (index.live === false && index.staffeln.some((s) => s.folgen.some((f) => f.status === 'entwurf' || f.status === 'geprueft'))) {
     kinder.push(el('p', { class: 'vorschau-hinweis', text: 'Vorschau: Hier erscheinen auch Folgen, die noch nicht freigegeben sind (markiert als Entwurf bzw. Geprüft).' }));
   }

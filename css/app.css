@@ -97,10 +97,6 @@ img, svg { max-width: 100%; }
 .karte-text { margin: 0 0 10px; color: var(--c-text-2); font-size: 17px; }
 
 /* Start */
-.start-kopf { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
-.start-logo { border-radius: 11px; flex: none; }
-.start-titel { margin: 0; font-size: 28px; line-height: 1.1; }
-.start-untertitel { margin: 0; color: var(--c-text-3); font-size: 17px; font-weight: 500; }
 .neu-liste { margin: 0 0 4px; padding-left: 22px; }
 .neu-version { margin: 0 0 12px; }
 .neu-kopf { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--c-text-3); }

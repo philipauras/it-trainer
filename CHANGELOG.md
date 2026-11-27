@@ -2,6 +2,11 @@
 
 Entscheidungen und Änderungen (für Philip kurz erklärt). Neueste oben. Was Nutzer in der App sehen: `content/neuigkeiten.md`.
 
+## 1.7.1 – 27.11.2026 (Icon lila Fläche, kein Logo/Name in der App – Philips Wunsch, live erst nach seinem OK)
+- **Icon:** Lila #6e2a78 als volle quadratische Fläche, Sichel entfernt; Rot/Orange/Gelb auf 90 % (Android 80 %).
+- **Startseite:** Kopf mit Logo, „IT“ und Untertitel entfernt (Logo und Name gehören nur zum App-Icon); Info-Karte in den
+  Einstellungen ohne App-Namen. Browser-Tab-Titel bleibt. Oberflächen-Prüfung wartet jetzt auf `#schichten-titel`.
+
 ## 1.7.0 – 27.11.2026 (frischere Farben + Icon gelb-lila, Philips Wunsch)
 - **Schicht-Farben** neu nach dem alten Apple-Regenbogen (Grün #61bb46, Gelb #fdb827, Orange #f5821f, Rot #e03a3e,
   Lila #963d97, Blau #009ddc), Lücken als Zwischentöne; Reihenfolge Strom → KI unverändert.

@@ -79,7 +79,7 @@ export function zeigeEinstellungen(ctx) {
     ]),
     el('section', { class: 'karte' }, [
       el('h2', { class: 'karte-titel', text: 'Über die App' }),
-      el('p', { class: 'karte-text', text: `${app.name} – ${app.beschreibung}` }),
+      el('p', { class: 'karte-text', text: app.beschreibung }),
       el('p', { class: 'karte-text', text: 'Jede Folge wird vor der Freigabe von einer unabhängigen Prüfung auf fachliche Richtigkeit und Verständlichkeit kontrolliert. Die Quellen stehen am Ende jeder Folge.' }),
       el('p', { class: 'version', id: 'version', text: versionsText(app.version, ctx.build) }),
     ]),
