@@ -20,17 +20,17 @@
     { "id": "meister", "titel": "Vertiefung", "beschreibung": "Daten, Server und KI – eigene Systeme bauen und betreiben." }
   ],
   "schichten": [
-    { "id": "strom", "titel": "Strom", "kurz": "Elektronen tragen Ja und Nein", "farbe": "#d99a0b" },
-    { "id": "transistor", "titel": "Transistor", "kurz": "Schalter ohne bewegliche Teile", "farbe": "#e0761f" },
-    { "id": "logik", "titel": "Logik", "kurz": "UND, ODER, NICHT – Rechnen mit Schaltern", "farbe": "#d4504a" },
-    { "id": "prozessor", "titel": "Prozessor", "kurz": "Das Rechenwerk, das Befehle abarbeitet", "farbe": "#c2417a" },
-    { "id": "betriebssystem", "titel": "Betriebssystem", "kurz": "Verteilt Rechenzeit, Speicher und Geräte", "farbe": "#9150c8" },
-    { "id": "netzwerk", "titel": "Netzwerk", "kurz": "Computer sprechen miteinander", "farbe": "#5f5bdc" },
-    { "id": "programmieren", "titel": "Programmieren", "kurz": "Dem Computer Arbeitsanweisungen schreiben", "farbe": "#2f72d6" },
-    { "id": "web", "titel": "Web", "kurz": "Seiten und Apps im Browser", "farbe": "#1688b8" },
-    { "id": "daten", "titel": "Daten", "kurz": "Wissen ordnen, speichern, abfragen", "farbe": "#0f9590" },
-    { "id": "server", "titel": "Server", "kurz": "Dienste, die rund um die Uhr laufen", "farbe": "#2b935a" },
-    { "id": "ki", "titel": "KI", "kurz": "Maschinen, die aus Beispielen lernen", "farbe": "#6f8f1f" }
+    { "id": "strom", "titel": "Strom", "kurz": "Elektronen tragen Ja und Nein", "farbe": "#fdb827" },
+    { "id": "transistor", "titel": "Transistor", "kurz": "Schalter ohne bewegliche Teile", "farbe": "#f5821f" },
+    { "id": "logik", "titel": "Logik", "kurz": "UND, ODER, NICHT – Rechnen mit Schaltern", "farbe": "#e03a3e" },
+    { "id": "prozessor", "titel": "Prozessor", "kurz": "Das Rechenwerk, das Befehle abarbeitet", "farbe": "#c4378a" },
+    { "id": "betriebssystem", "titel": "Betriebssystem", "kurz": "Verteilt Rechenzeit, Speicher und Geräte", "farbe": "#963d97" },
+    { "id": "netzwerk", "titel": "Netzwerk", "kurz": "Computer sprechen miteinander", "farbe": "#5a4fcf" },
+    { "id": "programmieren", "titel": "Programmieren", "kurz": "Dem Computer Arbeitsanweisungen schreiben", "farbe": "#2d7fe3" },
+    { "id": "web", "titel": "Web", "kurz": "Seiten und Apps im Browser", "farbe": "#009ddc" },
+    { "id": "daten", "titel": "Daten", "kurz": "Wissen ordnen, speichern, abfragen", "farbe": "#00ada3" },
+    { "id": "server", "titel": "Server", "kurz": "Dienste, die rund um die Uhr laufen", "farbe": "#61bb46" },
+    { "id": "ki", "titel": "KI", "kurz": "Maschinen, die aus Beispielen lernen", "farbe": "#a6ce39" }
   ],
   "staffeln": [
     {

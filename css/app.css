@@ -117,17 +117,17 @@ img, svg { max-width: 100%; }
 .schicht-kopf::-webkit-details-marker { display: none; }
 .schicht-nr {
   flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%;
-  background: var(--s-farbe); color: #fff; font-weight: 700; font-size: 15px;
+  background: var(--s-farbe); color: var(--s-schrift, #fff); font-weight: 700; font-size: 15px;
 }
 .schicht-name { display: flex; flex-direction: column; min-width: 0; flex: 1; }
 .schicht-name strong { font-size: 18px; line-height: 1.2; }
 .schicht-kurz { font-size: 15px; color: var(--c-text-3); line-height: 1.3; }
 .schicht-stand { font-size: 15px; color: var(--c-text-3); font-variant-numeric: tabular-nums; }
-.hier-marke { flex: none; padding: 3px 10px; border-radius: 99px; background: var(--s-farbe); color: #fff; font-size: 15px; font-weight: 700; }
+.hier-marke { flex: none; padding: 3px 10px; border-radius: 99px; background: var(--s-farbe); color: var(--s-schrift, #fff); font-size: 15px; font-weight: 700; }
 .schicht-hier { box-shadow: 0 0 0 2px var(--s-farbe), var(--schatten); }
 .schicht-fertig .schicht-nr::after { content: "✓"; position: absolute; }
 .schicht-fertig .schicht-nr { color: transparent; position: relative; }
-.schicht-fertig .schicht-nr::after { color: #fff; }
+.schicht-fertig .schicht-nr::after { color: var(--s-schrift, #fff); }
 .schicht-inhalt { padding: 0 14px 14px 50px; }
 .schicht-folgt { margin: 0; color: var(--c-text-3); font-size: 15px; }
 .schicht-folgen { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 4px; }

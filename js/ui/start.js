@@ -2,6 +2,7 @@
 import { el } from '../kern/dom.js';
 import { schichtStaende, aktuelleSchicht, istFertig, verfuegbar, folgenAnteil } from '../kern/fortschritt.js';
 import { ansichtSetzen, statusMarke, balken } from './bausteine.js';
+import { schriftAuf } from '../kern/thema.js';
 
 export function zeigeStart(ctx) {
   const { config, index, zustand } = ctx;
@@ -30,6 +31,7 @@ function schichtenKarte(ctx) {
     const fortschrittText = st.geplant ? `${st.fertig} von ${st.geplant} Folgen` : `Staffel ${st.staffeln.map((s) => s.symbol || s.nr).join(', ')} · folgt`;
     const details = el('details', { class: `schicht${offen ? ' schicht-hier' : ''}${st.fertig && st.fertig === st.geplant ? ' schicht-fertig' : ''}`, open: offen });
     details.style.setProperty('--s-farbe', st.schicht.farbe);
+    details.style.setProperty('--s-schrift', schriftAuf(st.schicht.farbe));
     details.append(
       el('summary', { class: 'schicht-kopf' }, [
         el('span', { class: 'schicht-nr', text: String(nr), 'aria-hidden': 'true' }),
