@@ -2,6 +2,9 @@
 
 Erscheint in der App als „Was ist neu“ nach einem Update. Oberster Eintrag = Version aus config.json.
 
+## 1.6.2 – 27.11.2026
+- Das App-Icon ist jetzt bunt: Jede Schicht der Kugel trägt eine Farbe aus der Schichten-Karte – außen Strom, ganz innen KI. Auf dem iPhone erscheint es erst, wenn du die App vom Home-Bildschirm löschst und neu hinzufügst.
+
 ## 1.6.1 – 27.11.2026
 - Neues App-Icon: die Kugel besteht jetzt aus flachen, übereinanderliegenden Ellipsen statt aus Glas-Verläufen. Auf dem iPhone siehst du es erst, wenn du die App vom Home-Bildschirm löschst und neu hinzufügst.
 

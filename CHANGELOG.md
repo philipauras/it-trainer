@@ -2,6 +2,11 @@
 
 Entscheidungen und Änderungen (für Philip kurz erklärt). Neueste oben. Was Nutzer in der App sehen: `content/neuigkeiten.md`.
 
+## 1.6.2 – 27.11.2026 (farbige Icon-Schichten, Philips Wahl „A“)
+- Ellipsen-Schichten in den Schicht-Farben aus `config.json` (jede zweite: Strom, Logik, Betriebssystem, Programmieren,
+  Daten, KI – außen nach innen), Sichel = Strom-Farbe aufgehellt, kein Glanzpunkt. Farben werden beim Erzeugen aus der
+  config gelesen. Entwürfe A–F: `/workspace/entwuerfe/it-trainer-icon/farbig`.
+
 ## 1.6.1 – 27.11.2026 (App-Icon aus Ellipsen-Schichten, Philips Wunsch)
 - Icon ohne Verläufe: dunkler Grundkreis, helle Sichel unten rechts, darauf 5 flache Ellipsen, die kleiner, heller und
   nach oben links verschoben werden – die Farbstufen ergeben die Kugelform. Entwürfe: `/workspace/entwuerfe/it-trainer-icon/ellipsen` (gewählt „A2“).
