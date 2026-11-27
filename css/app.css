@@ -47,6 +47,8 @@ img, svg { max-width: 100%; }
 .zahnrad:hover, .zahnrad[aria-current] { color: var(--c-akzent); background: var(--c-akzent-weich); }
 .zahnrad-punkt { position: absolute; top: 8px; right: 8px; width: 10px; height: 10px; border-radius: 50%; background: var(--c-akzent); }
 .ansicht > :first-child { padding-right: 44px; } /* nichts unter dem Zahnrad verstecken */
+.ansicht > .schichten:first-child { padding-right: 0; } /* Startseite: nur die Überschrift macht Platz fürs Zahnrad */
+.schichten > .abschnitt-titel { padding-right: 44px; }
 @media (min-width: 900px) {
   .rahmen { display: grid; grid-template-columns: 200px 1fr; }
   .hauptnavi {
