@@ -1,9 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs>
-<radialGradient id="koerper" cx="0.36" cy="0.32" r="0.95"><stop offset="0" stop-color="#9aa3b2"/><stop offset="0.45" stop-color="#2a2f3a"/><stop offset="1" stop-color="#030305"/></radialGradient>
-<radialGradient id="schein" cx="0.68" cy="0.76" r="0.34"><stop offset="0" stop-color="#7f8ea6" stop-opacity="0.85"/><stop offset="1" stop-color="#7f8ea6" stop-opacity="0"/></radialGradient>
-<radialGradient id="rand" cx="0.5" cy="0.5" r="0.5"><stop offset="0.72" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.45"/></radialGradient>
-<radialGradient id="glanz" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#fff" stop-opacity="0.35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-</defs>
-<circle cx="256" cy="256" r="256" fill="url(#koerper)"/><circle cx="256" cy="256" r="256" fill="url(#schein)"/><circle cx="256" cy="256" r="256" fill="url(#rand)"/>
-<ellipse cx="190" cy="160" rx="120" ry="78" transform="rotate(-28 190 160)" fill="url(#glanz)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><clipPath id="kugel"><circle cx="256" cy="256" r="256"/></clipPath></defs>
+<g clip-path="url(#kugel)"><circle cx="256" cy="256" r="256" fill="#171a22"/><ellipse cx="330" cy="340" rx="190" ry="170" transform="rotate(-35 330 340)" fill="#2b3140"/><ellipse cx="236" cy="226" rx="234" ry="228" fill="#171a22"/><ellipse cx="242" cy="236" rx="214" ry="208" transform="rotate(-5.6 242 236)" fill="#242730"/><ellipse cx="228" cy="216" rx="172" ry="162.4" transform="rotate(-11.2 228 216)" fill="#3f434c"/><ellipse cx="214" cy="196" rx="130" ry="119.1" transform="rotate(-16.8 214 196)" fill="#636871"/><ellipse cx="200" cy="176" rx="88.1" ry="78.2" transform="rotate(-22.4 200 176)" fill="#8f95a0"/><ellipse cx="186" cy="156" rx="46.1" ry="39.6" transform="rotate(-28 186 156)" fill="#c3cad6"/></g>
 </svg>

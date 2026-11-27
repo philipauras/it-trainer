@@ -2,6 +2,9 @@
 
 Erscheint in der App als „Was ist neu“ nach einem Update. Oberster Eintrag = Version aus config.json.
 
+## 1.6.1 – 27.11.2026
+- Neues App-Icon: die Kugel besteht jetzt aus flachen, übereinanderliegenden Ellipsen statt aus Glas-Verläufen. Auf dem iPhone siehst du es erst, wenn du die App vom Home-Bildschirm löschst und neu hinzufügst.
+
 ## 1.6.0 – 26.11.2026
 - Aufgeräumt: unten nur noch drei Reiter – Start (die Doku-Reihe), Lernen und Glossar. Einstellungen, Fortschritt übertragen und Neuigkeiten findest du unter dem Zahnrad oben rechts.
 - Lernen ist jetzt eine einfache Liste: Staffel → ihre Folgen. Tippe eine abgeschlossene Folge an, um ihre Fragen zu üben – was du noch nicht sicher weißt, kommt zuerst.

@@ -2,6 +2,11 @@
 
 Entscheidungen und Änderungen (für Philip kurz erklärt). Neueste oben. Was Nutzer in der App sehen: `content/neuigkeiten.md`.
 
+## 1.6.1 – 27.11.2026 (App-Icon aus Ellipsen-Schichten, Philips Wunsch)
+- Icon ohne Verläufe: dunkler Grundkreis, helle Sichel unten rechts, darauf 5 flache Ellipsen, die kleiner, heller und
+  nach oben links verschoben werden – die Farbstufen ergeben die Kugelform. Entwürfe: `/workspace/entwuerfe/it-trainer-icon/ellipsen` (gewählt „A2“).
+  Grundton etwas heller als die Fläche drumherum, damit der Rand auf iPhone/Android sichtbar bleibt.
+
 ## 1.6.0 – 26.11.2026 (aufgeräumter Aufbau, Philips Feedback)
 - **Drei Reiter** Start · Lernen · Glossar (am PC linke Leiste); Einstellungen, Fortschritt übertragen und Neuigkeiten unter dem
   **Zahnrad** oben rechts (Punkt bei ungelesenen Neuigkeiten). Start zeigt nur noch Schichten-Karte und Staffeln (Weiterlernen-,

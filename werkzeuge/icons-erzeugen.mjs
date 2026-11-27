@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-// Erzeugt die App-Icons: eine einzige Glaslinse aus Rauchglas – nur Verläufe, keine Linien, kein Motiv.
-// Wahl von Philip, 26.11.2026 (Entwurf „S · Rauchglas“, Runde 8; alle Entwürfe in /workspace/entwuerfe/it-trainer-icon).
-// Vier Verlaufs-Schichten: Grundkörper (Licht von oben links) · Lichtschein unten rechts (gebündeltes Licht) ·
-// dunkler werdender Rand (Wölbung) · weicher Glanzfleck (Spiegelung).
+// Erzeugt die App-Icons: eine abstrakte Kugel aus flachen, übereinanderliegenden Ellipsen – keine Verläufe, keine Linien.
+// Nachfolger der Rauchglas-Linse (Philip, 26.11.2026); Umstellung auf Schichten: Philip, 27.11.2026
+// (Entwürfe in /workspace/entwuerfe/it-trainer-icon/ellipsen, gewählt: „A2“).
+// Aufbau: dunkler Grundkreis · helle Sichel unten rechts (zurückgeworfenes Licht) · SCHICHTEN Ellipsen, die
+// Schritt für Schritt kleiner, heller und zum Licht (oben links) verschoben werden – die Stufen ersetzen den Verlauf.
 // resvg ist keine Projektabhängigkeit; es liegt dauerhaft in /workspace/werkzeuge/resvg:
 //   RESVG_ORDNER=/workspace/werkzeuge/resvg node werkzeuge/icons-erzeugen.mjs
 // Dateien in icons/:
@@ -15,23 +16,34 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ZIEL = join(dirname(fileURLToPath(import.meta.url)), '..', 'icons');
-const GLAS = { hell: '#9aa3b2', mitte: '#2a2f3a', tief: '#030305', schein: '#7f8ea6' };
+const FARBE = { tief: '#171a22', hell: '#c3cad6', sichel: '#2b3140' };
+const SCHICHTEN = 6;          // Anzahl Farbstufen inkl. Grundton
+const SCHRUMPF = 0.82;        // oberste Schicht hat 18 % des Kugelradius
+const LICHT = [-70, -100];    // Verschiebung der obersten Schicht (Richtung oben links), bei Radius 256
 const UMGEBUNG = '#08080b';   // Fläche um die Kugel (Android, iPhone)
 const SICHER = 0.8;           // sichtbarer Kreis bei Android-„maskable“-Icons: 80 % Durchmesser
 
+const z = (v) => +v.toFixed(1);
+const mischen = (a, b, t) => '#' + [1, 3, 5].map((i) => Math.round(parseInt(a.slice(i, i + 2), 16) * (1 - t)
+  + parseInt(b.slice(i, i + 2), 16) * t).toString(16).padStart(2, '0')).join('');
+
 function svgText({ radius = 256, grund = null } = {}) {
-  const k = radius / 256;     // Glanzfleck mit der Kugel skalieren
-  const c = `cx="256" cy="256" r="${radius}"`;
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs>
-<radialGradient id="koerper" cx="0.36" cy="0.32" r="0.95"><stop offset="0" stop-color="${GLAS.hell}"/><stop offset="0.45" stop-color="${GLAS.mitte}"/><stop offset="1" stop-color="${GLAS.tief}"/></radialGradient>
-<radialGradient id="schein" cx="0.68" cy="0.76" r="0.34"><stop offset="0" stop-color="${GLAS.schein}" stop-opacity="0.85"/><stop offset="1" stop-color="${GLAS.schein}" stop-opacity="0"/></radialGradient>
-<radialGradient id="rand" cx="0.5" cy="0.5" r="0.5"><stop offset="0.72" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.45"/></radialGradient>
-<radialGradient id="glanz" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#fff" stop-opacity="0.35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-</defs>${grund ? `<rect width="512" height="512" fill="${grund}"/>` : ''}
-<circle ${c} fill="url(#koerper)"/><circle ${c} fill="url(#schein)"/><circle ${c} fill="url(#rand)"/>
-<ellipse cx="${256 - 66 * k}" cy="${256 - 96 * k}" rx="${120 * k}" ry="${78 * k}" transform="rotate(-28 ${256 - 66 * k} ${256 - 96 * k})" fill="url(#glanz)"/>
-</svg>
-`;
+  const k = radius / 256;     // alles mit der Kugel skalieren, Mittelpunkt bleibt 256/256
+  const p = (dx, dy) => [z(256 + dx * k), z(256 + dy * k)];
+  const [sx, sy] = p(74, 84);
+  const [kx, ky] = p(-20, -30);
+  let s = `<circle cx="256" cy="256" r="${z(radius)}" fill="${FARBE.tief}"/>`
+    + `<ellipse cx="${sx}" cy="${sy}" rx="${z(190 * k)}" ry="${z(170 * k)}" transform="rotate(-35 ${sx} ${sy})" fill="${FARBE.sichel}"/>`
+    + `<ellipse cx="${kx}" cy="${ky}" rx="${z(234 * k)}" ry="${z(228 * k)}" fill="${FARBE.tief}"/>`;
+  for (let i = 1; i < SCHICHTEN; i++) {
+    const t = i / (SCHICHTEN - 1);
+    const r = 256 * (1 - SCHRUMPF * t) * k;
+    const [cx, cy] = p(LICHT[0] * t, LICHT[1] * t);
+    s += `<ellipse cx="${cx}" cy="${cy}" rx="${z(r)}" ry="${z(r * (1 - 0.14 * t))}" transform="rotate(${z(-28 * t)} ${cx} ${cy})"`
+      + ` fill="${mischen(FARBE.tief, FARBE.hell, t ** 1.6)}"/>`;
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><clipPath id="kugel"><circle cx="256" cy="256" r="${z(radius)}"/></clipPath></defs>`
+    + `${grund ? `<rect width="512" height="512" fill="${grund}"/>` : ''}\n<g clip-path="url(#kugel)">${s}</g>\n</svg>\n`;
 }
 
 writeFileSync(join(ZIEL, 'icon.svg'), svgText());
